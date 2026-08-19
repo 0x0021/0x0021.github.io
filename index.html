@@ -255,6 +255,23 @@ section {
   background: var(--surface-hi);
   transform: translateY(-2px);
 }
+/* Featured project card */
+.project-card--featured {
+  grid-column: 1 / -1;
+  padding: 0;
+  gap: 0;
+  overflow: hidden;
+}
+.project-card--featured .card-banner {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-bottom: 1px solid var(--border);
+}
+.card-banner--light { display: none; }
+[data-theme="light"] .card-banner--dark { display: none; }
+[data-theme="light"] .card-banner--light { display: block; }
+.project-card--featured .card-body { padding: 1.25rem; }
 .card-header {
   display: flex;
   align-items: center;
@@ -404,18 +421,24 @@ footer a:hover { text-decoration: underline; }
     </div>
     <div class="projects-grid reveal">
 
-      <a href="https://github.com/0x0021/Linkora" class="project-card" target="_blank" rel="noopener">
-        <div class="card-header">
-          <div class="card-icon" style="background:var(--accent-dim)">🌉</div>
-          <div>
-            <div class="card-name">Linkora 灵桥</div>
-            <div class="card-meta">Python · Multi-platform</div>
+      <a href="https://github.com/0x0021/Linkora" class="project-card project-card--featured" target="_blank" rel="noopener">
+        <picture>
+          <img class="card-banner card-banner--dark" src="assets/brand/linkora-hero-dark.png" alt="Linkora 灵桥 — 多平台 AI 智能连接中枢" loading="lazy" />
+          <img class="card-banner card-banner--light" src="assets/brand/linkora-hero-light.png" alt="Linkora 灵桥 — 多平台 AI 智能连接中枢" loading="lazy" />
+        </picture>
+        <div class="card-body">
+          <div class="card-header">
+            <div class="card-icon" style="background:var(--accent-dim)">🌉</div>
+            <div>
+              <div class="card-name">Linkora 灵桥</div>
+              <div class="card-meta">Python · Multi-platform</div>
+            </div>
           </div>
-        </div>
-        <p class="card-desc">企业级 AI 分身平台，接入钉钉/飞书/企微，读文档、调工具、自动处理群聊与私聊，懂得分何时交还真人。</p>
-        <div class="card-tags">
-          <span class="tag">AI Agent</span>
-          <span class="tag green">多平台</span>
+          <p class="card-desc">企业级 AI 分身平台，接入钉钉/飞书/企微，读文档、调工具、自动处理群聊与私聊，懂得分何时交还真人。</p>
+          <div class="card-tags">
+            <span class="tag">AI Agent</span>
+            <span class="tag green">多平台</span>
+          </div>
         </div>
       </a>
 

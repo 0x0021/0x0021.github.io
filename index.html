@@ -268,9 +268,10 @@ section {
   display: block;
   border-bottom: 1px solid var(--border);
 }
-.card-banner--light { display: none; }
-[data-theme="light"] .card-banner--dark { display: none; }
-[data-theme="light"] .card-banner--light { display: block; }
+.project-card--featured .card-banner--light { display: none; }
+.project-card--featured .card-banner--dark { display: block; }
+[data-theme="light"] .project-card--featured .card-banner--dark { display: none; }
+[data-theme="light"] .project-card--featured .card-banner--light { display: block; }
 .project-card--featured .card-body { padding: 1.25rem; }
 .card-header {
   display: flex;

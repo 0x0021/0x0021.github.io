@@ -3,398 +3,23 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>坤子 · 工程师</title>
-<meta name="description" content="坤子，开源工程师，专注 AI 智能体、云平台与企业级工具开发。" />
-<meta property="og:title" content="坤子 · 工程师" />
+<title>坤子 · 博客</title>
+<meta name="description" content="坤子，开源工程师，专注 AI 智能体、云平台与企业级工具开发。这里记录技术文章与近期动态。" />
+<meta property="og:title" content="坤子 · 博客" />
 <meta property="og:description" content="开源工程师，专注 AI 智能体、云平台与企业级工具开发。" />
 <meta property="og:type" content="website" />
 <meta name="theme-color" content="#0d1117" media="(prefers-color-scheme: dark)" />
 <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
-<style>
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-:root {
-  --bg: #0d1117;
-  --bg-2: #161b22;
-  --surface: rgba(255,255,255,0.04);
-  --surface-hi: rgba(255,255,255,0.07);
-  --border: rgba(255,255,255,0.08);
-  --border-hi: rgba(255,255,255,0.14);
-  --text: #e6edf3;
-  --text-sec: #8b949e;
-  --text-muted: #484f58;
-  --accent: #58a6ff;
-  --accent-dim: rgba(88,166,255,0.12);
-  --green: #3fb950;
-  --green-dim: rgba(63,185,80,0.12);
-  --orange: #d29922;
-  --gradient: linear-gradient(135deg, #58a6ff, #a371f7);
-  --font: 'Inter', -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif;
-  --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
-}
-
-[data-theme="light"] {
-  --bg: #ffffff;
-  --bg-2: #f6f8fa;
-  --surface: rgba(0,0,0,0.03);
-  --surface-hi: rgba(0,0,0,0.06);
-  --border: rgba(0,0,0,0.08);
-  --border-hi: rgba(0,0,0,0.14);
-  --text: #1f2328;
-  --text-sec: #656d76;
-  --text-muted: #a0a8b4;
-  --accent: #0969da;
-  --accent-dim: rgba(9,105,218,0.08);
-  --green: #1a7f37;
-  --green-dim: rgba(26,127,55,0.08);
-  --orange: #9a6700;
-  --gradient: linear-gradient(135deg, #0969da, #8250df);
-}
-
-html { scroll-behavior: smooth; }
-
-body {
-  font-family: var(--font);
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.6;
-  overflow-x: hidden;
-  transition: background 0.3s, color 0.3s;
-}
-
-/* ── Canvas ── */
-#hero-canvas {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  opacity: 0.5;
-}
-
-/* ── Nav ── */
-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 2rem;
-  height: 56px;
-  background: rgba(13,17,23,0.7);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
-  transition: background 0.3s;
-}
-[data-theme="light"] nav { background: rgba(255,255,255,0.8); }
-
-.nav-brand {
-  font-weight: 700;
-  font-size: 1.1rem;
-  letter-spacing: -0.02em;
-  background: var(--gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.nav-links { display: flex; gap: 1.5rem; align-items: center; }
-.nav-links a {
-  color: var(--text-sec);
-  text-decoration: none;
-  font-size: 0.875rem;
-  font-weight: 500;
-  transition: color 0.2s;
-}
-.nav-links a:hover { color: var(--accent); }
-
-.theme-toggle {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  width: 32px; height: 32px;
-  display: flex; align-items: center; justify-content: center;
-  cursor: pointer;
-  color: var(--text-sec);
-  font-size: 1rem;
-  transition: all 0.2s;
-}
-.theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
-
-/* ── Layout ── */
-main {
-  position: relative;
-  z-index: 1;
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
-}
-
-/* ── Hero ── */
-.hero {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  padding-top: 56px;
-}
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.3rem 0.8rem;
-  border-radius: 999px;
-  font-size: 0.75rem;
-  font-weight: 500;
-  background: var(--green-dim);
-  color: var(--green);
-  border: 1px solid rgba(63,185,80,0.2);
-  margin-bottom: 1.5rem;
-}
-.hero-badge::before {
-  content: '';
-  width: 6px; height: 6px;
-  border-radius: 50%;
-  background: var(--green);
-  animation: pulse 2s ease-in-out infinite;
-}
-@keyframes pulse {
-  0%,100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.5; transform: scale(0.8); }
-}
-.hero h1 {
-  font-size: clamp(2.5rem, 6vw, 4rem);
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  line-height: 1.1;
-  margin-bottom: 0.5rem;
-}
-.hero h1 .accent {
-  background: var(--gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.hero .tagline {
-  font-size: 1.25rem;
-  color: var(--text-sec);
-  margin-bottom: 2rem;
-  max-width: 520px;
-}
-.hero .cta-group {
-  display: flex;
-  gap: 0.75rem;
-  flex-wrap: wrap;
-}
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.6rem 1.2rem;
-  border-radius: 8px;
-  font-size: 0.875rem;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.2s;
-  cursor: pointer;
-  border: none;
-}
-.btn-primary {
-  background: var(--accent);
-  color: #fff;
-}
-.btn-primary:hover { opacity: 0.85; transform: translateY(-1px); }
-.btn-ghost {
-  background: var(--surface);
-  color: var(--text);
-  border: 1px solid var(--border);
-}
-.btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
-
-/* ── Section ── */
-section {
-  padding: 5rem 0;
-}
-.section-label {
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 0.75rem;
-}
-.section-title {
-  font-size: 1.75rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  margin-bottom: 2rem;
-}
-
-/* ── Projects Grid ── */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 1rem;
-}
-.project-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 1.25rem;
-  text-decoration: none;
-  color: inherit;
-  transition: all 0.2s;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-.project-card:hover {
-  border-color: var(--border-hi);
-  background: var(--surface-hi);
-  transform: translateY(-2px);
-}
-/* Featured project card */
-.project-card--featured {
-  grid-column: 1 / -1;
-  padding: 0;
-  gap: 0;
-  overflow: hidden;
-}
-.project-card--featured .card-banner {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-bottom: 1px solid var(--border);
-}
-.project-card--featured .card-banner--light { display: none; }
-.project-card--featured .card-banner--dark { display: block; }
-[data-theme="light"] .project-card--featured .card-banner--dark { display: none; }
-[data-theme="light"] .project-card--featured .card-banner--light { display: block; }
-.project-card--featured .card-body { padding: 1.25rem; }
-.card-header {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-}
-.card-icon {
-  width: 36px; height: 36px;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.1rem;
-  flex-shrink: 0;
-}
-.card-name {
-  font-weight: 600;
-  font-size: 1rem;
-  letter-spacing: -0.01em;
-}
-.card-meta {
-  font-size: 0.75rem;
-  color: var(--text-muted);
-  font-family: var(--mono);
-}
-.card-desc {
-  font-size: 0.85rem;
-  color: var(--text-sec);
-  line-height: 1.5;
-  flex: 1;
-}
-.card-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.35rem;
-  margin-top: 0.25rem;
-}
-.tag {
-  padding: 0.15rem 0.5rem;
-  border-radius: 999px;
-  font-size: 0.7rem;
-  font-weight: 500;
-  background: var(--accent-dim);
-  color: var(--accent);
-}
-.tag.green { background: var(--green-dim); color: var(--green); }
-.tag.orange { background: rgba(210,153,34,0.12); color: var(--orange); }
-
-/* ── About ── */
-.about-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-}
-@media (max-width: 600px) { .about-grid { grid-template-columns: 1fr; } }
-.about-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 1.5rem;
-}
-.about-card h3 {
-  font-size: 0.9rem;
-  font-weight: 600;
-  margin-bottom: 0.75rem;
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-}
-.about-card ul {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-}
-.about-card li {
-  font-size: 0.85rem;
-  color: var(--text-sec);
-  padding-left: 1rem;
-  position: relative;
-}
-.about-card li::before {
-  content: '›';
-  position: absolute;
-  left: 0;
-  color: var(--accent);
-  font-weight: 700;
-}
-
-/* ── Footer ── */
-footer {
-  padding: 2rem 0;
-  border-top: 1px solid var(--border);
-  text-align: center;
-  font-size: 0.8rem;
-  color: var(--text-muted);
-}
-footer a { color: var(--accent); text-decoration: none; }
-footer a:hover { text-decoration: underline; }
-
-/* ── Scroll reveal ── */
-.reveal {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ── Scrollbar ── */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: var(--border-hi); border-radius: 3px; }
-</style>
+<link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
 <canvas id="hero-canvas"></canvas>
 
 <nav>
-  <div class="nav-brand">坤子</div>
+  <a href="index.html" class="nav-brand">坤子</a>
   <div class="nav-links">
+    <a href="#blog">文章</a>
+    <a href="#timeline">动态</a>
     <a href="#projects">项目</a>
     <a href="#about">关于</a>
     <a href="https://github.com/0x0021" target="_blank" rel="noopener">GitHub</a>
@@ -405,12 +30,79 @@ footer a:hover { text-decoration: underline; }
 <main>
   <!-- Hero -->
   <section class="hero">
-    <div class="hero-badge">Available for collaboration</div>
+    <div class="hero-badge">Writing &amp; Building</div>
     <h1>Hi, I'm <span class="accent">坤子</span></h1>
-    <p class="tagline">工程师 · 开源爱好者 · 北京<br>专注 AI 智能体、云原生工具与企业级自动化</p>
+    <p class="tagline">工程师 · 开源爱好者 · 北京<br>写写 AI 智能体、云原生工具，折腾各种自动化</p>
     <div class="cta-group">
-      <a href="#projects" class="btn btn-primary">探索项目 ↓</a>
+      <a href="#blog" class="btn btn-primary">读博客 ↓</a>
       <a href="https://github.com/0x0021" class="btn btn-ghost" target="_blank" rel="noopener">GitHub ↗</a>
+    </div>
+  </section>
+
+  <!-- Blog posts -->
+  <section id="blog">
+    <div class="reveal">
+      <div class="section-label">Writing</div>
+      <div class="section-title">最新文章</div>
+    </div>
+    <div class="posts-grid reveal">
+
+      <a class="post-card" href="posts/linkora-architecture.html">
+        <div class="post-card__meta">2026-08-15 · 架构</div>
+        <h3 class="post-card__title">Linkora 灵桥：多平台 AI 分身架构复盘</h3>
+        <p class="post-card__excerpt">从钉钉单平台到钉钉/飞书/企微三端统一的适配器设计，以及 RAG + 规则引擎如何协同做出何时该回复、何时交还真人的决策。</p>
+        <div class="post-card__tags"><span class="tag">AI Agent</span><span class="tag green">架构</span></div>
+      </a>
+
+      <a class="post-card" href="posts/multi-platform-adapter.html">
+        <div class="post-card__meta">2026-08-02 · 工程实践</div>
+        <h3 class="post-card__title">多平台 IM 适配器：一套抽象吃下三家里程碑</h3>
+        <p class="post-card__excerpt">BaseIMAdapter 的上下文隔离、平台门控与执行兜底。记录踩过的坑：消息去重、自身消息识别、媒体消息降级。</p>
+        <div class="post-card__tags"><span class="tag">Python</span><span class="tag orange">IM</span></div>
+      </a>
+
+      <a class="post-card" href="posts/lookaway-localization.html">
+        <div class="post-card__meta">2026-07-20 · 折腾</div>
+        <h3 class="post-card__title">把 LookAway 汉化成简体中文</h3>
+        <p class="post-card__excerpt">一个 macOS 护眼小工具，本地化过程里的 nib 编辑、plutil 校验与 AppleScript 辅助，以及本地化文件的正确打包姿势。</p>
+        <div class="post-card__tags"><span class="tag">macOS</span><span class="tag green">本地化</span></div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- Timeline -->
+  <section id="timeline">
+    <div class="reveal">
+      <div class="section-label">Now &amp; Then</div>
+      <div class="section-title">近期动态</div>
+    </div>
+    <div class="timeline reveal">
+
+      <div class="timeline-item">
+        <div class="timeline-date">2026-08</div>
+        <div class="timeline-body">
+          <p>给 <strong>Linkora</strong> 做了一套开源宣传图，并直接嵌入 README、GitHub Pages 项目页和个人主页，深色/浅色双版本自动切换。</p>
+          <p>顺手把 JWT/RBAC 安全加固与上下文组装里的发言人丢失 bug 修了。</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">2026-07</div>
+        <div class="timeline-body">
+          <p>推进 <strong>数字克隆人</strong> 项目，基于 SQLite 沉淀近半年聊天记录，评估 Few-shot / LoRA / RAG / 混合四种技术路径。</p>
+          <p>启动 <strong>LookAway.app</strong> 简体中文汉化。</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">2026-06</div>
+        <div class="timeline-body">
+          <p>梳理 25 个钉钉 OA 审批表单模板，试点含「项目」字段表单的 API 批量管理。</p>
+          <p>用 Whisper medium 处理会议录音，校准「曲总 / 老蔡 / 英雄传团 Top10」等专有术语映射。</p>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -456,7 +148,7 @@ footer a:hover { text-decoration: underline; }
       <div class="about-card">
         <h3>🎯 专注领域</h3>
         <ul>
-          <li>AI 智能体 & RAG 系统</li>
+          <li>AI 智能体 &amp; RAG 系统</li>
           <li>企业级 IM 平台集成</li>
           <li>云原生与 DevOps 工具链</li>
           <li>网络安全与 VPN 方案</li>
@@ -479,108 +171,6 @@ footer a:hover { text-decoration: underline; }
   <p>© 2026 坤子 · Built with ☕ and open source · <a href="https://github.com/0x0021" target="_blank" rel="noopener">GitHub</a></p>
 </footer>
 
-<script>
-// ── Theme ──
-(function () {
-  const stored = localStorage.getItem('kp-theme');
-  if (stored === 'light') document.documentElement.setAttribute('data-theme', 'light');
-})();
-function toggleTheme() {
-  const html = document.documentElement;
-  const next = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
-  html.setAttribute('data-theme', next === 'light' ? 'light' : '');
-  localStorage.setItem('kp-theme', next);
-}
-
-// ── Scroll reveal ──
-const io = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-}, { threshold: 0.1 });
-document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-
-// ── Particle canvas ──
-(function () {
-  const canvas = document.getElementById('hero-canvas');
-  const ctx = canvas.getContext('2d');
-  let w, h, particles = [], mouse = { x: -1000, y: -1000 };
-
-  function resize() {
-    w = canvas.width = window.innerWidth;
-    h = canvas.height = window.innerHeight;
-  }
-  window.addEventListener('resize', resize);
-  resize();
-
-  class Particle {
-    constructor() { this.reset(); }
-    reset() {
-      this.x = Math.random() * w;
-      this.y = Math.random() * h;
-      this.vx = (Math.random() - 0.5) * 0.4;
-      this.vy = (Math.random() - 0.5) * 0.4;
-      this.r = Math.random() * 1.5 + 0.5;
-      this.alpha = Math.random() * 0.4 + 0.1;
-    }
-    update() {
-      this.x += this.vx;
-      this.y += this.vy;
-      const dx = mouse.x - this.x, dy = mouse.y - this.y;
-      const dist = Math.sqrt(dx*dx + dy*dy);
-      if (dist < 150) {
-        this.x -= dx * 0.008;
-        this.y -= dy * 0.008;
-      }
-      if (this.x < 0 || this.x > w) this.vx *= -1;
-      if (this.y < 0 || this.y > h) this.vy *= -1;
-      this.x = Math.max(0, Math.min(w, this.x));
-      this.y = Math.max(0, Math.min(h, this.y));
-    }
-    draw() {
-      ctx.beginPath();
-      ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
-      const isDark = document.documentElement.getAttribute('data-theme') !== 'light';
-      ctx.fillStyle = isDark
-        ? `rgba(88,166,255,${this.alpha})`
-        : `rgba(9,105,218,${this.alpha * 0.6})`;
-      ctx.fill();
-    }
-  }
-
-  const count = Math.min(80, Math.floor(w * h / 15000));
-  for (let i = 0; i < count; i++) particles.push(new Particle());
-
-  canvas.addEventListener('mousemove', e => {
-    mouse.x = e.clientX;
-    mouse.y = e.clientY;
-  });
-  canvas.addEventListener('mouseleave', () => { mouse.x = -1000; mouse.y = -1000; });
-
-  function loop() {
-    ctx.clearRect(0, 0, w, h);
-    particles.forEach(p => { p.update(); p.draw(); });
-    // draw connections
-    for (let i = 0; i < particles.length; i++) {
-      for (let j = i + 1; j < particles.length; j++) {
-        const dx = particles[i].x - particles[j].x;
-        const dy = particles[i].y - particles[j].y;
-        const dist = dx*dx + dy*dy;
-        if (dist < 12000) {
-          const isDark = document.documentElement.getAttribute('data-theme') !== 'light';
-          ctx.strokeStyle = isDark
-            ? `rgba(88,166,255,${0.06 * (1 - dist/12000)})`
-            : `rgba(9,105,218,${0.04 * (1 - dist/12000)})`;
-          ctx.lineWidth = 0.5;
-          ctx.beginPath();
-          ctx.moveTo(particles[i].x, particles[i].y);
-          ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.stroke();
-        }
-      }
-    }
-    requestAnimationFrame(loop);
-  }
-  loop();
-})();
-</script>
+<script src="assets/main.js"></script>
 </body>
 </html>

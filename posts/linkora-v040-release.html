@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Linkora v0.4.0：安全收口与主动触达 · 坤子</title>
+<meta name="description" content="v0.4.0 把认证迁移到 pyjwt、出站请求默认拒绝非公网、新增每日主动触达，并用 CI 护栏封死配置覆盖丢参数的事故路径。" />
+<link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="nav-brand">坤子</a>
+  <div class="nav-links">
+    <a href="../index.html#blog">文章</a>
+    <a href="../index.html#timeline">动态</a>
+    <a href="../index.html#projects">项目</a>
+    <a href="https://github.com/0x0021" target="_blank" rel="noopener">GitHub</a>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="切换主题">◑</button>
+  </div>
+</nav>
+
+<main class="post">
+  <a class="post-back" href="../index.html">← 返回博客</a>
+  <header class="post-header">
+    <div class="post-meta">2026-08-18 · 发布记录</div>
+    <h1>Linkora v0.4.0：安全收口与主动触达</h1>
+    <div class="post-tags">
+      <span class="tag">AI Agent</span>
+      <span class="tag red">安全</span>
+      <span class="tag green">v0.4.0</span>
+    </div>
+  </header>
+  <div class="post-divider"></div>
+  <article class="post-content">
+    <p>v0.4.0 是一次偏「内功」的版本：没有新增大模块，而是把过去一个月里暴露出来的几个真实风险点一次性收口——认证不再手搓、出站不再裸奔、配置覆盖不再能悄悄丢参数；同时补了一个我一直想要的小能力：让 AI 分身每天主动跟我同步近期对话。下面是这次改动里我认为值得记一下的几件事。</p>
+
+    <h2>认证：从手搓 HMAC 迁移到 pyjwt</h2>
+    <p>之前的 Web 鉴权是自己实现的 HMAC 签名 + <code>json.loads</code> 解析 token。能跑，但「自己造密码学」本身就是负债——边界条件、时钟漂移、异常处理都得自己兜底。v0.4.0 把整套逻辑迁移到 <code>pyjwt</code> 标准实现（HS256），签名、过期、篡改校验全部交给成熟库；旧格式令牌保持兼容、可继续校验，移除了手搓的 HMAC 与 <code>json.loads</code>。密钥解析语义不变，升级无需改任何配置。</p>
+
+    <h2>出站 SSRF：默认拒绝一切非公网地址</h2>
+    <p>AI 分身会调一堆外部服务（LLM、天气、搜索、网页抓取），出站请求是个典型的 SSRF 入口。新版本把出站策略改成<strong>默认拒绝</strong>：私网、回环、云元数据（169.254.169.254）、链路本地、CGNAT 全部封死，只放行公网单播与代理 fake-IP 段（198.18.0.0/15）。并补了一组边界回归测试，确保这条规则不会被后续改动悄悄改松。</p>
+
+    <h2>主动触达：AI 分身每天主动找我同步</h2>
+    <p>这是本次唯一的新能力。以前都是「人问我答」，现在它可以每天定时把近期对话摘要主动推到我的钉钉 1:1——复用既有对话缓存的摘要、不额外消耗 LLM token。默认关闭，在 <code>config.yaml</code> 里配 <code>proactive.enabled=true</code> 并填好主人账号后立即生效。对线上零行为影响，是纯增量。</p>
+
+    <h2>配置护栏：从根上堵死「覆盖丢参数」</h2>
+    <p>2026-08-17 出过一次事故：本地覆盖 <code>config.yaml</code> 时把全部真实定制整份冲掉。v0.4.0 在 CI 里接入了配置漂移防护——写盘前自检会丢失哪些 live 独有、非密钥的参数，从源头杜绝整份覆盖。这条护栏不依赖人的记忆，是机制而非约定。</p>
+
+    <h2>知识库检索增强 & 平台能力诚实标注</h2>
+    <p>KB 文档列表支持关键词搜索，RAG 管理页加了带防抖的搜索框；同时把飞书 / 企微在真实 CLI 下不支持的日历、待办、文档、已读闸门等能力，在平台能力矩阵里<strong>如实标注为不可用</strong>——消除此前「虚标可用、调用静默返回空」的黑洞。企微此前被错误暴露的日历 / 待办工具已收敛为钉钉专属。</p>
+
+    <blockquote>升级注意：主动触达默认关闭，安全加固无需改配置；飞书 / 企微用户此前若试过日历 / 待办工具（实际静默失败），升级后会收到明确的不支持提示而非空结果。</blockquote>
+
+    <p>完整变更见 <a href="https://github.com/0x0021/Linkora/blob/main/docs/CHANGELOG.md" target="_blank" rel="noopener">CHANGELOG</a>，代码在 <a href="https://github.com/0x0021/Linkora" target="_blank" rel="noopener">GitHub</a>。下个阶段我打算把 RAG 分块按语义边界切分、文档清洗引入 LLM 替代纯正则——这两块才是真正影响「答得准不准」的硬仗。</p>
+  </article>
+
+  <footer class="post-footer">
+    <a class="post-back" href="../index.html">← 返回博客</a>
+  </footer>
+</main>
+
+<script src="../assets/main.js"></script>
+</body>
+</html>

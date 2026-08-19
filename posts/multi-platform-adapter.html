@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>多平台 IM 适配器：一套抽象吃下三家里程碑 · 坤子</title>
+<meta name="description" content="BaseIMAdapter 的上下文隔离、平台门控与执行兜底，以及消息去重、自身识别、媒体降级等坑。" />
+<link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="nav-brand">坤子</a>
+  <div class="nav-links">
+    <a href="../index.html#blog">文章</a>
+    <a href="../index.html#timeline">动态</a>
+    <a href="../index.html#projects">项目</a>
+    <a href="https://github.com/0x0021" target="_blank" rel="noopener">GitHub</a>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="切换主题">◑</button>
+  </div>
+</nav>
+
+<main class="post">
+  <a class="post-back" href="../index.html">← 返回博客</a>
+  <header class="post-header">
+    <div class="post-meta">2026-08-02 · 工程实践</div>
+    <h1>多平台 IM 适配器：一套抽象吃下三家里程碑</h1>
+    <div class="post-tags">
+      <span class="tag">Python</span>
+      <span class="tag orange">IM</span>
+    </div>
+  </header>
+  <div class="post-divider"></div>
+  <article class="post-content">
+    <p>钉钉、飞书、企微三家 IM 的 API 风格天差地别，但站在「AI 分身」视角，它们要做的事高度一致：收消息、发消息、标已读、拉历史。把这份一致性抽出来，差异留在适配器内部，是多平台支持能成立的前提。</p>
+
+    <h2>上下文隔离是第一个坑</h2>
+    <p>每个账号一个会话数据库，靠 <code>ContextVar</code> 在请求链路里传递。问题在于：守护线程不会自动继承父线程的 ContextVar，导致跨线程取到的 DB 是错的。修复方式是显式把 context 在 spawn 时 copy 进子线程。</p>
+
+    <h2>平台门控不能挂在单例路由上</h2>
+    <p>ToolRouter 是三平台共享的单实例。如果在 router 上判断「这个工具属于哪个平台」，必然错判。正确的归属判断必须挂在 orchestrator / agent 上，因为那是 per-account 的上下文。</p>
+
+    <h2>三个最反直觉的边界 case</h2>
+    <ul>
+      <li><strong>自身消息识别</strong>：我们存的 AI 回复 UUID，被平台抓回时变成了 openMessageId，永不相等。只能退回到内容兜底——归一化后比对文本。</li>
+      <li><strong>媒体消息</strong>：钉钉视频/语音的 msgType 经常为空，content 里却藏着 <code>[视频消息](mediaId=...)</code>。统一用 <code>_detect_media_kind()</code> 探测，宁可不 OCR 也绝不误 OCR。</li>
+      <li><strong>去重防抖</strong>：内容相同且时间差 ≤ 2s 才算同一物理消息；时间戳缺失、时区混用一律保守判重复。只收紧不放松。</li>
+    </ul>
+
+    <h2>异常归属规则</h2>
+    <p>根异常类在 <code>src/exceptions.py</code>，具体子类由各族 owner 模块单一持有（LLM 异常归 llm/、IM 异常归 im_adapter/）。在本模块另立同名具体类是历史事故源头，现在已在代码评审里卡死。</p>
+    <p>这类抽象没有银弹，真正稳健靠的是把每条平台差异都变成一桩可复盘的工程事件。</p>
+  </article>
+</main>
+
+<footer>
+  <p>© 2026 坤子 · Built with ☕ and open source</p>
+</footer>
+
+<script src="../assets/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Linkora 灵桥：多平台 AI 分身架构复盘 · 坤子</title>
+<meta name="description" content="从钉钉单平台到钉钉/飞书/企微三端统一的适配器设计，以及 RAG + 规则引擎如何协同决策。" />
+<link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="nav-brand">坤子</a>
+  <div class="nav-links">
+    <a href="../index.html#blog">文章</a>
+    <a href="../index.html#timeline">动态</a>
+    <a href="../index.html#projects">项目</a>
+    <a href="https://github.com/0x0021" target="_blank" rel="noopener">GitHub</a>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="切换主题">◑</button>
+  </div>
+</nav>
+
+<main class="post">
+  <a class="post-back" href="../index.html">← 返回博客</a>
+  <header class="post-header">
+    <div class="post-meta">2026-08-15 · 架构</div>
+    <h1>Linkora 灵桥：多平台 AI 分身架构复盘</h1>
+    <div class="post-tags">
+      <span class="tag">AI Agent</span>
+      <span class="tag green">架构</span>
+    </div>
+  </header>
+  <div class="post-divider"></div>
+  <article class="post-content">
+    <p>Linkora 的定位很朴素：做一个能替我出现在钉钉、飞书、企微群聊和私聊里的「AI 分身」。但「替我出现」比想象中难得多——不是接个大模型就完事，难点全在平台差异、上下文边界和「何时该闭嘴交还真人」。</p>
+
+    <h2>分层：适配器吃下平台差异</h2>
+    <p>最底层是一组适配器，钉钉走 DWS、飞书/企微走各自的 SDK。它们都继承同一个 <code>BaseIMAdapter</code> 抽象，对外暴露统一的「收消息 / 发消息 / 标已读」接口。平台特有的字段（消息类型、openMessageId、媒体 mediaId）在适配器内部消化，上层逻辑完全不感知自己在哪条 IM 上。</p>
+    <p>一个踩过的坑：企微的「已读闸门」在某些版本里是静默降级的——基类返回空字典，上层以为成功其实没生效。后来改成启动期主动告警，避免长期以为「已读信号在工作」。</p>
+
+    <h2>决策：RAG + 规则引擎协同</h2>
+    <p>收到一条消息后，先过规则引擎做硬匹配（关键词、意图 39 类），命中的直接走确定性动作；没命中的才交给 LLM 结合 RAG 召回的文档知识生成回复。</p>
+    <blockquote>设计原则：能用规则确定的，绝不浪费一个 Token 给模型；只有真正需要理解语义的，才暴露上下文给 LLM 让它自己判断。</blockquote>
+
+    <h2>门控：什么时候该收尾</h2>
+    <p>「对话已经闭环还在追问工号手机号」是最典型的失控。我们用双向校验解决：进 LLM 前先 <code>_reply_gate_reason</code> 前置过滤（命中即省 Token），投递前再 <code>_should_reply_now</code> 做并发兜底。优先级是：自身 → 人工接管 → 真人在场 → DWS 已读。</p>
+
+    <h2>仍在推进的</h2>
+    <ul>
+      <li>RAG 分块按语义边界切分，<code>max_len</code> 作为软上限避免中间截断；</li>
+      <li>文档清洗引入 LLM 替代纯正则；</li>
+      <li>JWT / RBAC 安全加固收尾。</li>
+    </ul>
+    <p>完整代码在 <a href="https://github.com/0x0021/Linkora" target="_blank" rel="noopener">GitHub</a>，欢迎来提 issue。</p>
+  </article>
+</main>
+
+<footer>
+  <p>© 2026 坤子 · Built with ☕ and open source</p>
+</footer>
+
+<script src="../assets/main.js"></script>
+</body>
+</html>

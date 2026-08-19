@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>把 LookAway 汉化成简体中文 · 坤子</title>
+<meta name="description" content="一个 macOS 护眼小工具的本地化过程：nib 编辑、plutil 校验、AppleScript 辅助与本地化打包姿势。" />
+<link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="nav-brand">坤子</a>
+  <div class="nav-links">
+    <a href="../index.html#blog">文章</a>
+    <a href="../index.html#timeline">动态</a>
+    <a href="../index.html#projects">项目</a>
+    <a href="https://github.com/0x0021" target="_blank" rel="noopener">GitHub</a>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="切换主题">◑</button>
+  </div>
+</nav>
+
+<main class="post">
+  <a class="post-back" href="../index.html">← 返回博客</a>
+  <header class="post-header">
+    <div class="post-meta">2026-07-20 · 折腾</div>
+    <h1>把 LookAway 汉化成简体中文</h1>
+    <div class="post-tags">
+      <span class="tag">macOS</span>
+      <span class="tag green">本地化</span>
+    </div>
+  </header>
+  <div class="post-divider"></div>
+  <article class="post-content">
+    <p><a href="https://github.com/Apptality/LookAway" target="_blank" rel="noopener">LookAway</a> 是个很实用的 macOS 护眼小工具：定时把屏幕调暗、提醒你眨眼休息。它界面干净，但只有英文。顺手把它本地化成简体中文，过程里踩了几个只有 macOS 才有的坑。</p>
+
+    <h2>第一步：找到本地化包</h2>
+    <p>App 包里 <code>Contents/Resources/*.lproj</code> 是各语言目录。没有 <code>zh-Hans.lproj</code> 就自己建一个，放 <code>Localizable.strings</code> 和 nib 文件。字符串文件用 <code>plutil -lint</code> 先校验语法，避免引号转义翻车。</p>
+
+    <pre><code>plutil -lint zh-Hans.lproj/Localizable.strings</code></pre>
+
+    <h2>第二步：nib 的本地化</h2>
+    <p>纯文本字符串好办，但界面布局（nib/xib）里的文案是编译后的二进制。改法有两种：</p>
+    <ul>
+      <li>用 Xcode 的 Interface Builder 打开 nib，逐控件改文本；</li>
+      <li>没有 Xcode 时，用 <code>ibtool</code> 把 nib 导出为 XML、改完再编译回去。</li>
+    </ul>
+
+    <h2>第三步：小心运行时的 Accessibility 权限</h2>
+    <p>LookAway 需要辅助功能权限来控制系统显示。汉化只动文案，不涉及权限，但注册表里 <code>CFBundleLocalizations</code> 必须加上 <code>zh-Hans</code>，否则系统不会加载你的本地化包。</p>
+
+    <blockquote>经验：本地化的真正难点从来不是翻译，而是让系统「愿意」加载你的 zh-Hans，以及 nib 里的约束在中文较长文案下不崩。</blockquote>
+
+    <h2>收尾</h2>
+    <p>改完用 <code>codesign --force --deep --sign -</code> 重新签名（开发自用免证书），再重启 App 即可看到中文界面。整套流程跑通后，最大的体会是：macOS 的本地化机制设计得挺周到，只是文档散、工具老，需要耐心拼起来。</p>
+  </article>
+</main>
+
+<footer>
+  <p>© 2026 坤子 · Built with ☕ and open source</p>
+</footer>
+
+<script src="../assets/main.js"></script>
+</body>
+</html>

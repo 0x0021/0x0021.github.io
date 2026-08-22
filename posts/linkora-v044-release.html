@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Linkora v0.4.4：摘要连续性补跑——关机几天也不丢当天的摘要 · 坤子</title>
+<meta name="description" content="v0.4.4 给灵桥加了启动期停机检测：中途关了 Linkora 几天，再开起来会自动按天补生成遗漏的当日/近七天摘要，和正常周期同源同格式。" />
+<link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="nav-brand">坤子</a>
+  <div class="nav-links">
+    <a href="../index.html#blog">文章</a>
+    <a href="../index.html#timeline">动态</a>
+    <a href="../index.html#projects">项目</a>
+    <a href="https://github.com/0x0021" target="_blank" rel="noopener">GitHub</a>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="切换主题">◑</button>
+  </div>
+</nav>
+
+<main class="post">
+  <a class="post-back" href="../index.html">← 返回博客</a>
+  <header class="post-header">
+    <div class="post-meta">2026-08-22 · 发布记录</div>
+    <h1>Linkora v0.4.4：摘要连续性补跑——关机几天也不丢当天的摘要</h1>
+    <div class="post-tags">
+      <span class="tag">AI Agent</span>
+      <span class="tag green">v0.4.4</span>
+      <span class="tag">可靠性</span>
+    </div>
+  </header>
+  <div class="post-divider"></div>
+  <article class="post-content">
+    <p>摘要连续性这个需求，是我自己用出来的。我经常在笔记本上跑灵桥，但下班 / 出差时会直接关机，几天后再开。问题来了：<strong>主动推送和滚动摘要都是按「现在」滚动窗口算的，关机的那几天在系统眼里等于「从没存在过」</strong>——周二周三没跑，周四打开，近七天视图里周二周三就是空的，推送也只从周四现在开始。我的聊天记录明明有内容，摘要却缺了一块，很别扭。</p>
+
+    <h2>核心思路：记录「上次运行时间」，启动时反推停机窗口</h2>
+    <p>解法不复杂，但有几个坑得想清楚。我在主库加了一张 <code>meta</code> 表，记下 <code>last_run_at</code>。每次启动先读它，和「现在」一减，就知道停了多久：</p>
+    <ul>
+      <li>停机超过一天，就把遗漏段切成若干个<strong>自然日</strong>窗口；</li>
+      <li>对每一天，查当天落在该窗口内的消息，按会话分组，<strong>现场调 LLM</strong> 生成当日摘要；</li>
+      <li>写回 <code>conversation_summaries</code>——这一步是关键，它和正常周期<strong>完全同源</strong>，Web 摘要页和主动推送不用改一行代码，自然就把停机期补上了。</li>
+    </ul>
+    <p>「近七天」不用单独处理：补跑写回的摘要归属时刻标成「当日 23:59:59」，近七天视图（回溯 7 天）一拉就把它们全带上，主人端看到的就是连续的。</p>
+
+    <h2>两个真正花时间的坑</h2>
+    <p><strong>坑一：时区。</strong> 消息时间戳在库里是混着的——有的存本地 naive，有的带 <code>Z</code> 是 UTC。要是用 SQL 字符串直接比较窗口，跨时区会漏补。我把 SQL 只当粗筛，真正的切日放在 Python 里：先把每条时间戳统一归到本地时区，再分自然日。一个 <code>_parse_ts</code> helper 把 <code>Z</code> / <code>+00:00</code> / 纯本地串都消化掉，稳。</p>
+    <p><strong>坑二：别刷爆额度、别拖垮主链路。</strong> 停机几十天如果全补，免费 LLM 额度瞬间就没了。所以加了 <code>max_backfill_days</code>（默认 14）上限，只补最近 N 天；背靠既有 <code>llm_throttle</code> 限速，多会话 / 多天也不会轰炸。补跑跑在独立后台线程，DB 或 LLM 哪怕崩了也只是记条日志，<strong>绝对不碰主回复链路</strong>。单会话当天消息不足 3 条的也跳过，避免噪声。</p>
+
+    <h2>一个设计上的小取巧</h2>
+    <p>补跑的「当日摘要」和正常滚动摘要用的是<strong>同一个 <code>summarize_conversation</code> 函数和同一套 prompt</strong>，所以格式天然一致——都以「【对话摘要】」开头，结构对齐。我刻意没为补跑另写一套模板，否则哪天正常摘要改了格式，补跑的就成了「异类」。复用既有的，才是最省心的连续性。</p>
+
+    <blockquote>升级注意：新增 <code>summary_backfill</code> 配置段，<strong>默认开启</strong>；停机超过 14 天只补最近 14 天。改动需重启服务生效。Web 摘要页的「今日 / 昨日 / 近七天」三个窗口会在补跑完成后自动补齐，无需任何手动操作。</blockquote>
+
+    <p>完整变更见 <a href="https://github.com/0x0021/Linkora/blob/main/docs/CHANGELOG.md" target="_blank" rel="noopener">CHANGELOG</a>，代码在 <a href="https://github.com/0x0021/Linkora" target="_blank" rel="noopener">GitHub</a>。下一个想动的方向是 RAG 分块按语义边界切分，<code>max_len</code> 改成软上限——避免在句子中间硬截断导致检索召回率下降。</p>
+  </article>
+
+  <footer class="post-footer">
+    <a class="post-back" href="../index.html">← 返回博客</a>
+  </footer>
+</main>
+
+<script src="../assets/main.js"></script>
+</body>
+</html>

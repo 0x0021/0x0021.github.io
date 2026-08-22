@@ -47,6 +47,13 @@
     </div>
     <div class="posts-grid reveal">
 
+      <a class="post-card" href="posts/linkora-v044-release.html">
+        <div class="post-card__meta">2026-08-22 · 发布记录</div>
+        <h3 class="post-card__title">Linkora v0.4.4：摘要连续性补跑，关机几天也不丢当天的摘要</h3>
+        <p class="post-card__excerpt">启动检测停机时长，按自然日补生成遗漏的当日/近七天对话摘要，与正常周期同源同格式；时区稳健、LLM 额度受限流上限保护。</p>
+        <div class="post-card__tags"><span class="tag">AI Agent</span><span class="tag green">v0.4.4</span><span class="tag">可靠性</span></div>
+      </a>
+
       <a class="post-card" href="posts/linkora-v043-release.html">
         <div class="post-card__meta">2026-08-21 · 发布记录</div>
         <h3 class="post-card__title">Linkora v0.4.3：对话摘要页重构与稳定性修复</h3>
@@ -116,6 +123,7 @@
           <p><strong>v0.4.2</strong>：Web 侧栏「消息中心」新增独立「对话摘要」实时页（30s 轮询），与钉钉 17:30 主动触达推送完全同源；主动触达支持自定义时刻。</p>
           <p><strong>v0.4.3</strong>：对话摘要页从纯文本升级为结构化卡片（头像/平台标签/主题/关键词/建议待办），默认今日视图；修掉 get_store_dep 关闭全局单例导致 metrics 偶发 500 的隐性 bug；F5 刷新不再跳回首页。</p>
           <p>修掉一个有意思的「时间窗口」bug：主动触达摘要推送原公式 <code>max(今日0点, now - lookback_hours)</code> 在 <code>lookback_hours=24</code> 时恒取今日 0 点，导致 17:30 推送只覆盖当日、漏掉昨日尾巴。改为 <code>now - lookback_hours</code> 滚动窗口，17:30 推送正确覆盖「昨日 17:30 → 今日 17:30」；同时复用 Web 同源的 <code>list_recent_summaries(since=cutoff)</code>，消除窗口错配与活跃会话 LIMIT 截断的双重隐患。</p>
+          <p><strong>v0.4.4</strong>：摘要连续性补跑——启动检测停机时长，按自然日补生成遗漏的「当日 / 近七天」对话摘要，与正常周期同源同格式（均写回 <code>conversation_summaries</code>）；时区稳健、LLM 额度受 <code>max_backfill_days</code> 上限保护，异常不拖垮主链路。</p>
         </div>
       </div>
 

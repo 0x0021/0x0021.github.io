@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Linkora v0.4.5：摘要视角修复——不再把主人当成第三方 · 坤子</title>
+<meta name="description" content="v0.4.5 给灵桥的对话摘要做了第一人称视角加固：summarize_conversation 新增 owner_name 参数并强制 prompt 约束，杜绝把主人当第三方的混乱视角。" />
+<link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="nav-brand">坤子</a>
+  <div class="nav-links">
+    <a href="../index.html#blog">文章</a>
+    <a href="../index.html#timeline">动态</a>
+    <a href="../index.html#projects">项目</a>
+    <a href="https://github.com/0x0021" target="_blank" rel="noopener">GitHub</a>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="切换主题">◑</button>
+  </div>
+</nav>
+
+<main class="post">
+  <a class="post-back" href="../index.html">← 返回博客</a>
+  <header class="post-header">
+    <div class="post-meta">2026-08-22 · 发布记录</div>
+    <h1>Linkora v0.4.5：摘要视角修复——不再把主人当成第三方</h1>
+    <div class="post-tags">
+      <span class="tag">AI Agent</span>
+      <span class="tag green">v0.4.5</span>
+      <span class="tag">质量</span>
+    </div>
+  </header>
+  <div class="post-divider"></div>
+  <article class="post-content">
+    <p>今天在 Web 摘要页看到一条把我逗乐又警觉的摘要：「<strong>我向自己咨询关于系统中退货单产品编辑列不可编辑的设置问题</strong>」。这句话逻辑是矛盾的——如果「我」是对话主人，怎么可能「向自己咨询」？这就是视角漂移：摘要把主人（我）当成了对话里的第三方。</p>
+
+    <h2>根因：第一人称的识别依赖一个可能为空的名字</h2>
+    <p>摘要函数 <code>summarize_conversation</code> 原本靠 <code>agent.user_name</code> 来判断「哪条消息是主人说的」。它会把 <code>sender_name == user_name</code> 的消息标成「我」，其余标成对方名字或「对方」，再交给 LLM 总结。这套机制在正常自动链路里没问题——运行时 <code>current_user_name</code> 是正确注入的。</p>
+    <p>但那次手动补生成今日摘要时，临时脚本构造的假 agent <strong>没传 <code>user_name</code></strong>。于是主人自己发的消息就以原名原样进了 prompt，LLM 看了误以为对话里有两个人（同事 A、我），便自作主张把「我」安到了对方头上，写出了矛盾的第三人称视角。</p>
+
+    <h2>修复：把「谁是主人」显式钉死，prompt 加硬约束</h2>
+    <p>两件事一起做：</p>
+    <ul>
+      <li><strong>显式参数</strong>：<code>summarize_conversation</code> 新增 <code>owner_name</code> 参数，调用方可以明确说「主人就是我」。不传时回退到 <code>agent.user_name</code>，两者皆空则告警，绝不静默生成错误视角。</li>
+      <li><strong>prompt 硬约束</strong>：系统提示里写明「对话主人的名字/身份是 {owner_name}，标注为『我:』的就是主人自己」「凡是主人的消息，摘要中统一用『我』指代；严禁出现『我向{owner_name}…』『{owner_name}向我…』这类把主人当成第三方的矛盾描述」「对方称呼主人为具体称谓或昵称，仍用『我』指代，不要切换视角」。</li>
+    </ul>
+    <p>这样视角不再依赖模型自己猜——它有了明确的锚点，也收到了明确的禁区。</p>
+
+    <h2>一次修复，四类链路全生效</h2>
+    <p>周期性摘要（滚动调度器）、补跑机制、主动触达推送、Web 摘要页，这四条生成链路<strong>共用同一个 <code>summarize_conversation</code></strong>。所以这次加固不只是修掉手动脚本的偶发事故，而是把正常自动链路的视角稳定性也一起焊死了。改完把今日三条摘要重新生成了一遍，清一色「同事 A 向我咨询…」「同事 B 问我…」「同事 C 向我询问…」，干净。</p>
+
+    <blockquote>升级注意：纯逻辑修复，无新增配置项；改动需重启 Linkora 服务生效。</blockquote>
+
+    <p>完整变更见 <a href="https://github.com/0x0021/Linkora/blob/main/docs/CHANGELOG.md" target="_blank" rel="noopener">CHANGELOG</a>，代码在 <a href="https://github.com/0x0021/Linkora" target="_blank" rel="noopener">GitHub</a>。下一步打算把 RAG 分块按语义边界切分、<code>max_len</code> 改成软上限，避免句中硬截断拉低召回。</p>
+  </article>
+
+  <footer class="post-footer">
+    <a class="post-back" href="../index.html">← 返回博客</a>
+  </footer>
+</main>
+
+<script src="../assets/main.js"></script>
+</body>
+</html>

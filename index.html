@@ -132,6 +132,7 @@
           <p>修掉一个有意思的「时间窗口」bug：主动触达摘要推送原公式 <code>max(今日0点, now - lookback_hours)</code> 在 <code>lookback_hours=24</code> 时恒取今日 0 点，导致 17:30 推送只覆盖当日、漏掉昨日尾巴。改为 <code>now - lookback_hours</code> 滚动窗口，17:30 推送正确覆盖「昨日 17:30 → 今日 17:30」；同时复用 Web 同源的 <code>list_recent_summaries(since=cutoff)</code>，消除窗口错配与活跃会话 LIMIT 截断的双重隐患。</p>
           <p><strong>v0.4.4</strong>：摘要连续性补跑——启动检测停机时长，按自然日补生成遗漏的「当日 / 近七天」对话摘要，与正常周期同源同格式（均写回 <code>conversation_summaries</code>）；时区稳健、LLM 额度受 <code>max_backfill_days</code> 上限保护，异常不拖垮主链路。</p>
           <p><strong>v0.4.5</strong>：摘要视角修复——第一人称视角加固，<code>summarize_conversation</code> 新增显式 <code>owner_name</code> 参数并强制 prompt 约束「凡是主人的消息统一用『我』指代」，杜绝把主人当成第三方的混乱视角；四类生成链路共用同一函数，一次修复全生效。</p>
+          <p><strong>v0.4.6</strong>：主动触达摘要排版优化——<code>build_digest</code> 条目之间空行分隔、去除冗余的「【对话摘要】」前缀、改用序号列表，解决钉钉推送里所有摘要粘成一段的问题。</p>
         </div>
       </div>
 

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Linkora v0.4.1：公共记忆自动注入与日志脱敏 · 坤子</title>
+<meta name="description" content="v0.4.1 把公共记忆（scope=public）每轮对话自动召回并注入 system prompt，并移除 auth_middleware 中明文密码日志。" />
+<link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="nav-brand">坤子</a>
+  <div class="nav-links">
+    <a href="../index.html#blog">文章</a>
+    <a href="../index.html#timeline">动态</a>
+    <a href="../index.html#projects">项目</a>
+    <a href="https://github.com/0x0021" target="_blank" rel="noopener">GitHub</a>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="切换主题">◑</button>
+  </div>
+</nav>
+
+<main class="post">
+  <a class="post-back" href="../index.html">← 返回博客</a>
+  <header class="post-header">
+    <div class="post-meta">2026-08-20 · 发布记录</div>
+    <h1>Linkora v0.4.1：公共记忆自动注入与日志脱敏</h1>
+    <div class="post-tags">
+      <span class="tag">AI Agent</span>
+      <span class="tag red">安全</span>
+      <span class="tag green">v0.4.1</span>
+    </div>
+  </header>
+  <div class="post-divider"></div>
+  <article class="post-content">
+    <p>v0.4.1 是个「小步快跑」版本：两件事，一件是体验增强（公共记忆自动注入），一件是安全收口（移除明文密码日志）。两件事都指向同一个原则——<strong>机制替代约定</strong>。</p>
+
+    <h2>公共记忆：每轮对话自动召回注入</h2>
+    <p>Linkora 的记忆分两层：<code>scope=public</code>（公共，所有对话可见）和 <code>scope=private</code>（个人，私域召回）。v0.4.1 之前，<strong>两层都要 LLM 主动调用工具</strong>才能召回，问题是——LLM 经常忘。</p>
+    <p>公共记忆的语义本来就是「项目级背景信息」（团队术语、协作规范、公司名字），它就该每轮都在 prompt 里。v0.4.1 改成：公共记忆（<code>scope=public</code>）每轮对话自动召回并注入 system prompt，与 RAG 知识库注入对称。个人记忆仍保持 LLM 主动调用——因为它涉及隐私边界，不该无条件注入每条消息。</p>
+
+    <h2>权重提升：仿 RAG v5 的「指令前缀 + 紧贴 user 之前」</h2>
+    <p>公共记忆注入的位置和形式有讲究。直接塞在 system prompt 尾部，LLM 经常被 KB 文档覆盖；塞在最前面，token 又会被长对话挤到上下文窗口外。最后参照 RAG v5 的策略：</p>
+    <ul>
+      <li>把召回的公共记忆块抽出为一条<strong>独立的 user 消息</strong></li>
+      <li>紧贴真实 user 消息<strong>之前</strong>注入</li>
+      <li>消息正文前加「最高优先级」「覆盖声明」指令前缀</li>
+    </ul>
+    <p>这套结构在 RAG 上验证过——让 LLM 在「看 KB」和「看 user」之间不会被 KB 文档误导。公共记忆和 RAG 用同一套权重提升策略，一致性也省了一类心智负担。</p>
+
+    <h2>安全收口：日志里不允许出现明文密码</h2>
+    <p><code>auth_middleware.py</code> 里有一处历史遗留的 debug 日志，会把登录请求里的 password 字段原样写进日志。这条日志平时没人翻，但只要有人翻——就是 P0 事故苗头。CodeQL 也一直在报警。</p>
+    <p>v0.4.1 直接把那行日志删掉，连 password 字段名都不在日志里出现。审计层面的原则：<strong>默认不记录敏感字段，白名单加白名单</strong>，不要靠人的记忆去「记得别打 password」。</p>
+
+    <blockquote>升级注意：公共记忆自动注入是<strong>透明增强</strong>，无需额外配置。默认阈值 0.55 / <code>top_k=3</code>，可在 <code>config.yaml</code> 用 <code>memory.recall.threshold</code> 与 <code>memory.recall.top_k</code> 调整。<code>docs/memory.md</code> 已同步更新。</blockquote>
+
+    <p>完整变更见 <a href="https://github.com/0x0021/Linkora/blob/main/docs/CHANGELOG.md" target="_blank" rel="noopener">CHANGELOG</a>，代码在 <a href="https://github.com/0x0021/Linkora" target="_blank" rel="noopener">GitHub</a>。</p>
+  </article>
+
+  <footer class="post-footer">
+    <a class="post-back" href="../index.html">← 返回博客</a>
+  </footer>
+</main>
+
+<script src="../assets/main.js"></script>
+</body>
+</html>

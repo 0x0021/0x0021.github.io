@@ -47,6 +47,27 @@
     </div>
     <div class="posts-grid reveal">
 
+      <a class="post-card" href="posts/linkora-v043-release.html">
+        <div class="post-card__meta">2026-08-21 · 发布记录</div>
+        <h3 class="post-card__title">Linkora v0.4.3：对话摘要页重构与稳定性修复</h3>
+        <p class="post-card__excerpt">把对话摘要从纯文本升级成结构化卡片（头像/平台标签/主题/关键词/建议待办），并修掉潜伏两个版本的 get_store_dep 关闭全局单例导致 metrics 偶发 500 的 bug。</p>
+        <div class="post-card__tags"><span class="tag">AI Agent</span><span class="tag green">v0.4.3</span><span class="tag">前端</span></div>
+      </a>
+
+      <a class="post-card" href="posts/linkora-v042-release.html">
+        <div class="post-card__meta">2026-08-20 · 发布记录</div>
+        <h3 class="post-card__title">Linkora v0.4.2：对话摘要实时页与 CodeQL 告警清零</h3>
+        <p class="post-card__excerpt">Web 侧栏「消息中心」新增对话摘要实时页（30s 轮询），与钉钉 17:30 推送完全同源；主动触达支持自定义时刻；CodeQL 安全告警清零。</p>
+        <div class="post-card__tags"><span class="tag">AI Agent</span><span class="tag red">安全</span><span class="tag green">v0.4.2</span></div>
+      </a>
+
+      <a class="post-card" href="posts/linkora-v041-release.html">
+        <div class="post-card__meta">2026-08-20 · 发布记录</div>
+        <h3 class="post-card__title">Linkora v0.4.1：公共记忆自动注入与日志脱敏</h3>
+        <p class="post-card__excerpt">公共记忆（scope=public）每轮对话自动召回并注入 system prompt，与 RAG 注入对称；移除 auth_middleware 中明文密码日志，CodeQL 告警清零。</p>
+        <div class="post-card__tags"><span class="tag">AI Agent</span><span class="tag red">安全</span><span class="tag green">v0.4.1</span></div>
+      </a>
+
       <a class="post-card" href="posts/linkora-v040-release.html">
         <div class="post-card__meta">2026-08-18 · 发布记录</div>
         <h3 class="post-card__title">Linkora v0.4.0：安全收口与主动触达</h3>
@@ -91,6 +112,10 @@
         <div class="timeline-body">
           <p><strong>Linkora v0.4.0</strong> 发布：认证迁移 pyjwt、出站 SSRF 默认拒绝、新增每日主动触达，并用 CI 护栏封死配置覆盖丢参数的事故路径。</p>
           <p>给 Linkora 做了一套开源宣传图，嵌入 README、GitHub Pages 项目页和个人主页，深色/浅色双版本自动切换；顺手修了上下文组装里的发言人丢失 bug。</p>
+          <p><strong>v0.4.1</strong>：公共记忆（scope=public）每轮对话自动召回并注入 system prompt，与 RAG 注入对称；移除 auth_middleware 中明文密码日志，CodeQL 告警清零。</p>
+          <p><strong>v0.4.2</strong>：Web 侧栏「消息中心」新增独立「对话摘要」实时页（30s 轮询），与钉钉 17:30 主动触达推送完全同源；主动触达支持自定义时刻。</p>
+          <p><strong>v0.4.3</strong>：对话摘要页从纯文本升级为结构化卡片（头像/平台标签/主题/关键词/建议待办），默认今日视图；修掉 get_store_dep 关闭全局单例导致 metrics 偶发 500 的隐性 bug；F5 刷新不再跳回首页。</p>
+          <p>修掉一个有意思的「时间窗口」bug：主动触达摘要推送原公式 <code>max(今日0点, now - lookback_hours)</code> 在 <code>lookback_hours=24</code> 时恒取今日 0 点，导致 17:30 推送只覆盖当日、漏掉昨日尾巴。改为 <code>now - lookback_hours</code> 滚动窗口，17:30 推送正确覆盖「昨日 17:30 → 今日 17:30」；同时复用 Web 同源的 <code>list_recent_summaries(since=cutoff)</code>，消除窗口错配与活跃会话 LIMIT 截断的双重隐患。</p>
         </div>
       </div>
 

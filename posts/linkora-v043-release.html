@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Linkora v0.4.3：对话摘要页重构与稳定性修复 · 坤子</title>
+<meta name="description" content="v0.4.3 把对话摘要页从纯文本改造成结构化卡片，修复 get_store_dep 关闭全局单例导致 metrics 偶发 500 的隐性 bug。" />
+<link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="nav-brand">坤子</a>
+  <div class="nav-links">
+    <a href="../index.html#blog">文章</a>
+    <a href="../index.html#timeline">动态</a>
+    <a href="../index.html#projects">项目</a>
+    <a href="https://github.com/0x0021" target="_blank" rel="noopener">GitHub</a>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="切换主题">◑</button>
+  </div>
+</nav>
+
+<main class="post">
+  <a class="post-back" href="../index.html">← 返回博客</a>
+  <header class="post-header">
+    <div class="post-meta">2026-08-21 · 发布记录</div>
+    <h1>Linkora v0.4.3：对话摘要页重构与稳定性修复</h1>
+    <div class="post-tags">
+      <span class="tag">AI Agent</span>
+      <span class="tag green">v0.4.3</span>
+      <span class="tag">前端</span>
+    </div>
+  </header>
+  <div class="post-divider"></div>
+  <article class="post-content">
+    <p>v0.4.3 是个偏「手感」的版本：没有大模块上线，但把对话摘要页从一坨纯文本升级成了真正的「信息卡片」，顺手修掉一个潜伏了两个版本的隐性 bug。下面是这次改动里我想单独记一下的几件事。</p>
+
+    <h2>摘要页：从纯文本到结构化卡片</h2>
+    <p>之前的摘要页是一段连续的纯文本——你只能看到「某个对话有摘要」，看不到这条摘要的发言人、平台、消息数、主题、关键词。信息密度太低，要从一堆文字里人肉找重点。这次重构把所有字段提到卡片层：</p>
+    <ul>
+      <li>头部：头像 + 会话名 + 平台标签（钉钉/飞书/企微）</li>
+      <li>中部：消息数 + 自动提取的主题/关键词标签</li>
+      <li>尾部：建议待办标签（如果有）</li>
+    </ul>
+    <p>顶部「时间窗口」分段控件（今日/昨日/近七天）和「今日汇总」入口合并为同一行工具栏，默认进页就是「今日」，最新摘要时间完整换行显示（不再截断）。打开就看到今天有哪些群聊有新内容，一眼能挑出值得细看的。</p>
+
+    <h2>稳定性：单例 store 不能被 get_store_dep 顺手关掉</h2>
+    <p>这次埋的最深的一个 bug：<code>get_store_dep</code> 是 Web 路由层取 SQLiteStore 的依赖函数，旧的实现是「用完即关」——单次请求结束就 <code>store.close()</code>。问题在于，<strong>全局单例 store</strong>是被多路由共享的（metrics 页、对话摘要页、RAG 管理页都用它），某一个请求的 <code>get_store_dep</code> 把它 close 掉，下一个请求拿到的是 closed store，访问直接抛 <code>SQLiteStore is closed</code>。</p>
+    <p>触发条件是「摘要页轮询（30s 一次）」和「metrics 页访问」几乎同时发生时——摘要页的请求刚结束，metrics 页的请求立刻命中 closed store，前端就 500 了。修复方式：<code>get_store_dep</code> 不再 close，store 的生命周期完全交给应用启动/关闭钩子。改完跑了 200+ 次并发压测，不再复现。</p>
+
+    <h2>前端：刷新页面不再跳回首页</h2>
+    <p>另一个被用户报告过两次的小问题：在对话摘要页刷新，路由守卫没把页面加进白名单，被重定向回首页。补全前端路由白名单后，对话摘要页、RAG 管理页、记忆列表页都能正常 F5 刷新。</p>
+
+    <blockquote>升级注意：纯前端视觉与稳定性变更，<strong>无后端配置变更</strong>。前端资源已重编 <code>dist/</code> 随版本发布，升级只需 <code>git pull</code> + 重启服务。</blockquote>
+
+    <p>完整变更见 <a href="https://github.com/0x0021/Linkora/blob/main/docs/CHANGELOG.md" target="_blank" rel="noopener">CHANGELOG</a>，代码在 <a href="https://github.com/0x0021/Linkora" target="_blank" rel="noopener">GitHub</a>。下一个想动的方向是：把 RAG 分块按语义边界切分，<code>max_len</code> 改成软上限——避免在句子中间硬截断导致检索召回率下降。</p>
+  </article>
+
+  <footer class="post-footer">
+    <a class="post-back" href="../index.html">← 返回博客</a>
+  </footer>
+</main>
+
+<script src="../assets/main.js"></script>
+</body>
+</html>

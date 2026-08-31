@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Linkora v0.4.6：主动触达摘要排版优化 · 坤子</title>
+<meta name="description" content="v0.4.6 优化每日主动触达的摘要排版：条目之间空行分隔、去除冗余前缀、改用序号列表，解决钉钉推送里所有摘要粘成一段的问题。" />
+<link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="nav-brand">坤子</a>
+  <div class="nav-links">
+    <a href="../index.html#blog">文章</a>
+    <a href="../index.html#timeline">动态</a>
+    <a href="../index.html#projects">项目</a>
+    <a href="https://github.com/0x0021" target="_blank" rel="noopener">GitHub</a>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="切换主题">◑</button>
+  </div>
+</nav>
+
+<main class="post">
+  <a class="post-back" href="../index.html">← 返回博客</a>
+  <header class="post-header">
+    <div class="post-meta">2026-08-23 · 发布记录</div>
+    <h1>Linkora v0.4.6：主动触达摘要排版优化</h1>
+    <div class="post-tags">
+      <span class="tag">AI Agent</span>
+      <span class="tag green">v0.4.6</span>
+      <span class="tag">体验</span>
+    </div>
+  </header>
+  <div class="post-divider"></div>
+  <article class="post-content">
+    <p>这次是个纯体验向的小修。每天 17:30 的主动触达会往钉钉推一份「当日对话摘要」，但当时 <code>build_digest</code> 把所有摘要条目直接拼成一段，标题、要点、待办全糊在一起，手机上几乎没法读。</p>
+
+    <h2>问题：摘要在钉钉里变成一坨</h2>
+    <p>原来的拼接逻辑是「标题 + 内容」紧挨着追加，多条摘要之间没有空行，也没有序号。结果推送出来是这样的（示意）：</p>
+    <pre><code>【对话摘要】项目 A 进度同步
+要点：…
+【对话摘要】客户 B 询问报价
+要点：…
+建议待办：…</code></pre>
+    <p>所有内容挤成一段，视觉上完全分不清哪条属于哪段对话，待办也埋在中间。</p>
+
+    <h2>改动：空行 + 序号列表</h2>
+    <p>三处调整：</p>
+    <ul>
+      <li><strong>条目之间空行分隔</strong>——每条摘要独立成块，一眼能看出边界；</li>
+      <li><strong>去除冗余前缀</strong>——去掉千篇一律的「【对话摘要】」，标题本身已能表达；</li>
+      <li><strong>改用序号列表</strong>——多条要点用 <code>1. 2. 3.</code> 列开，待办单独成段、不再和正文混排。</li>
+    </ul>
+    <p>改动只动了 <code>build_digest</code> 的渲染层，摘要的数据来源、生成链路完全没变，属于低风险的可读性收尾。推送效果从「一坨文本」变成了清晰的编号条目，手机上终于能正常扫读了。</p>
+
+    <h2>小结</h2>
+    <p>v0.4.6 没有新功能，只是把每日主动触达这条主链路上的输出打磨得更像「人写的摘要」。这类边角体验往往最影响日常使用感受，顺手收掉挺值。</p>
+  </article>
+</main>
+
+<footer>
+  <p>© 2026 坤子 · Built with ☕ and open source · <a href="https://github.com/0x0021" target="_blank" rel="noopener">GitHub</a></p>
+</footer>
+
+<script src="../assets/main.js"></script>
+</body>
+</html>

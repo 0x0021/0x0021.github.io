@@ -95,3 +95,19 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
   }
   loop();
 })();
+
+// ── 回到顶部 ──
+(function () {
+  const toTop = document.getElementById('toTop');
+  if (!toTop) return;
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      toTop.classList.toggle('show', window.scrollY > 400);
+      ticking = false;
+    });
+  }, { passive: true });
+  toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+})();

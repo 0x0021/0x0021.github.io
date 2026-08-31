@@ -15,6 +15,9 @@
 <body>
 <canvas id="hero-canvas"></canvas>
 
+<!-- 顶部阅读进度条 -->
+<div class="reading-progress" id="readingProgress" aria-hidden="true"></div>
+
 <nav>
   <a href="index.html" class="nav-brand">坤子</a>
   <div class="nav-links">
@@ -38,6 +41,15 @@
   <span class="side-rail__line" aria-hidden="true"></span>
 </aside>
 
+<!-- 右侧章节导航（滚动高亮） -->
+<nav class="page-toc" id="pageToc" aria-label="本页章节导航">
+  <span class="page-toc__title">本页</span>
+  <a class="page-toc__item" href="#blog" data-target="blog">最新文章</a>
+  <a class="page-toc__item" href="#timeline" data-target="timeline">近期动态</a>
+  <a class="page-toc__item" href="#projects" data-target="projects">精选项目</a>
+  <a class="page-toc__item" href="#about" data-target="about">关于我</a>
+</nav>
+
 <main>
   <!-- Hero -->
   <section class="hero">
@@ -56,6 +68,17 @@
       <div class="section-label">Writing</div>
       <div class="section-title">最新文章</div>
     </div>
+
+    <div class="post-filter">
+      <div class="post-filter__search">
+        <span class="post-filter__icon" aria-hidden="true">⌕</span>
+        <input type="search" id="postSearch" placeholder="搜索文章标题或关键词…" aria-label="搜索文章" />
+      </div>
+      <div class="post-filter__chips" id="postChips"></div>
+      <div class="post-filter__count" id="postCount"></div>
+    </div>
+    <p class="post-empty" id="postEmpty" hidden>没有匹配的文章 🤔 换个关键词或标签试试</p>
+
     <div class="posts-grid reveal">
 
       <a class="post-card" href="posts/linkora-v048-release.html">
@@ -292,8 +315,23 @@
   <p>© 2026 坤子 · Built with ☕ and open source · <a href="https://github.com/0x0021" target="_blank" rel="noopener">GitHub</a></p>
 </footer>
 
-<!-- 回到顶部 -->
-<button class="to-top" id="toTop" aria-label="回到顶部" title="回到顶部">↑</button>
+<!-- 回到顶部（带进度环） -->
+<button class="to-top" id="toTop" aria-label="回到顶部" title="回到顶部">
+  <svg class="to-top__ring" viewBox="0 0 44 44" aria-hidden="true">
+    <circle class="to-top__track" cx="22" cy="22" r="19"></circle>
+    <circle class="to-top__bar" cx="22" cy="22" r="19" id="toTopBar"></circle>
+  </svg>
+  <span class="to-top__arrow">↑</span>
+</button>
+
+<!-- 移动端底部导航 -->
+<nav class="mobile-nav" aria-label="底部导航">
+  <a href="#blog">📝<span>文章</span></a>
+  <a href="#timeline">🕒<span>动态</span></a>
+  <a href="#projects">⭐<span>项目</span></a>
+  <a href="#about">👤<span>关于</span></a>
+  <button id="mobileTop" type="button">↑<span>顶部</span></button>
+</nav>
 
 <script src="assets/main.js"></script>
 </body>

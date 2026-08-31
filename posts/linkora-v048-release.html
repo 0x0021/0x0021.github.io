@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Linkora v0.4.8：把「答非所问」摁回去——历史重放防护、排版规范与安全加固 · 坤子</title>
+<meta name="description" content="v0.4.8 复盘一次线上「答非所问」事故：旧截图被重新拉取后污染当前上下文，AI 误判已完结话题回了客套话。三道防线根治，并顺手收掉长回复排版、引用回复降级和安全兜底。" />
+<link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="nav-brand">坤子</a>
+  <div class="nav-links">
+    <a href="../index.html#blog">文章</a>
+    <a href="../index.html#timeline">动态</a>
+    <a href="../index.html#projects">项目</a>
+    <a href="https://github.com/0x0021" target="_blank" rel="noopener">GitHub</a>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="切换主题">◑</button>
+  </div>
+</nav>
+
+<main class="post">
+  <a class="post-back" href="../index.html">← 返回博客</a>
+  <header class="post-header">
+    <div class="post-meta">2026-08-31 · 发布记录</div>
+    <h1>Linkora v0.4.8：把「答非所问」摁回去——历史重放防护、排版规范与安全加固</h1>
+    <div class="post-tags">
+      <span class="tag">AI Agent</span>
+      <span class="tag green">v0.4.8</span>
+      <span class="tag">质量</span>
+      <span class="tag">安全</span>
+    </div>
+  </header>
+  <div class="post-divider"></div>
+  <article class="post-content">
+    <p>上周同事在群里报了个 VDI 更新后黑屏的问题，我这边的 AI 分身回了一句「收到，问题已解决就好」——可那问题压根没解决。查下来是个典型的<strong>上下文被污染</strong>事故，这次 v0.4.8 主要就是把这类答非所问摁回去，顺手把排版、引用回复降级和安全兜底一起收了。</p>
+
+    <h2>事故：AI 对「已解决」的事答非所问</h2>
+    <p>根因挺隐蔽：轮询器用 <code>list-all</code> 把历史消息重新拉了一遍，其中一张 8-25 的旧截图（上面写着「桌面分配失败」）因为去重环节漏标，在 8-31 被当成新消息重放，和当天同事的真消息拼在一起喂给了模型。模型看到「桌面分配失败 → 已解决」这个旧上下文，误判成已经完结的话题，于是回了句客套话。三件事叠在一起才出事：去重表标记不全、历史窗口太粗、OCR 兜底把系统提示当成了图片内容。</p>
+
+    <h2>修复 1：把「新消息窗口」和「历史窗口」解耦</h2>
+    <p>原来轮询的年龄门槛直接吃 <code>history_days</code>（天级），对这个场景太粗了——一天前的消息都算「新」。这次新增 <code>poll_new_message_max_age_hours</code>（默认 24h），让新消息只认最近 N 小时内的，历史窗口仍然按天走，各管各的：</p>
+
+    <pre><code class="language-yaml">poller:
+  history_days: 3                    # 历史上下文回溯窗口（天）
+  poll_new_message_max_age_hours: 24 # 只处理最近 N 小时内的新消息（默认 24）</code></pre>
+
+    <h2>修复 2：批内防抖，剔除陈旧记录</h2>
+    <p>就算年龄门槛放开，同一批里也可能混入超过最新消息 1 天的旧记录（比如缺时间戳的连发）。加了一道 <code>_drop_stale_messages_in_batch()</code>：以批内最新消息时间为锚，剔除超过 1 天的陈旧项，但保守保留正常连发和缺时间戳的消息。</p>
+    <blockquote>原则：宁可漏掉一条旧消息，也不能让旧消息污染当前上下文。</blockquote>
+
+    <h2>修复 3：清理 OCR caption 噪声</h2>
+    <p>OCR 兜底 caption 会把 <code>[图片消息](mediaId=...) 注意：如需下载使用dws命令下载</code> 这种系统提示当成图片内容喂进去，模型可能对它产生幻觉。正则会排掉这类噪声，只保留真正的视觉描述。</p>
+
+    <h2>长回复排版：让 IM 输出读得下去</h2>
+    <p>另一个被吐槽的点：长回复（比如一段故障排查步骤）在钉钉里全挤成一段，标题列表全丢，读着像一坨。这次加了一套排版指令约束输出：</p>
+    <ul>
+      <li>标题层级用 <code>##</code> / <code>###</code>，不滥用；</li>
+      <li>列表逐项单行，用 <code>1. </code> 序号；</li>
+      <li>段落之间空行，长内容优先用列表而不是表格；</li>
+      <li>代码块标注语言，术语该加反引号就加；</li>
+      <li>全文视觉节奏统一，短回复（≤3 行）不受限。</li>
+    </ul>
+    <blockquote>原则：把格式约束写进 prompt，让模型自己排版，而不是堆正则后处理——后者只会越修越歪。</blockquote>
+
+    <h2>引用回复降级：别再刷 ERROR 了</h2>
+    <p>单聊走原生引用回复会因为话题圈不可用必然失败，群聊守卫之前把这种降级记成 ERROR，日志天天刷屏，看着像出了大故障。改成：单聊直接普通发送，群聊降级降到 debug 级。日志干净了，也不误报。</p>
+
+    <h2>承诺边界：别把主人当成第三方</h2>
+    <p>之前承诺边界写「把决定权交回本人」，隐含主人在场，模型就会反问对话者「这条消息是 XX 发来的吗」——明知故问。改成<strong>如实告诉对方「这事得主人拍板」</strong>，不再虚构主人在场。这一处提醒我：写指令时要检查每个代词在替模型定义「对面坐着谁」，否则模型会用错误的前提去补全。</p>
+
+    <h2>安全加固两处</h2>
+    <ul>
+      <li><strong>image.py 路径注入</strong>：图标下载在 <code>str</code> 上调用 <code>Path</code> 方法必然抛错（而且不报错、只是图标不显示），同时 CodeQL 不认项目自定义的 sanitizer。修法保留 <code>os.path.realpath</code> 净化链（CodeQL 依赖它当 barrier），另建 <code>Path(dest)</code> 做文件读写——既修掉必崩 bug，又守住净化链，彻底封死任意文件读取。</li>
+      <li><strong>登出吊销</strong>：原来 <code>require_role</code> 是死代码、logout 形同虚设。改成真实吊销——token 进内存黑名单，<code>verify_token</code> 校验黑名单。多 worker 下各进程独立（已知限制，live 已配 <code>jwt_secret</code>）。</li>
+    </ul>
+
+    <h2>升级注意</h2>
+    <blockquote>无破坏性变更，新增 <code>poll_new_message_max_age_hours</code>（默认 24，一般无需调整）。含轮询器 / Web 运行时改动，升级后需重启 Linkora 服务生效。</blockquote>
+
+    <p>完整变更见 <a href="https://github.com/0x0021/Linkora/blob/main/docs/CHANGELOG.md" target="_blank" rel="noopener">CHANGELOG</a>，代码在 <a href="https://github.com/0x0021" target="_blank" rel="noopener">GitHub</a>。</p>
+  </article>
+
+  <footer class="post-footer">
+    <a class="post-back" href="../index.html">← 返回博客</a>
+  </footer>
+</main>
+
+<script src="../assets/main.js"></script>
+</body>
+</html>

@@ -364,8 +364,8 @@ section { padding: 4.5rem 0; }
 /* ── About (保留) ── */
 .about-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
 }
 @media (max-width: 600px) { .about-grid { grid-template-columns: 1fr; } }
 .about-card {

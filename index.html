@@ -47,6 +47,20 @@
     </div>
     <div class="posts-grid reveal">
 
+      <a class="post-card" href="posts/linkora-v048-release.html">
+        <div class="post-card__meta">2026-08-31 · 发布记录</div>
+        <h3 class="post-card__title">Linkora v0.4.8：把「答非所问」摁回去——历史重放防护、排版规范与安全加固</h3>
+        <p class="post-card__excerpt">根治「旧截图被重放污染上下文导致答非所问」的事故，三道防线（新消息窗口解耦 / 批内防抖 / OCR 噪声清理）；顺手收掉长回复排版、引用回复降级，以及 image.py 路径注入、登出真实吊销等安全兜底。</p>
+        <div class="post-card__tags"><span class="tag">AI Agent</span><span class="tag green">v0.4.8</span><span class="tag">质量</span><span class="tag">安全</span></div>
+      </a>
+
+      <a class="post-card" href="posts/linkora-v047-release.html">
+        <div class="post-card__meta">2026-08-24 · 发布记录</div>
+        <h3 class="post-card__title">Linkora v0.4.7：缺陷修复——LLM 异常分类、OCR 下载限制、异常处理治理</h3>
+        <p class="post-card__excerpt">新增 LLMNetworkError / LLMRateLimitError / LLMAuthError 精确分类、OCR 下载收紧到 10MB、清理 91 处 noqa: BLE001；新增错误监控告警系统与性能基准测试。</p>
+        <div class="post-card__tags"><span class="tag">AI Agent</span><span class="tag green">v0.4.7</span><span class="tag">质量</span><span class="tag">安全</span></div>
+      </a>
+
       <a class="post-card" href="posts/linkora-v045-release.html">
         <div class="post-card__meta">2026-08-22 · 发布记录</div>
         <h3 class="post-card__title">Linkora v0.4.5：摘要视角修复，不再把主人当成第三方</h3>
@@ -134,6 +148,7 @@
           <p><strong>v0.4.5</strong>：摘要视角修复——第一人称视角加固，<code>summarize_conversation</code> 新增显式 <code>owner_name</code> 参数并强制 prompt 约束「凡是主人的消息统一用『我』指代」，杜绝把主人当成第三方的混乱视角；四类生成链路共用同一函数，一次修复全生效。</p>
           <p><strong>v0.4.6</strong>：主动触达摘要排版优化——<code>build_digest</code> 条目之间空行分隔、去除冗余的「【对话摘要】」前缀、改用序号列表，解决钉钉推送里所有摘要粘成一段的问题。</p>
           <p><strong>v0.4.7</strong>：缺陷修复——LLM 异常精确分类（新增 <code>LLMNetworkError</code> / <code>LLMRateLimitError</code> / <code>LLMAuthError</code>）、OCR 下载大小限制收紧到 10MB、清理 91 处 <code>noqa: BLE001</code>；新增错误监控告警系统（<code>src/alerts/</code>）、性能基准测试工具、文档站点自动生成；测试套件扩展到 1409 用例。</p>
+          <p><strong>v0.4.8</strong>：可靠性修复——根治「历史消息重放污染上下文导致答非所问」（新增 <code>poll_new_message_max_age_hours</code> 解耦新消息窗口、批内防抖剔除陈旧记录、清理 OCR caption 噪声）；长回复排版规范、引用回复降级消除、承诺边界措辞修正；安全加固 image.py 路径注入与登出真实吊销、性能并发化抓取与限频退避。</p>
         </div>
       </div>
 

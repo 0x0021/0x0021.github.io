@@ -96,18 +96,131 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
   loop();
 })();
 
-// ── 回到顶部 ──
+// ── 阅读进度条 + 回顶进度环 ──
 (function () {
+  const bar = document.getElementById('readingProgress');
   const toTop = document.getElementById('toTop');
-  if (!toTop) return;
+  const ring = document.getElementById('toTopBar');
+  const R = 19, C = 2 * Math.PI * R;
+  if (ring) { ring.style.strokeDasharray = C; ring.style.strokeDashoffset = C; }
   let ticking = false;
+  function onScroll() {
+    const st = window.scrollY || document.documentElement.scrollTop;
+    const docH = document.documentElement.scrollHeight - window.innerHeight;
+    const p = docH > 0 ? Math.min(1, Math.max(0, st / docH)) : 0;
+    if (bar) bar.style.transform = `scaleX(${p})`;
+    if (ring) ring.style.strokeDashoffset = C * (1 - p);
+    if (toTop) toTop.classList.toggle('show', st > 400);
+    ticking = false;
+  }
   window.addEventListener('scroll', () => {
-    if (ticking) return;
-    ticking = true;
-    requestAnimationFrame(() => {
-      toTop.classList.toggle('show', window.scrollY > 400);
-      ticking = false;
-    });
+    if (!ticking) { ticking = true; requestAnimationFrame(onScroll); }
   }, { passive: true });
-  toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  window.addEventListener('resize', onScroll, { passive: true });
+  onScroll();
+  if (toTop) toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+})();
+
+// ── 右侧章节导航 scrollspy ──
+(function () {
+  const toc = document.getElementById('pageToc');
+  if (!toc) return;
+  const items = Array.from(toc.querySelectorAll('.page-toc__item'));
+  const map = new Map();
+  items.forEach(it => {
+    const sec = document.getElementById(it.dataset.target);
+    if (sec) map.set(sec, it);
+  });
+  if (!map.size) return;
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        items.forEach(i => i.classList.remove('active'));
+        const it = map.get(e.target);
+        if (it) it.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+  map.forEach((_, sec) => obs.observe(sec));
+})();
+
+// ── 文章搜索 + 标签筛选 ──
+(function () {
+  const grid = document.querySelector('.posts-grid');
+  if (!grid) return;
+  const search = document.getElementById('postSearch');
+  const chipsWrap = document.getElementById('postChips');
+  const count = document.getElementById('postCount');
+  const empty = document.getElementById('postEmpty');
+  const cards = Array.from(grid.querySelectorAll('.post-card'));
+  let activeTag = 'all';
+  const norm = s => (s || '').toLowerCase().trim();
+
+  // 从卡片标签动态生成筛选 chips（排除版本号标签）
+  const tagSet = new Set();
+  cards.forEach(c => {
+    c.querySelectorAll('.post-card__tags .tag').forEach(t => {
+      const txt = t.textContent.trim();
+      if (txt && !/^v?\d+\.\d+/.test(txt)) tagSet.add(txt);
+    });
+  });
+  const priority = ['AI Agent', '安全', 'Python', 'macOS', '架构', 'IM', '本地化', '质量', '可靠性', '体验', '前端'];
+  const ordered = [...tagSet].sort((a, b) => {
+    const ia = priority.indexOf(a), ib = priority.indexOf(b);
+    if (ia === -1 && ib === -1) return a.localeCompare(b, 'zh');
+    if (ia === -1) return 1;
+    if (ib === -1) return -1;
+    return ia - ib;
+  });
+  if (chipsWrap) {
+    const all = document.createElement('button');
+    all.className = 'chip chip--active';
+    all.dataset.tag = 'all';
+    all.textContent = '全部';
+    chipsWrap.appendChild(all);
+    ordered.forEach(t => {
+      const b = document.createElement('button');
+      b.className = 'chip';
+      b.dataset.tag = t;
+      b.textContent = t;
+      chipsWrap.appendChild(b);
+    });
+  }
+
+  function cardData(c) {
+    const t = c.querySelector('.post-card__title')?.textContent || '';
+    const e = c.querySelector('.post-card__excerpt')?.textContent || '';
+    const tags = Array.from(c.querySelectorAll('.post-card__tags .tag')).map(x => x.textContent).join(' ');
+    return { hay: norm(t + ' ' + e), tags: norm(tags) };
+  }
+  function apply() {
+    const q = norm(search ? search.value : '');
+    let shown = 0;
+    cards.forEach(c => {
+      const { hay, tags } = cardData(c);
+      const matchQ = !q || hay.includes(q);
+      const matchTag = activeTag === 'all' || tags.includes(norm(activeTag));
+      const ok = matchQ && matchTag;
+      c.style.display = ok ? '' : 'none';
+      if (ok) shown++;
+    });
+    if (count) count.textContent = `共 ${shown} 篇`;
+    if (empty) empty.hidden = shown !== 0;
+  }
+  if (search) search.addEventListener('input', apply);
+  if (chipsWrap) chipsWrap.addEventListener('click', (e) => {
+    const btn = e.target.closest('.chip');
+    if (!btn) return;
+    chipsWrap.querySelectorAll('.chip').forEach(c => c.classList.remove('chip--active'));
+    btn.classList.add('chip--active');
+    activeTag = btn.dataset.tag;
+    apply();
+  });
+  apply();
+})();
+
+// ── 移动端底部导航：回到顶部 ──
+(function () {
+  const b = document.getElementById('mobileTop');
+  if (b) b.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 })();

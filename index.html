@@ -330,8 +330,34 @@
   <a href="#timeline">🕒<span>动态</span></a>
   <a href="#projects">⭐<span>项目</span></a>
   <a href="#about">👤<span>关于</span></a>
-  <button id="mobileTop" type="button">↑<span>顶部</span></button>
+  <button id="mobileMore" class="mobile-nav__more" type="button" aria-expanded="false" aria-controls="moreSheet" aria-label="更多">⋯<span>更多</span></button>
 </nav>
+
+<!-- 移动端"更多"面板 -->
+<div class="more-sheet" id="moreSheet" role="dialog" aria-modal="true" aria-labelledby="moreSheetTitle">
+  <div class="more-sheet__backdrop" data-close-sheet></div>
+  <div class="more-sheet__panel">
+    <div class="more-sheet__handle" aria-hidden="true"></div>
+    <div class="more-sheet__title" id="moreSheetTitle">更多</div>
+    <div class="more-sheet__list">
+      <button type="button" class="more-sheet__item" data-sheet-action="top">
+        <span class="more-sheet__icon" aria-hidden="true">↑</span>
+        <span class="more-sheet__label">回到顶部</span>
+        <span class="more-sheet__hint">TOP</span>
+      </button>
+      <a class="more-sheet__item" href="https://github.com/0x0021" target="_blank" rel="noopener">
+        <span class="more-sheet__icon" aria-hidden="true">↗</span>
+        <span class="more-sheet__label">GitHub 仓库</span>
+        <span class="more-sheet__hint">@0x0021</span>
+      </a>
+      <button type="button" class="more-sheet__item" data-sheet-action="theme">
+        <span class="more-sheet__icon theme" id="sheetThemeIcon" aria-hidden="true">◐</span>
+        <span class="more-sheet__label" id="sheetThemeLabel">切换主题</span>
+        <span class="more-sheet__hint" id="sheetThemeHint">DARK</span>
+      </button>
+    </div>
+  </div>
+</div>
 
 <script src="assets/main.js"></script>
 </body>

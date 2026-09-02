@@ -219,8 +219,76 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
   apply();
 })();
 
-// ── 移动端底部导航：回到顶部 ──
+// ── 移动端底部导航：回顶按钮（保留兼容，实际触发由更多面板处理）──
 (function () {
   const b = document.getElementById('mobileTop');
   if (b) b.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+})();
+
+// ── 移动端"更多"面板（底部弹层）──
+(function () {
+  const btn = document.getElementById('mobileMore');
+  const sheet = document.getElementById('moreSheet');
+  if (!btn || !sheet) return;
+
+  const CLOSE_MS = 220;
+
+  function open() {
+    sheet.classList.remove('hide');
+    sheet.classList.add('show');
+    btn.setAttribute('aria-expanded', 'true');
+  }
+  function close() {
+    if (!sheet.classList.contains('show')) return;
+    sheet.classList.add('hide');
+    btn.setAttribute('aria-expanded', 'false');
+    setTimeout(() => {
+      sheet.classList.remove('show');
+      sheet.classList.remove('hide');
+    }, CLOSE_MS);
+  }
+  function toggle() {
+    sheet.classList.contains('show') ? close() : open();
+  }
+
+  btn.addEventListener('click', (e) => { e.stopPropagation(); toggle(); });
+
+  // 点击 backdrop 关闭
+  sheet.addEventListener('click', (e) => {
+    if (e.target.closest('[data-close-sheet]')) close();
+  });
+
+  // 顶部链接：新标签打开外面，站内的回顶 / 切主题直接关闭
+  sheet.querySelectorAll('.more-sheet__item').forEach(el => {
+    const action = el.dataset.sheetAction;
+    if (!action) return; // GitHub 外链：保留新窗口，由浏览器自己处理
+    el.addEventListener('click', () => {
+      close();
+      if (action === 'top') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else if (action === 'theme') {
+        if (typeof toggleTheme === 'function') toggleTheme();
+      }
+    });
+  });
+
+  // ESC 关闭
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && sheet.classList.contains('show')) close();
+  });
+
+  // 同步主题按钮文案（☾=暗 / ☀=亮）
+  function syncThemeHint() {
+    const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+    const icon = document.getElementById('sheetThemeIcon');
+    const label = document.getElementById('sheetThemeLabel');
+    const hint = document.getElementById('sheetThemeHint');
+    if (icon) icon.textContent = isLight ? '☀' : '☾';
+    if (label) label.textContent = isLight ? '切换到深色' : '切换到浅色';
+    if (hint) hint.textContent = isLight ? 'LIGHT' : 'DARK';
+  }
+  syncThemeHint();
+  new MutationObserver(syncThemeHint).observe(document.documentElement, {
+    attributes: true, attributeFilter: ['data-theme'],
+  });
 })();

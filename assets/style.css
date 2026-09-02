@@ -619,30 +619,156 @@ footer a:hover { text-decoration: underline; }
 .mobile-nav {
   display: none;
   position: fixed;
+  top: auto;             /* override 基础 nav { top:0 }，避免被吸到顶部 */
   left: 0; right: 0; bottom: 0;
   z-index: 95;
+  height: auto;          /* 覆盖 nav { height:56px } */
   background: rgba(13,17,23,0.92);
   backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-top: 1px solid var(--border);
-  padding: 0.4rem 0.5rem calc(0.4rem + env(safe-area-inset-bottom));
+  padding: 0.4rem 0.4rem calc(0.45rem + env(safe-area-inset-bottom));
   justify-content: space-around;
 }
 .mobile-nav a, .mobile-nav button {
-  display: flex; flex-direction: column; align-items: center; gap: 0.05rem;
+  display: flex; flex-direction: column; align-items: center; gap: 0.1rem;
   background: none; border: none; cursor: pointer;
   color: var(--text-sec); text-decoration: none;
-  font-size: 1rem;
+  font-size: 1.05rem;
   font-family: var(--font);
-  padding: 0.2rem 0.5rem;
+  padding: 0.25rem 0;
   border-radius: 8px;
+  flex: 1;
+  min-width: 0;
+  transition: color 0.18s, background 0.18s;
 }
-.mobile-nav a span, .mobile-nav button span { font-size: 0.6rem; }
-.mobile-nav a:active, .mobile-nav button:active { color: var(--accent); }
+.mobile-nav a span, .mobile-nav button span {
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+.mobile-nav a:hover, .mobile-nav button:hover { color: var(--accent); }
+.mobile-nav a:active, .mobile-nav button:active {
+  background: var(--surface);
+  color: var(--accent);
+}
+.mobile-nav__more[aria-expanded="true"] { color: var(--accent); }
 [data-theme="light"] .mobile-nav { background: rgba(255,255,255,0.92); }
+
+/* ── Bottom sheet (移动端"更多"面板) ── */
+.more-sheet {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: none;
+  align-items: flex-end;
+  pointer-events: none;
+}
+.more-sheet.show {
+  display: flex;
+  pointer-events: auto;
+}
+.more-sheet__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  animation: sheet-fade 0.2s ease-out;
+}
+.more-sheet__panel {
+  position: relative;
+  width: 100%;
+  background: var(--bg-2);
+  border-top: 1px solid var(--border);
+  border-radius: 20px 20px 0 0;
+  padding: 0.5rem 1rem calc(1rem + env(safe-area-inset-bottom));
+  box-shadow: 0 -8px 30px rgba(0,0,0,0.4);
+  animation: sheet-up 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+.more-sheet__handle {
+  width: 36px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--border-hi);
+  margin: 0 auto 0.9rem;
+}
+.more-sheet__title {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-align: center;
+  margin-bottom: 0.9rem;
+}
+.more-sheet__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.more-sheet__item {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border-radius: 14px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  font-family: var(--font);
+  cursor: pointer;
+  transition: background 0.18s, border-color 0.18s, transform 0.12s;
+  text-align: left;
+}
+.more-sheet__item:hover { background: var(--surface-hi); border-color: var(--border-hi); }
+.more-sheet__item:active { transform: scale(0.98); }
+.more-sheet__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px; height: 34px;
+  border-radius: 9px;
+  background: var(--accent-dim);
+  color: var(--accent);
+  font-size: 1.05rem;
+  flex-shrink: 0;
+  font-weight: 700;
+}
+.more-sheet__icon.theme { background: var(--green-dim); color: var(--green); }
+.more-sheet__label { flex: 1; }
+.more-sheet__hint {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  font-family: var(--mono);
+  letter-spacing: 0.04em;
+}
+@keyframes sheet-fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes sheet-up {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+.more-sheet.hide .more-sheet__backdrop { animation: sheet-fade-out 0.18s ease-in forwards; }
+.more-sheet.hide .more-sheet__panel {
+  animation: sheet-down 0.22s cubic-bezier(0.55, 0, 1, 0.45) forwards;
+}
+@keyframes sheet-fade-out { from { opacity: 1; } to { opacity: 0; } }
+@keyframes sheet-down {
+  from { transform: translateY(0); }
+  to { transform: translateY(100%); }
+}
+
 @media (max-width: 768px) {
+  /* 移动端：彻底隐藏顶部桌面 nav，避免链接挤成一团 */
+  nav { display: none; }
   .mobile-nav { display: flex; }
   .to-top { display: none; }
-  main { padding-bottom: 4.5rem; }
+  main { padding-bottom: 5rem; }
 }
 
 /* ── Scrollbar ── */

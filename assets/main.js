@@ -258,12 +258,14 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
     if (e.target.closest('[data-close-sheet]')) close();
   });
 
-  // 顶部链接：新标签打开外面，站内的回顶 / 切主题直接关闭
+  // 顶部链接：新标签打开外面；站内锚点直接跳转并关闭；回顶 / 切主题执行动作
   sheet.querySelectorAll('.more-sheet__item').forEach(el => {
+    const isAnchor = (el.getAttribute('href') || '').startsWith('#');
     const action = el.dataset.sheetAction;
-    if (!action) return; // GitHub 外链：保留新窗口，由浏览器自己处理
+    if (!action && !isAnchor) return; // GitHub 外链：保留新窗口，由浏览器自己处理
     el.addEventListener('click', () => {
       close();
+      if (isAnchor) return; // 交给浏览器处理锚点滚动
       if (action === 'top') {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       } else if (action === 'theme') {
@@ -290,5 +292,65 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
   syncThemeHint();
   new MutationObserver(syncThemeHint).observe(document.documentElement, {
     attributes: true, attributeFilter: ['data-theme'],
+  });
+})();
+
+// ── 音乐卡片：复制口令 + toast ──
+(function () {
+  const cards = document.querySelectorAll('.music-card');
+  if (!cards.length) return;
+
+  const toast = document.createElement('div');
+  toast.className = 'music-toast';
+  toast.setAttribute('role', 'status');
+  toast.setAttribute('aria-live', 'polite');
+  document.body.appendChild(toast);
+
+  let toastTimer;
+  function showToast(msg) {
+    toast.textContent = msg;
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toast.classList.remove('show'), 2000);
+  }
+
+  async function copyText(text) {
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(text);
+        return true;
+      }
+    } catch (_) { /* 降级到 execCommand */ }
+
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.setAttribute('readonly', '');
+    ta.style.position = 'fixed';
+    ta.style.top = '-1000px';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    ta.setSelectionRange(0, ta.value.length);
+    let ok = false;
+    try { ok = document.execCommand('copy'); } catch (_) { ok = false; }
+    document.body.removeChild(ta);
+    return ok;
+  }
+
+  cards.forEach(card => {
+    const btn = card.querySelector('[data-copy]');
+    if (!btn) return;
+    const original = btn.textContent;
+    btn.addEventListener('click', async () => {
+      const ok = await copyText(btn.dataset.copy || '');
+      if (ok) {
+        btn.textContent = '已复制 ✓';
+        btn.classList.add('copied');
+        showToast('口令已复制，去番茄畅听 / 番茄音乐 App 粘贴打开');
+        setTimeout(() => { btn.textContent = original; btn.classList.remove('copied'); }, 2000);
+      } else {
+        showToast('复制失败，请手动选中口令文本');
+      }
+    });
   });
 })();

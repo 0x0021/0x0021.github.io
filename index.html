@@ -70,7 +70,7 @@
       <div class="section-label" data-page-node-id="nkh1Oa0gFqiXW27XbPTgXW">Music</div>
       <div class="section-title" data-page-node-id="6BfgqMs9Z96ZjIZk3qdtvo">我的音乐</div>
     </div>
-    <p class="music-intro reveal" data-page-node-id="9rSiuF2h7BR1o1Z7PWCm5E">写代码之外的另一种表达。最近写的两首歌已上线番茄畅听 / 番茄音乐，点开就能听。</p>
+    <p class="music-intro reveal" data-page-node-id="9rSiuF2h7BR1o1Z7PWCm5E">写代码之外的另一种表达。最近写的三首歌已上线番茄畅听 / 番茄音乐，点开就能听。</p>
     <div class="music-grid reveal" data-page-node-id="6Nfhs7yGTl5VjPCVaEw54x">
 
       <article class="music-card" data-page-node-id="Tv4qW7mkYhcJCZBdQjOufw">
@@ -103,6 +103,23 @@
           <div class="music-card__actions" data-page-node-id="rahB64JzCKgvXcRulpHt2l">
             <a class="music-btn music-btn--primary" href="https://m.novelfm.com/s/x5WJ4EMpkQs/" target="_blank" rel="noopener" data-page-node-id="Di5diFX2cjGFB7QOBo3gC4">▶ 在线试听</a>
             <button class="music-btn" type="button" data-copy="【音乐《还在路上》—me坤子】点击链接免费听👉https://m.novelfm.com/s/x5WJ4EMpkQs/ €Zb1GL€D4Lr99€ 复制此条消息，打开「番茄畅听APP」或「番茄音乐APP」后免费听~ Axw:/ W@m.DH :7pm" data-page-node-id="qUqIBNhRX3ySdWnT2fOf8g">复制口令</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="music-card">
+        <div class="music-card__cover" aria-hidden="true">
+          <span class="music-card__note">🍃</span>
+          <span class="music-eq"><i></i><i></i><i></i><i></i></span>
+        </div>
+        <div class="music-card__body">
+          <div class="music-card__meta">2026 · Single</div>
+          <h3 class="music-card__title">风吹过校门口</h3>
+          <div class="music-card__artist">me坤子</div>
+          <p class="music-card__desc">风从校门口吹过，把那段回不去的时光写成了歌——关于操场、铃声，和还没说再见的夏天。</p>
+          <div class="music-card__actions">
+            <a class="music-btn music-btn--primary" href="https://m.novelfm.com/s/Ye1CVSqPIuA/" target="_blank" rel="noopener">▶ 在线试听</a>
+            <button class="music-btn" type="button" data-copy="【音乐《风吹过校门口》—me坤子】点击链接免费听👉https://m.novelfm.com/s/Ye1CVSqPIuA/ €D0cvo€1OQt99€ 复制此条消息，打开「番茄畅听APP」或「番茄音乐APP」后免费听~ dvX:/ m@q.EH :7am">复制口令</button>
           </div>
         </div>
       </article>
@@ -228,6 +245,20 @@
         <div class="timeline-date">2026-09</div>
         <div class="timeline-body">
           <p><strong>意图识别修复</strong>：处置层新增尾部礼貌语剥离前处理，修掉「请求 + 谢谢」被误判为纯致谢直接跳过的问题——「徐工，帮开一下 VPN 吧，谢谢」这类客套请求现在会正常进入处理；社交子型改用剥离后核心判定，「收到，谢谢」归确认而非被谢谢翻成致谢。</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">2026-09</div>
+        <div class="timeline-body">
+          <p><strong>对话摘要卡片渲染修复</strong>：根治卡片只显示首行日期、正文全丢的问题——单条摘要按自然日分段（多行），<code>renderDigestCards</code> 原只认单行「• 名称：内容」格式、续行被丢弃，首行恰是纯日期头时卡片看上去就只有一个日期。新增续行回接（续行拼回上一条目）+ 分段日期弱化为 <code>digest-sub-date</code> 小标；前端显式请求 <code>max_chars=2000</code> 避免长摘要被后端默认上限截断。全库 57 条多行摘要统一恢复完整显示，张保丁 / 汤天傲 / 程海珍等卡片正文已正常。</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">2026-09</div>
+        <div class="timeline-body">
+          <p><strong>新歌《风吹过校门口》</strong>：又一首原创上线番茄畅听 / 番茄音乐，me坤子 演唱。风从校门口吹过，把那段回不去的时光写成了歌——「我的音乐」区块现已收录三首，点开就能听。</p>
         </div>
       </div>
 

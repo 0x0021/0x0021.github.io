@@ -121,29 +121,6 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
   if (toTop) toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 })();
 
-// ── 右侧章节导航 scrollspy ──
-(function () {
-  const toc = document.getElementById('pageToc');
-  if (!toc) return;
-  const items = Array.from(toc.querySelectorAll('.page-toc__item'));
-  const map = new Map();
-  items.forEach(it => {
-    const sec = document.getElementById(it.dataset.target);
-    if (sec) map.set(sec, it);
-  });
-  if (!map.size) return;
-  const obs = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        items.forEach(i => i.classList.remove('active'));
-        const it = map.get(e.target);
-        if (it) it.classList.add('active');
-      }
-    });
-  }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
-  map.forEach((_, sec) => obs.observe(sec));
-})();
-
 // ── 文章搜索 + 标签筛选 ──
 (function () {
   const grid = document.querySelector('.posts-grid');

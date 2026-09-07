@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Linkora v0.4.9：摘要不再串台，分身也学会说「我」了 · 坤子</title>
+<meta name="description" content="v0.4.9 修了三件让人哭笑不得的事：摘要越摘越杂、一句「谢谢」让正经请求被跳过、AI 用第三人称称呼自己。从取材范围、意图识别到人称映射，一次讲清根因与修法。" />
+<link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="nav-brand">坤子</a>
+  <div class="nav-links">
+    <a href="../index.html#blog">文章</a>
+    <a href="../index.html#timeline">动态</a>
+    <a href="../index.html#projects">项目</a>
+    <a href="https://github.com/0x0021" target="_blank" rel="noopener">GitHub</a>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="切换主题">◑</button>
+  </div>
+</nav>
+
+<main class="post">
+  <a class="post-back" href="../index.html">← 返回博客</a>
+  <header class="post-header">
+    <div class="post-meta">2026-09-07 · 发布记录</div>
+    <h1>Linkora v0.4.9：摘要不再串台，分身也学会说「我」了</h1>
+    <div class="post-tags">
+      <span class="tag">AI Agent</span>
+      <span class="tag green">v0.4.9</span>
+      <span class="tag">质量</span>
+      <span class="tag">体验</span>
+    </div>
+  </header>
+  <div class="post-divider"></div>
+  <article class="post-content">
+    <p>这周攒的三个问题，单看都不大，凑一块儿却都指向同一件事：<strong>模型拿到的上下文，和我以为它拿到的，不是一回事</strong>。摘要越摘越杂、一句「谢谢」把正经请求噎回去、分身用第三人称称呼自己—— v0.4.9 就是把这三处掰正。</p>
+
+    <h2>事故一：摘要越摘越杂，旧事反复回锅</h2>
+    <p>起因是我发现多人会话的摘要里，老是混进些早都摘过的人和事。查下来是两个原因叠在一起：</p>
+    <ul>
+      <li><strong>时间基准对不上</strong>：上次摘要时间存的是一种格式、消息时间是另一种，两边直接比大小会让时间部分失效，范围悄悄退化成「当天 0 点起」——等于每次都从头摘。</li>
+      <li><strong>自己写的摘要被自己取材</strong>：系统写回会话里的摘要副本，下一轮又被当成对话正文摘了一遍。更要命的是主动触达那份 digest，里面装着<strong>所有会话</strong>的人和事，它是「摘要里出现不相干的人」的直接来源。</li>
+    </ul>
+    <p>修法也两处：时间统一折算到同一基准再比较，真正做到「只摘上次摘要之后的增量」；取材侧和拼接侧双重过滤，把系统自己写回的摘要副本和 digest 推送副本都排掉。顺手还改了增量超限时的策略——以前保留最旧、丢弃最新，导致新消息长期摘不到，现在反过来保留最新。</p>
+    <blockquote>原则：摘要的价值在「增量」和「干净」，一旦允许回锅，杂质就会每轮放大。</blockquote>
+
+    <h2>顺带：摘要按日期与主题拆分</h2>
+    <p>取材干净了还不够，呈现也得清楚。现在素材按日期分段喂给模型，并要求严格按日期划分摘要、同一天内互不相关的主题拆成多条独立摘要，每条以「【对话摘要】YYYY-MM-DD」开头。杜绝那种一条大杂烩跨天混事的情况。</p>
+
+    <h2>事故二：一句「谢谢」，把正经请求噎了回去</h2>
+    <p>处置层原本有个判断：消息里含「谢谢」且全文很短，就当纯致谢直接跳过、不响应。听起来合理，实际问题很大——「麻烦帮开一下 VPN 吧，谢谢」这种<strong>正经业务请求</strong>，也被当成客套话跳过了。</p>
+    <p>修法是加一道尾部礼貌语剥离：把句末的「谢谢 / 感谢 / 辛苦了 / 多谢」先剥掉，再看剩下的核心有没有实质内容。有，就按业务请求走；没有（比如「收到，谢谢」），才归客套。同时补了一批通用请求动词（请 / 能否 / 帮忙 / 开一下 / 查一下）进证据词表，覆盖原来漏掉的表达。</p>
+    <blockquote>原则：别用「整句里有没有某个词」去猜意图，先把礼貌语这层壳剥掉，再判断内核。</blockquote>
+
+    <h2>事故三：AI 用第三人称称呼自己</h2>
+    <p>这个最尴尬。同事问 WiFi 密码，分身引用我此前发的账号信息时写的是「密码 xxx（XX 刚才发你的）」——而那个名字<strong>正是分身所代表的主人本人</strong>。等于它用第三人称称呼了自己，对面的人会以为还有第三个人在场。</p>
+    <p>有意思的是，提示词里其实早就写了「严禁出现你本人的名字」。为什么没挡住？两个原因：</p>
+    <ul>
+      <li>那条规则只论证了「不存在联系自己」这一种场景，管不到<strong>归属说明</strong>（说明某条消息是谁发的）；而且它埋在提示词中段，身后压着几十段指令，近因效应根本到不了它。</li>
+      <li>更要命的是承诺边界那段通篇用「主人」这个第三人称词——等于在教模型「主人 = 第三方」。模型需要指称主人时，自然就退回第三人称了。</li>
+    </ul>
+    <p>这里我特意<strong>没有</strong>去扩末端闸门的正则。那个闸门命中后是整句替换成安全模板，会把账号密码这类有用正文一起删掉，代价远大于收益。人称是行为问题，该在提示词层解决：我在近因位补了一段「自称与人称」指令，锁死映射——自称用「我」、称对方用「你」，提到自己此前发过的东西说「我刚才发你的」。</p>
+    <blockquote>原则：写「禁止 X」之前先想清楚它同时放开了什么。这次我特意加了一句「提到真正的第三方时照常用其姓名」——只禁不禁放行，模型连「某某刚才说过」这种正常话都不敢写了。</blockquote>
+
+    <h2>升级注意</h2>
+    <blockquote>无破坏性变更。含运行时逻辑变更（摘要取材、意图判定、提示词），升级后需重启 Linkora 服务生效。存量会话无需清理：历史摘要副本在取材时即被排除，下一次摘要自动恢复干净范围。</blockquote>
+
+    <p>完整变更见 <a href="https://github.com/0x0021/Linkora/blob/main/docs/CHANGELOG.md" target="_blank" rel="noopener">CHANGELOG</a>，代码在 <a href="https://github.com/0x0021" target="_blank" rel="noopener">GitHub</a>。</p>
+  </article>
+
+  <footer class="post-footer">
+    <a class="post-back" href="../index.html">← 返回博客</a>
+  </footer>
+</main>
+
+<script src="../assets/main.js"></script>
+</body>
+</html>

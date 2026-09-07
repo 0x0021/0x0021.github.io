@@ -785,12 +785,14 @@ footer a:hover { text-decoration: underline; }
 .music-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-auto-rows: 1fr;
   gap: 1rem;
 }
 .music-card {
   display: flex;
   flex-direction: column;
   gap: 0;
+  min-width: 0;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
@@ -808,14 +810,8 @@ footer a:hover { text-decoration: underline; }
   position: relative;
   flex-shrink: 0;
   width: 100%;
-  aspect-ratio: 1 / 1;
-  border-radius: 0;
+  padding-top: 100%; /* 强制 1:1，不依赖 aspect-ratio 兼容性 */
   background: var(--gradient);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.9rem;
-  line-height: 1;
   overflow: hidden;
 }
 .music-card__cover::after {
@@ -879,7 +875,7 @@ footer a:hover { text-decoration: underline; }
   margin-top: 0.2rem;
 }
 .music-card__artist { font-size: 0.8rem; color: var(--accent); margin-bottom: 0.45rem; }
-.music-card__desc { font-size: 0.88rem; color: var(--text-sec); line-height: 1.55; }
+.music-card__desc { font-size: 0.88rem; color: var(--text-sec); line-height: 1.55; overflow-wrap: anywhere; }
 .music-card__actions {
   display: flex;
   flex-wrap: wrap;

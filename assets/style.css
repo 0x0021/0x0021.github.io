@@ -884,6 +884,7 @@ footer a:hover { text-decoration: underline; }
   gap: 0.45rem;
   margin-top: 0.8rem;
 }
+.music-card__actions > .music-btn:only-child { width: 100%; justify-content: center; }
 .music-btn {
   display: inline-flex;
   align-items: center;
@@ -907,28 +908,6 @@ footer a:hover { text-decoration: underline; }
   font-weight: 500;
 }
 .music-btn--primary:hover { color: #fff; opacity: 0.88; border-color: transparent; }
-.music-btn.copied { border-color: var(--green); color: var(--green); }
-
-/* ── Copy toast ── */
-.music-toast {
-  position: fixed;
-  left: 50%;
-  bottom: 2rem;
-  transform: translate(-50%, 12px);
-  padding: 0.55rem 1.1rem;
-  border-radius: 999px;
-  background: var(--bg-2);
-  border: 1px solid var(--border-hi);
-  color: var(--text);
-  font-size: 0.85rem;
-  box-shadow: var(--shadow);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.2s ease, transform 0.2s ease;
-  z-index: 120;
-}
-.music-toast.show { opacity: 1; transform: translate(-50%, 0); }
 @media (max-width: 768px) {
-  .music-toast { bottom: 6.5rem; }
   .music-grid { grid-template-columns: 1fr; }
 }

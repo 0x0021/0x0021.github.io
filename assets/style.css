@@ -810,7 +810,7 @@ footer a:hover { text-decoration: underline; }
   position: relative;
   flex-shrink: 0;
   width: 100%;
-  padding-top: 100%; /* 强制 1:1，不依赖 aspect-ratio 兼容性 */
+  padding-top: 75%; /* 4:3，三张图统一且比 1:1 更紧凑 */
   background: var(--gradient);
   overflow: hidden;
 }
@@ -860,7 +860,13 @@ footer a:hover { text-decoration: underline; }
   0%, 100% { height: 4px; }
   50% { height: 14px; }
 }
-.music-card__body { min-width: 0; flex: 1; padding: 1rem 1.1rem 1.1rem; }
+.music-card__body {
+  min-width: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 1.1rem 1.1rem;
+}
 .music-card__meta {
   font-size: 0.7rem;
   font-family: var(--mono);
@@ -880,7 +886,8 @@ footer a:hover { text-decoration: underline; }
   display: flex;
   flex-wrap: wrap;
   gap: 0.45rem;
-  margin-top: 0.8rem;
+  margin-top: auto; /* 简介长短不一时按钮统一贴底，三卡横向等高 */
+  padding-top: 0.8rem;
 }
 .music-card__actions > .music-btn:only-child { width: 100%; justify-content: center; }
 .music-btn {

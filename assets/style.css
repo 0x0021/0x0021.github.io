@@ -808,7 +808,7 @@ footer a:hover { text-decoration: underline; }
   position: relative;
   flex-shrink: 0;
   width: 100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 1 / 1;
   border-radius: 0;
   background: var(--gradient);
   display: flex;

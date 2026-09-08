@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Linkora v0.5.0：RAG 严格问答模式——让每一句回答都指得到出处 · 坤子</title>
+<meta name="description" content="v0.5.0 新增 RAG 严格问答模式：开启后 AI 只依据知识库内容作答、未命中直接返回固定「未收录」文案，答案 100% 可溯源、零编造。适合制度问答、产品资料这类对出处要求极高的场景。" />
+<link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="nav-brand">坤子</a>
+  <div class="nav-links">
+    <a href="../index.html#blog">文章</a>
+    <a href="../index.html#timeline">动态</a>
+    <a href="../index.html#projects">项目</a>
+    <a href="https://github.com/0x0021" target="_blank" rel="noopener">GitHub</a>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="切换主题">◑</button>
+  </div>
+</nav>
+
+<main class="post">
+  <a class="post-back" href="../index.html">← 返回博客</a>
+  <header class="post-header">
+    <div class="post-meta">2026-09-08 · 发布记录</div>
+    <h1>Linkora v0.5.0：RAG 严格问答模式——让每一句回答都指得到出处</h1>
+    <div class="post-tags">
+      <span class="tag">AI Agent</span>
+      <span class="tag green">v0.5.0</span>
+      <span class="tag">RAG</span>
+      <span class="tag">质量</span>
+    </div>
+  </header>
+  <div class="post-divider"></div>
+  <article class="post-content">
+    <p>普通 RAG 让大模型「参考」知识库作答。听起来稳，实际常跑偏：模型顺手用自带知识补了个窟窿，答着答着就冒出资料里根本没有的细节——一条「通常来说」、一个不存在的链接、一个想当然的数字。v0.5.0 给这件事上了把锁：<strong>严格问答模式</strong>。开启后，AI 的回答只能来自检索到的知识库内容，知识库没收录就直说，从流程上把编造和幻觉摁死。</p>
+
+    <h2>它到底锁住了什么</h2>
+    <p>一句话：把「参考」升级成「只能依据」。</p>
+    <ul>
+      <li><strong>只认资料</strong>：开启后所有问答请求一律先强制检索知识库，回答<strong>只依据检索到的知识库内容</strong>生成——不调用通用大模型知识、不做外部推理、不补全常识。</li>
+      <li><strong>没收录就直说</strong>：知识库里没有相关内容时，<strong>直接返回一句固定的「未收录」文案</strong>。这条路径根本不进大模型、不追问、不兜底，从源头杜绝编造。</li>
+      <li><strong>关掉就完全原样</strong>：开关置回 <code>false</code>，立即回到原有逻辑（RAG 自动注入 + 意图门控 + 三级递进兜底 + 工具/技能路由），行为与开启前逐字一致。默认关闭，不配置即保持你熟悉的样子。</li>
+    </ul>
+
+    <h2>开启后一条消息的旅程</h2>
+    <p>为了「只能依据」，链路做了三件事：</p>
+    <ol>
+      <li><strong>强制检索</strong>：对任何消息都做向量检索，跳过意图门控与短消息过滤，用独立的 <code>rag_strict_min_similarity</code> / <code>rag_strict_max_results</code> 召回门槛。</li>
+      <li><strong>命中 → 贴硬约束</strong>：把「资料 + 仅依据资料作答」的约束块贴在用户消息之前的近因位（利用近因效应压住模型「自作主张」的冲动），同时<strong>禁用技能激活、只保留 <code>kb_search</code> 这一个工具</strong>（联网搜索 / 发消息 / 审批等一律剔除）、不注入公共记忆、跳过三级递进兜底。</li>
+      <li><strong>未命中 → 直接回固定文案</strong>：不调大模型、不追问、不兜底。</li>
+    </ol>
+
+    <h2>谁该打开它</h2>
+    <p>答案是<strong>对出处要求极高</strong>的场景：公司制度问答、产品资料问答、合规话术、内部 SOP 之类——这些场合「编得再顺」也比不上「句句有出处」。闲聊、天气、问候这类知识库本就覆盖不到的话题，开启后会收到「未收录」回复，属预期行为；要兼顾日常对话，保持关闭即可。</p>
+    <blockquote>建议开启前先把对应资料导入知识库、抽查几次召回效果，再按需调 <code>rag_strict_min_similarity</code>：过高易漏召回，过低易混入弱相关片段。</blockquote>
+
+    <h2>一句话切换，热重载即时生效</h2>
+    <p>两种方式都能开：配置文件 <code>llm.advanced.rag_strict_mode</code>，或 Web 控制台「设置 → 模型与参数 → RAG 严格问答模式」开关。保存即生效，<strong>无需重启服务</strong>。Web 顶栏常驻模式徽章、设置页状态条，以及模拟面板的「对比两种模式」一键并排，都能让你一眼看清当前模式、两种模式回答差在哪。</p>
+
+    <h2>升级注意</h2>
+    <blockquote>无破坏性变更。新增配置项 <code>rag_strict_mode</code> / <code>rag_strict_min_similarity</code> / <code>rag_strict_max_results</code> / <code>rag_strict_no_hit_reply</code>（未命中文案可自定义）。默认关闭，不影响原有行为。</blockquote>
+
+    <p>完整变更见 <a href="https://github.com/0x0021/Linkora/blob/main/docs/CHANGELOG.md" target="_blank" rel="noopener">CHANGELOG</a>，代码在 <a href="https://github.com/0x0021" target="_blank" rel="noopener">GitHub</a>。</p>
+  </article>
+
+  <footer class="post-footer">
+    <a class="post-back" href="../index.html">← 返回博客</a>
+  </footer>
+</main>
+
+<script src="../assets/main.js"></script>
+</body>
+</html>

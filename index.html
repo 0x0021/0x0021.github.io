@@ -234,6 +234,14 @@
       <div class="timeline-item">
         <div class="timeline-date">2026-09</div>
         <div class="timeline-body">
+          <p><strong>v0.5.0</strong>：新增 RAG「严格问答模式」——开启后回答只依据知识库内容、未命中直接返回固定「未收录」文案，从源头杜绝编造与幻觉；Web 顶栏常驻模式徽章、设置页状态条、模拟面板「对比两种模式」一键并排，直观体现两种模式差异；顺手修了 skills/router.py 跨线程读取崩溃（真实生产事故，被严格模式触发）。</p>
+          <p><strong>v0.4.9</strong>：摘要取材范围修复（漏旧消息、混自己写回的摘要副本、增量超限保最旧丢最新）+ 按日期与主题拆分摘要；意图识别补上礼貌语剥离，修掉「请求 + 谢谢」被误判为纯致谢直接跳过；分身自称改回第一人称「我」。</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">2026-09</div>
+        <div class="timeline-body">
           <p><strong>意图识别修复</strong>：处置层新增尾部礼貌语剥离前处理，修掉「请求 + 谢谢」被误判为纯致谢直接跳过的问题——「徐工，帮开一下 VPN 吧，谢谢」这类客套请求现在会正常进入处理；社交子型改用剥离后核心判定，「收到，谢谢」归确认而非被谢谢翻成致谢。</p>
         </div>
       </div>

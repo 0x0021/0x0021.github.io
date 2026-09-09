@@ -122,6 +122,13 @@
 
     <div class="posts-grid reveal" data-page-node-id="Hea4F37JaU9osGyNNni7ZQ">
 
+      <a class="post-card" href="posts/linkora-memory-optimization.html">
+        <div class="post-card__meta">2026-09-09 · 工程记录</div>
+        <h3 class="post-card__title">把常驻内存从 3.9GB 压到 0.6GB：两个「看不见」的内存大户</h3>
+        <p class="post-card__excerpt">模型才 91MB，进程却吃了 3.9GB。查下来是两个隐性大户：MPS 后端固定白拿 1GB 显存且回收不掉，SQLite 每线程页缓存随查询量一路爬升。附完整实测数据与排查工具。</p>
+        <div class="post-card__tags"><span class="tag">AI Agent</span><span class="tag green">性能</span><span class="tag">内存</span><span class="tag">Python</span></div>
+      </a>
+
       <a class="post-card" href="posts/linkora-v050-release.html">
         <div class="post-card__meta">2026-09-08 · 发布记录</div>
         <h3 class="post-card__title">Linkora v0.5.0：RAG 严格问答模式——给 AI 的嘴上把锁，答案只认知识库</h3>
@@ -242,14 +249,14 @@
       <div class="timeline-item">
         <div class="timeline-date">2026-09</div>
         <div class="timeline-body">
-          <p><strong>意图识别修复</strong>：处置层新增尾部礼貌语剥离前处理，修掉「请求 + 谢谢」被误判为纯致谢直接跳过的问题——「徐工，帮开一下 VPN 吧，谢谢」这类客套请求现在会正常进入处理；社交子型改用剥离后核心判定，「收到，谢谢」归确认而非被谢谢翻成致谢。</p>
+          <p><strong>意图识别修复</strong>：处置层新增尾部礼貌语剥离前处理，修掉「请求 + 谢谢」被误判为纯致谢直接跳过的问题——「王工，帮开一下 VPN 吧，谢谢」这类客套请求现在会正常进入处理；社交子型改用剥离后核心判定，「收到，谢谢」归确认而非被谢谢翻成致谢。</p>
         </div>
       </div>
 
       <div class="timeline-item">
         <div class="timeline-date">2026-09</div>
         <div class="timeline-body">
-          <p><strong>对话摘要卡片渲染修复</strong>：根治卡片只显示首行日期、正文全丢的问题——单条摘要按自然日分段（多行），<code>renderDigestCards</code> 原只认单行「• 名称：内容」格式、续行被丢弃，首行恰是纯日期头时卡片看上去就只有一个日期。新增续行回接（续行拼回上一条目）+ 分段日期弱化为 <code>digest-sub-date</code> 小标；前端显式请求 <code>max_chars=2000</code> 避免长摘要被后端默认上限截断。全库 57 条多行摘要统一恢复完整显示，张保丁 / 汤天傲 / 程海珍等卡片正文已正常。</p>
+          <p><strong>对话摘要卡片渲染修复</strong>：根治卡片只显示首行日期、正文全丢的问题——单条摘要按自然日分段（多行），<code>renderDigestCards</code> 原只认单行「• 名称：内容」格式、续行被丢弃，首行恰是纯日期头时卡片看上去就只有一个日期。新增续行回接（续行拼回上一条目）+ 分段日期弱化为 <code>digest-sub-date</code> 小标；前端显式请求 <code>max_chars=2000</code> 避免长摘要被后端默认上限截断。全库 57 条多行摘要统一恢复完整显示，此前受影响的卡片正文均已正常。</p>
         </div>
       </div>
 

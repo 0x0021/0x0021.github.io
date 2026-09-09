@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>把常驻内存从 3.9GB 压到 0.6GB：两个「看不见」的内存大户 · 坤子</title>
-<meta name="description" content="后台进程占了 3.9GB，可模型才 91MB。排查发现两个隐性大户：macOS 上 torch MPS 后端固定常驻约 1GB 显存且回收不掉，SQLite 每线程页缓存会随查询量一路爬升。实测数据与改法全记录。" />
+<title>把常驻内存从 3.9GB 压到 0.5GB：三个「看不见」的内存大户 · 坤子</title>
+<meta name="description" content="后台进程占了 3.9GB，可模型才 91MB。排查发现三个隐性大户：MPS 固定显存池、SQLite 每线程页缓存懒增长、重排模型懒加载时自动选 GPU。实测数据与改法全记录。" />
 <link rel="stylesheet" href="../assets/style.css" />
 </head>
 <body>
@@ -24,7 +24,7 @@
   <a class="post-back" href="../index.html">← 返回博客</a>
   <header class="post-header">
     <div class="post-meta">2026-09-09 · 工程记录</div>
-    <h1>把常驻内存从 3.9GB 压到 0.6GB：两个「看不见」的内存大户</h1>
+    <h1>把常驻内存从 3.9GB 压到 0.5GB：三个「看不见」的内存大户</h1>
     <div class="post-tags">
       <span class="tag">AI Agent</span>
       <span class="tag green">性能</span>
@@ -64,8 +64,19 @@
     </ul>
     <p>降到 8MB 会不会拖慢查询？实测三档的查询耗时：按会话查最近 50 条（走索引）是 0.019s / 0.014s / 0.015s，全表扫描 11 万行是 0.150s / 0.145s / 0.149s——<strong>差异全在噪声里</strong>。原因也简单：真实查询走索引，热点数据只有几 MB；大范围扫描那 102MB 由系统文件缓存兜底，SQLite 自己多留缓存纯属重复劳动。最终定在 8MB。</p>
 
+    <h2>大户三：重排模型偷偷选了 GPU</h2>
+    <p>前两块改完，进程从 3.9GB 降到 0.6GB，本以为收工了。结果过一阵再看，又涨回 <strong>3.1GB</strong>。说明还有第三只手。</p>
+    <p>第三块是 <strong>rerank 重排模型</strong>（<code>BAAI/bge-reranker-base</code>），RAG 检索里的精排环节。它的加载代码是 <code>CrossEncoder(model)</code>，<strong>没指定 device</strong>——sentence_transformers 一看本机有 GPU，自动就选了 MPS。</p>
+    <p>最阴险的是它是 <strong>lazy-load（懒加载）</strong>：只在第一次真的触发 RAG 检索时才把模型塞进显存。于是表现成「刚重启不高、过一阵突然涨 1–2GB」，而且因为是按需才炸，<code>footprint</code> 采样十次有九次都抓不到。过程中 OCR 还背了锅，实测 RapidOCR / onnxruntime 在 CoreML 和 CPU 两档下 <strong>Metal 显存都是 0MB</strong>，已排除，别再往它身上查。</p>
+    <p>对着进程抓了现场：重排模型一旦加载，GPU 显存直接 +1094MB。实测对照：</p>
+    <ul>
+      <li>不指定 device（原行为）→ <code>device=mps:0</code>、驱动显存 <strong>1094MB</strong>；</li>
+      <li>指定 <code>device=cpu</code> → 驱动显存 <strong>0MB</strong>，重排 5 组候选仅 <strong>0.05s</strong>（默认 <code>rerank_timeout</code> 是 2s，绰绰有余）。</li>
+    </ul>
+    <p>改法跟第一块一致：让重排模型<strong>跟随同一个 <code>embedding.device</code> 开关</strong>。CPU 下毫无压力，显存白白省下 1GB。</p>
+
     <h2>结果</h2>
-    <p>两项改完重启实测：后台进程从 <strong>3912MB 降到 563MB</strong>，Web 进程从 397MB 降到 200MB，合计降了约 82%。向量维度没变，<strong>知识库索引一行都没重建</strong>。</p>
+    <p>三块大头依次收掉：embedding 切 CPU 后进程从 3912MB 降到 563MB；再修掉重排模型自动选 GPU 那 1GB，进一步降到 <strong>486MB</strong>；Web 进程从 397MB 降到 144MB。合计降幅约 <strong>88%</strong>。向量维度始终是 512，<strong>知识库索引一行都没重建</strong>。</p>
 
     <h2>几条能直接抄走的经验</h2>
     <ul>
@@ -73,6 +84,7 @@
       <li><strong>小模型别迷信 GPU</strong>：推理本身只占几十毫秒时，框架的固定开销（显存池、kernel 启动）往往远大于收益。先量，再决定要不要上加速后端。</li>
       <li><strong>「每连接」「每线程」的配置要乘上并发数</strong>：单看 62.5MB 很合理，乘上 18 个连接就是另一个故事了。</li>
       <li><strong>「跑得越久越占内存」优先查懒增长型缓存</strong>：不是泄漏，是缓存一路爬向上限。这类问题重启能缓解，但会原样复现。</li>
+      <li><strong>只在使用时才加载的模型，要盯着它的默认设备选择</strong>：lazy-load 的组件（重排、OCR、缓存预热等）往往图省事不传 device，框架就替你选了 GPU。这类「按需才炸」的涨内存最隐蔽——采样抓不到，得在它真正被触发之后再看 <code>footprint</code>。</li>
     </ul>
 
     <p>完整变更见 <a href="https://github.com/0x0021/Linkora/blob/main/docs/CHANGELOG.md" target="_blank" rel="noopener">CHANGELOG</a>，代码在 <a href="https://github.com/0x0021" target="_blank" rel="noopener">GitHub</a>。</p>

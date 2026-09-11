@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Linkora v0.5.1：常驻内存从 3.9GB 降到 0.6GB——两个「看不见」的内存大户被摁住 · 坤子</title>
+<meta name="description" content="v0.5.1 定位并治理了两个长期隐性内存来源：MPS 后端固定白拿约 1GB 无法回收的驱动显存，以及 SQLite 每线程页缓存随查询量懒增长。实测常驻内存从 3.9GB 降到约 0.6GB，无需改配置即可受益。" />
+<link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="nav-brand">坤子</a>
+  <div class="nav-links">
+    <a href="../index.html#blog">文章</a>
+    <a href="../index.html#timeline">动态</a>
+    <a href="../index.html#projects">项目</a>
+    <a href="https://github.com/0x0021" target="_blank" rel="noopener">GitHub</a>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="切换主题">◑</button>
+  </div>
+</nav>
+
+<main class="post">
+  <a class="post-back" href="../index.html">← 返回博客</a>
+  <header class="post-header">
+    <div class="post-meta">2026-09-11 · 发布记录</div>
+    <h1>Linkora v0.5.1：常驻内存从 3.9GB 降到 0.6GB</h1>
+    <div class="post-tags">
+      <span class="tag">AI Agent</span>
+      <span class="tag green">v0.5.1</span>
+      <span class="tag">性能</span>
+      <span class="tag">内存</span>
+    </div>
+  </header>
+  <div class="post-divider"></div>
+  <article class="post-content">
+    <p>后台进程长期挂在 3.9GB，可它跑的向量模型参数才 91MB。差了四十倍，显然有东西在偷偷占地方。v0.5.1 把这个「看不见」的问题定位并治住了：实测常驻内存从 <strong>3.9GB 降到约 0.6GB</strong>，而且<strong>绝大多数用户什么都不用改就能直接受益</strong>。完整排查过程见同站的工程记录长文，这篇只说版本里到底动了什么。</p>
+
+    <h2>两个被治住的内存大户</h2>
+    <ul>
+      <li><strong>本地向量模型白白占着 GPU 显存</strong>：macOS 上 MPS 后端会向驱动申请约 <strong>1GB 固定显存池</strong>，且与模型大小无关、<code>empty_cache()</code> 也收不回，只有释放模型才释放。bge-small 在 CPU 上单条检索 15–20ms，MPS 毫无收益，纯属浪费。新增 <code>embedding.device</code>（<code>auto</code> / <code>cpu</code> / <code>mps</code> / <code>cuda</code>，默认 <code>auto</code>），重排模型跟随此设置——内存吃紧时改 <code>cpu</code> 即可彻底释放这 1GB。</li>
+      <li><strong>SQLite 每线程页缓存随查询量懒增长</strong>：原每连接缓存上限约 62.5MB 且按查询量懒增长，表现就是「跑得越久内存越高」。已降到 8MB，实测 9 连接全表扫描占用从 513MB 降到 115MB，查询耗时无变化——真实查询走索引，全表扫描靠 macOS unified buffer cache。</li>
+    </ul>
+
+    <h2>切 device 不改变维度，无需重建索引</h2>
+    <p>只改 <code>embedding.device</code> 是换计算后端，<strong>向量维度不变，知识库索引无需重建</strong>；只有换模型或走 API provider 才需要重建。换句话说，这个优化对线上是零成本的。</p>
+
+    <h2>要不要手动改配置</h2>
+    <p>默认 <code>auto</code> 已能覆盖绝大多数场景。仅当你本机内存长期紧张、或确认用不到 MPS 加速时，才建议在 <code>config.yaml</code> 的 <code>embedding</code> 段显式写 <code>device: cpu</code>。配置项说明已同步进 <a href="https://github.com/0x0021/Linkora/blob/main/docs/configuration.md" target="_blank" rel="noopener">configuration.md</a>。</p>
+    <blockquote>升级注意：无破坏性变更，无新增必填配置。新增可选配置 <code>embedding.device</code>（默认 <code>auto</code>）。SQLite 缓存上限由内部默认值调整，无需用户介入。</blockquote>
+
+    <p>完整变更见 <a href="https://github.com/0x0021/Linkora/blob/main/docs/CHANGELOG.md" target="_blank" rel="noopener">CHANGELOG</a>，代码在 <a href="https://github.com/0x0021" target="_blank" rel="noopener">GitHub</a>。</p>
+  </article>
+
+  <footer class="post-footer">
+    <a class="post-back" href="../index.html">← 返回博客</a>
+  </footer>
+</main>
+
+<script src="../assets/main.js"></script>
+</body>
+</html>

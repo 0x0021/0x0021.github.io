@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Linkora v0.5.2：RAG 记忆不再记住「死」的结论 · 坤子</title>
+<meta name="description" content="v0.5.2 给 RAG 记忆引入时效与作废机制：同一主题新结论自动作废旧版、检索最新优先、过期信息自动遗忘，并清理了消息展示噪声、升级两个依赖修复 CVE。" />
+<link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="nav-brand">坤子</a>
+  <div class="nav-links">
+    <a href="../index.html#blog">文章</a>
+    <a href="../index.html#timeline">动态</a>
+    <a href="../index.html#projects">项目</a>
+    <a href="https://github.com/0x0021" target="_blank" rel="noopener">GitHub</a>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="切换主题">◑</button>
+  </div>
+</nav>
+
+<main class="post">
+  <a class="post-back" href="../index.html">← 返回博客</a>
+  <header class="post-header">
+    <div class="post-meta">2026-09-15 · 发布记录</div>
+    <h1>Linkora v0.5.2：RAG 记忆不再记住「死」的结论</h1>
+    <div class="post-tags">
+      <span class="tag">AI Agent</span>
+      <span class="tag green">v0.5.2</span>
+      <span class="tag">RAG</span>
+      <span class="tag">记忆</span>
+    </div>
+  </header>
+  <div class="post-divider"></div>
+  <article class="post-content">
+    <p>分身聊了十次同一个客户，前九次得出的结论各不相同，第十次才定下来。但检索时，这十条结论被一视同仁地喂给大模型——旧的「死记忆」照样和新结论抢召回。v0.5.2 给 RAG 记忆装上了<strong>「时效」和「作废」</strong>两个概念，让它能像人一样：最新的话优先听、过期的自己主动忘。</p>
+
+    <h2>四个治理点</h2>
+    <ul>
+      <li><strong>检索时效加权</strong>：记忆召回和知识库检索都引入了时间维度。最新的结论优先、过期信息自然沉底——不再只看相似度把新旧结论打平。</li>
+      <li><strong>写入即作废旧版</strong>：同一主题写出新结论时，自动把旧版标记为 <code>superseded</code>，召回只返回最新那一条。这顺手修掉了之前一个反直觉的 bug——新结论曾被「语义去重」拦在门外，反而把旧结论留下了。</li>
+      <li><strong>知识库重投 supersede</strong>：同一文档重投时改成「原地替换分块 + 版本号 +1」，不再新建重复文档、也不再残留互相对打的僵尸分块（之前标题稍一微调就会生成副本）。</li>
+      <li><strong>智能过期 GC</strong>：清理逻辑从「按年龄硬删」改成「先删已作废、再删超龄」，自动忘记真正过期的信息，而不会误删仍然相关的内容。</li>
+    </ul>
+
+    <h2>顺带清理与加固</h2>
+    <p>会话详情页和仪表盘里，钉钉 / 飞书的媒体占位符噪声（如 <code>[视频消息](mediaId=...)</code>）被剥离，只留真实文字；app 类消息的裸 JSON 也做了拆壳提取。依赖层面把 <code>nanoid</code>、<code>vitest</code> 各升一档，修掉两个 CVE。</p>
+
+    <h2>升级注意</h2>
+    <blockquote>无破坏性变更，无新增必填配置。记忆检索更智能了，但对外接口与配置项完全不变——你什么都不用改就能直接受益。</blockquote>
+
+    <p>完整变更见 <a href="https://github.com/0x0021/Linkora/blob/main/docs/CHANGELOG.md" target="_blank" rel="noopener">CHANGELOG</a>；这套记忆治理是怎么从根因改起的，有一篇工程长文 <a href="../Linkora/memory-staleness.html">《让 RAG 记忆学会忘掉过期的自己》</a> 讲得很细。代码在 <a href="https://github.com/0x0021" target="_blank" rel="noopener">GitHub</a>。</p>
+  </article>
+
+  <footer class="post-footer">
+    <a class="post-back" href="../index.html">← 返回博客</a>
+  </footer>
+</main>
+
+<script src="../assets/main.js"></script>
+</body>
+</html>

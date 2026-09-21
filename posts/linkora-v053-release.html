@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Linkora v0.5.3：会话图片不再「莫名消失」 · 坤子</title>
+<meta name="description" content="v0.5.3 加固了启动期孤儿图片回收：先算保护集再回收、账号身份存疑即整轮停手，杜绝活跃账号正在用的图被误删；历史图片缺失时自动降级为占位，不再满屏破图。" />
+<link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="nav-brand">坤子</a>
+  <div class="nav-links">
+    <a href="../index.html#blog">文章</a>
+    <a href="../index.html#timeline">动态</a>
+    <a href="../index.html#projects">项目</a>
+    <a href="https://github.com/0x0021" target="_blank" rel="noopener">GitHub</a>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="切换主题">◑</button>
+  </div>
+</nav>
+
+<main class="post">
+  <a class="post-back" href="../index.html">← 返回博客</a>
+  <header class="post-header">
+    <div class="post-meta">2026-09-21 · 发布记录</div>
+    <h1>Linkora v0.5.3：会话图片不再「莫名消失」</h1>
+    <div class="post-tags">
+      <span class="tag">AI Agent</span>
+      <span class="tag green">v0.5.3</span>
+      <span class="tag">可靠性</span>
+      <span class="tag">媒体</span>
+    </div>
+  </header>
+  <div class="post-divider"></div>
+  <article class="post-content">
+    <p>分身跑了一阵子，忽然有人发现自己的会话截图不见了——不是谁删的，是后台的「孤儿图片回收」把它们当垃圾清掉了。这事儿发生过两次，根因都是回收逻辑只按「孤儿库自己的引用」判断，没把活跃账号正在用的图算进保护集。v0.5.3 给这段清理逻辑加了三道护栏，让「该删的删、不该删的一个都不碰」。</p>
+
+    <h2>会话图片不再「莫名消失」</h2>
+    <ul>
+      <li><strong>先算保护集再回收</strong>：回收前先并集所有活跃库引用过的图片，命中保护集的一律不动。即使同一张图被活跃库和孤儿库共享，也只删孤儿库那份引用、绝不打穿活跃账号。</li>
+      <li><strong>身份存疑就停手</strong>：账号身份没解析准（拿到的是兜底键）时，整轮跳过回收、只记日志——宁可少清理，也不删错。这是 fail-closed 的设计：判断不可靠时，默认不动手。</li>
+    </ul>
+
+    <h2>历史图片缺失时不再满屏破图</h2>
+    <p>此前若某张图片文件已不在磁盘，会话详情页会直接渲染出浏览器的破图图标，一长串会话看下来满屏裂图。v0.5.3 让前端在图片加载失败时自动降级为「图片已不可用」占位，不再出现破图；并且只处理本站图片接口的失败，外部链接图片不受影响。</p>
+
+    <h2>升级注意</h2>
+    <blockquote>无破坏性变更，无新增必填配置。图片回收与展示都是内部行为，对外接口与配置项完全不变——你什么都不用改。</blockquote>
+
+    <p>完整变更见 <a href="https://github.com/0x0021/Linkora/blob/main/docs/CHANGELOG.md" target="_blank" rel="noopener">CHANGELOG</a>；代码在 <a href="https://github.com/0x0021" target="_blank" rel="noopener">GitHub</a>。</p>
+  </article>
+
+  <footer class="post-footer">
+    <a class="post-back" href="../index.html">← 返回博客</a>
+  </footer>
+</main>
+
+<script src="../assets/main.js"></script>
+</body>
+</html>

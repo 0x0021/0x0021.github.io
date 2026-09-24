@@ -916,3 +916,225 @@ footer a:hover { text-decoration: underline; }
 @media (max-width: 768px) {
   .music-grid { grid-template-columns: 1fr; }
 }
+
+/* ════════════════════════════════════════════════════════════════
+   macOS Desktop Theme Layer
+   在原有信息架构上叠加 macOS 美学：系统菜单栏、毛玻璃应用窗口、
+   交通灯按钮、圆角毛玻璃卡片、squircle 图标。移动端自动降级。
+   ════════════════════════════════════════════════════════════════ */
+
+:root {
+  /* 桌面壁纸（深色）：Big Sur 风格低饱和渐变 */
+  --wallpaper:
+    radial-gradient(1100px 760px at 12% 8%, rgba(88,166,255,0.20), transparent 60%),
+    radial-gradient(1000px 720px at 88% 18%, rgba(163,113,247,0.18), transparent 58%),
+    radial-gradient(900px 720px at 50% 110%, rgba(45,170,140,0.16), transparent 60%),
+    linear-gradient(160deg, #0c1016 0%, #11161f 45%, #0a0e14 100%);
+  --wallpaper-light:
+    radial-gradient(1100px 760px at 12% 8%, rgba(88,166,255,0.22), transparent 60%),
+    radial-gradient(1000px 720px at 88% 18%, rgba(163,113,247,0.18), transparent 58%),
+    radial-gradient(900px 720px at 50% 110%, rgba(45,170,140,0.16), transparent 60%),
+    linear-gradient(160deg, #eef2f8 0%, #f6f8fc 45%, #e9eef6 100%);
+
+  /* 毛玻璃面板 */
+  --glass: rgba(255,255,255,0.055);
+  --glass-hi: rgba(255,255,255,0.10);
+  --glass-border: rgba(255,255,255,0.14);
+  --glass-hairline: rgba(255,255,255,0.10);
+  --window-bg: rgba(20,25,33,0.66);
+  --titlebar-bg: rgba(255,255,255,0.05);
+
+  /* 交通灯 */
+  --tl-red: #ff5f57;
+  --tl-yellow: #febc2e;
+  --tl-green: #28c840;
+  --tl-glyph: rgba(0,0,0,0.55);
+
+  --radius: 14px;
+  --radius-lg: 18px;
+  --shadow-window: 0 26px 70px rgba(0,0,0,0.55), 0 2px 10px rgba(0,0,0,0.4);
+  --shadow-card: 0 1px 2px rgba(0,0,0,0.25), 0 8px 24px rgba(0,0,0,0.28);
+  --inset-hi: inset 0 1px 0 rgba(255,255,255,0.10);
+}
+
+[data-theme="light"] {
+  --glass: rgba(255,255,255,0.55);
+  --glass-hi: rgba(255,255,255,0.78);
+  --glass-border: rgba(0,0,0,0.10);
+  --glass-hairline: rgba(0,0,0,0.07);
+  --window-bg: rgba(255,255,255,0.62);
+  --titlebar-bg: rgba(255,255,255,0.5);
+  --tl-glyph: rgba(0,0,0,0.5);
+  --shadow-window: 0 26px 70px rgba(20,30,50,0.22), 0 2px 8px rgba(20,30,50,0.12);
+  --shadow-card: 0 1px 2px rgba(0,0,0,0.06), 0 10px 26px rgba(20,30,50,0.12);
+}
+
+/* 桌面壁纸：作为 body 背景，固定不随滚动 */
+body {
+  background-color: var(--bg);
+  background-image: var(--wallpaper);
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+[data-theme="light"] body { background-image: var(--wallpaper-light); }
+
+/* ── 系统菜单栏（顶部 nav）── */
+nav {
+  height: 52px;
+  padding: 0 1.4rem;
+  background: rgba(13,17,23,0.5);
+  backdrop-filter: blur(26px) saturate(180%);
+  -webkit-backdrop-filter: blur(26px) saturate(180%);
+  border-bottom: 1px solid var(--glass-hairline);
+  box-shadow: var(--inset-hi);
+}
+[data-theme="light"] nav { background: rgba(255,255,255,0.55); }
+.nav-brand { font-size: 1rem; }
+.nav-links { gap: 1.4rem; }
+.nav-links a { font-size: 0.82rem; }
+
+/* ── macOS 应用窗口 ── */
+.app-window {
+  position: relative;
+  z-index: 1;
+  max-width: 940px;
+  margin: 72px auto 3rem;
+  background: var(--window-bg);
+  backdrop-filter: blur(34px) saturate(170%);
+  -webkit-backdrop-filter: blur(34px) saturate(170%);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-window), var(--inset-hi);
+  overflow: hidden;
+}
+.app-window main { max-width: none; margin: 0; padding: 0 1.75rem 2rem; }
+
+/* 窗口标题栏 + 交通灯 */
+.window-titlebar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 42px;
+  padding: 0 14px;
+  background: var(--titlebar-bg);
+  border-bottom: 1px solid var(--glass-hairline);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  flex-shrink: 0;
+}
+.traffic-lights { display: flex; align-items: center; gap: 8px; }
+.traffic-light {
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  border: none;
+  padding: 0;
+  position: relative;
+  cursor: default;
+  box-shadow: inset 0 0 0 0.5px rgba(0,0,0,0.18);
+  transition: filter 0.15s;
+}
+.traffic-light.tl-close { background: var(--tl-red); }
+.traffic-light.tl-min { background: var(--tl-yellow); }
+.traffic-light.tl-max { background: var(--tl-green); }
+.traffic-light::before {
+  content: '';
+  position: absolute;
+  inset: -1px 0 0 0;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--tl-glyph);
+  font-size: 10px; font-weight: 700; line-height: 11px;
+  opacity: 0;
+  transition: opacity 0.12s;
+}
+.traffic-light.tl-close::before { content: '\00d7'; }   /* × */
+.traffic-light.tl-min::before { content: '\2212'; }     /* − */
+.traffic-light.tl-max::before { content: '\002b'; }     /* + */
+.traffic-lights:hover .traffic-light::before { opacity: 1; }
+.window-title {
+  position: absolute;
+  left: 0; right: 0;
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-sec);
+  letter-spacing: 0.01em;
+  pointer-events: none;
+  font-family: var(--font);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 62%;
+  margin: 0 auto;
+}
+
+/* ── 毛玻璃圆角卡片 ── */
+.post-card, .project-card, .about-card, .music-card {
+  background: var(--glass);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card), var(--inset-hi);
+  transition: transform 0.22s cubic-bezier(0.22,1,0.36,1), border-color 0.22s, background 0.22s, box-shadow 0.22s;
+}
+.post-card:hover, .project-card:hover, .about-card:hover, .music-card:hover {
+  border-color: var(--glass-hi);
+  background: var(--glass-hi);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 34px rgba(0,0,0,0.35), var(--inset-hi);
+}
+
+/* ── squircle 图标 ── */
+.card-icon {
+  border-radius: 10px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.28), 0 2px 6px rgba(0,0,0,0.22);
+}
+.more-sheet__icon {
+  border-radius: 10px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.22), 0 2px 5px rgba(0,0,0,0.18);
+}
+
+/* ── 按钮质感（NSButton 风）── */
+.btn {
+  border-radius: 10px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.18), 0 1px 2px rgba(0,0,0,0.2);
+}
+.btn:active { transform: translateY(0) scale(0.97); }
+.btn-primary {
+  background: linear-gradient(180deg, #4c9bff, #2f7fe6);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), 0 2px 8px rgba(47,127,230,0.35);
+}
+.btn-primary:hover { opacity: 1; filter: brightness(1.04); transform: translateY(-1px); }
+[data-theme="light"] .btn-primary { background: linear-gradient(180deg, #2f86f0, #1f6fd6); }
+.music-btn { border-radius: 10px; }
+.music-btn:active { transform: scale(0.97); }
+.theme-toggle { border-radius: 9px; }
+
+/* ── 窗口内区块微调 ── */
+.app-window .hero { padding-top: 2.5rem; min-height: 70vh; }
+.app-window section { padding: 3.5rem 0; }
+
+/* ── 博文页窗口 ── */
+.app-window--post { margin: 72px auto 3rem; }
+.app-window--post .post { max-width: 720px; margin: 0 auto; padding: 1.5rem 1.5rem 3rem; }
+
+/* ── 移动端降级：关闭窗口框架，恢复实底背景 ── */
+@media (max-width: 768px) {
+  .app-window {
+    margin: 0;
+    max-width: 100%;
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    overflow: visible;
+  }
+  .window-titlebar { display: none; }
+  .app-window main { padding: 0 1.25rem 5rem; }
+  .app-window .hero { padding-top: 3.5rem; min-height: 68vh; }
+  .app-window--post .post { padding: 2.5rem 1.25rem 4rem; max-width: 100%; }
+  body { background-image: none; background-color: var(--bg); }
+}

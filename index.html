@@ -138,6 +138,13 @@
 
     <div class="posts-grid reveal" data-page-node-id="Hea4F37JaU9osGyNNni7ZQ">
 
+      <a class="post-card" href="posts/linkora-v056-release.html">
+        <div class="post-card__meta">2026-09-24 · 发布记录</div>
+        <h3 class="post-card__title">Linkora v0.5.6：答复门禁——命中即拦截，敏感问题不再进 AI</h3>
+        <p class="post-card__excerpt">AI 分身最怕不该答的它也答。v0.5.6 新增答复门禁：对每条用户提问做前置检测，命中规则直接终止回复并返回拦截提示，问题根本不进 AI。内置隐私 / 违法 / 辱骂 / 引流四类预置规则，关键词与正则双模式（带 ReDoS 防护），后台可维护、可测试、可统计，门禁本身 fail-open 绝不吞正常消息。</p>
+        <div class="post-card__tags"><span class="tag">AI Agent</span><span class="tag green">v0.5.6</span><span class="tag">安全</span><span class="tag">管理后台</span></div>
+      </a>
+
       <a class="post-card" href="posts/linkora-v055-release.html">
         <div class="post-card__meta">2026-09-23 · 发布记录</div>
         <h3 class="post-card__title">Linkora v0.5.5：记忆重构为「整合记忆」，已读后不再嘴瓢</h3>
@@ -285,6 +292,7 @@
       <div class="timeline-item">
         <div class="timeline-date">2026-09</div>
         <div class="timeline-body">
+          <p><strong>v0.5.6</strong>：新增「答复门禁」——对用户发来的每条提问做前置检测，命中任一启用中的规则直接终止回复并返回拦截提示语，问题根本不进 AI（比生成后再过滤干净得多）。内置私人隐私 / 违法信息 / 负面情绪 / 其他四类预置规则（11 条装完即有基础防护），支持关键词与正则双模式（regex 引擎带超时，ReDoS 打不死主链路），后台规则可增删改查、批量启停、命中计数、在线匹配测试；门禁 fail-open——规则加载或匹配出任何异常一律放行，绝不吞正常消息。</p>
           <p><strong>v0.5.5</strong>：记忆系统重构为「基于摘要的整合记忆」——单条逐条记忆容易堆积冗余、让检索被噪声淹没，v0.5.5 改为按「人 + 主题」聚合：个人记忆按对话对象、公共记忆按主题桶，后台调度器周期把零散事实合并成结构化摘要并去重，召回直接返回摘要、上下文更干净；顺手堵上「标记已读仍自动回复」（发送前强制复核未读 + 3 秒已读反悔窗口），并把「今日」摘要卡片取材窗口收敛到当天、不再串旧内容。</p>
           <p><strong>v0.5.4</strong>：出厂配置自带可用默认密码——此前 `config.yaml.example` 的占位密码恰好落在「弱口令拒绝启动」黑名单里，新用户照抄模板一启动就被拦，体感「没默认密码」。v0.5.4 把出厂默认密码改为强度达标且不在黑名单的 `Admin@P0sw0rd`，照抄即可登录（fail-closed 仍拦弱口令，首次登录请改密码）。</p>
           <p><strong>v0.5.3</strong>：会话图片不再「莫名消失」——后台孤儿图片回收此前误删过两次活跃账号的图，v0.5.3 加三道护栏：先算保护集再回收（跨库共享同一张图也不误删）、账号身份存疑整轮停手（宁可少清不删错）；顺手让前端在图片缺失时自动降级为「图片已不可用」占位，不再满屏破图。</p>

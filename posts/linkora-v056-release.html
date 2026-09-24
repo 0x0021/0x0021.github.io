@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Linkora v0.5.6：答复门禁——命中即拦截，敏感问题不再进 AI · 坤子</title>
+<meta name="description" content="v0.5.6 新增「答复门禁」：对用户发来的每条提问做前置检测，命中任一启用中的规则直接终止回复并返回拦截提示语——问题根本不会进入 AI。内置隐私 / 违法 / 辱骂 / 引流四类预置规则，支持关键词与正则（带 ReDoS 防护）、批量启停、命中计数与在线匹配测试。" />
+<link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="nav-brand">坤子</a>
+  <div class="nav-links">
+    <a href="../index.html#blog">文章</a>
+    <a href="../index.html#timeline">动态</a>
+    <a href="../index.html#projects">项目</a>
+    <a href="https://github.com/0x0021" target="_blank" rel="noopener">GitHub</a>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="切换主题">◑</button>
+  </div>
+</nav>
+
+<main class="post">
+  <a class="post-back" href="../index.html">← 返回博客</a>
+  <header class="post-header">
+    <div class="post-meta">2026-09-24 · 发布记录</div>
+    <h1>Linkora v0.5.6：答复门禁——命中即拦截，敏感问题不再进 AI</h1>
+    <div class="post-tags">
+      <span class="tag">AI Agent</span>
+      <span class="tag green">v0.5.6</span>
+      <span class="tag">安全</span>
+      <span class="tag">管理后台</span>
+    </div>
+  </header>
+  <div class="post-divider"></div>
+  <article class="post-content">
+    <p>AI 分身替你回消息，最怕的不是答得差，而是<strong>不该答的它也答</strong>——别人问收入婚史它顺着聊，问涉政敏感它硬接，上来就骂两句它还礼貌回应。此前 v0.5.x 系列把「答得好」做扎实了，v0.5.6 解决「不该答的不答」：新增<strong>答复门禁</strong>，对用户发来的每条提问做前置检测，命中任一启用中的规则，直接终止回复流程并返回拦截提示语——问题根本不会进入 AI，比生成之后再过滤干净得多。</p>
+
+    <h2>四类预置规则，装完即有基础防护</h2>
+    <ul>
+      <li><strong>私人隐私</strong>：家庭与婚恋、年龄生日、收入资产、住址行踪——「你结婚了吗」「工资多少」这类问题直接拦下。</li>
+      <li><strong>违法信息</strong>：涉政敏感话题、翻墙与代理工具、违禁品与违法活动，红线问题零容忍。</li>
+      <li><strong>负面情绪</strong>：辱骂脏话、人身攻击与威胁——好好说话可以，骂人不回应。</li>
+      <li><strong>其他</strong>：广告引流（加微信 / 刷单 / 转账）与提示词攻击（「忽略之前的指令」这类越狱话术）。</li>
+    </ul>
+    <p>四类只是出厂模板，管理后台可自建<strong>自定义分类</strong>，规则名称、命中模式、拦截提示语全部在线维护，改完即生效。</p>
+
+    <h2>关键词与正则双模式，快得安全</h2>
+    <p>命中方式两种：关键词模式逗号分隔多个词、命中任一即拦（大小写不敏感）；正则模式支持完整 Python 正则语法，并用带超时的 regex 引擎执行——灾难性回溯（ReDoS）会被强制中断，绝不让一条坏规则拖死消息主链路。规则引擎带 60 秒 TTL 缓存，检测在消息进入 AI 之前完成，不增加可感知延迟。</p>
+
+    <h2>管理后台：不只是增删改查</h2>
+    <ul>
+      <li><strong>规则列表</strong>：统计卡（总规则 / 已启用 / 总命中）、高频命中 Top 10 热度排行、按分类与类型筛选、客户端分页、批量启用停用删除。</li>
+      <li><strong>匹配测试</strong>：输入一句话即时验证会不会被拦、被哪条规则拦、返回哪句提示语，上线前先测一遍。</li>
+      <li><strong>命中计数</strong>：每条规则记录实际命中次数，哪些规则在干活一目了然。</li>
+    </ul>
+
+    <h2>fail-open：门禁绝不吞正常消息</h2>
+    <p>护栏设计上特意反着来：规则加载失败、匹配抛异常、数据库抖动——任何情况下门禁一律放行。宁可漏拦，绝不因为安全模块自身故障把正常消息吞掉。</p>
+
+    <h2>升级注意</h2>
+    <blockquote>无破坏性变更，无新增必填配置。<code>gate_rules</code> 表随启动自动创建，无需手工迁移；<code>scripts/seed_gate_rules.py</code> 幂等可重放，随时补种预置规则。</blockquote>
+
+    <p>完整变更见 <a href="https://github.com/0x0021/Linkora/blob/main/docs/CHANGELOG.md" target="_blank" rel="noopener">CHANGELOG</a>；代码在 <a href="https://github.com/0x0021" target="_blank" rel="noopener">GitHub</a>。</p>
+  </article>
+  <footer class="post-footer">
+    <a class="post-back" href="../index.html">← 返回博客</a>
+  </footer>
+</main>
+</body>
+</html>

@@ -138,6 +138,20 @@
 
     <div class="posts-grid reveal" data-page-node-id="Hea4F37JaU9osGyNNni7ZQ">
 
+      <a class="post-card" href="posts/linkora-v055-release.html">
+        <div class="post-card__meta">2026-09-23 · 发布记录</div>
+        <h3 class="post-card__title">Linkora v0.5.5：记忆重构为「整合记忆」，已读后不再嘴瓢</h3>
+        <p class="post-card__excerpt">分身聊久了记忆越攒越杂，零散事实堆一起既冗余又淹没检索。v0.5.5 把记忆升级为按「人 + 主题」聚合的整合记忆，后台周期合并零散事实成结构化摘要、召回更干净；堵上「标记已读仍自动回复」，标记已读后加 3 秒反悔窗口；今日摘要卡片取材收敛到当天。</p>
+        <div class="post-card__tags"><span class="tag">AI Agent</span><span class="tag green">v0.5.5</span><span class="tag">记忆</span><span class="tag">体验</span></div>
+      </a>
+
+      <a class="post-card" href="posts/linkora-v054-release.html">
+        <div class="post-card__meta">2026-09-22 · 发布记录</div>
+        <h3 class="post-card__title">Linkora v0.5.4：出厂默认密码终于能直接登录了</h3>
+        <p class="post-card__excerpt">此前 config.yaml.example 的占位密码恰好落在「弱口令拒绝启动」黑名单里，新用户照模板 cp 后一启动就被拦、体感「没默认密码还登不进」。v0.5.4 把出厂默认密码改为强度达标且不在黑名单的 Admin@P0sw0rd，照抄即可登录；fail-closed 仍拦弱口令，首次登录请改密码。</p>
+        <div class="post-card__tags"><span class="tag">AI Agent</span><span class="tag green">v0.5.4</span><span class="tag">安全</span><span class="tag">体验</span></div>
+      </a>
+
       <a class="post-card" href="posts/linkora-v053-release.html">
         <div class="post-card__meta">2026-09-21 · 发布记录</div>
         <h3 class="post-card__title">Linkora v0.5.3：会话图片不再「莫名消失」</h3>
@@ -150,13 +164,6 @@
         <h3 class="post-card__title">Linkora v0.5.2：RAG 记忆不再记住「死」的结论</h3>
         <p class="post-card__excerpt">分身聊了十次同一个客户，前十次结论各不相同，检索时旧结论照样和新结论抢召回。v0.5.2 给记忆装上时效与作废：最新优先、写入即作废旧版、过期自动忘，并清理了消息展示噪声、升级两个依赖修 CVE。</p>
         <div class="post-card__tags"><span class="tag">AI Agent</span><span class="tag green">v0.5.2</span><span class="tag">RAG</span><span class="tag">记忆</span></div>
-      </a>
-
-      <a class="post-card" href="Linkora/memory-staleness.html">
-        <div class="post-card__meta">2026-09-15 · 工程复盘</div>
-        <h3 class="post-card__title">让 RAG 记忆学会「忘掉过期的自己」</h3>
-        <p class="post-card__excerpt">v0.5.2 记忆治理工程复盘：RAG 记忆为什么满是「死」结论，以及用时效加权 + 写入 supersede + 智能 GC 三层方案把陈旧信息压下去的全过程。</p>
-        <div class="post-card__tags"><span class="tag">AI Agent</span><span class="tag">RAG</span><span class="tag">记忆架构</span><span class="tag">复盘</span></div>
       </a>
 
       <a class="post-card" href="posts/linkora-v051-release.html">

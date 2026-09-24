@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Linkora v0.5.4：出厂默认密码终于能直接登录了 · 坤子</title>
+<meta name="description" content="v0.5.4 把出厂默认密码改为强度达标且不在弱口令黑名单的 Admin@P0sw0rd，解决此前占位密码触发弱口令拒绝启动、新用户照模板 cp 后一启动就被拦、体感「没默认密码还登不进」的问题。" />
+<link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="nav-brand">坤子</a>
+  <div class="nav-links">
+    <a href="../index.html#blog">文章</a>
+    <a href="../index.html#timeline">动态</a>
+    <a href="../index.html#projects">项目</a>
+    <a href="https://github.com/0x0021" target="_blank" rel="noopener">GitHub</a>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="切换主题">◑</button>
+  </div>
+</nav>
+
+<main class="post">
+  <a class="post-back" href="../index.html">← 返回博客</a>
+  <header class="post-header">
+    <div class="post-meta">2026-09-22 · 发布记录</div>
+    <h1>Linkora v0.5.4：出厂默认密码终于能直接登录了</h1>
+    <div class="post-tags">
+      <span class="tag">AI Agent</span>
+      <span class="tag green">v0.5.4</span>
+      <span class="tag">安全</span>
+      <span class="tag">体验</span>
+    </div>
+  </header>
+  <div class="post-divider"></div>
+  <article class="post-content">
+    <p>新用户拿到一个开源项目，最顺手的体验就是照着示例配置 <code>cp</code> 一份、改改就能跑。Linkora 一直想给到这个体验，但此前 <code>config.yaml.example</code> 里的占位密码恰好落在程序「弱口令拒绝启动」的黑名单里——刚 <code>cp</code> 完一启动就被 fail-closed 拦下来，连默认账号都登不进去。体感就是「没有默认密码，还进不去后台」。</p>
+
+    <h2>出厂配置自带可用默认密码</h2>
+    <ul>
+      <li><strong>默认账号 <code>admin</code>，默认密码 <code>Admin@P0sw0rd</code></strong>：强度达标且不在黑名单，照抄模板即可直接登录，新用户第一次启动不再被卡在门外。</li>
+      <li><strong>fail-closed 仍然生效</strong>：填 <code>admin</code> / <code>password</code> / <code>123456</code> 这类弱口令或留空，依旧拒绝启动——该拦的照样拦，防止管理后台裸奔。</li>
+      <li><strong>配套安装文档</strong>：新增面向飞书 + RAG 场景的简体中文安装指引，可以直接丢给 AI 协助完成配置，少踩坑。</li>
+    </ul>
+
+    <h2>升级注意</h2>
+    <blockquote>首次登录后请务必在设置页修改默认密码。无破坏性变更、无新增必填配置——你只需在第一次启动时知道默认凭据是什么。</blockquote>
+
+    <p>完整变更见 <a href="https://github.com/0x0021/Linkora/blob/main/docs/CHANGELOG.md" target="_blank" rel="noopener">CHANGELOG</a>；代码在 <a href="https://github.com/0x0021" target="_blank" rel="noopener">GitHub</a>。</p>
+  </article>
+  <footer class="post-footer">
+    <a class="post-back" href="../index.html">← 返回博客</a>
+  </footer>
+</main>
+
+<script src="../assets/main.js"></script>
+</body>
+</html>

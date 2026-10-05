@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Linkora v0.6.0：修启动卡死、决策追踪排序与安全加固 · 坤子</title>
+<meta name="description" content="v0.6.0 修复「启动卡在步骤 4/8」的真凶（离线配置误走同步加载）、首页决策追踪取到最旧而非最新消息；安全侧新增关闭鉴权时的 fail-closed、管理口令从明文升级为 PBKDF2 哈希、消除 3 条 urllib3 依赖告警；性能侧消除每次回复最多 400 次查询的 N+1。" />
+<link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="nav-brand">坤子</a>
+  <div class="nav-links">
+    <a href="../index.html#blog">文章</a>
+    <a href="../index.html#timeline">动态</a>
+    <a href="../index.html#projects">项目</a>
+    <a href="https://github.com/0x0021" target="_blank" rel="noopener">GitHub</a>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="切换主题">◑</button>
+  </div>
+</nav>
+
+<main class="post">
+  <a class="post-back" href="../index.html">← 返回博客</a>
+  <header class="post-header">
+    <div class="post-meta">2026-10-05 · 发布记录</div>
+    <h1>Linkora v0.6.0：修启动卡死、决策追踪排序与安全加固</h1>
+    <div class="post-tags">
+      <span class="tag">AI Agent</span>
+      <span class="tag green">v0.6.0</span>
+      <span class="tag">修复</span>
+      <span class="tag">安全</span>
+      <span class="tag">性能</span>
+    </div>
+  </header>
+
+  <article>
+    <p>这一版没有新功能，全是「把自己绊了一跤的地方填平」——从一次线上事故的根因，到三个被门禁当场抓出来的问题。</p>
+
+    <h2>启动卡在「步骤 4/8」：<code>offline</code> 怎么把主线程堵死的</h2>
+    <p>本地部署时日志停在「步骤 4/8: 初始化规则引擎… 完成」永不继续，Web 端口从不上线。进程还活着、CPU 却只有 0.4%，采样栈显示主线程阻塞在一次文件读取上——它根本没在干活，在等磁盘。</p>
+    <p>真凶是一处看似合理的写法：</p>
+    <blockquote><code>if background and not offline:</code> 走后台加载，<code>else:</code> 走同步加载。</blockquote>
+    <p><code>offline=True</code>（用本地缓存、不联网，<em>最常见</em>的配置）恰好让整个条件为假，于是「后台加载」被跳过，主线程被按在地上读模型权重（实测超过 50 秒）。</p>
+    <p>问题出在把两件正交的事绑成了一个条件：<code>background</code> 管的是「要不要阻塞启动」，<code>offline</code> 管的是「要不要联网」。离线与否，跟能不能异步，毫无关系。现在后台加载与离线解耦：启动秒回，模型照旧在后台约 10 秒就绪，Web 不再被它挡住。</p>
+    <blockquote>教训：两个语义独立的开关，绝不能用逻辑运算符绑成同一个分支。这不是编译器能拦的错误，只能靠人读代码时多问一句。</blockquote>
+
+    <h2>首页「决策追踪」停在旧消息</h2>
+    <p>后端按时间正序返回决策，前端组件却直接取前 N 条——于是卡片上永远是<em>最旧</em>的两条。现在排序下沉到组件内部统一处理，最新消息始终在最上方，「意图 &amp; 路由」页也一并受益。</p>
+    <p>顺带一个概念澄清：<strong>决策追踪记录的是「AI 对每条消息做了什么决策」，不是聊天记录</strong>。人工回复的消息本就不产生决策记录——某天没有决策，不代表哪里坏了。</p>
+
+    <h2>安全：三件事</h2>
+    <ul>
+      <li><strong>关闭鉴权不再裸奔</strong>：调试时关掉 <code>auth_enabled</code> 且未配凭据，此前即使服务绑定了对外地址，写操作与配置导出仍会完全无认证放行。现在这种情况直接拒绝（fail-closed）；仅本机 / 私网使用时维持原行为，不影响免鉴权调试与内网反代。</li>
+      <li><strong>管理口令从明文升级为 PBKDF2 哈希</strong>：项目本已内置 PBKDF2 支持，只是存量配置从未迁移，现提供迁移工具一键升级。校验函数对明文与哈希双兼容，<strong>登录行为完全不变</strong>；迁移前自动备份，明文全程不落盘不打印。</li>
+      <li><strong>消除 3 条依赖告警</strong>：<code>urllib3</code> 升级到 2.8.0，消掉 2 高危（分块解码无界内存耗尽、HTTPS 代理 TLS 配置被忽略）与 1 中危（分块解压死循环）。排查时发现一个容易误判的坑：<code>requirements.lock</code> 早已是安全版本，但 CI 实际消费的是 <code>uv.lock</code> 里的漏洞版本——两份锁文件现已对齐。</li>
+    </ul>
+
+    <h2>把「静默吞噬」变成「可追溯」</h2>
+    <p>项目内 640 处宽异常中，有 85 处既不记日志也不重新抛出——异常彻底消失，排障时看不到任何线索（上面那个启动卡死被另一条噪音告警淹没，就是活生生的例子）。现在这 85 处全部补上带完整堆栈的日志，并新增 AST 门禁把总数锁定为「只减不增」，防止回潮。</p>
+    <blockquote>这里有个反直觉的结论：<strong>这 640 处宽异常，绝大多数是正确的防御性容错</strong>（配置解析失败即回退默认值；日志格式化失败绝不能崩）。所以本版本<em>刻意没有做机械收窄</em>——强行收窄反而会把「可容错」变成「会崩」。真正要治的不是数量，而是静默吞噬。</blockquote>
+
+    <h2>性能：每次回复最多省 400 次查询</h2>
+    <p>少样本推荐原先对每条候选回复单独查一次「前一条用户消息」，候选多时每次回复产生最多 400 次查询。改为一批取回 + 二分定位后，<strong>N+1 降为单次查询</strong>，返回值完全不变。</p>
+
+    <h2>生产事故复盘：索引损坏</h2>
+    <p>此前一轮「持续报 <code>database is locked</code>」的根因既不是并发也不是参数，而是<strong>数据文件索引损坏</strong>：某分库的一个索引有 49 行缺失，致每次写入退化为全表扫描重建索引、写锁被长期占用，闸门与限流全部失效。现在启动时会检测并自动重建损坏索引（幂等、不动数据），上线后该错误归零。</p>
+    <p>由此定了一条硬规则：<strong>「代码改完还是坏」＝数据库文件损坏的强信号</strong>，此时应立刻查 <code>integrity_check</code>，而不是继续在代码里找原因（注意 <code>quick_check</code> 对索引不一致会漏检）。</p>
+
+    <h2>工程门禁</h2>
+    <ul>
+      <li>ruff 覆盖范围从 38% 扩到全量：此前只扫 <code>src/</code>，<code>web/</code>、<code>tests/</code>、<code>scripts/</code> 全在门外——一个真实的 Web 崩溃就是这么漏掉的。</li>
+      <li>CI 补并发控制与超时：连续推送不再叠加完整作业；job 挂死不会永久占用 runner。</li>
+      <li>依赖一致性门禁首次真正生效：本次即拦下一次自动合并带来的 10 项版本漂移。</li>
+    </ul>
+
+    <h2>升级注意</h2>
+    <p>无破坏性变更、无新增必填配置。数据库索引自愈与孤儿图片回收参数均自动生效，无需手工迁移。<strong>部署建议改用单进程模式</strong>：<code>python scripts/run_linkora.py --single-process</code>，Web 与后台轮询同驻一进程，从根上消除 SQLite 跨进程写锁争用（此前该问题曾表现为持续的 database is locked 与轮询丢会话）。</p>
+
+    <p>完整变更见 <a href="https://github.com/0x0021/Linkora/blob/main/docs/CHANGELOG.md" target="_blank" rel="noopener">CHANGELOG</a>；代码在 <a href="https://github.com/0x0021" target="_blank" rel="noopener">GitHub</a>。</p>
+  </article>
+  <footer class="post-footer">
+    <a class="post-back" href="../index.html">← 返回博客</a>
+  </footer>
+</main>
+</body>
+</html>

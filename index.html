@@ -138,6 +138,13 @@
 
     <div class="posts-grid reveal" data-page-node-id="Hea4F37JaU9osGyNNni7ZQ">
 
+      <a class="post-card" href="posts/linkora-v060-release.html">
+        <div class="post-card__meta">2026-10-05 · 发布记录</div>
+        <h3 class="post-card__title">Linkora v0.6.0：修启动卡死、决策追踪排序与安全加固</h3>
+        <p class="post-card__excerpt">全是「把自己绊了一跤的地方填平」。根因修掉「offline 配置误走同步加载导致启动永挂在步骤 4/8」；决策追踪不再取最旧而取最新；安全侧关闭鉴权时 fail-closed、管理口令升级 PBKDF2 哈希、消除 3 条 urllib3 告警；85 处静默吞噬补上可追溯日志并加门禁防回潮；每次回复最多省 400 次查询。</p>
+        <div class="post-card__tags"><span class="tag">AI Agent</span><span class="tag green">v0.6.0</span><span class="tag">修复</span><span class="tag">安全</span></div>
+      </a>
+
       <a class="post-card" href="posts/linkora-v056-release.html">
         <div class="post-card__meta">2026-09-24 · 发布记录</div>
         <h3 class="post-card__title">Linkora v0.5.6：答复门禁——命中即拦截，敏感问题不再进 AI</h3>
@@ -288,6 +295,13 @@
       <div class="section-title" data-page-node-id="RhDdx5CofEeGyIX75MdTD7">近期动态</div>
     </div>
     <div class="timeline reveal" data-page-node-id="7SIQX957SeEP7IVtbwzcyH">
+
+      <div class="timeline-item">
+        <div class="timeline-date">2026-10</div>
+        <div class="timeline-body">
+          <p><strong>v0.6.0</strong>：修「服务起不来」的真凶——本地部署日志停在「步骤 4/8」永不继续、web 端口从不上线，根因是 <code>offline=True</code>（用本地缓存不联网，最常见的配置）恰好命中「同步加载」分支，把主线程堵在读模型权重上（实测 &gt;50 秒，进程活着但 CPU 0.4%）。<code>background</code>（要不要异步）与 <code>offline</code>（要不要联网）本是正交的两件事，绑成一个条件就成了设计错误；现已解耦，启动秒回、模型照旧后台约 10 秒就绪。顺带修首页「决策追踪」取到最旧而非最新消息（后端正序、前端取前 N 条），排序下沉到组件内部统一处理；安全侧关闭鉴权且无凭据时对外地址改走 fail-closed、管理口令从明文升级为 PBKDF2 哈希（登录行为不变）、<code>urllib3</code> 升到 2.8.0 消掉 3 条告警（此前两份锁文件不一致，CI 实际吃的是漏洞版）；85 处「静默吞噬异常」补上可追溯日志并加 AST 门禁防回潮；少样本推荐的 N+1 降为单次查询（每次回复最多省 400 次）。</p>
+        </div>
+      </div>
 
       <div class="timeline-item">
         <div class="timeline-date">2026-09</div>

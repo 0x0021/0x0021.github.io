@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Linkora v0.6.1：一次系统性缺陷审计的收口 · 坤子</title>
+<meta name="description" content="v0.6.1 是一次全量缺陷审计的收口版本：工具执行加超时护栏、注销令牌黑名单不再无限增长、卡片图片不再污染正文、读游标未关闭致写锁阻塞、python -O 下 assert 被剥离致返回 None、SKILL.md frontmatter 切分统一。" />
+<link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="nav-brand">坤子</a>
+  <div class="nav-links">
+    <a href="../index.html#blog">文章</a>
+    <a href="../index.html#timeline">动态</a>
+    <a href="../index.html#projects">项目</a>
+    <a href="https://github.com/0x0021" target="_blank" rel="noopener">GitHub</a>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="切换主题">◑</button>
+  </div>
+</nav>
+
+<main class="post">
+  <a class="post-back" href="../index.html">← 返回博客</a>
+  <header class="post-header">
+    <div class="post-meta">2026-10-08 · 发布记录</div>
+    <h1>Linkora v0.6.1：一次系统性缺陷审计的收口</h1>
+    <div class="post-tags">
+      <span class="tag">AI Agent</span>
+      <span class="tag green">v0.6.1</span>
+      <span class="tag">修复</span>
+      <span class="tag">可靠性</span>
+      <span class="tag">安全</span>
+    </div>
+  </header>
+
+  <article>
+    <p>这一版没有新功能。它是一次<strong>全量缺陷审计</strong>的收口——把 Web 管理台、工具执行、技能系统、轮询主链路、平台适配、意图路由、LLM、记忆这些核心子系统逐个过了一遍，修了 10 类确凿缺陷。</p>
+    <p>有意思的是，这些缺陷大多是同一类形态：<em>平时跑得好好的，特定条件下才发作</em>。它们不会在开发时立刻报错，而是在生产环境累积到某个时刻突然爆掉。下面挑几个最有代表性的。</p>
+
+    <h2><code>python -O</code> 启动时，<code>assert</code> 会被整条剥离</h2>
+    <p>代码里有 8 处用 <code>assert</code> 做类型收窄——写法本身没问题，运行时也确实有效。但生产环境常用 <code>python -O</code> 启动（跳过断言以省开销），而 <code>-O</code> 会把 <code>assert</code> 整条<strong>剥离</strong>。于是本该返回数据库记录 ID 的地方静默返回 <code>None</code>，调用方拿着 <code>None</code> 去拼 SQL，直接崩。</p>
+    <p>开发环境跑一年都不会发现，因为断言还在。这 8 处已全部改为运行时收窄——它在类型层面等价、但不会被 <code>-O</code> 剥离。</p>
+    <blockquote>教训：<code>assert</code> 适合「开发期自检」，不适合承担「生产期的类型收窄」。后者一旦被优化掉，错误就从「明确」变成「静默」。</blockquote>
+
+    <h2>读游标没关干净，最后拖垮的是写入</h2>
+    <p>高频轮询路径上有 3 个读方法没关游标。单看每一条都不严重——游标最终会被垃圾回收。可这个进程是<strong>永不退出</strong>的轮询进程，天长日久，WAL 读快照不断累积，最终触发写锁阻塞。</p>
+    <p>这类问题的阴险之处在于：报错的地方（<code>database is locked</code>）和出问题的地方（三个只读方法）隔着十万八千里。而且它和 v0.6.0 修的那次索引损坏事故<strong>症状一模一样</strong>——所以排查时很容易被带偏，去查锁参数、加限流，而真正的源头是三个忘了关的游标。</p>
+
+    <h2>工具卡住会拖慢所有人</h2>
+    <p>工具执行原先没有外层超时。一个工具卡住，调用它的线程就一直等——而工具是<strong>并发共享</strong>的，意味着一个卡死的工具会连带拖慢其它所有会话。</p>
+    <p>现在加了统一超时护栏，默认 120 秒。这个数字是算出来的：内部子进程的硬超时是 60 秒，留一倍余量，既能挡住真挂死，又不会误杀合法的慢工具。新增配置项 <code>tools.max_tool_seconds</code>，设为 0 可关闭护栏。</p>
+    <p>顺带补齐了参数校验：缺必填参数、参数类型不对，现在返回明确错误，而不是抛出让人摸不着头脑的内部异常。</p>
+
+    <h2>注销之后，旧令牌仍然有效（且黑名单无限增长）</h2>
+    <p>令牌黑名单是个只增不减的集合——每次注销往里塞一条，但过期的令牌从不清理。长时间运行会持续累积。更值得一提的是它的设计意图：黑名单本就是为了让「注销」这个动作真正生效，但它自己却需要人工介入才不会烂掉。</p>
+    <p>现在按令牌过期时间记录，校验时惰性清理。行为完全不变，但不再无限增长。</p>
+
+    <h2>卡片里的图片路径，被当成了文字写进正文</h2>
+    <p>处理图文混排消息时，「给正文加本地图片路径」的逻辑对所有消息类型都生效。但卡片消息里的图片字段内部是一段 JSON 映射，不是路径——于是被原样拼进正文，产生「本地图片 /xxx/yyy」这种指向不存在文件的假路径。</p>
+    <p>已把该逻辑限定为只对单图消息生效。修复前后的差别很直观：改动前后的消息正文里会多出一行莫名其妙的「本地图片」。</p>
+
+    <h2>三处 frontmatter 切分方式不一致</h2>
+    <p>技能文件（<code>SKILL.md</code>）的元信息写在文件头的 <code>---</code> 分隔线之间。读取时用行级切分（只看「整行就是 <code>---</code>」），但有 3 处写回逻辑用的是字符串查找——在文件里找下一个 <code>---</code> 就完事。</p>
+    <p>两者在正常文件上结果一致，但只要 frontmatter 里某个<em>值</em>内部含 <code>---</code>（说明文字里带代码片段、Markdown 分隔线之类），字符串查找就会先命中值里那个，切分错位，正文被吞进元信息。</p>
+    <p>三处已全部收敛到行级切分，和读取路径同一个真源。附带一个有意思的发现：<strong>三处都不是一处</strong>——最初只记了一处，实际扫出来三处（AI 意图写回、技能安装写平台、Web 端改元数据）。典型的「以为修完了，其实漏了两处」。</p>
+
+    <h2>门禁</h2>
+    <ul>
+      <li>全量测试通过：技能 / 意图 / Web 路由相关 365 项，配置与工具相关 56 项。</li>
+      <li>ruff 全路径通过、pyright 0 error、依赖一致性 0 告警、宽异常基线 638（未新增）。</li>
+      <li>每个修复都配了回归测试，其中 frontmatter 那条特意验证过「用旧逻辑跑这个用例会失败」——否则测试可能只是个摆设。</li>
+    </ul>
+
+    <h2>升级注意</h2>
+    <p>无破坏性变更、无新增必填配置、无数据迁移。新增可选配置 <code>tools.max_tool_seconds</code>（默认 120 秒），一般无需调整。</p>
+
+    <p>完整变更见 <a href="https://github.com/0x0021/Linkora/blob/main/docs/CHANGELOG.md" target="_blank" rel="noopener">CHANGELOG</a>；代码在 <a href="https://github.com/0x0021" target="_blank" rel="noopener">GitHub</a>。</p>
+  </article>
+  <footer class="post-footer">
+    <a class="post-back" href="../index.html">← 返回博客</a>
+  </footer>
+</main>
+</body>
+</html>

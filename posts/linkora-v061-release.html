@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="../assets/style.css" />
 </head>
 <body>
+<div class="post-progress" aria-hidden="true"></div>
 
 <nav>
   <a href="../index.html" class="nav-brand">坤子</a>
@@ -34,9 +35,19 @@
     </div>
   </header>
 
-  <article>
+  <article class="post-content">
     <p>这一版没有新功能。它是一次<strong>全量缺陷审计</strong>的收口——把 Web 管理台、工具执行、技能系统、轮询主链路、平台适配、意图路由、LLM、记忆这些核心子系统逐个过了一遍，修了 10 类确凿缺陷。</p>
-    <p>有意思的是，这些缺陷大多是同一类形态：<em>平时跑得好好的，特定条件下才发作</em>。它们不会在开发时立刻报错，而是在生产环境累积到某个时刻突然爆掉。下面挑几个最有代表性的。</p>
+    <p>有意思的是，这些缺陷大多是同一类形态：<em>平时跑得好好的，特定条件下才发作</em>。它们不会在开发时立刻报错，而是在生产环境累积到某个时刻突然爆掉。</p>
+
+    <blockquote>
+      <p><strong>本文要点</strong></p>
+      <ul>
+        <li><code>python -O</code> 会把 <code>assert</code> 整条剥离，8 处类型收窄在生产静默失效</li>
+        <li>3 个只读方法没关游标，累积到把写入拖垮——症状与真正的元凶完全无关</li>
+        <li>工具卡住会拖慢所有并发会话，现补120 秒超时护栏</li>
+        <li>注销令牌黑名单只增不减；frontmatter 切分实际有 3 处不一致</li>
+      </ul>
+    </blockquote>
 
     <h2><code>python -O</code> 启动时，<code>assert</code> 会被整条剥离</h2>
     <p>代码里有 8 处用 <code>assert</code> 做类型收窄——写法本身没问题，运行时也确实有效。但生产环境常用 <code>python -O</code> 启动（跳过断言以省开销），而 <code>-O</code> 会把 <code>assert</code> 整条<strong>剥离</strong>。于是本该返回数据库记录 ID 的地方静默返回 <code>None</code>，调用方拿着 <code>None</code> 去拼 SQL，直接崩。</p>
@@ -75,11 +86,17 @@
     <h2>升级注意</h2>
     <p>无破坏性变更、无新增必填配置、无数据迁移。新增可选配置 <code>tools.max_tool_seconds</code>（默认 120 秒），一般无需调整。</p>
 
-    <p>完整变更见 <a href="https://github.com/0x0021/Linkora/blob/main/docs/CHANGELOG.md" target="_blank" rel="noopener">CHANGELOG</a>；代码在 <a href="https://github.com/0x0021" target="_blank" rel="noopener">GitHub</a>。</p>
+    <h2>延伸阅读</h2>
+    <ul>
+      <li><a href="https://github.com/0x0021/Linkora/blob/main/docs/CHANGELOG.md" target="_blank" rel="noopener">完整变更日志（CHANGELOG）</a>——本次 10 类缺陷逐条的原始描述</li>
+      <li><a href="https://github.com/0x0021/Linkora/blob/main/docs/configuration.md" target="_blank" rel="noopener">配置文档</a>——新增的 <code>tools.max_tool_seconds</code> 说明</li>
+      <li><a href="https://github.com/0x0021/Linkora" target="_blank" rel="noopener">项目源码</a>——<a href="https://github.com/0x0021" target="_blank" rel="noopener">GitHub</a></li>
+    </ul>
   </article>
   <footer class="post-footer">
     <a class="post-back" href="../index.html">← 返回博客</a>
   </footer>
 </main>
+<script src="../assets/main.js"></script>
 </body>
 </html>

@@ -16,6 +16,32 @@ const io = new IntersectionObserver((entries) => {
 }, { threshold: 0.1 });
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
+// ── 文章阅读进度条（仅文章详情页）──
+// 正文滚动进度用 transform:scaleX 驱动，避免每帧触发布局。
+(function () {
+  const bar = document.querySelector('.post-progress');
+  const article = document.querySelector('.post-content');
+  if (!bar || !article) return;
+
+  let ticking = false;
+  function update() {
+    const rect = article.getBoundingClientRect();
+    const start = window.scrollY + rect.top - window.innerHeight * 0.2;
+    const total = rect.height - window.innerHeight * 0.6;
+    const ratio = total > 0 ? (window.scrollY - start) / total : (window.scrollY > start ? 1 : 0);
+    bar.style.transform = `scaleX(${Math.min(1, Math.max(0, ratio)).toFixed(4)})`;
+    ticking = false;
+  }
+  function onScroll() {
+    if (!ticking) { ticking = true; requestAnimationFrame(update); }
+  }
+
+  bar.style.transform = 'scaleX(0)';
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll, { passive: true });
+  update();
+})();
+
 // ── Particle canvas (仅当 hero 存在时启用) ──
 (function () {
   const canvas = document.getElementById('hero-canvas');

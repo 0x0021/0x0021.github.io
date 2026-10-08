@@ -692,8 +692,17 @@ footer a:hover { text-decoration: underline; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: var(--border-hi); border-radius: 3px; }
 
-/* ── Post page (文章详情) ── */
-.post { max-width: 720px; padding-top: 80px; padding-bottom: 4rem; }
+/* ── Post page (文章详情) ──
+   排版目标：现代长文阅读习惯——
+   · 正文列加宽到 46em（约 72 字符/行，中文约 38 字/行），行高 1.9
+   · 中文排版：标点挤压、避免首行孤字、标题后不与正文粘连
+   · 层级锚点：h2 前置 accent 竖条 + 段间距节奏化
+   · 行内 code / 块quote / pre 各自成块，不与正文串成一片         */
+.post {
+  max-width: 780px;
+  padding-top: 72px;
+  padding-bottom: 5rem;
+}
 .post-back {
   display: inline-flex;
   align-items: center;
@@ -701,69 +710,232 @@ footer a:hover { text-decoration: underline; }
   font-size: 0.85rem;
   color: var(--text-sec);
   text-decoration: none;
-  margin-bottom: 1.5rem;
-  transition: color 0.2s;
+  margin-bottom: 2rem;
+  padding: 0.35rem 0.7rem 0.35rem 0.55rem;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  transition: color 0.2s, background 0.2s, border-color 0.2s;
 }
-.post-back:hover { color: var(--accent); }
+.post-back:hover {
+  color: var(--accent);
+  background: var(--surface);
+  border-color: var(--border);
+}
 .post-meta {
   font-size: 0.78rem;
   font-family: var(--mono);
   color: var(--text-muted);
-  margin-bottom: 0.5rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.65rem;
+}
+/* 标题区：加一条 accent 渐变竖条，形成视觉起点 */
+.post-header {
+  margin-bottom: 2.5rem;
+  padding-left: 1.1rem;
+  border-left: 3px solid transparent;
+  border-image: var(--gradient) 1;
 }
 .post-header h1 {
-  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-size: clamp(1.75rem, 4.2vw, 2.5rem);
   font-weight: 800;
-  letter-spacing: -0.02em;
-  line-height: 1.2;
-  margin-bottom: 0.75rem;
+  letter-spacing: -0.025em;
+  line-height: 1.25;
+  margin-bottom: 0.9rem;
+  /* 中文标题换行更均衡 */
+  text-wrap: balance;
 }
-.post-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 2rem; }
+.post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-bottom: 0;
+}
 .post-divider { height: 1px; background: var(--border); margin: 2rem 0; }
-.post-content { font-size: 1rem; color: var(--text); line-height: 1.8; }
+
+/* 正文主体 */
+.post-content {
+  font-size: 1.045rem;
+  color: var(--text);
+  line-height: 1.9;
+  /* 中文正文更松散的字距，长段落不显拥挤 */
+  letter-spacing: 0.01em;
+  /* 避免单个字/词独占一行（孤字） */
+  text-wrap: pretty;
+  hanging-punctuation: allow-end;
+}
+/* 首段：略大一号 + 次级色，作为导语 */
+.post-content > p:first-of-type {
+  font-size: 1.12rem;
+  line-height: 1.8;
+  color: var(--text);
+}
+
+/* h2：前置 accent 竖条作为层级锚点，上方留白更大以分隔章节 */
 .post-content h2 {
-  font-size: 1.4rem;
+  font-size: 1.32rem;
   font-weight: 700;
-  letter-spacing: -0.01em;
-  margin: 2.2rem 0 0.9rem;
+  letter-spacing: -0.015em;
+  line-height: 1.45;
+  margin: 3rem 0 1.1rem;
+  padding-left: 0.85rem;
+  border-left: 3px solid var(--accent);
+  text-wrap: balance;
 }
 .post-content h3 {
-  font-size: 1.15rem;
-  font-weight: 600;
-  margin: 1.6rem 0 0.6rem;
+  font-size: 1.12rem;
+  font-weight: 700;
+  margin: 2rem 0 0.75rem;
+  color: var(--text);
+  text-wrap: balance;
 }
-.post-content p { margin-bottom: 1.1rem; }
-.post-content ul, .post-content ol { margin: 0 0 1.1rem 1.25rem; }
-.post-content li { margin-bottom: 0.4rem; color: var(--text-sec); }
-.post-content strong { color: var(--text); font-weight: 600; }
-.post-content a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent-dim); }
+/* h2 紧跟的首段不额外再压边 */
+.post-content h2 + p, .post-content h3 + p { margin-top: 0; }
+
+.post-content p { margin-bottom: 1.25rem; }
+
+/* 列表：改用更清晰的实心圆点 + 悬挂缩进，条目呼吸感更足 */
+.post-content ul, .post-content ol {
+  margin: 0 0 1.4rem;
+  padding-left: 1.4rem;
+}
+.post-content ul { list-style: disc; }
+.post-content ol { list-style: decimal; }
+.post-content li {
+  margin-bottom: 0.6rem;
+  color: var(--text-sec);
+  line-height: 1.8;
+}
+.post-content li::marker { color: var(--text-muted); }
+/* 列表内含代码或强调时用主色，保持可读 */
+.post-content li strong, .post-content li code { color: var(--text); }
+/* 列表项内段落不重复留白 */
+.post-content li > p:last-child { margin-bottom: 0; }
+.post-content li > ul, .post-content li > ol { margin-top: 0.5rem; margin-bottom: 0.3rem; }
+
+.post-content strong { color: var(--text); font-weight: 650; }
+.post-content em { color: var(--text); font-style: italic; }
+
+.post-content a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid var(--accent-dim);
+  transition: border-color 0.2s;
+}
 .post-content a:hover { border-bottom-color: var(--accent); }
+
+/* 行内代码：加左侧微标 + 更高对比，避免与正文混淆 */
 .post-content code {
   font-family: var(--mono);
-  font-size: 0.85em;
+  font-size: 0.86em;
   background: var(--surface-hi);
-  padding: 0.15em 0.4em;
+  padding: 0.12em 0.38em;
   border-radius: 5px;
   color: var(--orange);
+  border: 1px solid var(--border);
+  white-space: nowrap;
 }
+/* 块级代码：明确可横向滚动 + 左侧 accent 提示条 */
 .post-content pre {
   background: var(--bg-2);
   border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
   border-radius: var(--radius);
-  padding: 1.1rem 1.25rem;
+  padding: 1rem 1.15rem;
   overflow-x: auto;
-  margin: 0 0 1.2rem;
+  margin: 1.6rem 0;
+  font-size: 0.88rem;
+  line-height: 1.7;
+  -webkit-overflow-scrolling: touch;
 }
-.post-content pre code { background: none; padding: 0; color: var(--text); font-size: 0.85rem; }
+.post-content pre code {
+  background: none;
+  padding: 0;
+  border: none;
+  color: var(--text);
+  font-size: inherit;
+  white-space: pre;
+}
+
+/* 引用块：作为「经验/教训」强调块，斜体 + 更强左边线 + 毛玻璃底 */
 .post-content blockquote {
   border-left: 3px solid var(--accent);
-  padding: 0.4rem 0 0.4rem 1rem;
-  margin: 0 0 1.2rem;
+  padding: 0.9rem 1.1rem;
+  margin: 1.6rem 0;
   color: var(--text-sec);
   background: var(--surface);
   border-radius: 0 8px 8px 0;
+  font-style: italic;
 }
-.post-content img { max-width: 100%; border-radius: var(--radius); border: 1px solid var(--border); margin: 0.5rem 0 1.2rem; }
+.post-content blockquote p:last-child { margin-bottom: 0; }
+/* 引用块内嵌列表：作为「要点速览」使用，需压缩内外边距避免撑开 */
+.post-content blockquote ul, .post-content blockquote ol {
+  margin: 0.6rem 0 0.2rem;
+  padding-left: 1.2rem;
+}
+.post-content blockquote li { margin-bottom: 0.35rem; font-style: normal; }
+.post-content blockquote li strong { color: var(--text); }
+/* 速览块首行（标题行）不重复留白 */
+.post-content blockquote > p:first-child { margin-bottom: 0.2rem; }
+.post-content blockquote code { white-space: normal; }
+
+.post-content img {
+  max-width: 100%;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  margin: 1.6rem auto 0.5rem;
+  display: block;
+}
+.post-content hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 2.5rem 0;
+}
+
+/* 表格：横向滚动 + 表头底色，长文里对参数表很常见 */
+.post-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.6rem 0;
+  font-size: 0.92rem;
+  display: block;
+  overflow-x: auto;
+}
+.post-content th, .post-content td {
+  border: 1px solid var(--border);
+  padding: 0.55rem 0.8rem;
+  text-align: left;
+}
+.post-content th { background: var(--surface-hi); font-weight: 650; color: var(--text); }
+
+/* 尾部阅读引导：与正文留出呼吸 */
+.post-footer {
+  margin-top: 3.5rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--border);
+}
+
+/* ── 阅读进度条（文章页顶��细线，纯 CSS 装饰，不遮挡内容）── */
+.post-progress {
+  position: fixed;
+  top: 52px; /* 与 nav 高度对齐 */
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background: var(--gradient);
+  transform-origin: 0 50%;
+  transform: scaleX(0);
+  opacity: 0.85;
+  pointer-events: none;
+  z-index: 60;
+}
+
+@media (max-width: 640px) {
+  .post { padding-top: 3rem; }
+  .post-content { font-size: 1rem; line-height: 1.85; }
+  .post-content > p:first-of-type { font-size: 1.05rem; }
+  .post-content h2 { font-size: 1.2rem; margin: 2.5rem 0 0.9rem; }
+  .post-header { padding-left: 0.9rem; }
+}
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {

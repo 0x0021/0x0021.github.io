@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Linkora v0.6.2：源码没错，构建错了 · 坤子</title>
+<meta name="description" content="v0.6.2 是一次前端专项：把颜色/字体/图标/间距收敛到设计 token，并修掉一个源码完全正确、只有构建压缩后才出错的缺陷——过滤器点击即清空列表。" />
+<link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+<div class="post-progress" aria-hidden="true"></div>
+
+<nav>
+  <a href="../index.html" class="nav-brand">坤子</a>
+  <div class="nav-links">
+    <a href="../index.html#blog">文章</a>
+    <a href="../index.html#timeline">动态</a>
+    <a href="../index.html#projects">项目</a>
+    <a href="https://github.com/0x0021" target="_blank" rel="noopener">GitHub</a>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="切换主题">◑</button>
+  </div>
+</nav>
+
+<main class="post">
+  <a class="post-back" href="../index.html">← 返回博客</a>
+  <header class="post-header">
+    <div class="post-meta">2026-10-10 · 发布记录</div>
+    <h1>Linkora v0.6.2：源码没错，构建错了</h1>
+    <div class="post-tags">
+      <span class="tag">AI Agent</span>
+      <span class="tag green">v0.6.2</span>
+      <span class="tag">修复</span>
+      <span class="tag">前端</span>
+      <span class="tag">工程</span>
+    </div>
+  </header>
+
+  <article class="post-content">
+    <p>这一版是一次前端专项：把散乱的视觉样式收敛到单一真源，同时修掉一个<strong>源码完全正确、只有构建压缩之后才出错</strong>的隐蔽缺陷。</p>
+    <p>后者比前者有意思得多——它是这轮排查里最值得记下来的东西。</p>
+
+    <blockquote>
+      <p><strong>本文要点</strong></p>
+      <ul>
+        <li>过滤器「默认能加载、点了就清空」的真凶不在前端逻辑，也不在后端，而在<strong>构建压缩把变量绑错了</strong></li>
+        <li>源码是对的、单元测试也是绿的，只有真正跑生产产物才会暴露</li>
+        <li>颜色 / 字体 / 图标 / 间距四类散乱样式收敛到设计 token，视觉零变化</li>
+        <li>为这类 bug 加了静态门禁：禁止用拼接生成 <code>data-*</code> 属性</li>
+      </ul>
+    </blockquote>
+
+    <h2>一个「源码对、产物错」的 bug</h2>
+    <p>现象很普通：草稿审阅页和死信队列页，<strong>默认能加载出数据，点「全部 / 待处理」等过滤器标签，列表就清空了</strong>。两个页面，同一个症状。</p>
+    <p>按常规路径排查了一圈：后端 <code>status=all</code> 返回正常（实测 13 条）；模板容器 ID 与 JS 引用一致；<code>data-args</code> 的 JSON 解析链路没问题；页面模块有 window 注册；没有 form 包裹导致误提交。全部正常。</p>
+    <p>转折点是一个不起眼的细节——用真实 dist 产物而不是源码去执行那段 tab 生成代码时，看到的片段是这样的：</p>
+
+    <blockquote>
+      <p><code>.map(function(H){ return '...data-args=\'["' + s + '"]\'' + ... })</code></p>
+      <p>回调参数是 <code>H</code>，但 <code>data-args</code> 里的 <code>s</code> 没有跟着改——它指向了外层另一个同名变量。</p>
+    </blockquote>
+
+    <p>于是整条链路就通了：<code>var t = [...].map(...), s = '&lt;button&gt;全部&lt;/button&gt;'</code> 是<strong>顺序求值</strong>的，<code>.map()</code> 执行时外层 <code>s</code> 还是 <code>undefined</code> → 生成的 <code>data-args</code> 成了 <code>["undefined"]</code> → 事件分发时 <code>JSON.parse</code> 解析出一个 <code>undefined</code> → 请求 <code>/api/...?status=undefined</code> → 后端按字面量 <code>WHERE status='undefined'</code> 查询 → <strong>空列表</strong>。</p>
+
+    <h3>为什么它能一路逃过审查</h3>
+    <p>因为<strong>源码本身是完全正确的</strong>：变量声明、拼接顺序、参数传递都没问题。错的是压缩器把拼接重排成了模板字面量片段：</p>
+    <blockquote>
+      <p>源码：<code>'...data-args=\'["' + s + '"]\''</code></p>
+      <p>产物：<code>'...data-args=\'["'</code> + <code>s</code> + <code>'"]\''</code> —— <code>["</code> 和 <code>"]</code> 变成了模板字面量，<code>+s+</code> 夹在中间</p>
+    </blockquote>
+    <p>这意味着：读代码看不出问题；单元测试直接调用函数也会「通过」——因为它加载的是源码。只有真正跑生产产物，或者在真实构建产物上做断言，才会暴露。</p>
+    <blockquote>教训：<strong>验前端 bug 必须验产物</strong>。源码正确不等于产物正确——尤其当产物要经过压缩、合并、转译时。</blockquote>
+
+    <h3>修法，以及顺带暴露的门禁问题</h3>
+    <p>修法本身很简单：改用模板字符串插值（<code>${}</code>，变量作用域绑定，压缩安全）。改完后产物是干净的 <code>data-args='["${H}"]'</code>。</p>
+    <p>但更重要的是补上<strong>门禁</strong>——这类错误只要有人再写一次字符串拼接就会复发。新增 <code>scripts/check_data_args_concat.mjs</code>：任何用 <code>+ 变量 +</code> 拼接生成 <code>data-*</code> 属性值的写法都会让构建失败，已接进 <code>verify:frontend</code> 与 CI。回归测试也改成直接针对 <strong>minify 产物</strong>断言，而非源码。</p>
+    <p>门禁写完后我都做了一次反向验证：把 bug 原样注入回去，确认门禁和测试<strong>真的会红</strong>，再还原修复确认变绿。否则那只是一段看起来很严谨的空代码。</p>
+
+    <h2>样式收敛：四类散乱值归位</h2>
+    <p>顺便做了件一直想做的事——把界面上散落的样式值收敛到设计 token。原先的状态是多种来源混用：</p>
+    <ul>
+      <li><strong>颜色</strong>：Tailwind 灰阶与 Bootstrap / GitHub Primer / Ant 的色值混用，同一语义存在多个近似但不同的值（灰阶同时有 <code>#6b7280</code> 和 <code>#64748b</code>），主色有 4 种蓝、3 种红；</li>
+      <li><strong>字体</strong>：等宽字体有 10+ 种手写栈（<code>'SF Mono'</code>、<code>ui-monospace</code>、<code>Monaco</code>…）；</li>
+      <li><strong>图标</strong>：字号 25+ 种散值（0.55rem 到 2rem），同档位抖动（0.7 / 0.72 / 0.78 并存）；</li>
+      <li><strong>间距</strong>：<code>--space-*</code> token 定义了却零引用，全站仍用魔法值。</li>
+    </ul>
+    <p>现已全部折叠为 token（<code>--brand-*</code> / <code>--gray-*</code> / <code>--font-mono</code> / 新增 <code>--icon-xs</code> 到 <code>--icon-3xl</code> 七档刻度 / 启用 <code>--space-*</code>）。全部是<strong>保值映射，视觉零变化</strong>——改的只是「值的来源」，不是「值本身」。</p>
+    <p>这里有个教训值得记：第一版我顺手把中等亮度的装饰性文字色也映射到浅色 token，结果暗色主题下那些 token 是 12% 透明度，文字直接隐形了。发现后<strong>整体回滚重做</strong>，改成只折叠无歧义的部分（重复灰阶 + 强语义色），浅底和中间调保持字面值。</p>
+    <blockquote>统一风格这件事，<strong>保值优先于彻底</strong>。宁可少统一几处，也不要为了「干净」引入可见性回归。</blockquote>
+
+    <h2>顺带修掉的几个交互问题</h2>
+    <ul>
+      <li><strong>弹窗背景可滚动</strong>：弹窗是全屏遮罩，但背后内容区仍能滚轮滚动。已补背景滚动锁——锁的是真正的滚动容器（<code>.content-area</code>），而不是 <code>body</code>（后者本来就不滚动，锁了没用）。</li>
+      <li><strong>图片灯箱监听器泄漏</strong>：反复打开大图会重复绑定 Esc 监听；且直接访问节点没有空值保护。现补空值守卫 + 防重复绑定标志。</li>
+      <li><strong>错误提示不变红</strong>：知识库页 4 处引用了一个只在某个局部作用域定义的 <code>--danger</code>，不是 <code>:root</code> 全局变量 → CSS 声明失效 → 错误文字继承默认色。改用规范的 <code>--brand-danger</code>。</li>
+      <li><strong>死信搜索框是死按钮</strong>：模板引用了 <code>debouncedLoadDeadLettersPage</code>，代码里根本没有这个函数。已补上。</li>
+    </ul>
+
+    <h2>门禁</h2>
+    <ul>
+      <li>前端测试全量通过：132 项（含新增 4 项针对构建产物的回归）。</li>
+      <li>ESLint、bundle 冒烟、运行时冒烟、依赖一致性（0 告警）、ruff 全路径通过。</li>
+      <li>新增的门禁与测试都做过「注入故障 → 确认报错」验证，确保不是空跑。</li>
+    </ul>
+
+    <h2>升级注意</h2>
+    <p>无破坏性变更、无新增配置、无数据迁移。纯前端改动。若浏览器缓存了旧 bundle，升级后建议强制刷新一次。</p>
+
+    <h2>延伸阅读</h2>
+    <ul>
+      <li><a href="https://github.com/0x0021/Linkora/blob/main/docs/CHANGELOG.md" target="_blank" rel="noopener">完整变更日志（CHANGELOG）</a>——本次全部变更条目</li>
+      <li><a href="https://github.com/0x0021/Linkora/releases/tag/v0.6.2" target="_blank" rel="noopener">GitHub Release v0.6.2</a></li>
+      <li><a href="https://github.com/0x0021/Linkora" target="_blank" rel="noopener">项目源码</a>——<a href="https://github.com/0x0021" target="_blank" rel="noopener">GitHub</a></li>
+    </ul>
+  </article>
+  <footer class="post-footer">
+    <a class="post-back" href="../index.html">← 返回博客</a>
+  </footer>
+</main>
+<script src="../assets/main.js"></script>
+</body>
+</html>

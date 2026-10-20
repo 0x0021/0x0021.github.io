@@ -192,6 +192,8 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
   .card{background:linear-gradient(180deg,var(--card),var(--card2));border:1px solid var(--line);
     border-radius:var(--radius);padding:15px;display:flex;flex-direction:column;gap:10px;transition:.18s;position:relative;overflow:hidden}
   .card:hover{transform:translateY(-3px);border-color:var(--accent);box-shadow:var(--shadow)}
+  .grid>.card{height:100%}
+  .card .desc{margin-top:auto}
   .card .head{display:flex;gap:12px;align-items:center}
   .icon{flex:0 0 46px;width:46px;height:46px;border-radius:12px;background:var(--bg);border:1px solid var(--line);
     display:flex;align-items:center;justify-content:center;font-size:24px;overflow:hidden}

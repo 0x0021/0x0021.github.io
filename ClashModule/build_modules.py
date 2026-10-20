@@ -3,10 +3,10 @@
 """
 从可莉的插件中心 (https://hub.kelee.one) 的 list.json 生成 ClashModule 页面。
 
-关键设计：免维护 / 自动同步 / 全站缓存
-  - 整份模块清单在构建时已完整内联进 index.html，站点本身就是缓存，不写入任何用户本地存储；
-  - 页面在浏览器加载时，先用内置快照秒开，再实时 fetch https://hub.kelee.one/list.json；
-  - 拉取成功则用最新数据重渲染（真正自动同步），失败则保留站点内置快照并提示构建时间；
+关键设计：免维护 / 自动同步
+  - index.html 内联一份「原始快照」(list.json 的 lists/notice/name) 作为离线兜底；
+  - 页面在浏览器加载时，先渲染快照（秒开），再实时 fetch https://hub.kelee.one/list.json；
+  - 拉取成功则用最新数据重渲染（真正自动同步），失败则保留快照并提示；
   - 因此无需任何定时任务、无需重新生成或推送，数据始终跟随源站更新。
 
 用法:
@@ -19,7 +19,6 @@
 """
 import json
 import os
-import datetime
 from collections import Counter
 from urllib.parse import urlparse, parse_qs, quote
 
@@ -92,14 +91,12 @@ def main():
     print(f"共收集 {len(modules)} 个模块；热门标签 {len(tags)} 个")
 
     # 内联到页面的是「原始快照」(lists/notice/name)，前端负责转换 + 实时拉取
-    # 关键：整份清单在构建时已完整写入 index.html，站点本身即全站缓存，不写任何用户本地存储
     snapshot = {
         "lists": items,
         "notice": data.get("notice", []),
         "name": data.get("name", SRC_NAME),
         "srcUrl": SRC_URL,
         "liveUrl": LIVE_JSON,
-        "buildDate": datetime.datetime.now().strftime("%Y-%m-%d %H:%M"),
     }
     build_html(here, snapshot)
 
@@ -514,10 +511,28 @@ function fmtTime(d){
   const p=n=>String(n).padStart(2,'0');
   return `${d.getFullYear()}-${p(d.getMonth()+1)}-${p(d.getDate())} ${p(d.getHours())}:${p(d.getMinutes())}`;
 }
+function agoText(ts){
+  const sec=Math.round((Date.now()-ts)/1000);
+  if(sec<60) return `${sec} 秒前`;
+  if(sec<3600) return `${Math.floor(sec/60)} 分钟前`;
+  return `${Math.floor(sec/3600)} 小时前`;
+}
 
-/* 全站缓存：整份模块清单在构建时已完整内联进 index.html，站点本身就是缓存，
-   不写入任何用户本地存储（无 localStorage / sessionStorage）。
-   运行时仅在打开页面时尝试拉取源站最新数据，失败则回退到站点内置快照。 */
+/* 本地缓存：10 分钟内不重复请求源站，优先用缓存，降低刷新时的请求频次 */
+const CACHE_KEY='clashmod-cache';
+const CACHE_TTL=10*60*1000; // 10 分钟
+function readCache(){
+  try{
+    const raw=localStorage.getItem(CACHE_KEY);
+    if(!raw) return null;
+    const obj=JSON.parse(raw);
+    if(!obj||!Array.isArray(obj.lists)||!obj.ts) return null;
+    return obj;
+  }catch(e){ return null; }
+}
+function writeCache(lists){
+  try{ localStorage.setItem(CACHE_KEY,JSON.stringify({lists,ts:Date.now()})); }catch(e){}
+}
 function applyModules(lists,extra){
   const live=transformLists(lists);
   if(!live.length) return false;
@@ -528,7 +543,7 @@ function applyModules(lists,extra){
 }
 
 /* 实时同步源站：源站 CORS 头为重复的 "*, *"（非法），直连必然被浏览器拒绝，
-   因此走支持 CORS 的代理：jina（稳定）→ allorigins（备用）→ 站点内置快照兜底 */
+   因此走支持 CORS 的代理：jina（稳定）→ allorigins（备用）→ 内置快照兜底 */
 const LIVE_URL=SNAPSHOT.liveUrl||'https://hub.kelee.one/list.json';
 const LIVE_SOURCES=[
   {url:'https://r.jina.ai/'+LIVE_URL, parse:async r=>{
@@ -550,6 +565,7 @@ async function syncLive(){
       const data=await src.parse(res);
       const lists=data.lists||[];
       if(!lists.length) throw new Error('empty');
+      writeCache(lists);
       applyModules(lists,{cls:'ok',text:`已实时同步 ${MODULES.length} 个模块（${fmtTime(new Date())}）${i>0?' · 经代理':''}`});
       return true;
     }catch(err){ /* 换下一个源 */ }
@@ -558,10 +574,20 @@ async function syncLive(){
 }
 
 (async function init(){
-  // 站点内置快照（index.html 内联）已先行渲染，此处仅尝试刷新到最新
-  const ok=await syncLive();
-  if(!ok){
-    setSync('warn',`当前使用站点内置缓存（构建于 ${SNAPSHOT.buildDate||'—'}，源站暂不可达）`);
+  const cache=readCache();
+  if(cache && (Date.now()-cache.ts) < CACHE_TTL){
+    // 10 分钟内的缓存：直接用，不再请求源站
+    applyModules(cache.lists,{cls:'ok',text:`已使用本地缓存（${agoText(cache.ts)}同步，10 分钟内不再请求源站）`});
+  }else{
+    // 缓存过期/缺失：请求源站；失败则回退到本地缓存，再不行才用内置快照
+    const ok=await syncLive();
+    if(!ok){
+      if(cache && cache.lists.length){
+        applyModules(cache.lists,{cls:'warn',text:`源站暂不可达，已使用本地缓存（${agoText(cache.ts)}同步）`});
+      }else{
+        setSync('warn','当前使用内置缓存快照（源站与代理均不可达，仍为最新已知数据）');
+      }
+    }
   }
 })();
 </script>

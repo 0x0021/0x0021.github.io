@@ -123,12 +123,21 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
     --line:#2a3245; --text:#e7ebf3; --muted:#9aa6bd; --accent:#6c8cff;
     --accent2:#48d1a0; --radius:16px; --shadow:0 8px 30px rgba(0,0,0,.35);
     --maxw:1080px;
+    --deco1:rgba(108,140,255,.14); --deco2:rgba(72,209,160,.09);
+    --glow1:rgba(108,140,255,.16); --glow2:rgba(72,209,160,.10); --glow3:rgba(108,140,255,.18);
+  }
+  :root[data-theme="light"]{
+    --bg:#eef1f7; --bg2:#ffffff; --card:#ffffff; --card2:#f3f6fc;
+    --line:#dde3ee; --text:#16202e; --muted:#5a6479; --accent:#3b5bff;
+    --accent2:#0f9d76; --shadow:0 8px 30px rgba(20,30,60,.12);
+    --deco1:rgba(59,91,255,.10); --deco2:rgba(15,157,118,.07);
+    --glow1:rgba(59,91,255,.13); --glow2:rgba(15,157,118,.09); --glow3:rgba(59,91,255,.15);
   }
   *{box-sizing:border-box}
   html,body{margin:0;padding:0}
   body{
-    background:radial-gradient(1200px 600px at 80% -10%, #1d2740 0%, transparent 60%),
-               radial-gradient(900px 500px at -10% 10%, #1a2236 0%, transparent 55%),
+    background:radial-gradient(1200px 600px at 80% -10%, var(--deco1) 0%, transparent 60%),
+               radial-gradient(900px 500px at -10% 10%, var(--deco2) 0%, transparent 55%),
                var(--bg);
     color:var(--text);
     font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
@@ -139,10 +148,10 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
 
   .hero{
     text-align:center;padding:34px 16px 26px;margin-bottom:20px;
-    background:linear-gradient(135deg,rgba(108,140,255,.16),rgba(72,209,160,.10));
+    background:linear-gradient(135deg,var(--glow1),var(--glow2));
     border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);position:relative;overflow:hidden;
   }
-  .hero::after{content:"";position:absolute;inset:0;background:radial-gradient(400px 200px at 30% 0%,rgba(108,140,255,.18),transparent 70%);pointer-events:none;}
+  .hero::after{content:"";position:absolute;inset:0;background:radial-gradient(400px 200px at 30% 0%,var(--glow3),transparent 70%);pointer-events:none;}
   .hero h1{margin:0 0 8px;font-size:clamp(22px,5vw,32px);font-weight:800;letter-spacing:.5px;}
   .hero p{margin:6px auto 0;color:var(--muted);max-width:720px;font-size:14px;}
   .src{display:inline-flex;gap:6px;align-items:center;margin-top:14px;font-size:12.5px;color:var(--muted);
@@ -216,17 +225,39 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
     opacity:0;pointer-events:none;transition:.25s;z-index:99;box-shadow:var(--shadow)}
   #toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 
+  .theme-switch{position:fixed;top:14px;right:14px;z-index:50;display:flex;gap:2px;padding:3px;
+    background:var(--bg2);border:1px solid var(--line);border-radius:999px;box-shadow:var(--shadow)}
+  .theme-switch button{font:inherit;font-size:12px;font-weight:600;color:var(--muted);background:transparent;
+    border:none;padding:6px 11px;border-radius:999px;cursor:pointer;transition:.15s;white-space:nowrap}
+  .theme-switch button.active{background:var(--accent);color:#fff}
+  .theme-switch button:hover:not(.active){color:var(--text)}
+
   @media (max-width:560px){
     .wrap{padding:16px 12px calc(36px + env(safe-area-inset-bottom))}
     .grid{grid-template-columns:1fr;gap:12px}
     .hero{padding:28px 14px 22px}
     .search{flex:1 1 100%}
     .btn.primary{flex:1 1 100%}
+    .theme-switch{top:10px;right:10px}
+    .theme-switch button{padding:5px 9px}
   }
 </style>
+<script>
+/* 尽早应用主题，避免浅色用户看到深色闪烁；默认「自动」跟随系统 */
+(function(){try{
+  var m=localStorage.getItem('clashmod-theme')||'auto';
+  var t=m==='auto'?(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):m;
+  document.documentElement.dataset.theme=t;
+}catch(e){}})();
+</script>
 </head>
 <body>
   <div class="wrap">
+    <div class="theme-switch" id="themeSwitch" role="group" aria-label="主题切换">
+      <button data-theme="light">日间</button>
+      <button data-theme="dark">夜间</button>
+      <button data-theme="auto">自动</button>
+    </div>
     <header class="hero">
       <h1>⚡ Clash / Loon 模块导入</h1>
       <p>从「可莉的插件中心」收集的代理模块资源。点击「导入 Clash」在浏览器中拉起 Clash 客户端安装，或点「Loon」用 Loon 直接导入。</p>
@@ -319,6 +350,27 @@ const noticeEl=document.getElementById('notice');
 const syncEl=document.getElementById('sync');
 const syncText=document.getElementById('syncText');
 const SRC_NAME=SNAPSHOT.name||'可莉的插件中心';
+
+/* ===== 主题切换：日间 / 夜间 / 自动（默认自动，跟随系统，localStorage 记忆） ===== */
+const THEME_KEY='clashmod-theme';
+const themeSwitch=document.getElementById('themeSwitch');
+let currentTheme='auto';
+try{ currentTheme=localStorage.getItem(THEME_KEY)||'auto'; }catch(e){}
+const prefersDark=window.matchMedia('(prefers-color-scheme: dark)');
+function applyTheme(mode){
+  document.documentElement.dataset.theme=(mode==='auto')?(prefersDark.matches?'dark':'light'):mode;
+}
+function syncThemeButtons(){
+  [...themeSwitch.children].forEach(b=>b.classList.toggle('active',b.dataset.theme===currentTheme));
+}
+applyTheme(currentTheme); syncThemeButtons();
+themeSwitch.addEventListener('click',e=>{
+  const btn=e.target.closest('button'); if(!btn) return;
+  currentTheme=btn.dataset.theme;
+  try{ localStorage.setItem(THEME_KEY,currentTheme); }catch(err){}
+  applyTheme(currentTheme); syncThemeButtons();
+});
+prefersDark.addEventListener?.('change',()=>{ if(currentTheme==='auto') applyTheme('auto'); });
 
 totalEl.textContent=MODULES.length;
 
@@ -427,23 +479,42 @@ render();
 
 function setSync(cls,text){ syncEl.className='sync '+cls; syncText.textContent=text; }
 
+/* 实时同步：源站的 CORS 头为重复的 "*, *"（非法），浏览器会直接拒绝，
+   因此依次尝试 直连 → CORS 代理 → 内置快照兜底 */
+const LIVE_URL=SNAPSHOT.liveUrl||'https://hub.kelee.one/list.json';
+const LIVE_SOURCES=[
+  {url:LIVE_URL, parse:r=>r.json()},
+  {url:'https://api.allorigins.win/raw?url='+encodeURIComponent(LIVE_URL), parse:r=>r.json()},
+  {url:'https://r.jina.ai/'+LIVE_URL, parse:async r=>{
+    const t=await r.text();
+    const i=t.indexOf('Markdown Content:');
+    const s=i>=0?t.indexOf('{',i):t.indexOf('{');
+    if(s<0) throw new Error('no json');
+    return JSON.parse(t.slice(s));
+  }}
+];
+
 (async function syncLive(){
-  try{
-    const res=await fetch(SNAPSHOT.liveUrl||'https://hub.kelee.one/list.json',{cache:'no-cache'});
-    if(!res.ok) throw new Error('HTTP '+res.status);
-    const data=await res.json();
-    const live=transformLists(data.lists||[]);
-    if(!live.length) throw new Error('empty');
-    MODULES=live;
-    TOP_TAGS=computeTopTags(MODULES,16);
-    buildChips();
-    totalEl.textContent=MODULES.length;
-    render();
-    const d=new Date();
-    setSync('ok',`已实时同步 ${live.length} 个模块（${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')} ${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}）`);
-  }catch(err){
-    setSync('warn','当前使用内置缓存快照（源站暂不可达，仍为最新已知数据）');
+  for(let i=0;i<LIVE_SOURCES.length;i++){
+    const src=LIVE_SOURCES[i];
+    try{
+      const res=await fetch(src.url,{cache:'no-cache'});
+      if(!res.ok) throw new Error('HTTP '+res.status);
+      const data=await src.parse(res);
+      const live=transformLists(data.lists||[]);
+      if(!live.length) throw new Error('empty');
+      MODULES=live;
+      TOP_TAGS=computeTopTags(MODULES,16);
+      buildChips();
+      totalEl.textContent=MODULES.length;
+      render();
+      const d=new Date();
+      const ts=`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')} ${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}`;
+      setSync('ok',`已实时同步 ${live.length} 个模块（${ts}）${i>0?' · 经代理':''}`);
+      return;
+    }catch(err){ /* 换下一个源 */ }
   }
+  setSync('warn','当前使用内置缓存快照（源站与代理均不可达，仍为最新已知数据）');
   })();
 </script>
 </body>

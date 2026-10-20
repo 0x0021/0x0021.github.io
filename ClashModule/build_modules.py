@@ -126,6 +126,7 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
     --deco1:rgba(108,140,255,.14); --deco2:rgba(72,209,160,.09);
     --glow1:rgba(108,140,255,.16); --glow2:rgba(72,209,160,.10); --glow3:rgba(108,140,255,.18);
     --on-accent:#0b0e16; --on-accent2:#06281f;
+    --notice-bg:rgba(255,182,72,.08); --notice-text:#e8b478; --notice-line:rgba(255,182,72,.22);
   }
   :root[data-theme="light"]{
     --bg:#eef1f7; --bg2:#ffffff; --card:#ffffff; --card2:#f3f6fc;
@@ -134,6 +135,7 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
     --deco1:rgba(59,91,255,.10); --deco2:rgba(15,157,118,.07);
     --glow1:rgba(59,91,255,.13); --glow2:rgba(15,157,118,.09); --glow3:rgba(59,91,255,.15);
     --on-accent:#ffffff; --on-accent2:#ffffff;
+    --notice-bg:#fff7e8; --notice-text:#8a5b12; --notice-line:#f0ddb5;
   }
   *{box-sizing:border-box}
   html,body{margin:0;padding:0}
@@ -167,8 +169,8 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
   .sync.load .dot{background:var(--accent);animation:pulse 1s infinite}
   @keyframes pulse{0%,100%{opacity:.4}50%{opacity:1}}
 
-  .notice{margin:0 0 18px;padding:12px 14px;border-radius:12px;border:1px solid var(--line);
-    background:rgba(255,182,72,.08);color:#ffcf8a;font-size:12.5px;line-height:1.6}
+  .notice{margin:0 0 18px;padding:12px 14px;border-radius:12px;border:1px solid var(--notice-line);
+    background:var(--notice-bg);color:var(--notice-text);font-size:12.5px;line-height:1.6}
   .notice div{margin:2px 0}
 
   .controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:10px;}
@@ -201,13 +203,17 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
   .tags{display:flex;gap:6px;flex-wrap:wrap}
   .tag{font-size:11px;color:var(--accent2);background:rgba(72,209,160,.10);border:1px solid rgba(72,209,160,.25);
     padding:2px 8px;border-radius:7px;white-space:nowrap}
-  .acts{display:flex;gap:8px;margin-top:2px;flex-wrap:wrap}
-  .btn{flex:1 1 auto;text-align:center;padding:10px 10px;border-radius:11px;font-size:13.5px;font-weight:600;
+  .acts{display:flex;flex-direction:column;gap:8px;margin-top:2px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;text-align:center;
+    padding:10px 10px;border-radius:11px;font-size:13.5px;font-weight:600;
     cursor:pointer;border:1px solid var(--line);background:var(--bg2);color:var(--text);transition:.15s;min-width:0}
-  .btn.primary{background:linear-gradient(135deg,var(--accent),#7d94ff);color:var(--on-accent);border-color:transparent;flex:2 1 auto}
+  .btn svg{flex:0 0 auto}
+  .btn.primary{width:100%;background:linear-gradient(135deg,var(--accent),#7d94ff);color:var(--on-accent);border-color:transparent}
   .btn.primary:hover{filter:brightness(1.07)}
   .btn:hover{border-color:var(--accent)}
-  .btn.ghost{flex:0 0 auto;padding:10px 12px}
+  .btn.secondary{flex:1 1 0;font-size:12.8px;color:var(--muted)}
+  .btn.secondary:hover{color:var(--text)}
+  .sec-row{display:flex;gap:8px}
 
   .empty{text-align:center;color:var(--muted);padding:50px 10px;font-size:15px}
 
@@ -241,7 +247,7 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
     .grid{grid-template-columns:1fr;gap:12px}
     .hero{padding:28px 14px 22px}
     .search{flex:1 1 100%}
-    .btn.primary{flex:1 1 100%}
+    .btn.secondary{font-size:12.5px;padding:9px 6px}
     .theme-switch{top:10px;right:10px}
     .theme-switch button{padding:5px 9px}
   }
@@ -430,9 +436,20 @@ function card(m){
     <div class="desc">${esc(m.desc)||'—'}</div>
     <div class="tags">${tags}</div>
     <div class="acts">
-      <a class="btn primary" href="${esc(m.install)}">⚡ 导入 Clash</a>
-      <a class="btn" href="${esc(m.loon)}">Loon</a>
-      <button class="btn ghost" data-copy="${esc(m.lpx)}" title="复制资源链接">⧉</button>
+      <a class="btn primary" href="${esc(m.install)}">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M4 19h16"/></svg>
+        导入 Clash
+      </a>
+      <div class="sec-row">
+        <a class="btn secondary" href="${esc(m.loon)}">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4.5 13.5H11L10 22l8.5-11.5H12z"/></svg>
+          Loon 导入
+        </a>
+        <button class="btn secondary" data-copy="${esc(m.lpx)}" title="复制资源链接">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2.5"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          复制链接
+        </button>
+      </div>
     </div>
   </div>`;
 }

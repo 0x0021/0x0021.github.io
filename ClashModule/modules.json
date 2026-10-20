@@ -1,0 +1,192 @@
+[
+  {
+    "name": "Sample Config",
+    "file": "Clash_Sample_Config_By_iKeLee.yaml",
+    "client": "Clash",
+    "path": "Tool/Clash/Config/Clash_Sample_Config_By_iKeLee.yaml",
+    "raw": "https://raw.githubusercontent.com/luestr/ProxyResource/main/Tool/Clash/Config/Clash_Sample_Config_By_iKeLee.yaml",
+    "install": "hako://install-module?url=https%3A%2F%2Fraw.githubusercontent.com%2Fluestr%2FProxyResource%2Fmain%2FTool%2FClash%2FConfig%2FClash_Sample_Config_By_iKeLee.yaml",
+    "size": 8646,
+    "sizeText": "8.4 KB"
+  },
+  {
+    "name": "Adblock No Proxy Config",
+    "file": "Loon_Adblock_No_Proxy_Config_By_iKeLee.lcf",
+    "client": "Loon",
+    "path": "Tool/Loon/Lcf/zh-CN/Loon_Adblock_No_Proxy_Config_By_iKeLee.lcf",
+    "raw": "https://raw.githubusercontent.com/luestr/ProxyResource/main/Tool/Loon/Lcf/zh-CN/Loon_Adblock_No_Proxy_Config_By_iKeLee.lcf",
+    "install": "hako://install-module?url=https%3A%2F%2Fraw.githubusercontent.com%2Fluestr%2FProxyResource%2Fmain%2FTool%2FLoon%2FLcf%2Fzh-CN%2FLoon_Adblock_No_Proxy_Config_By_iKeLee.lcf",
+    "size": 2257,
+    "sizeText": "2.2 KB"
+  },
+  {
+    "name": "Advanced Config",
+    "file": "Loon_Advanced_Config_By_iKeLee.lcf",
+    "client": "Loon",
+    "path": "Tool/Loon/Lcf/en-US/Loon_Advanced_Config_By_iKeLee.lcf",
+    "raw": "https://raw.githubusercontent.com/luestr/ProxyResource/main/Tool/Loon/Lcf/en-US/Loon_Advanced_Config_By_iKeLee.lcf",
+    "install": "hako://install-module?url=https%3A%2F%2Fraw.githubusercontent.com%2Fluestr%2FProxyResource%2Fmain%2FTool%2FLoon%2FLcf%2Fen-US%2FLoon_Advanced_Config_By_iKeLee.lcf",
+    "size": 10937,
+    "sizeText": "10.7 KB"
+  },
+  {
+    "name": "Advanced Config",
+    "file": "Loon_Advanced_Config_By_iKeLee.lcf",
+    "client": "Loon",
+    "path": "Tool/Loon/Lcf/zh-CN/Loon_Advanced_Config_By_iKeLee.lcf",
+    "raw": "https://raw.githubusercontent.com/luestr/ProxyResource/main/Tool/Loon/Lcf/zh-CN/Loon_Advanced_Config_By_iKeLee.lcf",
+    "install": "hako://install-module?url=https%3A%2F%2Fraw.githubusercontent.com%2Fluestr%2FProxyResource%2Fmain%2FTool%2FLoon%2FLcf%2Fzh-CN%2FLoon_Advanced_Config_By_iKeLee.lcf",
+    "size": 9891,
+    "sizeText": "9.7 KB"
+  },
+  {
+    "name": "Advanced Config(Full Type Policy Group)",
+    "file": "Loon_Advanced_Config(Full_Type_Policy_Group)_By_iKeLee.lcf",
+    "client": "Loon",
+    "path": "Tool/Loon/Lcf/zh-CN/Loon_Advanced_Config(Full_Type_Policy_Group)_By_iKeLee.lcf",
+    "raw": "https://raw.githubusercontent.com/luestr/ProxyResource/main/Tool/Loon/Lcf/zh-CN/Loon_Advanced_Config(Full_Type_Policy_Group)_By_iKeLee.lcf",
+    "install": "hako://install-module?url=https%3A%2F%2Fraw.githubusercontent.com%2Fluestr%2FProxyResource%2Fmain%2FTool%2FLoon%2FLcf%2Fzh-CN%2FLoon_Advanced_Config%28Full_Type_Policy_Group%29_By_iKeLee.lcf",
+    "size": 12903,
+    "sizeText": "12.6 KB"
+  },
+  {
+    "name": "Auto Select Config",
+    "file": "Loon_Auto_Select_Config_By_iKeLee.lcf",
+    "client": "Loon",
+    "path": "Tool/Loon/Lcf/en-US/Loon_Auto_Select_Config_By_iKeLee.lcf",
+    "raw": "https://raw.githubusercontent.com/luestr/ProxyResource/main/Tool/Loon/Lcf/en-US/Loon_Auto_Select_Config_By_iKeLee.lcf",
+    "install": "hako://install-module?url=https%3A%2F%2Fraw.githubusercontent.com%2Fluestr%2FProxyResource%2Fmain%2FTool%2FLoon%2FLcf%2Fen-US%2FLoon_Auto_Select_Config_By_iKeLee.lcf",
+    "size": 7385,
+    "sizeText": "7.2 KB"
+  },
+  {
+    "name": "Auto Select Config",
+    "file": "Loon_Auto_Select_Config_By_iKeLee.lcf",
+    "client": "Loon",
+    "path": "Tool/Loon/Lcf/zh-CN/Loon_Auto_Select_Config_By_iKeLee.lcf",
+    "raw": "https://raw.githubusercontent.com/luestr/ProxyResource/main/Tool/Loon/Lcf/zh-CN/Loon_Auto_Select_Config_By_iKeLee.lcf",
+    "install": "hako://install-module?url=https%3A%2F%2Fraw.githubusercontent.com%2Fluestr%2FProxyResource%2Fmain%2FTool%2FLoon%2FLcf%2Fzh-CN%2FLoon_Auto_Select_Config_By_iKeLee.lcf",
+    "size": 6918,
+    "sizeText": "6.8 KB"
+  },
+  {
+    "name": "Beginner Config",
+    "file": "Loon_Beginner_Config_By_iKeLee.lcf",
+    "client": "Loon",
+    "path": "Tool/Loon/Lcf/en-US/Loon_Beginner_Config_By_iKeLee.lcf",
+    "raw": "https://raw.githubusercontent.com/luestr/ProxyResource/main/Tool/Loon/Lcf/en-US/Loon_Beginner_Config_By_iKeLee.lcf",
+    "install": "hako://install-module?url=https%3A%2F%2Fraw.githubusercontent.com%2Fluestr%2FProxyResource%2Fmain%2FTool%2FLoon%2FLcf%2Fen-US%2FLoon_Beginner_Config_By_iKeLee.lcf",
+    "size": 4696,
+    "sizeText": "4.6 KB"
+  },
+  {
+    "name": "Beginner Config",
+    "file": "Loon_Beginner_Config_By_iKeLee.lcf",
+    "client": "Loon",
+    "path": "Tool/Loon/Lcf/zh-CN/Loon_Beginner_Config_By_iKeLee.lcf",
+    "raw": "https://raw.githubusercontent.com/luestr/ProxyResource/main/Tool/Loon/Lcf/zh-CN/Loon_Beginner_Config_By_iKeLee.lcf",
+    "install": "hako://install-module?url=https%3A%2F%2Fraw.githubusercontent.com%2Fluestr%2FProxyResource%2Fmain%2FTool%2FLoon%2FLcf%2Fzh-CN%2FLoon_Beginner_Config_By_iKeLee.lcf",
+    "size": 3579,
+    "sizeText": "3.5 KB"
+  },
+  {
+    "name": "Debug Config",
+    "file": "Loon_Debug_Config_By_iKeLee.lcf",
+    "client": "Loon",
+    "path": "Tool/Loon/Lcf/en-US/Loon_Debug_Config_By_iKeLee.lcf",
+    "raw": "https://raw.githubusercontent.com/luestr/ProxyResource/main/Tool/Loon/Lcf/en-US/Loon_Debug_Config_By_iKeLee.lcf",
+    "install": "hako://install-module?url=https%3A%2F%2Fraw.githubusercontent.com%2Fluestr%2FProxyResource%2Fmain%2FTool%2FLoon%2FLcf%2Fen-US%2FLoon_Debug_Config_By_iKeLee.lcf",
+    "size": 2304,
+    "sizeText": "2.2 KB"
+  },
+  {
+    "name": "Debug Config",
+    "file": "Loon_Debug_Config_By_iKeLee.lcf",
+    "client": "Loon",
+    "path": "Tool/Loon/Lcf/zh-CN/Loon_Debug_Config_By_iKeLee.lcf",
+    "raw": "https://raw.githubusercontent.com/luestr/ProxyResource/main/Tool/Loon/Lcf/zh-CN/Loon_Debug_Config_By_iKeLee.lcf",
+    "install": "hako://install-module?url=https%3A%2F%2Fraw.githubusercontent.com%2Fluestr%2FProxyResource%2Fmain%2FTool%2FLoon%2FLcf%2Fzh-CN%2FLoon_Debug_Config_By_iKeLee.lcf",
+    "size": 2042,
+    "sizeText": "2.0 KB"
+  },
+  {
+    "name": "Manual Select Config",
+    "file": "Loon_Manual_Select_Config_By_iKeLee.lcf",
+    "client": "Loon",
+    "path": "Tool/Loon/Lcf/en-US/Loon_Manual_Select_Config_By_iKeLee.lcf",
+    "raw": "https://raw.githubusercontent.com/luestr/ProxyResource/main/Tool/Loon/Lcf/en-US/Loon_Manual_Select_Config_By_iKeLee.lcf",
+    "install": "hako://install-module?url=https%3A%2F%2Fraw.githubusercontent.com%2Fluestr%2FProxyResource%2Fmain%2FTool%2FLoon%2FLcf%2Fen-US%2FLoon_Manual_Select_Config_By_iKeLee.lcf",
+    "size": 6620,
+    "sizeText": "6.5 KB"
+  },
+  {
+    "name": "Manual Select Config",
+    "file": "Loon_Manual_Select_Config_By_iKeLee.lcf",
+    "client": "Loon",
+    "path": "Tool/Loon/Lcf/zh-CN/Loon_Manual_Select_Config_By_iKeLee.lcf",
+    "raw": "https://raw.githubusercontent.com/luestr/ProxyResource/main/Tool/Loon/Lcf/zh-CN/Loon_Manual_Select_Config_By_iKeLee.lcf",
+    "install": "hako://install-module?url=https%3A%2F%2Fraw.githubusercontent.com%2Fluestr%2FProxyResource%2Fmain%2FTool%2FLoon%2FLcf%2Fzh-CN%2FLoon_Manual_Select_Config_By_iKeLee.lcf",
+    "size": 5730,
+    "sizeText": "5.6 KB"
+  },
+  {
+    "name": "Return to China Config",
+    "file": "Loon_Return_to_China_Config_By_iKeLee.lcf",
+    "client": "Loon",
+    "path": "Tool/Loon/Lcf/zh-CN/Loon_Return_to_China_Config_By_iKeLee.lcf",
+    "raw": "https://raw.githubusercontent.com/luestr/ProxyResource/main/Tool/Loon/Lcf/zh-CN/Loon_Return_to_China_Config_By_iKeLee.lcf",
+    "install": "hako://install-module?url=https%3A%2F%2Fraw.githubusercontent.com%2Fluestr%2FProxyResource%2Fmain%2FTool%2FLoon%2FLcf%2Fzh-CN%2FLoon_Return_to_China_Config_By_iKeLee.lcf",
+    "size": 4551,
+    "sizeText": "4.4 KB"
+  },
+  {
+    "name": "tvOS Config",
+    "file": "Loon_tvOS_Config_By_iKeLee.lcf",
+    "client": "Loon",
+    "path": "Tool/Loon/Lcf/en-US/Loon_tvOS_Config_By_iKeLee.lcf",
+    "raw": "https://raw.githubusercontent.com/luestr/ProxyResource/main/Tool/Loon/Lcf/en-US/Loon_tvOS_Config_By_iKeLee.lcf",
+    "install": "hako://install-module?url=https%3A%2F%2Fraw.githubusercontent.com%2Fluestr%2FProxyResource%2Fmain%2FTool%2FLoon%2FLcf%2Fen-US%2FLoon_tvOS_Config_By_iKeLee.lcf",
+    "size": 8870,
+    "sizeText": "8.7 KB"
+  },
+  {
+    "name": "tvOS Config",
+    "file": "Loon_tvOS_Config_By_iKeLee.lcf",
+    "client": "Loon",
+    "path": "Tool/Loon/Lcf/zh-CN/Loon_tvOS_Config_By_iKeLee.lcf",
+    "raw": "https://raw.githubusercontent.com/luestr/ProxyResource/main/Tool/Loon/Lcf/zh-CN/Loon_tvOS_Config_By_iKeLee.lcf",
+    "install": "hako://install-module?url=https%3A%2F%2Fraw.githubusercontent.com%2Fluestr%2FProxyResource%2Fmain%2FTool%2FLoon%2FLcf%2Fzh-CN%2FLoon_tvOS_Config_By_iKeLee.lcf",
+    "size": 8838,
+    "sizeText": "8.6 KB"
+  },
+  {
+    "name": "Advanced Config(Full Type Policy Group)",
+    "file": "Quantumult_X_Advanced_Config(Full_Type_Policy_Group)_By_iKeLee.conf",
+    "client": "Quantumult X",
+    "path": "Tool/QuantumultX/Config/Quantumult_X_Advanced_Config(Full_Type_Policy_Group)_By_iKeLee.conf",
+    "raw": "https://raw.githubusercontent.com/luestr/ProxyResource/main/Tool/QuantumultX/Config/Quantumult_X_Advanced_Config(Full_Type_Policy_Group)_By_iKeLee.conf",
+    "install": "hako://install-module?url=https%3A%2F%2Fraw.githubusercontent.com%2Fluestr%2FProxyResource%2Fmain%2FTool%2FQuantumultX%2FConfig%2FQuantumult_X_Advanced_Config%28Full_Type_Policy_Group%29_By_iKeLee.conf",
+    "size": 9646,
+    "sizeText": "9.4 KB"
+  },
+  {
+    "name": "Auto Select Config",
+    "file": "Quantumult_X_Auto_Select_Config_By_iKeLee.conf",
+    "client": "Quantumult X",
+    "path": "Tool/QuantumultX/Config/Quantumult_X_Auto_Select_Config_By_iKeLee.conf",
+    "raw": "https://raw.githubusercontent.com/luestr/ProxyResource/main/Tool/QuantumultX/Config/Quantumult_X_Auto_Select_Config_By_iKeLee.conf",
+    "install": "hako://install-module?url=https%3A%2F%2Fraw.githubusercontent.com%2Fluestr%2FProxyResource%2Fmain%2FTool%2FQuantumultX%2FConfig%2FQuantumult_X_Auto_Select_Config_By_iKeLee.conf",
+    "size": 4553,
+    "sizeText": "4.4 KB"
+  },
+  {
+    "name": "TestFlight",
+    "file": "TestFlight.snippet",
+    "client": "Quantumult X",
+    "path": "Tool/QuantumultX/Rewrite/TestFlight.snippet",
+    "raw": "https://raw.githubusercontent.com/luestr/ProxyResource/main/Tool/QuantumultX/Rewrite/TestFlight.snippet",
+    "install": "hako://install-module?url=https%3A%2F%2Fraw.githubusercontent.com%2Fluestr%2FProxyResource%2Fmain%2FTool%2FQuantumultX%2FRewrite%2FTestFlight.snippet",
+    "size": 423,
+    "sizeText": "423 B"
+  }
+]

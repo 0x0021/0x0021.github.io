@@ -50,7 +50,7 @@ def transform(items):
     for it in items:
         url = it.get("url", "")
         lpx = extract_resource(url)
-        install = "clash://install-config?url=" + quote(lpx, safe="")
+        install = "hako://install-module?url=" + quote(lpx, safe="")
         authors = it.get("author", []) or []
         a0 = authors[0] if authors else {}
         tags = it.get("tag", []) or []
@@ -251,7 +251,7 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
 
     <footer>
       本页为资源索引，模块版权归原作者所有（CC BY-NC-SA 4.0），数据来自 __SRCNAME__。<br/>
-      「导入 Clash」使用 <code>clash://install-config</code> 协议；「Loon」使用 <code>loon://import</code> 协议。<br/>
+      「导入 Clash」使用 <code>hako://install-module</code> 协议；「Loon」使用 <code>loon://import</code> 协议。<br/>
       页面每次打开都会自动同步源站最新数据，源站不可达时回退到内置缓存快照。<br/>
       若设备未安装对应客户端，链接将无法拉起，可使用「复制」按钮手动导入。
     </footer>
@@ -286,7 +286,7 @@ function transformLists(lists){
   const mods=[];
   for(const it of (lists||[])){
     const lpx=extractResource(it.url||'');
-    const install='clash://install-config?url='+pyQuote(lpx);
+    const install='hako://install-module?url='+pyQuote(lpx);
     const authors=it.author||[];
     const a0=authors[0]||{};
     const tags=it.tag||[];

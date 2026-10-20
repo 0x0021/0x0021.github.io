@@ -10,7 +10,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/Amap_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FAmap_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FAmap_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/Amap_remove_ads.lpx"
   },
   {
@@ -24,7 +24,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/QuickSearch.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FQuickSearch.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FQuickSearch.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/QuickSearch.lpx"
   },
   {
@@ -39,7 +39,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/Block_HTTPDNS.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FBlock_HTTPDNS.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FBlock_HTTPDNS.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/Block_HTTPDNS.lpx"
   },
   {
@@ -54,7 +54,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/BlockAdvertisers.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FBlockAdvertisers.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FBlockAdvertisers.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/BlockAdvertisers.lpx"
   },
   {
@@ -68,7 +68,7 @@
     "author": "VirgilClyne",
     "authorHome": "https://github.com/VirgilClyne",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/1.1.1.1.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2F1.1.1.1.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2F1.1.1.1.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/1.1.1.1.lpx"
   },
   {
@@ -82,7 +82,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/5EPlay_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2F5EPlay_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2F5EPlay_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/5EPlay_remove_ads.lpx"
   },
   {
@@ -96,7 +96,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/36Kr_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2F36Kr_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2F36Kr_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/36Kr_remove_ads.lpx"
   },
   {
@@ -110,7 +110,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/123NetWorkDisk_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2F123NetWorkDisk_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2F123NetWorkDisk_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/123NetWorkDisk_remove_ads.lpx"
   },
   {
@@ -124,7 +124,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/360SmartCamera_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2F360SmartCamera_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2F360SmartCamera_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/360SmartCamera_remove_ads.lpx"
   },
   {
@@ -138,7 +138,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/SafetyHome_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FSafetyHome_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FSafetyHome_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/SafetyHome_remove_ads.lpx"
   },
   {
@@ -152,7 +152,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/555DY_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2F555DY_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2F555DY_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/555DY_remove_ads.lpx"
   },
   {
@@ -166,7 +166,7 @@
     "author": "RuCu6",
     "authorHome": "https://github.com/RuCu6",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/12306_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2F12306_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2F12306_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/12306_remove_ads.lpx"
   },
   {
@@ -180,7 +180,7 @@
     "author": "VirgilClyne",
     "authorHome": "https://github.com/VirgilClyne",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/AppleWeatherEnhancer.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FAppleWeatherEnhancer.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FAppleWeatherEnhancer.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/AppleWeatherEnhancer.lpx"
   },
   {
@@ -194,7 +194,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/SnowCamera_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FSnowCamera_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FSnowCamera_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/SnowCamera_remove_ads.lpx"
   },
   {
@@ -208,7 +208,7 @@
     "author": "chavyleung",
     "authorHome": "https://github.com/chavyleung",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/BoxJs.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FBoxJs.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FBoxJs.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/BoxJs.lpx"
   },
   {
@@ -222,7 +222,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/CCLive_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FCCLive_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FCCLive_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/CCLive_remove_ads.lpx"
   },
   {
@@ -236,7 +236,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/DjDuoDuo_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FDjDuoDuo_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FDjDuoDuo_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/DjDuoDuo_remove_ads.lpx"
   },
   {
@@ -250,7 +250,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/Dlabel_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FDlabel_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FDlabel_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/Dlabel_remove_ads.lpx"
   },
   {
@@ -264,7 +264,7 @@
     "author": "非正常人类研究中心",
     "authorHome": null,
     "lpx": "https://kelee.one/Tool/Loon/Lpx/Prevent_DNS_Leaks.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FPrevent_DNS_Leaks.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FPrevent_DNS_Leaks.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/Prevent_DNS_Leaks.lpx"
   },
   {
@@ -278,7 +278,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/DREAME_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FDREAME_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FDREAME_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/DREAME_remove_ads.lpx"
   },
   {
@@ -292,7 +292,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/EcovacsHome_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FEcovacsHome_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FEcovacsHome_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/EcovacsHome_remove_ads.lpx"
   },
   {
@@ -306,7 +306,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/EasyCharge_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FEasyCharge_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FEasyCharge_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/EasyCharge_remove_ads.lpx"
   },
   {
@@ -320,7 +320,7 @@
     "author": "小白脸",
     "authorHome": null,
     "lpx": "https://kelee.one/Tool/Loon/Lpx/Fileball_mount.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FFileball_mount.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FFileball_mount.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/Fileball_mount.lpx"
   },
   {
@@ -334,7 +334,7 @@
     "author": "gideonsenku",
     "authorHome": "https://github.com/gideonsenku",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/FollowRSS_checkin.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FFollowRSS_checkin.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FFollowRSS_checkin.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/FollowRSS_checkin.lpx"
   },
   {
@@ -348,7 +348,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/Foodie_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FFoodie_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FFoodie_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/Foodie_remove_ads.lpx"
   },
   {
@@ -362,7 +362,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/Google.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FGoogle.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FGoogle.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/Google.lpx"
   },
   {
@@ -376,7 +376,7 @@
     "author": "C.Hiang",
     "authorHome": null,
     "lpx": "https://kelee.one/Tool/Loon/Lpx/HongKongToolbar_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FHongKongToolbar_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FHongKongToolbar_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/HongKongToolbar_remove_ads.lpx"
   },
   {
@@ -390,7 +390,7 @@
     "author": "小白脸",
     "authorHome": null,
     "lpx": "https://kelee.one/Tool/Loon/Lpx/IPATool.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FIPATool.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FIPATool.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/IPATool.lpx"
   },
   {
@@ -404,7 +404,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/IThome_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FIThome_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FIThome_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/IThome_remove_ads.lpx"
   },
   {
@@ -418,7 +418,7 @@
     "author": "MoonYuki",
     "authorHome": "https://github.com/MoonYuki",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/Jump_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FJump_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FJump_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/Jump_remove_ads.lpx"
   },
   {
@@ -432,7 +432,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/Keep_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FKeep_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FKeep_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/Keep_remove_ads.lpx"
   },
   {
@@ -446,7 +446,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/KOOK_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FKOOK_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FKOOK_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/KOOK_remove_ads.lpx"
   },
   {
@@ -460,7 +460,7 @@
     "author": "jkgtw",
     "authorHome": "https://github.com/jkgtw",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/Line_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FLine_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FLine_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/Line_remove_ads.lpx"
   },
   {
@@ -474,7 +474,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/OKOK_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FOKOK_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FOKOK_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/OKOK_remove_ads.lpx"
   },
   {
@@ -488,7 +488,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/PICOOC_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FPICOOC_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FPICOOC_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/PICOOC_remove_ads.lpx"
   },
   {
@@ -502,7 +502,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/Pinterest_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FPinterest_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FPinterest_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/Pinterest_remove_ads.lpx"
   },
   {
@@ -516,7 +516,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/QQ_Redirect.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FQQ_Redirect.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FQQ_Redirect.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/QQ_Redirect.lpx"
   },
   {
@@ -530,7 +530,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/QQMusic_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FQQMusic_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FQQMusic_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/QQMusic_remove_ads.lpx"
   },
   {
@@ -544,7 +544,7 @@
     "author": "xream",
     "authorHome": "https://github.com/xream",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/Reddit_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FReddit_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FReddit_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/Reddit_remove_ads.lpx"
   },
   {
@@ -558,7 +558,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/ReelShort_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FReelShort_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FReelShort_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/ReelShort_remove_ads.lpx"
   },
   {
@@ -572,7 +572,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/Roborock_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FRoborock_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FRoborock_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/Roborock_remove_ads.lpx"
   },
   {
@@ -586,7 +586,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/RQrun_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FRQrun_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FRQrun_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/RQrun_remove_ads.lpx"
   },
   {
@@ -600,7 +600,7 @@
     "author": "xream",
     "authorHome": "https://github.com/xream",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/Script-Hub.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FScript-Hub.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FScript-Hub.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/Script-Hub.lpx"
   },
   {
@@ -614,7 +614,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/Sofascore_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FSofascore_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FSofascore_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/Sofascore_remove_ads.lpx"
   },
   {
@@ -628,7 +628,7 @@
     "author": "ZenmoFeiShi",
     "authorHome": "https://github.com/ZenmoFeiShi",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/Soul_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FSoul_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FSoul_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/Soul_remove_ads.lpx"
   },
   {
@@ -642,7 +642,7 @@
     "author": "001ProMax",
     "authorHome": "https://github.com/001ProMax",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/Spotify_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FSpotify_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FSpotify_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/Spotify_remove_ads.lpx"
   },
   {
@@ -656,7 +656,7 @@
     "author": "VirgilClyne",
     "authorHome": "https://github.com/VirgilClyne",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/Spotify_lyrics_translation.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FSpotify_lyrics_translation.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FSpotify_lyrics_translation.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/Spotify_lyrics_translation.lpx"
   },
   {
@@ -670,7 +670,7 @@
     "author": "Peng-YM",
     "authorHome": "https://github.com/Peng-YM",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/Sub-Store.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FSub-Store.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FSub-Store.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/Sub-Store.lpx"
   },
   {
@@ -684,7 +684,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/TelegramRedirect.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FTelegramRedirect.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FTelegramRedirect.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/TelegramRedirect.lpx"
   },
   {
@@ -698,7 +698,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/TeraBox_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FTeraBox_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FTeraBox_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/TeraBox_remove_ads.lpx"
   },
   {
@@ -712,7 +712,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/TestFlightRegionUnlock.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FTestFlightRegionUnlock.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FTestFlightRegionUnlock.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/TestFlightRegionUnlock.lpx"
   },
   {
@@ -726,7 +726,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/TubeMax_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FTubeMax_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FTubeMax_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/TubeMax_remove_ads.lpx"
   },
   {
@@ -740,7 +740,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/Tumblr_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FTumblr_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FTumblr_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/Tumblr_remove_ads.lpx"
   },
   {
@@ -754,7 +754,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/Uki_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FUki_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FUki_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/Uki_remove_ads.lpx"
   },
   {
@@ -768,7 +768,7 @@
     "author": "suiyuran",
     "authorHome": "https://github.com/suiyuran",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/VVebo_repair.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FVVebo_repair.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FVVebo_repair.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/VVebo_repair.lpx"
   },
   {
@@ -782,7 +782,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/WakeupSchedule_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FWakeupSchedule_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FWakeupSchedule_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/WakeupSchedule_remove_ads.lpx"
   },
   {
@@ -796,7 +796,7 @@
     "author": "VirgilClyne",
     "authorHome": "https://github.com/VirgilClyne",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/WARP_Node_Query.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FWARP_Node_Query.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FWARP_Node_Query.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/WARP_Node_Query.lpx"
   },
   {
@@ -810,7 +810,7 @@
     "author": "小白脸",
     "authorHome": null,
     "lpx": "https://kelee.one/Tool/Loon/Lpx/WPS_checkin.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FWPS_checkin.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FWPS_checkin.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/WPS_checkin.lpx"
   },
   {
@@ -824,7 +824,7 @@
     "author": "Maasea",
     "authorHome": "https://github.com/Maasea",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/YouTube_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FYouTube_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FYouTube_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/YouTube_remove_ads.lpx"
   },
   {
@@ -838,7 +838,7 @@
     "author": "VirgilClyne",
     "authorHome": "https://github.com/VirgilClyne",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/YouTubeSubtitlesTranslation.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FYouTubeSubtitlesTranslation.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FYouTubeSubtitlesTranslation.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/YouTubeSubtitlesTranslation.lpx"
   },
   {
@@ -852,7 +852,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/YY_Voice_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FYY_Voice_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FYY_Voice_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/YY_Voice_remove_ads.lpx"
   },
   {
@@ -866,7 +866,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/YYVoiceTool_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FYYVoiceTool_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FYYVoiceTool_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/YYVoiceTool_remove_ads.lpx"
   },
   {
@@ -880,7 +880,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/ZAKER_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FZAKER_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FZAKER_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/ZAKER_remove_ads.lpx"
   },
   {
@@ -894,7 +894,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/Aiinquiry_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FAiinquiry_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FAiinquiry_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/Aiinquiry_remove_ads.lpx"
   },
   {
@@ -908,7 +908,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/iQiYi_Video_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FiQiYi_Video_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FiQiYi_Video_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/iQiYi_Video_remove_ads.lpx"
   },
   {
@@ -922,7 +922,7 @@
     "author": "RuCu6",
     "authorHome": "https://github.com/RuCu6",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/AliYunDrive_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FAliYunDrive_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FAliYunDrive_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/AliYunDrive_remove_ads.lpx"
   },
   {
@@ -936,7 +936,7 @@
     "author": "可莉🅥",
     "authorHome": "https://getupnote.com/share/notes/zSn1ShBmzNYISKcTgjXE5oHMrNf2/34bf3aad-7872-497d-b239-198e27e8c84c",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/BaiduMap_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FBaiduMap_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FBaiduMap_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/BaiduMap_remove_ads.lpx"
   },
   {
@@ -950,7 +950,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/BaiduTranslate_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FBaiduTranslate_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FBaiduTranslate_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/BaiduTranslate_remove_ads.lpx"
   },
   {
@@ -964,7 +964,7 @@
     "author": "Keywos",
     "authorHome": "https://github.com/Keywos",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/Baidu_input_method_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FBaidu_input_method_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FBaidu_input_method_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/Baidu_input_method_remove_ads.lpx"
   },
   {
@@ -978,7 +978,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/Tieba_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FTieba_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FTieba_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/Tieba_remove_ads.lpx"
   },
   {
@@ -992,7 +992,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/BaiduNetDisk_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FBaiduNetDisk_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FBaiduNetDisk_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/BaiduNetDisk_remove_ads.lpx"
   },
   {
@@ -1006,7 +1006,7 @@
     "author": "Keywos",
     "authorHome": "https://github.com/Keywos",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/BaiduSearchWebpage_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FBaiduSearchWebpage_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FBaiduSearchWebpage_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/BaiduSearchWebpage_remove_ads.lpx"
   },
   {
@@ -1020,7 +1020,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/BaiduWenku_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FBaiduWenku_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FBaiduWenku_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/BaiduWenku_remove_ads.lpx"
   },
   {
@@ -1034,7 +1034,7 @@
     "author": "RuCu6",
     "authorHome": "https://github.com/RuCu6",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/BabyTree_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FBabyTree_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FBabyTree_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/BabyTree_remove_ads.lpx"
   },
   {
@@ -1048,7 +1048,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/Beike_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FBeike_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FBeike_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/Beike_remove_ads.lpx"
   },
   {
@@ -1062,7 +1062,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/BiliComic_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FBiliComic_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FBiliComic_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/BiliComic_remove_ads.lpx"
   },
   {
@@ -1076,7 +1076,7 @@
     "author": "kokoryh",
     "authorHome": "https://github.com/kokoryh",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/Bilibili_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FBilibili_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FBilibili_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/Bilibili_remove_ads.lpx"
   },
   {
@@ -1090,7 +1090,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/BitqiuPan_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FBitqiuPan_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FBitqiuPan_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/BitqiuPan_remove_ads.lpx"
   },
   {
@@ -1104,7 +1104,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/Bixin_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FBixin_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FBixin_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/Bixin_remove_ads.lpx"
   },
   {
@@ -1118,7 +1118,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/BodianMusic_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FBodianMusic_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FBodianMusic_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/BodianMusic_remove_ads.lpx"
   },
   {
@@ -1132,7 +1132,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/BooHee_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FBooHee_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FBooHee_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/BooHee_remove_ads.lpx"
   },
   {
@@ -1146,7 +1146,7 @@
     "author": "小白脸",
     "authorHome": null,
     "lpx": "https://kelee.one/Tool/Loon/Lpx/Cainiao_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FCainiao_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FCainiao_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/Cainiao_remove_ads.lpx"
   },
   {
@@ -1160,7 +1160,7 @@
     "author": "RuCu6",
     "authorHome": "https://github.com/RuCu6",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/CaixinMedia_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FCaixinMedia_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FCaixinMedia_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/CaixinMedia_remove_ads.lpx"
   },
   {
@@ -1174,7 +1174,7 @@
     "author": "RuCu6",
     "authorHome": "https://github.com/RuCu6",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/ColorfulClouds_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FColorfulClouds_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FColorfulClouds_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/ColorfulClouds_remove_ads.lpx"
   },
   {
@@ -1188,7 +1188,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/Cece_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FCece_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FCece_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/Cece_remove_ads.lpx"
   },
   {
@@ -1202,7 +1202,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/MyFriday_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FMyFriday_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FMyFriday_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/MyFriday_remove_ads.lpx"
   },
   {
@@ -1216,7 +1216,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/Chelaile_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FChelaile_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FChelaile_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/Chelaile_remove_ads.lpx"
   },
   {
@@ -1230,7 +1230,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/ChengFenMiao_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FChengFenMiao_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FChengFenMiao_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/ChengFenMiao_remove_ads.lpx"
   },
   {
@@ -1244,7 +1244,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/SkyworthDigitalPicamera_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FSkyworthDigitalPicamera_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FSkyworthDigitalPicamera_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/SkyworthDigitalPicamera_remove_ads.lpx"
   },
   {
@@ -1258,7 +1258,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/Chuzhan_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FChuzhan_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FChuzhan_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/Chuzhan_remove_ads.lpx"
   },
   {
@@ -1272,7 +1272,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/XFuse_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FXFuse_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FXFuse_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/XFuse_remove_ads.lpx"
   },
   {
@@ -1286,7 +1286,7 @@
     "author": "I-am-R-E",
     "authorHome": "https://github.com/I-am-R-E",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/NodeLinkCheck.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FNodeLinkCheck.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FNodeLinkCheck.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/NodeLinkCheck.lpx"
   },
   {
@@ -1300,7 +1300,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/Damai_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FDamai_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FDamai_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/Damai_remove_ads.lpx"
   },
   {
@@ -1314,7 +1314,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/Dayima_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FDayima_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FDayima_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/Dayima_remove_ads.lpx"
   },
   {
@@ -1328,7 +1328,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/iReaderDejian_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FiReaderDejian_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FiReaderDejian_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/iReaderDejian_remove_ads.lpx"
   },
   {
@@ -1342,7 +1342,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/Dewu_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FDewu_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FDewu_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/Dewu_remove_ads.lpx"
   },
   {
@@ -1356,7 +1356,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/DidaPincheTaxi_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FDidaPincheTaxi_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FDidaPincheTaxi_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/DidaPincheTaxi_remove_ads.lpx"
   },
   {
@@ -1370,7 +1370,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/DiDi_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FDiDi_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FDiDi_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/DiDi_remove_ads.lpx"
   },
   {
@@ -1384,7 +1384,7 @@
     "author": "zirawell",
     "authorHome": "https://github.com/zirawell",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/DingdongMaicai_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FDingdongMaicai_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FDingdongMaicai_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/DingdongMaicai_remove_ads.lpx"
   },
   {
@@ -1398,7 +1398,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/DouBan_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FDouBan_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FDouBan_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/DouBan_remove_ads.lpx"
   },
   {
@@ -1412,7 +1412,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/DoubanRead_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FDoubanRead_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FDoubanRead_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/DoubanRead_remove_ads.lpx"
   },
   {
@@ -1426,7 +1426,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/Douyu_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FDouyu_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FDouyu_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/Douyu_remove_ads.lpx"
   },
   {
@@ -1440,7 +1440,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/DuiTang_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FDuiTang_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FDuiTang_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/DuiTang_remove_ads.lpx"
   },
   {
@@ -1454,7 +1454,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/TCLnScreen_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FTCLnScreen_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FTCLnScreen_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/TCLnScreen_remove_ads.lpx"
   },
   {
@@ -1468,7 +1468,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/DragonRead_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FDragonRead_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FDragonRead_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/DragonRead_remove_ads.lpx"
   },
   {
@@ -1482,7 +1482,7 @@
     "author": "Yuheng0101",
     "authorHome": "https://github.com/Yuheng0101",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/KebidaDushu_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FKebidaDushu_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FKebidaDushu_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/KebidaDushu_remove_ads.lpx"
   },
   {
@@ -1496,7 +1496,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/FlyerTea_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FFlyerTea_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FFlyerTea_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/FlyerTea_remove_ads.lpx"
   },
   {
@@ -1510,7 +1510,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/TaobaoTravel_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FTaobaoTravel_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FTaobaoTravel_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/TaobaoTravel_remove_ads.lpx"
   },
   {
@@ -1524,7 +1524,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/FenBi_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FFenBi_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FFenBi_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/FenBi_remove_ads.lpx"
   },
   {
@@ -1538,7 +1538,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/FC_Box_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FFC_Box_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FFC_Box_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/FC_Box_remove_ads.lpx"
   },
   {
@@ -1552,7 +1552,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/ifengNews_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FifengNews_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FifengNews_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/ifengNews_remove_ads.lpx"
   },
   {
@@ -1566,7 +1566,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/RiskBird_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FRiskBird_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FRiskBird_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/RiskBird_remove_ads.lpx"
   },
   {
@@ -1580,7 +1580,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/LiveLab_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FLiveLab_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FLiveLab_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/LiveLab_remove_ads.lpx"
   },
   {
@@ -1594,7 +1594,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/GuideRank_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FGuideRank_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FGuideRank_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/GuideRank_remove_ads.lpx"
   },
   {
@@ -1608,7 +1608,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/GaoDing_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FGaoDing_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FGaoDing_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/GaoDing_remove_ads.lpx"
   },
   {
@@ -1622,7 +1622,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/AlcidaeVideo_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FAlcidaeVideo_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FAlcidaeVideo_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/AlcidaeVideo_remove_ads.lpx"
   },
   {
@@ -1636,7 +1636,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/EasyBike_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FEasyBike_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FEasyBike_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/EasyBike_remove_ads.lpx"
   },
   {
@@ -1650,7 +1650,7 @@
     "author": "佚名",
     "authorHome": null,
     "lpx": "https://kelee.one/Tool/Loon/Lpx/Umetrip_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FUmetrip_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FUmetrip_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/Umetrip_remove_ads.lpx"
   },
   {
@@ -1664,7 +1664,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/YunmaiScale_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FYunmaiScale_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FYunmaiScale_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/YunmaiScale_remove_ads.lpx"
   },
   {
@@ -1678,7 +1678,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/MrHema_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FMrHema_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FMrHema_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/MrHema_remove_ads.lpx"
   },
   {
@@ -1692,7 +1692,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/FinanceNews_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FFinanceNews_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FFinanceNews_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/FinanceNews_remove_ads.lpx"
   },
   {
@@ -1706,7 +1706,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/HantingHotels_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FHantingHotels_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FHantingHotels_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/HantingHotels_remove_ads.lpx"
   },
   {
@@ -1720,7 +1720,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/SmartLife_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FSmartLife_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FSmartLife_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/SmartLife_remove_ads.lpx"
   },
   {
@@ -1734,7 +1734,7 @@
     "author": "ZenmoFeiShi",
     "authorHome": "https://github.com/ZenmoFeiShi",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/HUPU_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FHUPU_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FHUPU_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/HUPU_remove_ads.lpx"
   },
   {
@@ -1748,7 +1748,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/Huxiu_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FHuxiu_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FHuxiu_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/Huxiu_remove_ads.lpx"
   },
   {
@@ -1762,7 +1762,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/JiaKaoBaoDian_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FJiaKaoBaoDian_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FJiaKaoBaoDian_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/JiaKaoBaoDian_remove_ads.lpx"
   },
   {
@@ -1776,7 +1776,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/91160_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2F91160_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2F91160_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/91160_remove_ads.lpx"
   },
   {
@@ -1790,7 +1790,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/SeasunJX3_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FSeasunJX3_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FSeasunJX3_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/SeasunJX3_remove_ads.lpx"
   },
   {
@@ -1804,7 +1804,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/JiaXiaoDrive_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FJiaXiaoDrive_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FJiaXiaoDrive_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/JiaXiaoDrive_remove_ads.lpx"
   },
   {
@@ -1818,7 +1818,7 @@
     "author": "xream",
     "authorHome": "https://github.com/xream",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/Node_detection_tool.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FNode_detection_tool.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FNode_detection_tool.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/Node_detection_tool.lpx"
   },
   {
@@ -1832,7 +1832,7 @@
     "author": "wf021325",
     "authorHome": "https://github.com/wf021325",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/JD_Price.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FJD_Price.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FJD_Price.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/JD_Price.lpx"
   },
   {
@@ -1846,7 +1846,7 @@
     "author": "RuCu6",
     "authorHome": "https://github.com/RuCu6",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/JD_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FJD_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FJD_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/JD_remove_ads.lpx"
   },
   {
@@ -1860,7 +1860,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/JDWaimai_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FJDWaimai_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FJDWaimai_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/JDWaimai_remove_ads.lpx"
   },
   {
@@ -1874,7 +1874,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/WPS_Documents_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FWPS_Documents_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FWPS_Documents_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/WPS_Documents_remove_ads.lpx"
   },
   {
@@ -1888,7 +1888,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/Jin10Data_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FJin10Data_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FJin10Data_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/Jin10Data_remove_ads.lpx"
   },
   {
@@ -1902,7 +1902,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/ChatCam_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FChatCam_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FChatCam_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/ChatCam_remove_ads.lpx"
   },
   {
@@ -1916,7 +1916,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/Remove_ads_by_keli.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FRemove_ads_by_keli.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FRemove_ads_by_keli.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/Remove_ads_by_keli.lpx"
   },
   {
@@ -1930,7 +1930,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/ShoujiDesk_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FShoujiDesk_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FShoujiDesk_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/ShoujiDesk_remove_ads.lpx"
   },
   {
@@ -1944,7 +1944,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/KuaiDi100_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FKuaiDi100_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FKuaiDi100_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/KuaiDi100_remove_ads.lpx"
   },
   {
@@ -1958,7 +1958,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/KuaiDuiZuoYe_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FKuaiDuiZuoYe_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FKuaiDuiZuoYe_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/KuaiDuiZuoYe_remove_ads.lpx"
   },
   {
@@ -1972,7 +1972,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/KuaiKanComic_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FKuaiKanComic_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FKuaiKanComic_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/KuaiKanComic_remove_ads.lpx"
   },
   {
@@ -1986,7 +1986,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/KuaiShou_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FKuaiShou_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FKuaiShou_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/KuaiShou_remove_ads.lpx"
   },
   {
@@ -2000,7 +2000,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/KwaiVideoeditor_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FKwaiVideoeditor_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FKwaiVideoeditor_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/KwaiVideoeditor_remove_ads.lpx"
   },
   {
@@ -2014,7 +2014,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/QuarkBrowser_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FQuarkBrowser_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FQuarkBrowser_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/QuarkBrowser_remove_ads.lpx"
   },
   {
@@ -2028,7 +2028,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/QuarkScanking_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FQuarkScanking_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FQuarkScanking_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/QuarkScanking_remove_ads.lpx"
   },
   {
@@ -2042,7 +2042,7 @@
     "author": "RuCu6",
     "authorHome": "https://github.com/RuCu6",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/CoolApk_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FCoolApk_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FCoolApk_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/CoolApk_remove_ads.lpx"
   },
   {
@@ -2056,7 +2056,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/KuGouYouth_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FKuGouYouth_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FKuGouYouth_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/KuGouYouth_remove_ads.lpx"
   },
   {
@@ -2070,7 +2070,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/KGRing_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FKGRing_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FKGRing_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/KGRing_remove_ads.lpx"
   },
   {
@@ -2084,7 +2084,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/KuGou_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FKuGou_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FKuGou_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/KuGou_remove_ads.lpx"
   },
   {
@@ -2098,7 +2098,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/KuroBBS_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FKuroBBS_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FKuroBBS_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/KuroBBS_remove_ads.lpx"
   },
   {
@@ -2112,7 +2112,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/Kuwo_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FKuwo_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FKuwo_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/Kuwo_remove_ads.lpx"
   },
   {
@@ -2126,7 +2126,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/TV_Assistant_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FTV_Assistant_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FTV_Assistant_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/TV_Assistant_remove_ads.lpx"
   },
   {
@@ -2140,7 +2140,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/2bulu_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2F2bulu_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2F2bulu_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/2bulu_remove_ads.lpx"
   },
   {
@@ -2154,7 +2154,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/LZMH_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FLZMH_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FLZMH_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/LZMH_remove_ads.lpx"
   },
   {
@@ -2168,7 +2168,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/RoboTaxi_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FRoboTaxi_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FRoboTaxi_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/RoboTaxi_remove_ads.lpx"
   },
   {
@@ -2182,7 +2182,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/MaFengWo_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FMaFengWo_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FMaFengWo_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/MaFengWo_remove_ads.lpx"
   },
   {
@@ -2196,7 +2196,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/marki_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2Fmarki_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2Fmarki_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/marki_remove_ads.lpx"
   },
   {
@@ -2210,7 +2210,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/MangoTV_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FMangoTV_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FMangoTV_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/MangoTV_remove_ads.lpx"
   },
   {
@@ -2224,7 +2224,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/MKZ_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FMKZ_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FMKZ_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/MKZ_remove_ads.lpx"
   },
   {
@@ -2238,7 +2238,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/CatEarFM_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FCatEarFM_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FCatEarFM_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/CatEarFM_remove_ads.lpx"
   },
   {
@@ -2252,7 +2252,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/Meizhixiuxing_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FMeizhixiuxing_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FMeizhixiuxing_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/Meizhixiuxing_remove_ads.lpx"
   },
   {
@@ -2266,7 +2266,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/MeiRiSaiChe_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FMeiRiSaiChe_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FMeiRiSaiChe_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/MeiRiSaiChe_remove_ads.lpx"
   },
   {
@@ -2280,7 +2280,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/MeiShiJie_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FMeiShiJie_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FMeiShiJie_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/MeiShiJie_remove_ads.lpx"
   },
   {
@@ -2294,7 +2294,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/MeiTu_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FMeiTu_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FMeiTu_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/MeiTu_remove_ads.lpx"
   },
   {
@@ -2308,7 +2308,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/MeituMYXJ_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FMeituMYXJ_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FMeituMYXJ_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/MeituMYXJ_remove_ads.lpx"
   },
   {
@@ -2322,7 +2322,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/MeetYou_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FMeetYou_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FMeetYou_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/MeetYou_remove_ads.lpx"
   },
   {
@@ -2336,7 +2336,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/MoeGirlWiki_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FMoeGirlWiki_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FMoeGirlWiki_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/MoeGirlWiki_remove_ads.lpx"
   },
   {
@@ -2350,7 +2350,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/miHoYoBBS_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FmiHoYoBBS_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FmiHoYoBBS_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/miHoYoBBS_remove_ads.lpx"
   },
   {
@@ -2364,7 +2364,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/MojiWeather_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FMojiWeather_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FMojiWeather_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/MojiWeather_remove_ads.lpx"
   },
   {
@@ -2378,7 +2378,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/MaiMai_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FMaiMai_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FMaiMai_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/MaiMai_remove_ads.lpx"
   },
   {
@@ -2392,7 +2392,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/FerrisWheel_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FFerrisWheel_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FFerrisWheel_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/FerrisWheel_remove_ads.lpx"
   },
   {
@@ -2406,7 +2406,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/MotorFans_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FMotorFans_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FMotorFans_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/MotorFans_remove_ads.lpx"
   },
   {
@@ -2420,7 +2420,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/CSG_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FCSG_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FCSG_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/CSG_remove_ads.lpx"
   },
   {
@@ -2434,7 +2434,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/AxWorkSchedule_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FAxWorkSchedule_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FAxWorkSchedule_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/AxWorkSchedule_remove_ads.lpx"
   },
   {
@@ -2448,7 +2448,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/PangguaiLife_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FPangguaiLife_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FPangguaiLife_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/PangguaiLife_remove_ads.lpx"
   },
   {
@@ -2462,7 +2462,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/DubbingShow_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FDubbingShow_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FDubbingShow_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/DubbingShow_remove_ads.lpx"
   },
   {
@@ -2476,7 +2476,7 @@
     "author": "ZenmoFeiShi",
     "authorHome": "https://github.com/ZenmoFeiShi",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/PinDuoDuo_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FPinDuoDuo_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FPinDuoDuo_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/PinDuoDuo_remove_ads.lpx"
   },
   {
@@ -2490,7 +2490,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/PiPiXia_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FPiPiXia_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FPiPiXia_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/PiPiXia_remove_ads.lpx"
   },
   {
@@ -2504,7 +2504,7 @@
     "author": "kelv1n1n",
     "authorHome": "https://github.com/kelv1n1n",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/PuPuMall_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FPuPuMall_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FPuPuMall_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/PuPuMall_remove_ads.lpx"
   },
   {
@@ -2518,7 +2518,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/51Job_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2F51Job_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2F51Job_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/51Job_remove_ads.lpx"
   },
   {
@@ -2532,7 +2532,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/AutoHome_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FAutoHome_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FAutoHome_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/AutoHome_remove_ads.lpx"
   },
   {
@@ -2546,7 +2546,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/QiDian_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FQiDian_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FQiDian_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/QiDian_remove_ads.lpx"
   },
   {
@@ -2560,7 +2560,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/SevenCat_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FSevenCat_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FSevenCat_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/SevenCat_remove_ads.lpx"
   },
   {
@@ -2574,7 +2574,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/Qbb_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FQbb_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FQbb_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/Qbb_remove_ads.lpx"
   },
   {
@@ -2588,7 +2588,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/QtingFM_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FQtingFM_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FQtingFM_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/QtingFM_remove_ads.lpx"
   },
   {
@@ -2602,7 +2602,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/SodaMusic_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FSodaMusic_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FSodaMusic_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/SodaMusic_remove_ads.lpx"
   },
   {
@@ -2616,7 +2616,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/QiXinBao_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FQiXinBao_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FQiXinBao_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/QiXinBao_remove_ads.lpx"
   },
   {
@@ -2630,7 +2630,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/QQKSong_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FQQKSong_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FQQKSong_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/QQKSong_remove_ads.lpx"
   },
   {
@@ -2644,7 +2644,7 @@
     "author": "Sliverkiss",
     "authorHome": "https://github.com/Sliverkiss",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/LuckinCoffee_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FLuckinCoffee_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FLuckinCoffee_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/LuckinCoffee_remove_ads.lpx"
   },
   {
@@ -2658,7 +2658,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/ShandongSchool_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FShandongSchool_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FShandongSchool_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/ShandongSchool_remove_ads.lpx"
   },
   {
@@ -2672,7 +2672,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/YueDanBa_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FYueDanBa_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FYueDanBa_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/YueDanBa_remove_ads.lpx"
   },
   {
@@ -2686,7 +2686,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/smzdm_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2Fsmzdm_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2Fsmzdm_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/smzdm_remove_ads.lpx"
   },
   {
@@ -2700,7 +2700,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/ShouYinTongMerchant_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FShouYinTongMerchant_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FShouYinTongMerchant_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/ShouYinTongMerchant_remove_ads.lpx"
   },
   {
@@ -2714,7 +2714,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/SF-Express_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FSF-Express_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FSF-Express_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/SF-Express_remove_ads.lpx"
   },
   {
@@ -2728,7 +2728,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/ShuQiCenterReader_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FShuQiCenterReader_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FShuQiCenterReader_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/ShuQiCenterReader_remove_ads.lpx"
   },
   {
@@ -2742,7 +2742,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/DigitalHeartbeat_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FDigitalHeartbeat_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FDigitalHeartbeat_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/DigitalHeartbeat_remove_ads.lpx"
   },
   {
@@ -2756,7 +2756,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/KingdeeMyMoney_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FKingdeeMyMoney_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FKingdeeMyMoney_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/KingdeeMyMoney_remove_ads.lpx"
   },
   {
@@ -2770,7 +2770,7 @@
     "author": "RuCu6",
     "authorHome": "https://github.com/RuCu6",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/Taobao_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FTaobao_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FTaobao_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/Taobao_remove_ads.lpx"
   },
   {
@@ -2784,7 +2784,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/Taopiaopiao_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FTaopiaopiao_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FTaopiaopiao_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/Taopiaopiao_remove_ads.lpx"
   },
   {
@@ -2798,7 +2798,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/Taqu_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FTaqu_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FTaqu_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/Taqu_remove_ads.lpx"
   },
   {
@@ -2812,7 +2812,7 @@
     "author": "RuCu6",
     "authorHome": "https://github.com/RuCu6",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/Tencent_Video_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FTencent_Video_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FTencent_Video_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/Tencent_Video_remove_ads.lpx"
   },
   {
@@ -2826,7 +2826,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/TXDocs_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FTXDocs_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FTXDocs_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/TXDocs_remove_ads.lpx"
   },
   {
@@ -2840,7 +2840,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/TmallCampus_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FTmallCampus_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FTmallCampus_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/TmallCampus_remove_ads.lpx"
   },
   {
@@ -2854,7 +2854,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/TianQiTong_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FTianQiTong_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FTianQiTong_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/TianQiTong_remove_ads.lpx"
   },
   {
@@ -2868,7 +2868,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/iReaderCityWeather_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FiReaderCityWeather_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FiReaderCityWeather_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/iReaderCityWeather_remove_ads.lpx"
   },
   {
@@ -2882,7 +2882,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/CrazyRope_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FCrazyRope_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FCrazyRope_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/CrazyRope_remove_ads.lpx"
   },
   {
@@ -2896,7 +2896,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/TuGuaiShou_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FTuGuaiShou_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FTuGuaiShou_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/TuGuaiShou_remove_ads.lpx"
   },
   {
@@ -2910,7 +2910,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/Daily_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FDaily_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FDaily_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/Daily_remove_ads.lpx"
   },
   {
@@ -2924,7 +2924,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/WaCaiJiZhang_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FWaCaiJiZhang_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FWaCaiJiZhang_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/WaCaiJiZhang_remove_ads.lpx"
   },
   {
@@ -2938,7 +2938,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/Wacai_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FWacai_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FWacai_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/Wacai_remove_ads.lpx"
   },
   {
@@ -2952,7 +2952,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/NetEaseGodlike_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FNetEaseGodlike_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FNetEaseGodlike_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/NetEaseGodlike_remove_ads.lpx"
   },
   {
@@ -2966,7 +2966,7 @@
     "author": "RuCu6",
     "authorHome": "https://github.com/RuCu6",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/NeteaseNews_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FNeteaseNews_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FNeteaseNews_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/NeteaseNews_remove_ads.lpx"
   },
   {
@@ -2980,7 +2980,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/YoudaoDict_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FYoudaoDict_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FYoudaoDict_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/YoudaoDict_remove_ads.lpx"
   },
   {
@@ -2994,7 +2994,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/MailMaster_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FMailMaster_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FMailMaster_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/MailMaster_remove_ads.lpx"
   },
   {
@@ -3008,7 +3008,7 @@
     "author": "RuCu6",
     "authorHome": "https://github.com/RuCu6",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/NeteaseCloudMusic_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FNeteaseCloudMusic_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FNeteaseCloudMusic_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/NeteaseCloudMusic_remove_ads.lpx"
   },
   {
@@ -3022,7 +3022,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/PerfectWorldEsport_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FPerfectWorldEsport_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FPerfectWorldEsport_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/PerfectWorldEsport_remove_ads.lpx"
   },
   {
@@ -3036,7 +3036,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/Weibo_intl_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FWeibo_intl_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FWeibo_intl_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/Weibo_intl_remove_ads.lpx"
   },
   {
@@ -3050,7 +3050,7 @@
     "author": "RuCu6",
     "authorHome": "https://github.com/RuCu6",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/Weibo_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FWeibo_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FWeibo_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/Weibo_remove_ads.lpx"
   },
   {
@@ -3064,7 +3064,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/Weidian_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FWeidian_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FWeidian_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/Weidian_remove_ads.lpx"
   },
   {
@@ -3078,7 +3078,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/WPForum_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FWPForum_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FWPForum_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/WPForum_remove_ads.lpx"
   },
   {
@@ -3092,7 +3092,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/Weimai_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FWeimai_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FWeimai_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/Weimai_remove_ads.lpx"
   },
   {
@@ -3106,7 +3106,7 @@
     "author": "RuCu6",
     "authorHome": "https://github.com/RuCu6",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/Weixin_Official_Accounts_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FWeixin_Official_Accounts_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FWeixin_Official_Accounts_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/Weixin_Official_Accounts_remove_ads.lpx"
   },
   {
@@ -3120,7 +3120,7 @@
     "author": "zZPiglet",
     "authorHome": "https://github.com/zZPiglet",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/Weixin_external_links_unlock.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FWeixin_external_links_unlock.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FWeixin_external_links_unlock.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/Weixin_external_links_unlock.lpx"
   },
   {
@@ -3134,7 +3134,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/WexinMiniPrograms_Remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FWexinMiniPrograms_Remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FWexinMiniPrograms_Remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/WexinMiniPrograms_Remove_ads.lpx"
   },
   {
@@ -3148,7 +3148,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/Walmart_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FWalmart_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FWalmart_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/Walmart_remove_ads.lpx"
   },
   {
@@ -3162,7 +3162,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/SnailSleep_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FSnailSleep_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FSnailSleep_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/SnailSleep_remove_ads.lpx"
   },
   {
@@ -3176,7 +3176,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/WutaCamera_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FWutaCamera_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FWutaCamera_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/WutaCamera_remove_ads.lpx"
   },
   {
@@ -3190,7 +3190,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/XiaChuFang_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FXiaChuFang_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FXiaChuFang_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/XiaChuFang_remove_ads.lpx"
   },
   {
@@ -3204,7 +3204,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/HKDouYin_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FHKDouYin_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FHKDouYin_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/HKDouYin_remove_ads.lpx"
   },
   {
@@ -3218,7 +3218,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/OraySunlogin_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FOraySunlogin_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FOraySunlogin_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/OraySunlogin_remove_ads.lpx"
   },
   {
@@ -3232,7 +3232,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/FleaMarket_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FFleaMarket_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FFleaMarket_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/FleaMarket_remove_ads.lpx"
   },
   {
@@ -3246,7 +3246,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/XiaobaiPrint_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FXiaobaiPrint_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FXiaobaiPrint_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/XiaobaiPrint_remove_ads.lpx"
   },
   {
@@ -3260,7 +3260,7 @@
     "author": "Sliverkiss",
     "authorHome": "https://github.com/Sliverkiss",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/XiaoCan_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FXiaoCan_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FXiaoCan_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/XiaoCan_remove_ads.lpx"
   },
   {
@@ -3274,7 +3274,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/ShopKeeperAdmin_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FShopKeeperAdmin_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FShopKeeperAdmin_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/ShopKeeperAdmin_remove_ads.lpx"
   },
   {
@@ -3288,7 +3288,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/XiaoHeiHe_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FXiaoHeiHe_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FXiaoHeiHe_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/XiaoHeiHe_remove_ads.lpx"
   },
   {
@@ -3302,7 +3302,7 @@
     "author": "RuCu6",
     "authorHome": "https://github.com/RuCu6",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/RedPaper_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FRedPaper_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FRedPaper_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/RedPaper_remove_ads.lpx"
   },
   {
@@ -3316,7 +3316,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/XiaojukejiCharge_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FXiaojukejiCharge_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FXiaojukejiCharge_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/XiaojukejiCharge_remove_ads.lpx"
   },
   {
@@ -3330,7 +3330,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/MiaoRead_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FMiaoRead_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FMiaoRead_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/MiaoRead_remove_ads.lpx"
   },
   {
@@ -3344,7 +3344,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/XiaomiSpeaker_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FXiaomiSpeaker_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FXiaomiSpeaker_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/XiaomiSpeaker_remove_ads.lpx"
   },
   {
@@ -3358,7 +3358,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/HeartideBrainWave_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FHeartideBrainWave_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FHeartideBrainWave_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/HeartideBrainWave_remove_ads.lpx"
   },
   {
@@ -3372,7 +3372,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/iMaiCai_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FiMaiCai_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FiMaiCai_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/iMaiCai_remove_ads.lpx"
   },
   {
@@ -3386,7 +3386,7 @@
     "author": "wish",
     "authorHome": null,
     "lpx": "https://kelee.one/Tool/Loon/Lpx/CosmosPodcast_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FCosmosPodcast_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FCosmosPodcast_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/CosmosPodcast_remove_ads.lpx"
   },
   {
@@ -3400,7 +3400,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/Himalaya_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FHimalaya_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FHimalaya_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/Himalaya_remove_ads.lpx"
   },
   {
@@ -3414,7 +3414,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/OnTheWay_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FOnTheWay_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FOnTheWay_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/OnTheWay_remove_ads.lpx"
   },
   {
@@ -3428,7 +3428,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/SinaStock_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FSinaStock_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FSinaStock_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/SinaStock_remove_ads.lpx"
   },
   {
@@ -3442,7 +3442,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/Snowball_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FSnowball_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FSnowball_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/Snowball_remove_ads.lpx"
   },
   {
@@ -3456,7 +3456,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/ChaoXingStudy_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FChaoXingStudy_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FChaoXingStudy_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/ChaoXingStudy_remove_ads.lpx"
   },
   {
@@ -3470,7 +3470,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/XunLei_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FXunLei_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FXunLei_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/XunLei_remove_ads.lpx"
   },
   {
@@ -3484,7 +3484,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/YiKaoBang_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FYiKaoBang_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FYiKaoBang_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/YiKaoBang_remove_ads.lpx"
   },
   {
@@ -3498,7 +3498,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/BaiduPhoto_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FBaiduPhoto_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FBaiduPhoto_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/BaiduPhoto_remove_ads.lpx"
   },
   {
@@ -3512,7 +3512,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/VideoGo_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FVideoGo_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FVideoGo_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/VideoGo_remove_ads.lpx"
   },
   {
@@ -3526,7 +3526,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/Yitian_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FYitian_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FYitian_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/Yitian_remove_ads.lpx"
   },
   {
@@ -3540,7 +3540,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/YiSchool_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FYiSchool_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FYiSchool_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/YiSchool_remove_ads.lpx"
   },
   {
@@ -3554,7 +3554,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/YoudaoTrans_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FYoudaoTrans_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FYoudaoTrans_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/YoudaoTrans_remove_ads.lpx"
   },
   {
@@ -3568,7 +3568,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/YoudaoNote_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FYoudaoNote_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FYoudaoNote_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/YoudaoNote_remove_ads.lpx"
   },
   {
@@ -3582,7 +3582,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/YouKu_Video_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FYouKu_Video_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FYouKu_Video_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/YouKu_Video_remove_ads.lpx"
   },
   {
@@ -3596,7 +3596,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/Yueyou_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FYueyou_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FYueyou_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/Yueyou_remove_ads.lpx"
   },
   {
@@ -3610,7 +3610,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/NarwelRobots_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FNarwelRobots_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FNarwelRobots_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/NarwelRobots_remove_ads.lpx"
   },
   {
@@ -3624,7 +3624,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/ValorantBible_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FValorantBible_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FValorantBible_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/ValorantBible_remove_ads.lpx"
   },
   {
@@ -3638,7 +3638,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/LOL_Bible_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FLOL_Bible_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FLOL_Bible_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/LOL_Bible_remove_ads.lpx"
   },
   {
@@ -3652,7 +3652,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/iReader_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FiReader_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FiReader_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/iReader_remove_ads.lpx"
   },
   {
@@ -3666,7 +3666,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/Zhibo8_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FZhibo8_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FZhibo8_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/Zhibo8_remove_ads.lpx"
   },
   {
@@ -3680,7 +3680,7 @@
     "author": "xream",
     "authorHome": "https://github.com/xream",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/SuZhouCitizenCard_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FSuZhouCitizenCard_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FSuZhouCitizenCard_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/SuZhouCitizenCard_remove_ads.lpx"
   },
   {
@@ -3694,7 +3694,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/Zhihu_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FZhihu_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FZhihu_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/Zhihu_remove_ads.lpx"
   },
   {
@@ -3708,7 +3708,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/ZhiLianZhaoPin_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FZhiLianZhaoPin_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FZhiLianZhaoPin_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/ZhiLianZhaoPin_remove_ads.lpx"
   },
   {
@@ -3720,7 +3720,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/UnnooQuan_remove_watermark.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FUnnooQuan_remove_watermark.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FUnnooQuan_remove_watermark.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/UnnooQuan_remove_watermark.lpx"
   },
   {
@@ -3734,7 +3734,7 @@
     "author": "Sliverkiss",
     "authorHome": "https://github.com/Sliverkiss",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/PICC_Insurance_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FPICC_Insurance_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FPICC_Insurance_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/PICC_Insurance_remove_ads.lpx"
   },
   {
@@ -3748,7 +3748,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/WeatherChina_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FWeatherChina_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FWeatherChina_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/WeatherChina_remove_ads.lpx"
   },
   {
@@ -3762,7 +3762,7 @@
     "author": "RuCu6",
     "authorHome": "https://github.com/RuCu6",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/mobileClouds_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FmobileClouds_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FmobileClouds_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/mobileClouds_remove_ads.lpx"
   },
   {
@@ -3776,7 +3776,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/EtouchEcalendar_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FEtouchEcalendar_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FEtouchEcalendar_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/EtouchEcalendar_remove_ads.lpx"
   },
   {
@@ -3790,7 +3790,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/ZhuanZhuan_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FZhuanZhuan_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FZhuanZhuan_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/ZhuanZhuan_remove_ads.lpx"
   },
   {
@@ -3804,7 +3804,7 @@
     "author": "奶思",
     "authorHome": "https://github.com/fmz200",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/Auto_Join_TF.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FAuto_Join_TF.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FAuto_Join_TF.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/Auto_Join_TF.lpx"
   },
   {
@@ -3818,7 +3818,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/ZongHeng_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FZongHeng_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FZongHeng_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/ZongHeng_remove_ads.lpx"
   },
   {
@@ -3832,7 +3832,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/iWallBiZhi_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FiWallBiZhi_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FiWallBiZhi_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/iWallBiZhi_remove_ads.lpx"
   },
   {
@@ -3846,7 +3846,7 @@
     "author": "可莉🅥",
     "authorHome": "https://github.com/luestr/ProxyResource/blob/main/README.md",
     "lpx": "https://kelee.one/Tool/Loon/Lpx/ZuiYou_remove_ads.lpx",
-    "install": "clash://install-config?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FZuiYou_remove_ads.lpx",
+    "install": "hako://install-module?url=https%3A%2F%2Fkelee.one%2FTool%2FLoon%2FLpx%2FZuiYou_remove_ads.lpx",
     "loon": "loon://import?plugin=https://kelee.one/Tool/Loon/Lpx/ZuiYou_remove_ads.lpx"
   }
 ]

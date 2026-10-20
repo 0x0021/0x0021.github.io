@@ -391,12 +391,46 @@ function toast(msg){
 
 document.getElementById('q').addEventListener('input',e=>{state.q=e.target.value;state.page=1;render();});
 
-/* 先用快照秒开，再实时同步源站最新数据 */
+/* 先用快照秒开，再根据缓存策略决定是否需要请求源站 */
 render();
 
 function setSync(cls,text){ syncEl.className='sync '+cls; syncText.textContent=text; }
+function fmtTime(d){
+  const p=n=>String(n).padStart(2,'0');
+  return `${d.getFullYear()}-${p(d.getMonth()+1)}-${p(d.getDate())} ${p(d.getHours())}:${p(d.getMinutes())}`;
+}
+function agoText(ts){
+  const sec=Math.round((Date.now()-ts)/1000);
+  if(sec<60) return `${sec} 秒前`;
+  if(sec<3600) return `${Math.floor(sec/60)} 分钟前`;
+  return `${Math.floor(sec/3600)} 小时前`;
+}
 
-/* 实时同步：源站的 CORS 头为重复的 "*, *"（非法），直连必然被浏览器拒绝，
+/* 本地缓存：10 分钟内不重复请求源站，优先用缓存，降低刷新时的请求频次 */
+const CACHE_KEY='clashmod-cache';
+const CACHE_TTL=10*60*1000; // 10 分钟
+function readCache(){
+  try{
+    const raw=localStorage.getItem(CACHE_KEY);
+    if(!raw) return null;
+    const obj=JSON.parse(raw);
+    if(!obj||!Array.isArray(obj.lists)||!obj.ts) return null;
+    return obj;
+  }catch(e){ return null; }
+}
+function writeCache(lists){
+  try{ localStorage.setItem(CACHE_KEY,JSON.stringify({lists,ts:Date.now()})); }catch(e){}
+}
+function applyModules(lists,extra){
+  const live=transformLists(lists);
+  if(!live.length) return false;
+  MODULES=live; TOP_TAGS=computeTopTags(MODULES,16);
+  buildChips(); totalEl.textContent=MODULES.length; render();
+  if(extra) setSync(extra.cls,extra.text);
+  return true;
+}
+
+/* 实时同步源站：源站 CORS 头为重复的 "*, *"（非法），直连必然被浏览器拒绝，
    因此走支持 CORS 的代理：jina（稳定）→ allorigins（备用）→ 内置快照兜底 */
 const LIVE_URL=SNAPSHOT.liveUrl||'https://hub.kelee.one/list.json';
 const LIVE_SOURCES=[
@@ -410,28 +444,40 @@ const LIVE_SOURCES=[
   {url:'https://api.allorigins.win/raw?url='+encodeURIComponent(LIVE_URL), parse:r=>r.json()}
 ];
 
-(async function syncLive(){
+async function syncLive(){
   for(let i=0;i<LIVE_SOURCES.length;i++){
     const src=LIVE_SOURCES[i];
     try{
       const res=await fetch(src.url,{cache:'no-cache'});
       if(!res.ok) throw new Error('HTTP '+res.status);
       const data=await src.parse(res);
-      const live=transformLists(data.lists||[]);
-      if(!live.length) throw new Error('empty');
-      MODULES=live;
-      TOP_TAGS=computeTopTags(MODULES,16);
-      buildChips();
-      totalEl.textContent=MODULES.length;
-      render();
-      const d=new Date();
-      const ts=`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')} ${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}`;
-      setSync('ok',`已实时同步 ${live.length} 个模块（${ts}）${i>0?' · 经代理':''}`);
-      return;
+      const lists=data.lists||[];
+      if(!lists.length) throw new Error('empty');
+      writeCache(lists);
+      applyModules(lists,{cls:'ok',text:`已实时同步 ${MODULES.length} 个模块（${fmtTime(new Date())}）${i>0?' · 经代理':''}`});
+      return true;
     }catch(err){ /* 换下一个源 */ }
   }
-  setSync('warn','当前使用内置缓存快照（源站与代理均不可达，仍为最新已知数据）');
-  })();
+  return false;
+}
+
+(async function init(){
+  const cache=readCache();
+  if(cache && (Date.now()-cache.ts) < CACHE_TTL){
+    // 10 分钟内的缓存：直接用，不再请求源站
+    applyModules(cache.lists,{cls:'ok',text:`已使用本地缓存（${agoText(cache.ts)}同步，10 分钟内不再请求源站）`});
+  }else{
+    // 缓存过期/缺失：请求源站；失败则回退到本地缓存，再不行才用内置快照
+    const ok=await syncLive();
+    if(!ok){
+      if(cache && cache.lists.length){
+        applyModules(cache.lists,{cls:'warn',text:`源站暂不可达，已使用本地缓存（${agoText(cache.ts)}同步）`});
+      }else{
+        setSync('warn','当前使用内置缓存快照（源站与代理均不可达，仍为最新已知数据）');
+      }
+    }
+  }
+})();
 </script>
 </body>
 </html>

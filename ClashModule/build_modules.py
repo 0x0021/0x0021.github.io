@@ -48,7 +48,8 @@ def main():
     for it in items:
         url = it.get("url", "")
         lpx = extract_resource(url)
-        install = "hako://install-module?url=" + quote(lpx, safe="")
+        # 浏览器拉起 Clash 客户端导入（Clash Verge Rev / ClashX / CFW 等识别 clash://install-config）
+        install = "clash://install-config?url=" + quote(lpx, safe="")
         authors = it.get("author", []) or []
         author_name = authors[0].get("name", "") if authors else ""
         author_home = authors[0].get("homepage", "") if authors else ""
@@ -106,7 +107,7 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 <title>Clash / Loon 模块导入 · 可莉插件中心</title>
-<meta name="description" content="从可莉的插件中心收集的 Loon / Clash 模块，浏览器一键拉起 Stash(Hako) 或 Loon 导入。" />
+<meta name="description" content="从可莉的插件中心收集的 Loon / Clash 模块，浏览器一键拉起 Clash 或 Loon 导入。" />
 <style>
   :root{
     --bg:#0f1117; --bg2:#161a23; --card:#1b2030; --card2:#20283a;
@@ -213,7 +214,7 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
   <div class="wrap">
     <header class="hero">
       <h1>⚡ Clash / Loon 模块导入</h1>
-      <p>从「可莉的插件中心」收集的代理模块资源。点击「导入 Stash」在浏览器中拉起 Stash（Hako）安装，或点「Loon」用 Loon 直接导入。</p>
+      <p>从「可莉的插件中心」收集的代理模块资源。点击「导入 Clash」在浏览器中拉起 Clash 客户端安装，或点「Loon」用 Loon 直接导入。</p>
       <div class="src">数据来源 · <a href="__SRCURL__" target="_blank" rel="noopener"><b>__SRCNAME__</b></a> · 共 <span id="total">0</span> 个模块</div>
     </header>
 
@@ -234,7 +235,7 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
 
     <footer>
       本页为资源索引，模块版权归原作者所有（CC BY-NC-SA 4.0），数据来自 __SRCNAME__。<br/>
-      「导入 Stash」使用 <code>hako://install-module</code> 协议；「Loon」使用 <code>loon://import</code> 协议。<br/>
+      「导入 Clash」使用 <code>clash://install-config</code> 协议；「Loon」使用 <code>loon://import</code> 协议。<br/>
       若设备未安装对应客户端，链接将无法拉起，可使用「复制」按钮手动导入。
     </footer>
   </div>
@@ -297,7 +298,7 @@ function card(m){
     <div class="desc">${esc(m.desc)||'—'}</div>
     <div class="tags">${tags}</div>
     <div class="acts">
-      <a class="btn primary" href="${esc(m.install)}">⚡ 导入 Stash</a>
+      <a class="btn primary" href="${esc(m.install)}">⚡ 导入 Clash</a>
       <a class="btn" href="${esc(m.loon)}">Loon</a>
       <button class="btn ghost" data-copy="${esc(m.lpx)}" title="复制资源链接">⧉</button>
     </div>

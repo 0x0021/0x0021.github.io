@@ -216,7 +216,8 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
     position:relative;overflow:hidden;-webkit-backdrop-filter:var(--glass);backdrop-filter:var(--glass);}
   .card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:rgba(0,113,227,.4)}
   .grid>.card{height:100%}
-  .card .desc{margin-top:auto}
+  .card .desc{margin-top:0}
+  .card .acts{margin-top:auto}
   .card .head{display:flex;gap:13px;align-items:center}
   .icon{flex:0 0 50px;width:50px;height:50px;border-radius:14px;background:var(--bg2);border:1px solid var(--line);
     display:flex;align-items:center;justify-content:center;font-size:26px;overflow:hidden}
@@ -224,6 +225,7 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
   .card h3{margin:0;font-size:16.5px;font-weight:600;line-height:1.3;letter-spacing:-.2px}
   .meta{font-size:12px;color:var(--muted);margin-top:3px}
   .desc{font-size:13.5px;color:var(--muted);line-height:1.55;
+    min-height:calc(3 * 1.55em);/* 预留 3 行：不足的卡片以空行占位，保证按钮行对齐 */
     display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
   .tags{display:flex;gap:7px;flex-wrap:wrap}
   .tag{font-size:11.5px;color:var(--accent);background:rgba(0,113,227,.10);border:1px solid rgba(0,113,227,.18);

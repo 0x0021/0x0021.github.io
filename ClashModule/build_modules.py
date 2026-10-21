@@ -491,11 +491,9 @@ function card(m){
   const when=m.date?`${esc((m.date||'').slice(0,10))}`:'';
   const meta=[author,when].filter(Boolean).join(' · ');
   const isQx=m.source==='qx';
-  const primary=isQx
-    ?`<a class="btn primary" href="${esc(m.install)}">${SVG_BOLT}导入 Quantumult X</a>`
-    :`<a class="btn primary" href="${esc(m.install)}">${SVG_DOWN}导入 Clash</a>`;
+  const primary=`<a class="btn primary" href="${esc(isQx?m.hako:m.install)}">${SVG_DOWN}导入 Clash</a>`;
   const secondary=isQx
-    ?`<a class="btn secondary" href="${esc(m.hako)}" title="用 hako://install-module 协议导入">${SVG_LINK}hako 导入</a>`
+    ?`<a class="btn secondary" href="${esc(m.install)}" title="用 quantumult-x:///add-resource 协议导入">${SVG_BOLT}导入 Quantumult X</a>`
     :`<a class="btn secondary" href="${esc(m.loon)}">${SVG_BOLT}Loon 导入</a>`;
   return `
   <div class="card">

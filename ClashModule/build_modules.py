@@ -158,7 +158,7 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
     -webkit-font-smoothing:antialiased;line-height:1.5;min-height:100vh;
   }
   a{color:inherit;text-decoration:none}
-  .wrap{max-width:var(--maxw);margin:0 auto;padding:24px 16px calc(40px + env(safe-area-inset-bottom));}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:24px 16px calc(40px + env(safe-area-inset-bottom));position:relative;}
 
   .hero{
     text-align:center;padding:34px 16px 26px;margin-bottom:20px;
@@ -241,8 +241,10 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
   .pager button:disabled{opacity:.35;cursor:not-allowed}
   .pager .ellipsis{color:var(--muted);padding:0 4px}
 
-  footer{margin-top:34px;text-align:center;color:var(--muted);font-size:12px;line-height:1.8}
+  footer{margin-top:34px;text-align:center;color:var(--muted);font-size:12px;line-height:1.85;overflow-wrap:anywhere;word-break:break-word}
   footer a{color:var(--accent)}
+  footer code{font-size:11.5px;background:var(--bg2);border:1px solid var(--line);padding:1px 6px;border-radius:6px;
+    white-space:normal;word-break:break-all;}
 
   #toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);
     background:var(--accent2);color:var(--on-accent2);padding:11px 18px;border-radius:12px;font-weight:600;font-size:14px;
@@ -261,11 +263,16 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
   @media (max-width:560px){
     .wrap{padding:16px 12px calc(36px + env(safe-area-inset-bottom))}
     .grid{grid-template-columns:1fr;gap:12px}
-    .hero{padding:28px 14px 22px}
+    .hero{padding:54px 14px 22px}
+    .hero h1{font-size:clamp(19px,5.4vw,26px);line-height:1.25}
+    .hero p{font-size:13px}
+    .src{margin-top:12px;font-size:11.5px;padding:6px 10px}
     .search{flex:1 1 100%}
     .btn.secondary{font-size:12.5px;padding:9px 6px}
-    .theme-switch{top:10px;right:10px}
-    .theme-switch button{padding:5px 9px}
+    .theme-switch{position:absolute;top:8px;right:8px;transform:none}
+    .theme-switch button{padding:5px 8px}
+    footer{text-align:left;font-size:11.5px}
+    footer code{font-size:11px}
   }
 </style>
 <script>

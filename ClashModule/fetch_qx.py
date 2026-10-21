@@ -30,10 +30,23 @@ REPOS = {
 
 
 def load_tree(key):
+    """读目录树缓存；缓存缺失时实时拉取 GitHub API（需本机代理 127.0.0.1:7890）。"""
     path = os.path.join("/tmp", {
         "dee": "dee.json", "ddg_rw": "ddg_rewrite.json",
         "ddg_filter": "ddg_filter.json", "adblock": "adblock.json",
     }[key])
+    if not os.path.exists(path):
+        repo, branch = REPOS[key]
+        tok = os.environ.get("GITHUB_TOKEN", "")
+        headers = ["-H", f"Authorization: token {tok}"] if tok else []
+        out = subprocess.run(
+            ["curl", "-s", "-x", PROXY, *headers,
+             f"https://api.github.com/repos/{repo}/git/trees/{branch}?recursive=1"],
+            capture_output=True, text=True, timeout=60,
+        ).stdout
+        with open(path, "w", encoding="utf-8") as f:
+            f.write(out)
+        print(f"[{key}] 目录树缓存缺失，已实时拉取 -> {path}")
     with open(path, encoding="utf-8") as f:
         return [t["path"] for t in json.load(f)["tree"] if t["type"] == "blob"]
 
@@ -96,7 +109,15 @@ def shorten(s, n=90):
 # ---------- A. deezertidal：README 精选索引 → 仓库 rewrite/*.conf ----------
 def collect_dee():
     tree = set(load_tree("dee"))
-    with open("/tmp/dee_readme.md", encoding="utf-8") as f:
+    readme_path = "/tmp/dee_readme.md"
+    if not os.path.exists(readme_path):
+        subprocess.run(
+            ["curl", "-s", "-x", PROXY,
+             "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/README.md",
+             "-o", readme_path], timeout=60,
+        )
+        print("[dee] README 缓存缺失，已实时拉取")
+    with open(readme_path, encoding="utf-8") as f:
         readme = f.read()
     pat = re.compile(
         r"^\|\s*(:[^|:]+:)?\s*([^|]+?)\s*\|\s*\[:link:链接地址\]\(https://yfamilys\.com/rewrite/([^)#]+)\)",

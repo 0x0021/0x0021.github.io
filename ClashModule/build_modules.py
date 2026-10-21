@@ -19,6 +19,7 @@
 """
 import json
 import os
+import datetime
 from collections import Counter
 from urllib.parse import urlparse, parse_qs, quote
 
@@ -97,7 +98,16 @@ def main():
         "name": data.get("name", SRC_NAME),
         "srcUrl": SRC_URL,
         "liveUrl": LIVE_JSON,
+        "buildDate": datetime.datetime.now().strftime("%Y-%m-%d %H:%M"),
     }
+
+    # Quantumult X 资源（构建时快照，来自三个 GitHub 仓库，由 fetch_qx.py 采集）
+    qx_path = os.path.join(here, "quantumult.json")
+    if os.path.exists(qx_path):
+        with open(qx_path, encoding="utf-8") as f:
+            snapshot["qx"] = json.load(f)
+        print(f"已载入 Quantumult X 资源 {len(snapshot['qx'].get('modules', []))} 个")
+
     build_html(here, snapshot)
 
 
@@ -116,7 +126,7 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 <title>Clash / Loon 模块导入 · 可莉插件中心</title>
-<meta name="description" content="从可莉的插件中心收集的 Loon / Clash 模块，浏览器一键拉起 Clash 或 Loon 导入，页面自动同步源站最新数据。" />
+<meta name="description" content="从可莉的插件中心收集的 Loon / Clash 模块，浏览器一键拉起 Clash 或 Loon 导入；另收录 Quantumult X 重写与规则合集（可莉重写库 / 墨鱼手记 / 毒奶特供），支持 quantumult-x 与 hako 协议导入。" />
 <style>
   :root{
     --bg:#0f1117; --bg2:#161a23; --card:#1b2030; --card2:#20283a;
@@ -181,6 +191,9 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
   .search svg{position:absolute;left:13px;top:50%;transform:translateY(-50%);opacity:.6}
 
   .chips{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:14px;max-height:none}
+  .sources{display:flex;gap:7px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+  .sources .src-label{font-size:12.5px;color:var(--muted);margin-right:2px;user-select:none}
+  .sources .chip{font-weight:600}
   .chip{padding:7px 12px;border-radius:999px;border:1px solid var(--line);background:var(--bg2);
     color:var(--muted);font-size:12.5px;cursor:pointer;transition:.15s;user-select:none;white-space:nowrap}
   .chip:hover{color:var(--text);border-color:var(--accent)}
@@ -277,13 +290,20 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
       </button>
     </div>
     <header class="hero">
-      <h1>⚡ Clash / Loon 模块导入</h1>
-      <p>从「可莉的插件中心」收集的代理模块资源。点击「导入 Clash」在浏览器中拉起 Clash 客户端安装，或点「Loon」用 Loon 直接导入。</p>
-      <div class="src">数据来源 · <a href="__SRCURL__" target="_blank" rel="noopener"><b>__SRCNAME__</b></a> · 共 <span id="total">0</span> 个模块</div>
+      <h1>⚡ Clash / Loon / Quantumult X 模块导入</h1>
+      <p>可莉插件中心的 Loon 模块，一键拉起 Clash / Loon 导入；另收录 Quantumult X 重写与规则合集（可莉重写库 / 墨鱼手记 / 毒奶特供），支持 Quantumult X 与 hako:// 协议导入。</p>
+      <div class="src">数据来源 · <a href="__SRCURL__" target="_blank" rel="noopener"><b>__SRCNAME__</b></a> · Quantumult X 资源合集 · 共 <span id="total">0</span> 个模块</div>
       <div class="sync load" id="sync"><span class="dot"></span><span id="syncText">正在同步源站最新模块…</span></div>
     </header>
 
     <div class="notice" id="notice"></div>
+
+    <div class="sources" id="sources">
+      <span class="src-label">来源</span>
+      <div class="chip active" data-src="all">全部</div>
+      <div class="chip" data-src="kelee">可莉插件中心</div>
+      <div class="chip" data-src="qx">Quantumult X</div>
+    </div>
 
     <div class="controls">
       <div class="search">
@@ -300,8 +320,9 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
 
     <footer>
       本页为资源索引，模块版权归原作者所有（CC BY-NC-SA 4.0），数据来自 __SRCNAME__。<br/>
-      「导入 Clash」使用 <code>hako://install-module</code> 协议；「Loon」使用 <code>loon://import</code> 协议。<br/>
-      页面每次打开都会自动同步源站最新数据，源站不可达时回退到内置缓存快照。<br/>
+      「导入 Clash」使用 <code>hako://install-module</code> 协议；「Loon」使用 <code>loon://import</code> 协议；「导入 Quantumult X」使用 <code>quantumult-x:///add-resource</code> 协议（保留现有资源追加导入）。<br/>
+      Quantumult X 资源的导入链接直连 GitHub 仓库，点一下拉取的永远是仓库最新版；其页面数据为构建时快照。<br/>
+      可莉插件中心部分：每次打开会自动同步源站最新数据，源站不可达时回退到内置缓存快照。<br/>
       若设备未安装对应客户端，链接将无法拉起，可使用「复制」按钮手动导入。
     </footer>
   </div>
@@ -354,9 +375,43 @@ function computeTopTags(mods,n){
   return Object.entries(c).sort((a,b)=>b[1]-a[1]).slice(0,n).map(x=>x[0]);
 }
 
-let MODULES = transformLists(SNAPSHOT.lists);
+/* ===== Quantumult X 合集：quantumult-x:///add-resource（保留现有资源追加导入）+ hako:// 双协议 ===== */
+function qxInstall(url, kind, name){
+  const key = kind==='rule' ? 'filter_remote' : 'rewrite_remote';
+  const tag = String(name||'').replace(/,/g,'，').slice(0,40);
+  const payload = JSON.stringify({[key]:[url+', tag='+tag]});
+  return 'quantumult-x:///add-resource?remote-resource='+pyQuote(payload);
+}
+function transformQx(qx){
+  if(!qx || !qx.modules) return [];
+  return qx.modules.map(m=>({
+    name:m.name||'', desc:(m.desc||'').trim(), tags:m.tags||[], icon:m.icon||'',
+    date:'', author:m.author||'', authorHome:'',
+    lpx:m.url||'', raw:m.url||'', kind:m.kind||'rewrite', repo:m.repo||'',
+    source:'qx',
+    install:qxInstall(m.url||'', m.kind, m.name),
+    hako:'hako://install-module?url='+pyQuote(m.url||''),
+    loon:'loon://import?plugin='+encodeURIComponent(m.url||'')
+  }));
+}
+
+let KELEE = transformLists(SNAPSHOT.lists);
+let QX = transformQx(SNAPSHOT.qx);
+let MODULES = KELEE.concat(QX);
 let TOP_TAGS = computeTopTags(MODULES, 16);
-let state = { q:"", tag:"全部", page:1 };
+let state = { q:"", tag:"全部", page:1, source:"all" };
+
+/* 全部视图下两类资源交替排列，保证两边都能被看到 */
+function interleave(a,b){
+  const out=[]; const n=Math.max(a.length,b.length);
+  for(let i=0;i<n;i++){ if(i<a.length) out.push(a[i]); if(i<b.length) out.push(b[i]); }
+  return out;
+}
+function currentSet(){
+  if(state.source==='kelee') return KELEE;
+  if(state.source==='qx') return QX;
+  return interleave(KELEE,QX);
+}
 
 const grid=document.getElementById('grid');
 const empty=document.getElementById('empty');
@@ -409,11 +464,15 @@ function buildChips(){
     chipsEl.appendChild(el);
   });
 }
-buildChips();
+function refreshTags(){
+  TOP_TAGS=computeTopTags(currentSet(),16);
+  buildChips();
+}
+refreshTags();
 
 function filtered(){
   const q=state.q.trim().toLowerCase();
-  return MODULES.filter(m=>{
+  return currentSet().filter(m=>{
     if(state.tag!=="全部" && !(m.tags||[]).includes(state.tag)) return false;
     if(!q) return true;
     const hay=(m.name+" "+(m.desc||"")+" "+(m.tags||[]).join(" ")+" "+(m.author||"")).toLowerCase();
@@ -421,11 +480,23 @@ function filtered(){
   });
 }
 
+const SVG_DOWN='<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M4 19h16"/></svg>';
+const SVG_BOLT='<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4.5 13.5H11L10 22l8.5-11.5H12z"/></svg>';
+const SVG_LINK='<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg>';
+const SVG_COPY='<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2.5"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>';
+
 function card(m){
   const tags=(m.tags||[]).slice(0,4).map(t=>`<span class="tag">${esc(t)}</span>`).join('');
   const author=m.author?`${esc(m.author)}`:'';
   const when=m.date?`${esc((m.date||'').slice(0,10))}`:'';
   const meta=[author,when].filter(Boolean).join(' · ');
+  const isQx=m.source==='qx';
+  const primary=isQx
+    ?`<a class="btn primary" href="${esc(m.install)}">${SVG_BOLT}导入 Quantumult X</a>`
+    :`<a class="btn primary" href="${esc(m.install)}">${SVG_DOWN}导入 Clash</a>`;
+  const secondary=isQx
+    ?`<a class="btn secondary" href="${esc(m.hako)}" title="用 hako://install-module 协议导入">${SVG_LINK}hako 导入</a>`
+    :`<a class="btn secondary" href="${esc(m.loon)}">${SVG_BOLT}Loon 导入</a>`;
   return `
   <div class="card">
     <div class="head">
@@ -438,17 +509,11 @@ function card(m){
     <div class="desc">${esc(m.desc)||'—'}</div>
     <div class="tags">${tags}</div>
     <div class="acts">
-      <a class="btn primary" href="${esc(m.install)}">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M4 19h16"/></svg>
-        导入 Clash
-      </a>
+      ${primary}
       <div class="sec-row">
-        <a class="btn secondary" href="${esc(m.loon)}">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4.5 13.5H11L10 22l8.5-11.5H12z"/></svg>
-          Loon 导入
-        </a>
+        ${secondary}
         <button class="btn secondary" data-copy="${esc(m.lpx)}" title="复制资源链接">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2.5"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          ${SVG_COPY}
           复制链接
         </button>
       </div>
@@ -503,10 +568,31 @@ function toast(msg){
 
 document.getElementById('q').addEventListener('input',e=>{state.q=e.target.value;state.page=1;render();});
 
+/* 来源筛选：全部 / 可莉插件中心 / Quantumult X */
+const sourcesEl=document.getElementById('sources');
+sourcesEl.addEventListener('click',e=>{
+  const el=e.target.closest('.chip'); if(!el) return;
+  const src=el.dataset.src; if(!src||src===state.source) return;
+  state.source=src; state.tag='全部'; state.page=1;
+  [...sourcesEl.querySelectorAll('.chip')].forEach(x=>x.classList.toggle('active',x.dataset.src===src));
+  refreshTags(); updateSyncForSource(); render();
+});
+
 /* 先用快照秒开，再根据缓存策略决定是否需要请求源站 */
 render();
 
-function setSync(cls,text){ syncEl.className='sync '+cls; syncText.textContent=text; }
+let keleeSync={cls:'load',text:'正在同步源站最新模块…'};
+function setSync(cls,text,remember){
+  syncEl.className='sync '+cls; syncText.textContent=text;
+  if(remember!==false) keleeSync={cls,text};
+}
+function updateSyncForSource(){
+  if(state.source==='qx'){
+    setSync('ok',`Quantumult X 资源共 ${QX.length} 个（构建于 ${SNAPSHOT.buildDate||'—'}），导入链接直连 GitHub 仓库，始终拉取最新版`,false);
+  }else{
+    setSync(keeleeSync.cls,keeleeSync.text,false);
+  }
+}
 function fmtTime(d){
   const p=n=>String(n).padStart(2,'0');
   return `${d.getFullYear()}-${p(d.getMonth()+1)}-${p(d.getDate())} ${p(d.getHours())}:${p(d.getMinutes())}`;
@@ -536,8 +622,9 @@ function writeCache(lists){
 function applyModules(lists,extra){
   const live=transformLists(lists);
   if(!live.length) return false;
-  MODULES=live; TOP_TAGS=computeTopTags(MODULES,16);
-  buildChips(); totalEl.textContent=MODULES.length; render();
+  KELEE=live;                        /* 实时同步只替换可莉插件中心部分，QX 为静态快照 */
+  MODULES=KELEE.concat(QX);
+  refreshTags(); totalEl.textContent=MODULES.length; render();
   if(extra) setSync(extra.cls,extra.text);
   return true;
 }

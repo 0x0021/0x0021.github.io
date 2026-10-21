@@ -227,6 +227,7 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
   .btn.primary:hover{filter:brightness(1.07)}
   .btn:hover{border-color:var(--accent)}
   .btn.secondary{flex:1 1 0;font-size:12.8px;color:var(--muted)}
+  .btn.secondary.wide{flex:1.7 1 0}
   .btn.secondary:hover{color:var(--text)}
   .sec-row{display:flex;gap:8px}
 
@@ -493,7 +494,7 @@ function card(m){
   const isQx=m.source==='qx';
   const primary=`<a class="btn primary" href="${esc(isQx?m.hako:m.install)}">${SVG_DOWN}导入 Clash</a>`;
   const secondary=isQx
-    ?`<a class="btn secondary" href="${esc(m.install)}" title="用 quantumult-x:///add-resource 协议导入">${SVG_BOLT}导入 Quantumult X</a>`
+    ?`<a class="btn secondary wide" href="${esc(m.install)}" title="用 quantumult-x:///add-resource 协议导入">${SVG_BOLT}导入 Quantumult X</a>`
     :`<a class="btn secondary" href="${esc(m.loon)}">${SVG_BOLT}Loon 导入</a>`;
   return `
   <div class="card">

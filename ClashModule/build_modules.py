@@ -233,7 +233,7 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
   .acts{display:flex;flex-direction:column;gap:10px;margin-top:2px}
   .btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;text-align:center;
     padding:11px 14px;border-radius:12px;font-size:14px;font-weight:600;
-    cursor:pointer;border:1px solid var(--line);background:var(--bg2);color:var(--text);transition:.2s var(--ease);min-width:0;
+    cursor:pointer;border:1px solid var(--line);background:var(--bg2);color:var(--text);transition:.2s var(--ease);min-width:0;white-space:nowrap;
     -webkit-tap-highlight-color:transparent;}
   .btn svg{flex:0 0 auto}
   .btn.primary{width:100%;background:var(--accent);color:#fff;border-color:transparent;box-shadow:0 4px 16px rgba(0,113,227,.28)}
@@ -241,7 +241,7 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
   .btn.primary:active{transform:scale(.985)}
   .btn:hover{border-color:var(--accent)}
   .btn.secondary{flex:1 1 0;font-size:13px;color:var(--text);font-weight:500;background:var(--bg2);}
-  .btn.secondary.wide{flex:1.7 1 0}
+  .btn.secondary.wide{flex:2 1 0}
   .btn.secondary:hover{color:var(--accent);border-color:var(--accent)}
   .sec-row{display:flex;gap:10px}
 

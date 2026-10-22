@@ -728,12 +728,8 @@ footer a:hover { text-decoration: underline; }
   letter-spacing: 0.02em;
   margin-bottom: 0.65rem;
 }
-/* 标题区：加一条 accent 渐变竖条，形成视觉起点 */
 .post-header {
   margin-bottom: 2.5rem;
-  padding-left: 1.1rem;
-  border-left: 3px solid transparent;
-  border-image: var(--gradient) 1;
 }
 .post-header h1 {
   font-size: clamp(1.75rem, 4.2vw, 2.5rem);
@@ -967,7 +963,7 @@ footer a:hover { text-decoration: underline; }
   .post-content { font-size: 1rem; line-height: 1.85; }
   .post-content > p:first-of-type { font-size: 1.05rem; }
   .post-content h2 { font-size: 1.2rem; margin: 2.5rem 0 0.9rem; }
-  .post-header { padding-left: 0.9rem; }
+  .post-header { padding-left: 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {

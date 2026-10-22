@@ -304,7 +304,7 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
   const box = document.querySelector('.toc');
   if (!article || !box) return;
   const heads = [...article.querySelectorAll('h2')];
-  if (!heads.length) return;
+  if (!heads.length) { box.remove(); return; }
 
   const list = document.createElement('ul');
   list.className = 'toc-list';

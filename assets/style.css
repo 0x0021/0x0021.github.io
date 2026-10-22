@@ -748,13 +748,36 @@ footer a:hover { text-decoration: underline; }
 }
 .post-divider { height: 1px; background: var(--border); margin: 2rem 0; }
 
-/* 文章侧边浮动目录（类 Markdown [TOC]） */
+/* 文章侧边浮动目录（类 Markdown [TOC]）：竖向导轨 + 滑动指示条 */
 .toc { display: none; } /* 移动端默认隐藏，保持简洁 */
-.toc-title { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1rem; }
-.toc-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; border-left: 2px solid var(--border); }
-.toc-list a { display: block; padding: 0.12rem 0 0.12rem 0.9rem; margin-left: -2px; border-left: 2px solid transparent; color: var(--text-sec); text-decoration: none; font-size: 0.84rem; line-height: 1.5; transition: color .2s, border-color .2s; }
+.toc-list {
+  list-style: none; margin: 0; padding: 0;
+  position: relative;
+  display: flex; flex-direction: column; gap: 2px;
+}
+/* 导轨底色 */
+.toc-list::before {
+  content: ''; position: absolute; left: 0; top: 6px; bottom: 6px;
+  width: 2px; border-radius: 1px; background: var(--border);
+}
+/* 滑动 accent 指示条（top/height 由 JS 按激活项定位） */
+.toc-ind {
+  position: absolute; left: 0; width: 2px; border-radius: 1px;
+  background: var(--accent);
+  transition: top .28s cubic-bezier(.4,0,.2,1), height .28s cubic-bezier(.4,0,.2,1);
+}
+.toc-list a {
+  display: block; padding: .32rem 0 .32rem 1.05rem;
+  color: var(--text-muted); text-decoration: none;
+  font-size: .84rem; line-height: 1.45;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  transition: color .2s, transform .2s;
+}
 .toc-list a:hover { color: var(--text); }
-.toc-list a.active { color: var(--accent); border-left-color: var(--accent); font-weight: 600; }
+.toc-list a.active {
+  color: var(--accent); font-weight: 600;
+  transform: translateX(2px);
+}
 .post-content h2 { scroll-margin-top: 76px; }
 
 @media (min-width: 1024px) {
@@ -778,6 +801,8 @@ footer a:hover { text-decoration: underline; }
     position: sticky;
     top: 84px;
     align-self: start;
+    /* 与右栏文章标题顶部对齐：跳过「返回博客」一行 + 行间距 */
+    margin-top: calc(3rem + 2.45rem);
   }
 }
 

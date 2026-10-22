@@ -319,10 +319,34 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
     list.appendChild(li);
     return a;
   });
+  // 滑动 accent 指示条
+  const ind = document.createElement('div');
+  ind.className = 'toc-ind';
+  list.appendChild(ind);
   box.appendChild(list);
 
-  const setActive = (id) => links.forEach(l => l.classList.toggle('active', l.dataset.target === id));
+  const setActive = (id) => links.forEach(l => {
+    const on = l.dataset.target === id;
+    l.classList.toggle('active', on);
+    if (on) {
+      ind.style.top = l.offsetTop + 'px';
+      ind.style.height = l.offsetHeight + 'px';
+    }
+  });
   setActive(heads[0].id);
+  // 字体加载完成后指示条位置可能漂移，再校准一次
+  requestAnimationFrame(() => {
+    const cur = links.find(l => l.classList.contains('active'));
+    if (cur) { ind.style.top = cur.offsetTop + 'px'; ind.style.height = cur.offsetHeight + 'px'; }
+  });
+
+  // 点击平滑滚动到对应章节
+  links.forEach(a => a.addEventListener('click', (e) => {
+    e.preventDefault();
+    const t = document.getElementById(a.dataset.target);
+    if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    history.replaceState(null, '', '#' + a.dataset.target);
+  }));
 
   const obs = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) setActive(e.target.id); });

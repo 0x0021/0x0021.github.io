@@ -170,7 +170,8 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
     background:linear-gradient(145deg,#0a84ff,#30d158);box-shadow:0 10px 30px rgba(0,113,227,.35);
     transform:rotate(-6deg);
   }
-  .hero h1{margin:0 0 12px;font-size:clamp(28px,5.5vw,44px);font-weight:700;letter-spacing:-.5px;line-height:1.1;}
+  .hero h1{margin:0 0 12px;font-size:clamp(28px,5.5vw,44px);font-weight:700;letter-spacing:-.5px;line-height:1.1;
+    background:linear-gradient(120deg,#0071e3,#5e5ce6,#0a84ff);-webkit-background-clip:text;background-clip:text;color:transparent;}
   .hero p{margin:0 auto;color:var(--muted);max-width:680px;font-size:16px;line-height:1.55;}
   .src{display:inline-flex;gap:6px;align-items:center;margin-top:20px;font-size:13px;color:var(--muted);
     background:var(--bg2);border:1px solid var(--line);padding:7px 16px;border-radius:980px;
@@ -189,14 +190,22 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
     -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);}
   .notice div{margin:3px 0}
 
+  .toolbar{position:sticky;top:56px;z-index:30;margin:0 0 18px;padding:14px;border-radius:20px;
+    background:var(--bg2);border:1px solid var(--line);box-shadow:var(--shadow);
+    -webkit-backdrop-filter:var(--glass);backdrop-filter:var(--glass);}
   .controls{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:14px;}
   .search{flex:1 1 260px;min-width:0;position:relative;}
-  .search input{width:100%;padding:13px 16px 13px 44px;border-radius:980px;border:1px solid var(--line);
+  .search input{width:100%;padding:13px 42px 13px 44px;border-radius:980px;border:1px solid var(--line);
     background:var(--bg2);color:var(--text);font-size:15px;outline:none;transition:.25s var(--ease);
     -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);}
   .search input:focus{border-color:var(--accent);box-shadow:0 0 0 4px rgba(0,113,227,.15)}
   .search input::placeholder{color:var(--muted)}
   .search svg{position:absolute;left:16px;top:50%;transform:translateY(-50%);opacity:.5}
+  .search .clear{position:absolute;right:10px;top:50%;transform:translateY(-50%);border:none;background:var(--line);
+    color:var(--muted);font-size:18px;line-height:1;cursor:pointer;padding:0;width:24px;height:24px;border-radius:50%;
+    display:none;align-items:center;justify-content:center;transition:.15s var(--ease);}
+  .search .clear:hover{color:var(--text);background:var(--muted)}
+  .search .clear.show{display:flex}
 
   .chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px;}
   .sources{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
@@ -208,7 +217,9 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
   .chip:hover{color:var(--text);border-color:var(--accent)}
   .chip.active{background:var(--accent);color:#fff;border-color:transparent;font-weight:600;box-shadow:0 4px 14px rgba(0,113,227,.3)}
 
-  .count{color:var(--muted);font-size:13.5px;margin:0 4px 16px;font-weight:500}
+  .count{display:inline-block;color:var(--muted);font-size:13px;margin:0 2px 18px;font-weight:500;
+    background:var(--bg2);border:1px solid var(--line);padding:6px 14px;border-radius:999px;
+    -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);}
 
   .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px;}
   .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px;
@@ -224,6 +235,15 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
   .icon img{width:100%;height:100%;object-fit:contain}
   .card h3{margin:0;font-size:16.5px;font-weight:600;line-height:1.3;letter-spacing:-.2px}
   .meta{font-size:12px;color:var(--muted);margin-top:3px}
+  .card .src-badge{position:absolute;top:14px;right:14px;font-size:11px;font-weight:600;padding:3px 9px;border-radius:999px;
+    white-space:nowrap;border:1px solid transparent;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);}
+  .card .src-badge[data-r="kelee"],.card .src-badge[data-r="klee"]{color:#0071e3;background:rgba(0,113,227,.10);border-color:rgba(0,113,227,.22)}
+  .card .src-badge[data-r="ddg"]{color:#0a9d8e;background:rgba(10,157,142,.12);border-color:rgba(10,157,142,.24)}
+  .card .src-badge[data-r="adblock"]{color:#e08600;background:rgba(224,134,0,.12);border-color:rgba(224,134,0,.24)}
+  .card .src-badge[data-r="qx"]{color:var(--muted);background:var(--bg2);border-color:var(--line)}
+  .card::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+    background:radial-gradient(120% 70% at 50% 0%, rgba(0,113,227,.10), transparent 55%);opacity:0;transition:opacity .25s var(--ease);}
+  .card:hover::after{opacity:1}
   .desc{font-size:13.5px;color:var(--muted);line-height:1.55;
     min-height:calc(3 * 1.55em);/* 预留 3 行：不足的卡片以空行占位，保证按钮行对齐 */
     display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
@@ -245,7 +265,9 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
   .btn.secondary:hover{color:var(--accent);border-color:var(--accent)}
   .sec-row{display:flex;gap:10px}
 
-  .empty{text-align:center;color:var(--muted);padding:64px 10px;font-size:16px}
+  .empty{text-align:center;color:var(--muted);padding:72px 10px;font-size:16px}
+  .empty-ico{font-size:46px;margin-bottom:14px;opacity:.85}
+  .empty-sub{font-size:13px;margin-top:8px;opacity:.8}
 
   .pager{display:flex;justify-content:center;align-items:center;gap:8px;margin-top:32px;flex-wrap:wrap}
   .pager button{min-width:40px;height:40px;padding:0 12px;border-radius:980px;border:1px solid var(--line);
@@ -288,6 +310,7 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
     .hero h1{font-size:clamp(24px,7vw,32px)}
     .hero p{font-size:14.5px}
     .src{margin-top:16px;font-size:12px;padding:6px 13px}
+    .toolbar{top:0;padding:12px;margin-bottom:14px}
     .search{flex:1 1 100%}
     .btn.secondary{font-size:12.5px;padding:10px 6px}
     .theme-switch{position:absolute;top:10px;right:10px}
@@ -328,24 +351,31 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
 
     <div class="notice" id="notice"></div>
 
-    <div class="sources" id="sources">
-      <span class="src-label">来源</span>
-      <div class="chip active" data-src="all">全部</div>
-      <div class="chip" data-src="kelee">可莉插件中心</div>
-      <div class="chip" data-src="qx">Quantumult X</div>
-    </div>
-
-    <div class="controls">
-      <div class="search">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
-        <input id="q" type="search" placeholder="搜索模块名称 / 描述 / 标签 / 作者…" autocomplete="off" />
+    <div class="toolbar">
+      <div class="sources" id="sources">
+        <span class="src-label">来源</span>
+        <div class="chip active" data-src="all">全部</div>
+        <div class="chip" data-src="kelee">可莉插件中心</div>
+        <div class="chip" data-src="qx">Quantumult X</div>
       </div>
+
+      <div class="controls">
+        <div class="search">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+          <input id="q" type="search" placeholder="搜索模块名称 / 描述 / 标签 / 作者…" autocomplete="off" />
+          <button class="clear" id="clearBtn" type="button" aria-label="清空搜索">×</button>
+        </div>
+      </div>
+      <div class="chips" id="chips"></div>
     </div>
-    <div class="chips" id="chips"></div>
 
     <div class="count" id="count"></div>
     <div class="grid" id="grid"></div>
-    <div class="empty" id="empty" style="display:none">没有匹配的模块，换个关键词试试 🔍</div>
+    <div class="empty" id="empty" style="display:none">
+      <div class="empty-ico">🔍</div>
+      <div>没有匹配的模块</div>
+      <div class="empty-sub">换个关键词，或点上方标签 / 来源重新筛选</div>
+    </div>
     <div class="pager" id="pager"></div>
 
     <footer>
@@ -522,12 +552,15 @@ function card(m){
   const when=m.date?`${esc((m.date||'').slice(0,10))}`:'';
   const meta=[author,when].filter(Boolean).join(' · ');
   const isQx=m.source==='qx';
+  const rk = isQx ? ({'墨鱼手记':'ddg','毒奶特供':'adblock','可莉重写库':'klee'}[m.repo]||'qx') : 'kelee';
+  const rlabel = isQx ? (m.repo||'Quantumult X') : '可莉插件中心';
   const primary=`<a class="btn primary" href="${esc(isQx?m.hako:m.install)}">${SVG_DOWN}导入 Clash</a>`;
   const secondary=isQx
     ?`<a class="btn secondary wide" href="${esc(m.install)}" title="用 quantumult-x:///add-resource 协议导入">${SVG_BOLT}导入 Quantumult X</a>`
     :`<a class="btn secondary" href="${esc(m.loon)}">${SVG_BOLT}Loon 导入</a>`;
   return `
   <div class="card">
+    <span class="src-badge" data-r="${rk}">${esc(rlabel)}</span>
     <div class="head">
       <div class="icon"><span>🧩</span><img src="${esc(m.icon)}" alt="" loading="lazy" onload="this.previousElementSibling.remove()" onerror="this.remove()"></div>
       <div style="min-width:0">
@@ -595,7 +628,11 @@ function toast(msg){
   clearTimeout(el._t);el._t=setTimeout(()=>el.classList.remove('show'),1600);
 }
 
-document.getElementById('q').addEventListener('input',e=>{state.q=e.target.value;state.page=1;render();});
+const qEl=document.getElementById('q');
+const clearBtn=document.getElementById('clearBtn');
+function syncClear(){ clearBtn.classList.toggle('show', qEl.value.length>0); }
+qEl.addEventListener('input',e=>{state.q=e.target.value;state.page=1;render();syncClear();});
+clearBtn.addEventListener('click',()=>{ qEl.value=''; state.q=''; state.page=1; render(); syncClear(); qEl.focus(); });
 
 /* 来源筛选：全部 / 可莉插件中心 / Quantumult X */
 const sourcesEl=document.getElementById('sources');

@@ -770,6 +770,11 @@ footer a:hover { text-decoration: underline; }
     margin: 0 auto;
     align-items: start;
   }
+  /* 内容子元素显式放进第 2 列，避免 grid 自动填充把标题挤进窄列 */
+  .post.has-toc > .post-back,
+  .post.has-toc > .post-header,
+  .post.has-toc > .post-content,
+  .post.has-toc > .post-footer { grid-column: 2; }
   .post.has-toc .toc {
     display: block;
     grid-column: 1;

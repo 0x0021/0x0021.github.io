@@ -298,3 +298,40 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
   });
 })();
 
+// ── 文章侧边浮动目录（自动从 h2 生成，类 Markdown [TOC]，高亮当前章节）──
+(function () {
+  const article = document.querySelector('.post-content');
+  const box = document.querySelector('.toc');
+  if (!article || !box) return;
+  const heads = [...article.querySelectorAll('h2')];
+  if (!heads.length) return;
+
+  const title = document.createElement('div');
+  title.className = 'toc-title';
+  title.textContent = '目录';
+  box.appendChild(title);
+
+  const list = document.createElement('ul');
+  list.className = 'toc-list';
+  const links = heads.map((h, i) => {
+    if (!h.id) h.id = 'sec-' + (i + 1);
+    const li = document.createElement('li');
+    const a = document.createElement('a');
+    a.href = '#' + h.id;
+    a.textContent = h.textContent;
+    a.dataset.target = h.id;
+    li.appendChild(a);
+    list.appendChild(li);
+    return a;
+  });
+  box.appendChild(list);
+
+  const setActive = (id) => links.forEach(l => l.classList.toggle('active', l.dataset.target === id));
+  setActive(heads[0].id);
+
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) setActive(e.target.id); });
+  }, { rootMargin: '-80px 0px -65% 0px', threshold: 0 });
+  heads.forEach(h => obs.observe(h));
+})();
+

@@ -311,6 +311,9 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
     .hero p{font-size:14.5px}
     .src{margin-top:16px;font-size:12px;padding:6px 13px}
     .toolbar{top:0;padding:12px;margin-bottom:14px}
+    .controls{margin-bottom:10px}
+    .chips{flex-wrap:nowrap;overflow-x:auto;margin-bottom:6px;padding-bottom:4px;scrollbar-width:none}
+    .chips::-webkit-scrollbar{display:none}
     .search{flex:1 1 100%}
     .btn.secondary{font-size:12.5px;padding:10px 6px}
     .theme-switch{position:absolute;top:10px;right:10px}

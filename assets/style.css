@@ -801,8 +801,7 @@ footer a:hover { text-decoration: underline; }
     position: sticky;
     top: 84px;
     align-self: start;
-    /* 与右栏文章标题顶部对齐：跳过「返回博客」一行 + 行间距 */
-    margin-top: calc(3rem + 2.45rem);
+    /* 顶部与正文第一段对齐由 JS 按每篇文章标题实际高度动态计算 */
   }
 }
 

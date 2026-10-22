@@ -325,6 +325,16 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
   list.appendChild(ind);
   box.appendChild(list);
 
+  // 目录顶部与正文第一段顶端对齐（每篇文章标题高度不同，动态计算）
+  const alignToc = () => {
+    if (getComputedStyle(box).display === 'none') return;
+    const cur = parseFloat(getComputedStyle(box).marginTop) || 0;
+    const delta = article.offsetTop - box.offsetTop;
+    if (delta > 0) box.style.marginTop = (cur + delta) + 'px';
+  };
+  alignToc();
+  window.addEventListener('resize', alignToc);
+
   const setActive = (id) => links.forEach(l => {
     const on = l.dataset.target === id;
     l.classList.toggle('active', on);

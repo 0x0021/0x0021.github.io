@@ -261,6 +261,9 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
   footer a{color:var(--accent)}
   footer code{font-size:11.5px;background:var(--bg2);border:1px solid var(--line);padding:2px 7px;border-radius:7px;
     white-space:normal;word-break:break-all;}
+  footer .recommend{display:inline-block;margin-top:14px;padding-top:14px;border-top:1px dashed var(--line);
+    color:var(--text);font-weight:600;font-size:13px;}
+  footer .recommend a{color:var(--accent)}
 
   #toast{position:fixed;left:50%;bottom:28px;transform:translateX(-50%) translateY(20px);
     background:rgba(0,0,0,.82);color:#fff;padding:12px 20px;border-radius:980px;font-weight:600;font-size:14px;
@@ -350,7 +353,8 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
       「导入 Clash」使用 <code>hako://install-module</code> 协议；「Loon」使用 <code>loon://import</code> 协议；「导入 Quantumult X」使用 <code>quantumult-x:///add-resource</code> 协议（保留现有资源追加导入）。<br/>
       Quantumult X 资源的导入链接直连 GitHub 仓库，点一下拉取的永远是仓库最新版；其页面数据为构建时快照。<br/>
       可莉插件中心部分：每次打开会自动同步源站最新数据，源站不可达时回退到内置缓存快照。<br/>
-      若设备未安装对应客户端，链接将无法拉起，可使用「复制」按钮手动导入。
+      若设备未安装对应客户端，链接将无法拉起，可使用「复制」按钮手动导入。<br/>
+      <span class="recommend">友情推荐 · <a href="https://xn--4gqx1hgtfdmt.com/#/register?code=ayOVtXLb" target="_blank" rel="noopener">一分机场</a>（高速稳定，注册即送流量）</span>
     </footer>
   </div>
 

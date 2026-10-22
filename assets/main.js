@@ -306,11 +306,6 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
   const heads = [...article.querySelectorAll('h2')];
   if (!heads.length) return;
 
-  const title = document.createElement('div');
-  title.className = 'toc-title';
-  title.textContent = '目录';
-  box.appendChild(title);
-
   const list = document.createElement('ul');
   list.className = 'toc-list';
   const links = heads.map((h, i) => {

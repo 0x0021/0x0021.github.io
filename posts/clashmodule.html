@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ClashModule：把散落的 Loon / Quantumult X 模块收拢成可一键导入 Clash 的索引 · 坤子</title>
+<meta name="description" content="可莉插件中心的 Loon 模块与 Quantumult X 的重写 / 规则散落在源站各处，换设备、分享时总要反复翻找。ClashModule 把这些模块收拢成一个纯静态浏览器索引：596 个模块、搜索 + 标签筛选 + 分页，主按钮「导入 Clash」点一下就拉起客户端导入，也支持 Loon / Quantumult X 与复制链接手动导入，数据实时同步源站。" />
+<link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+<div class="post-progress" aria-hidden="true"></div>
+
+<nav>
+  <a href="../index.html" class="nav-brand">坤子</a>
+  <div class="nav-links">
+    <a href="../index.html#blog">文章</a>
+    <a href="../index.html#timeline">动态</a>
+    <a href="../index.html#projects">项目</a>
+    <a href="https://github.com/0x0021" target="_blank" rel="noopener">GitHub</a>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="切换主题">◑</button>
+  </div>
+</nav>
+
+<main class="post">
+  <a class="post-back" href="../index.html">← 返回博客</a>
+  <header class="post-header">
+    <div class="post-meta">2026-10-22 · 工具 / 资源</div>
+    <h1>ClashModule：把散落的 Loon / Quantumult X 模块收拢成可一键导入 Clash 的索引</h1>
+    <div class="post-tags">
+      <span class="tag">代理</span>
+      <span class="tag green">工具</span>
+      <span class="tag">Clash</span>
+      <span class="tag">Loon</span>
+      <span class="tag">Quantumult X</span>
+    </div>
+  </header>
+
+  <article class="post-content">
+    <p>可莉插件中心（Kelee Loon）的模块、Quantumult X 的远程重写和规则订阅，是我换设备、帮朋友配代理时最常翻的东西。但它们散在源站的不同页面，每次都要登录、找分类、复制链接、再手动拉起客户端导入——多台设备、不同客户端之间来回切，琐碎又容易漏。于是我做了 <strong>ClashModule</strong>：一个纯静态的浏览器索引页，把这些模块收拢到一起，<strong>以「导入 Clash」为主按钮</strong>、Loon / Quantumult X 为辅，搜索、筛选、一键拉起对应客户端导入，数据实时跟着源站走。</p>
+
+    <blockquote>
+      <p><strong>本文要点</strong></p>
+      <ul>
+        <li><strong>596 个模块</strong>：275 个 Loon 模块 + 321 个 Quantumult X 重写 / 规则合集，一次性收进一个索引</li>
+        <li><strong>一键导入 Clash 为主</strong>：主按钮即「导入 Clash」(<code>hako://</code>)，点一下拉起客户端；Loon（<code>loon://</code>）、Quantumult X（<code>quantumult-x://</code>）作为同场景备用，按需切换</li>
+        <li><strong>不止一键</strong>：每个模块都提供「复制链接」，可手动粘贴到任意客户端导入</li>
+        <li><strong>搜索 + 标签筛选 + 分页</strong>，移动端同样好用，自带暗色模式</li>
+      </ul>
+    </blockquote>
+
+    <h2>它到底解决了什么</h2>
+    <p>源站的模块是真的多，但访问路径是真的碎。要一个一个分类翻、复制安装链接，再切到客户端里粘贴，中间还隔着登录态和不同的页面结构。更麻烦的是分享——你拿着一套配置想发给用不同客户端的朋友，得先分清哪些是 Loon 模块、哪些要转成 Quantumult X 的 <code>rewrite_remote</code> / <code>filter_remote</code>，手误就导入失败。</p>
+    <p>ClashModule 把这件事压成一步：打开索引页 → 搜到 / 筛出想要的模块 → 点一下「导入 Clash / 导入 Loon / 导入 Quantumult X」→ 客户端自动弹起请求。源站更新了，页面数据也跟着更新，不用再各翻各的。</p>
+
+    <h2>三种客户端的导入协议</h2>
+    <p>不同客户端的「深链导入」协议不一样，页面按当前模块类型和你的客户端分别拼好：</p>
+    <ul>
+      <li><strong>Clash</strong>：用 <code>hako://install-module?url=</code> 拉起 hako 导入，主按钮文案即「导入 Clash」（协议本身不变）。</li>
+      <li><strong>Loon</strong>：用 <code>loon://import</code> 直接把模块推给 Loon 导入。</li>
+      <li><strong>Quantumult X</strong>：用 <code>quantumult-x:///add-resource?remote-resource=&lt;编码后的 JSON&gt;</code> 注入。页面会帮我把 <code>rewrite</code> 改写成 <code>rewrite_remote</code>、<code>rule</code> 改写成 <code>filter_remote</code> 再做 URL 编码，免去手动转换的坑。</li>
+    </ul>
+    <p>如果当下不方便直接拉起客户端（比如桌面浏览器打开、手机没装对应 App），每个模块都带了「复制链接」按钮——复制出来的就是上面那串深链，你贴到能处理它的客户端里一样导入。</p>
+
+    <h2>怎么用</h2>
+    <ol>
+      <li>打开 <a href="https://0x0021.github.io/ClashModule/" target="_blank" rel="noopener">ClashModule 索引页</a>，在搜索框输入关键词，或点来源 / 标签 chip 做筛选。</li>
+      <li>翻到目标模块，点最醒目的<strong>「导入 Clash」</strong>主按钮即可拉起客户端；若你用 Loon / Quantumult X，页面会按模块类型给出对应的导入按钮。</li>
+      <li>客户端弹起导入请求后确认即可；没弹起就点「复制链接」手动粘贴。</li>
+      <li>换设备时重复第 1–3 步，数据始终与源站保持一致，不用重新记分类路径。</li>
+    </ol>
+
+    <h2>一些顺手做的细节</h2>
+    <ul>
+      <li><strong>实时同步源站</strong>：页面内联一份快照实现秒开，再按缓存策略判断是否回源拉最新数据，既快又不失真。</li>
+      <li><strong>苹果风 UI</strong>：系统字体栈、毛玻璃卡片、大圆角、SF 蓝主色，并内置暗色模式（跟随系统或手动切换）。</li>
+      <li><strong>移动端友好</strong>：无横向滚动条，顶部工具栏在滚动时自动收起、回到顶部再展开，不遮挡内容。</li>
+      <li><strong>分页浏览</strong>：翻页后定位到第一排卡片而非页面顶部，长列表浏览不跳来跳去。</li>
+      <li><strong>页脚友情推荐</strong>：放了一个机场的推荐入口，需要的话顺手可取，不要也无妨。</li>
+    </ul>
+
+    <h2>延伸</h2>
+    <ul>
+      <li><a href="https://0x0021.github.io/ClashModule/" target="_blank" rel="noopener">ClashModule 工具页</a>——596 个模块实时索引，直接去导入</li>
+      <li><a href="https://0x0021.github.io/" target="_blank" rel="noopener">坤子 · 博客</a>——更多工具与项目记录</li>
+    </ul>
+  </article>
+  <footer class="post-footer">
+    <a class="post-back" href="../index.html">← 返回博客</a>
+  </footer>
+</main>
+<script src="../assets/main.js"></script>
+</body>
+</html>

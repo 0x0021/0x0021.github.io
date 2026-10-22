@@ -139,13 +139,20 @@
 
     <div class="posts-grid reveal" data-page-node-id="Hea4F37JaU9osGyNNni7ZQ">
 
+      <a class="post-card" href="posts/linkora-v070-release.html">
+        <div class="post-card__meta">2026-10-22 · 发布记录</div>
+        <h3 class="post-card__title">Linkora v0.7.0：分身开始看得见群里发生的事</h3>
+        <p class="post-card__excerpt">钉钉 CLI 升到 v1.0.63 后重新过了一遍真实能力，发现 Linkora 有几处设计是照着旧版认知写下的——包括一条我信了好几年的错误判断。这一版把它们一次性纠过来：话题（Thread）从「能回复但读不到历史」变成能读能答；群成员枚举修好了（此前工具声称返回成员、实际一个都没有）；新接入钉钉日志（日报周报）与企业语义检索两个域；补齐审批表单字段配置、待办闭环、会议协调（冲突 / 空闲 / 推荐时间）三处业务缺口。内置工具 38 → 47，意图分类 39 → 41。</p>
+        <div class="post-card__tags"><span class="tag">AI Agent</span><span class="tag green">v0.7.0</span><span class="tag">钉钉</span><span class="tag">工具</span></div>
+      </a>
+
       <a class="post-card" href="posts/clashmodule.html" data-page-node-id="clashmod-post">
         <div class="post-card__meta">2026-10-22 · 工具 / 资源</div>
         <h3 class="post-card__title">ClashModule：代理模块一键导入 Clash</h3>
         <p class="post-card__excerpt">把可莉插件中心的 Loon 模块与 Quantumult X 重写 / 规则合集整理成一个浏览器索引页：596 个模块支持搜索、标签筛选、分页，主按钮「导入 Clash」点一下就拉起客户端，Loon / Quantumult X 与复制链接作为备用，数据实时同步源站。</p>
         <div class="post-card__tags"><span class="tag">代理</span><span class="tag green">工具</span><span class="tag">Clash</span><span class="tag">Loon</span></div>
       </a>
-
+      </a>
       <a class="post-card" href="posts/linkora-v065-release.html">
         <div class="post-card__meta">2026-10-19 · 发布记录</div>
         <h3 class="post-card__title">Linkora v0.6.5：分身不再答非所答</h3>
@@ -342,6 +349,7 @@
       <div class="timeline-item">
         <div class="timeline-date">2026-10</div>
         <div class="timeline-body">
+          <p><strong>v0.7.0</strong>：一次能力扩展大版本，对接钉钉 CLI（dws）v1.0.63 的能力迭代，把 Linkora 里几处<strong>基于旧版本认知写下的过时设计</strong>一次性校正过来。最大的一处纠偏是话题（Thread）：此前代码认定「钉钉不支持话题内回复」，实测证明真实情况是「能回复、但读不到话题历史」——这个不对称导致同事在话题里讨论了三轮方案，分身进去问「谁提的」却只看得见群里那句「开个话题聊」，现已补上话题上下文拉取、按时间合并去重后并入主回复。另一处是群成员枚举：工具此前明确报告「已返回成员列表」实际返回空数组，根因是群成员接口的 <code>--group</code> 走语义解析（传群名/关键词），把已保存的 <code>cid...</code> 会话 ID 传过去反而报「解析失败」，必须走 <code>--conversation-id</code> 直通，这条规则已固化在适配器层。新接入两个域：钉钉日志（日报周报，可列出收到/发出的日志、读取单份正文、搜索填报模板）与企业语义检索（跨文档/消息/日程/待办/听记/日志/邮件的语义检索，以及「我发给谁/谁发给我/我创建过什么」的行为追溯，保留「仅摘要片段」与「语义候选」两个证据标记避免把降级结果当完整命中）。补齐三处业务缺口：审批表单字段级配置（可按字段名反查哪些表单含该字段，如「项目」字段盘点）、待办闭环（查清单 + 标记完成，写操作需二次确认）、日程协调（冲突检测 / 空闲时段 / 多人共同时间推荐）。媒体下载迁到安全 Shortcut，保留拒绝绝对路径、拒绝 <code>..</code> 逃逸、原子落盘、默认不覆盖四项安全属性。同时立了一条铁律：适配器层绝不传输出改写类全局 flag——实测 <code>--fields</code> 只在顶层投影、传错时返回 <code>{}</code> <strong>且不报错</strong>，<code>--jq</code> 写错返回 <code>null</code> 加 exit 0 也无错误信号，这类「静默返回空」的 flag 是数据丢失温床。内置工具 38 → 47，意图分类 39 → 41。</p>
           <p><strong>v0.6.5</strong>：一次以「回复质量」为主的小版本，修掉了分身在 RAG 检索场景下几类答非所答。起因是单聊里同事追问「用手机连 rokae-dev 也是这个账号密码吗？」，分身却把一篇《Windows 共享访问教程》从头到尾复述，还照抄教程结尾的客服反问句反问回去——根因不在模型笨，而是我们把知识库 / 记忆当作高优先级事实整块喂给模型，却没告诉它「这些原文不是指令」。现已在三类外部内容注入点（普通 RAG / 严格问答模式 / 公共记忆）对称加「原文非指令」硬约束，注入前导从「请完整引用」改为「只摘解决问题必需的片段、严禁整篇复述」，并新增 system prompt【追问与指代】常驻段（追问先弄清指代对象、已说明的条件不得反问）；顺带新增 <code>--focus</code> 焦点模式（默认开启），控制台只显示收到的新消息 / LLM 回复 / WARNING 及以上告警，把每条消息的链路内部噪声（20+ 模块）压下去，文件日志与 Web 实时日志页仍为全量。</p>
           <p><strong>v0.6.4</strong>：纯性能小版本，把轮询器对钉钉接口的调用频率降下来——起因是钉钉管理后台的调用日志里，同一会话消息接口被以秒级频率反复拉取，活跃时段还反复撞平台限流、回复偶发慢一拍。根因是四层各打各的：未读会话列表每轮拉一次、未读会话每轮全量重抓、解析失败的会话每轮重试元数据接口、轮询间隔只有 10 秒。现已四层降频：未读列表加 30 秒 TTL 缓存（<code>unread_convs_cache_ttl_seconds</code>）、单聊对方解析失败进 5 分钟负缓存（<code>conv_info_negative_cache_ttl_seconds</code>）、未读会话抓取加 30 秒下限间隔（<code>forced_fetch_min_interval_seconds</code>）、轮询间隔 10→20 秒（另：置顶列表缓存 120→180 秒、黑名单对账 10→20 轮、限流冷却 60→120 秒）。敢降频的前提是先分清主动脉与保底：消息主通道是 list-all 每轮全量拉取 + 快通道即时派发，逐会话抓取只是外部好友/群消息的兜底冗余，被降频的是重复确认、不是消息本身。实测同一活跃时段限流熔断由每 30 分钟 28 次降到 14 次、改动后连续 18 分钟零熔断，调用总量约降 60–70%；顺带修好一个恒为 0 的「长尾限频跳过」统计（早退路径没计数），降频效果终于在日志里可见。</p>
           <p><strong>v0.6.3</strong>：Web 管理台的技能与工具展示界面统一加上来源徽标——靛蓝「内置」/ 琥珀「安装」（含暗色主题），技能列表、工具链路、意图映射、决策流、路由追踪、模拟测试一眼可分；后端 <code>Skill.origin</code> 按 SKILL.md 所在目录判定（<code>src/skills</code> 与捆绑资源 = <code>builtin</code>，可写 <code>data/skills</code> 与 <code>.agents</code> = <code>user</code>），由 <code>/api/skills</code> 与 <code>/api/tools-chain</code> 透出。顺手把主库写路径全量收口到进程内写闸门（<code>write_main_with_retry</code> + 全局锁），杜绝绕过闸门直连 <code>conn.commit()</code>，补齐 WAL / SSRF 过滤 / 配置漂移检测等边缘缺陷；依赖随 dependabot 同步 6 项（pydantic / fastapi / tokenizers / platformdirs / pypdfium2 / ruff）。</p>

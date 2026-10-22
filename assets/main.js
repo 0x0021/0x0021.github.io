@@ -325,15 +325,19 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
   list.appendChild(ind);
   box.appendChild(list);
 
-  // 目录顶部与正文第一段顶端对齐（每篇文章标题高度不同，动态计算）
+  // 目录顶部与正文第一段顶端对齐：用 transform 平移（不占布局，避免撑大 grid 行高）
+  const inner = document.createElement('div');
+  inner.className = 'toc-inner';
+  while (box.firstChild) inner.appendChild(box.firstChild);
+  box.appendChild(inner);
   const alignToc = () => {
     if (getComputedStyle(box).display === 'none') return;
-    const cur = parseFloat(getComputedStyle(box).marginTop) || 0;
     const delta = article.offsetTop - box.offsetTop;
-    if (delta > 0) box.style.marginTop = (cur + delta) + 'px';
+    inner.style.transform = delta > 0 ? `translateY(${delta}px)` : '';
   };
   alignToc();
   window.addEventListener('resize', alignToc);
+  window.addEventListener('load', alignToc);
 
   const setActive = (id) => links.forEach(l => {
     const on = l.dataset.target === id;

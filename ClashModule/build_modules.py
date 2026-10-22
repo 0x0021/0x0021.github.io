@@ -565,7 +565,7 @@ function render(){
       const b=document.createElement('button'); b.textContent=label;
       if(opts.active)b.classList.add('active');
       if(opts.disabled)b.disabled=true;
-      else b.onclick=()=>{state.page=page;render();window.scrollTo({top:0,behavior:'smooth'});};
+      else b.onclick=()=>{state.page=page;render();const y=(grid.getBoundingClientRect().top+window.scrollY-12);window.scrollTo({top:y,behavior:'smooth'});};
       return b;
     };
     pager.appendChild(mk('‹',state.page-1,{disabled:state.page===1}));

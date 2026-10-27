@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-page-node-id="DsnCTgoJQUFpVHGE7Z7Lpq">
+<head data-page-node-id="mm5X8C9v0f9B5IjkK3eYFj">
+<meta charset="UTF-8" data-page-node-id="qilBMvP51OcGAPven38a1k" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="HK5xo1f5iyONakzPXUqm4O" />
+<title>坤子 · 博客</title>
+<meta name="description" content="坤子，开源工程师，专注 AI 智能体、云平台与企业级工具开发。这里记录技术文章与近期动态。" data-page-node-id="w6oavBgQSZHPEWEtOBuAz7" />
+<meta property="og:title" content="坤子 · 博客" data-page-node-id="cipLTNy1LG9Gd5OdVGdB5b" />
+<meta property="og:description" content="开源工程师，专注 AI 智能体、云平台与企业级工具开发。" data-page-node-id="b2xVQeQfgs0ey0rAIA9E6k" />
+<meta property="og:type" content="website" data-page-node-id="t8w07ioxkmMJgX5Z6HVvc9" />
+<meta name="theme-color" content="#0d1117" media="(prefers-color-scheme: dark)" data-page-node-id="C8GtucE67zBx2HN6C3zhLS" />
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" data-page-node-id="XqQvxoxWGH8dFCJ0lwOnOF" />
+<link rel="stylesheet" href="assets/style.css" data-page-node-id="i8cN3FrytlEygtWB68rwi9" />
+</head>
+<body data-page-node-id="yh1OIZrPeX06vnH1J7iVeE">
+<canvas id="hero-canvas" data-page-node-id="voLFFponmGKkNHl4tALHhR"></canvas>
+
+<!-- 顶部阅读进度条 -->
+<div class="reading-progress" id="readingProgress" aria-hidden="true" data-page-node-id="ZHObZSwOuDXB7MSsSxfOnI"></div>
+
+<nav data-page-node-id="H8HTUcgD7bOk9iPlQ7C9Bm">
+  <a href="index.html" class="nav-brand" data-page-node-id="oIEDEHImuGwaiFLxwz0sPe">坤子</a>
+  <div class="nav-links" data-page-node-id="5RBtwAyjNqzGvfkCWoxDMh">
+    <a href="#music" data-page-node-id="ZHAD8UCj8dNKEdgFEGGB5u">音乐</a>
+    <a href="#blog" data-page-node-id="T6HNd0KpYd6d1QaAikCJGQ">文章</a>
+    <a href="#timeline" data-page-node-id="SC0m0xsH1bQDpqvFvMkaUZ">动态</a>
+    <a href="#projects" data-page-node-id="DfcRI9asNOzGdlTGdpfWGF">项目</a>
+    <a href="#about" data-page-node-id="kgKgPX8EUjOxOWQA8VazOA">关于</a>
+    <a href="https://github.com/0x0021" target="_blank" rel="noopener" data-page-node-id="B4JIAUdL24urD1kSyjEODt">GitHub</a>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="切换主题" data-page-node-id="EZeJBcqFBujAQTyF72BK88">◑</button>
+  </div>
+</nav>
+
+<main data-page-node-id="PjkyKgFT4wWF7o5kv65S5o">
+  <!-- Hero -->
+  <section class="hero" data-page-node-id="FwcRbRzHKjN5KaidfQMTL7">
+    <div class="hero-badge" data-page-node-id="y09WdG1ufmUQFksW3WsKy8">Writing &amp; Building</div>
+    <h1 data-page-node-id="F2Tc3npBW33EHph5EhYBGQ">Hi, I'm <span class="accent" data-page-node-id="bkKxD841rOI7qHIPQu5UZ0">坤子</span></h1>
+    <p class="tagline" data-page-node-id="TweL0iUoAjCvkC8HGlSfW6">工程师 · 开源爱好者 · 北京<br data-page-node-id="PusF0JPBlvfPzFLgDBJVTD">与 AI 智能体为伍，在云原生里造船，把一切能自动的都交给机器。</p>
+    <div class="cta-group" data-page-node-id="S9z5o93hFQHloip8jSHtkp">
+      <a href="#blog" class="btn btn-primary" data-page-node-id="jBLefeviVd8ouFGitss2oD">读博客 ↓</a>
+      <a href="/Linkora/" class="btn btn-ghost" target="_blank" rel="noopener">Linkora ↗</a>
+      <a href="https://github.com/0x0021" class="btn btn-ghost" target="_blank" rel="noopener" data-page-node-id="Hu7H5ZsxNo9C0lk6IbpBS9">GitHub ↗</a>
+    </div>
+  </section>
+
+  <!-- Music -->
+  <section id="music" data-page-node-id="0VW6CthVtpu9VeATAFsxDH">
+    <div class="reveal" data-page-node-id="BJttKm57RmGzAFo9JVhIQ6">
+      <div class="section-label" data-page-node-id="nkh1Oa0gFqiXW27XbPTgXW">Music</div>
+      <div class="section-title" data-page-node-id="6BfgqMs9Z96ZjIZk3qdtvo">我的音乐</div>
+    </div>
+    <p class="music-intro reveal" data-page-node-id="9rSiuF2h7BR1o1Z7PWCm5E">写代码之外的另一种表达。最近写的四首歌已上线番茄畅听 / 番茄音乐，点开就能听。</p>
+    <div class="music-grid reveal" data-page-node-id="6Nfhs7yGTl5VjPCVaEw54x">
+
+      <article class="music-card" data-page-node-id="Tv4qW7mkYhcJCZBdQjOufw">
+        <div class="music-card__cover" data-page-node-id="X7QGIFZysU0BpWZ3vwNnYk">
+          <img class="music-card__img" src="assets/cover/music-cloud-hello.webp" alt="我和云朵说你好 封面" loading="lazy" />
+          <span class="music-eq" data-page-node-id="J0LAk3apGcSUa60lJ49Mqi"><i data-page-node-id="cAWpIXvHZVVqhR5cyFVpt6"></i><i data-page-node-id="opggt4UfzFmIkjtzNx8ED2"></i><i data-page-node-id="l3egGUp3MyAE3VfVSPBmBZ"></i><i data-page-node-id="e5vd7opS6BZlI9YPWIaEkU"></i></span>
+        </div>
+        <div class="music-card__body" data-page-node-id="eqUb75akNwtk4Evb8M1yRu">
+          <div class="music-card__meta" data-page-node-id="kPEmSpqji999522FS4OVQ6">2026 · Single</div>
+          <h3 class="music-card__title" data-page-node-id="jhbeycqO47M4D4uBKWYlIJ">我和云朵说你好</h3>
+          <div class="music-card__artist" data-page-node-id="jtVS8GCSqVJvRoGVA6CDB5">me坤子</div>
+          <p class="music-card__desc" data-page-node-id="g6d08gbJRBj6SJK6zs1oNF">抬头看看蓝蓝天空，一朵白云向我飘——把小朋友和云朵打招呼的小快乐，写成了歌。</p>
+          <div class="music-card__actions" data-page-node-id="z9Z7VHjnKGZzCyHimp32v4">
+            <a class="music-btn music-btn--primary" href="https://m.novelfm.com/s/9X-wYAUu92c/" target="_blank" rel="noopener" data-page-node-id="gVxF9QasDhs7l1eoUH5TRM">▶ 在线试听</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="music-card" data-page-node-id="kh6v3Irx4lUVZCt1I0kzFJ">
+        <div class="music-card__cover" data-page-node-id="oGm8MlOt31upbZ8DaaeTxR">
+          <img class="music-card__img" src="assets/cover/music-on-the-way.webp" alt="还在路上 封面" loading="lazy" />
+          <span class="music-eq" data-page-node-id="ApM0FrOmTDpZ6qlktBbsvR"><i data-page-node-id="YMFGhpPqt47UgSuqKIsm8h"></i><i data-page-node-id="wd45i3l7hI5jiFykEopcwS"></i><i data-page-node-id="7zNMs9LLSfADsvpISLPXZQ"></i><i data-page-node-id="NBAjEX6EB2GdArYXh2KlAi"></i></span>
+        </div>
+        <div class="music-card__body" data-page-node-id="lq1C9rqhJZG4dX8ZuBUUsY">
+          <div class="music-card__meta" data-page-node-id="vMQ7ROq1MivufBbWZdBlSd">2026 · Single</div>
+          <h3 class="music-card__title" data-page-node-id="cDCe6pwNVYaBcvCXL1vNlR">还在路上</h3>
+          <div class="music-card__artist" data-page-node-id="vxLXUeutYPkWQPWdlzZtOe">me坤子</div>
+          <p class="music-card__desc" data-page-node-id="BAoHOWVfi1ewwE8hg9tVcn">「只要还在路上，一切就还来得及」——写给所有还没到站的人：走过晴天雨天，只要心里还留着一点光，就不怕夜太长。</p>
+          <div class="music-card__actions" data-page-node-id="rahB64JzCKgvXcRulpHt2l">
+            <a class="music-btn music-btn--primary" href="https://m.novelfm.com/s/x5WJ4EMpkQs/" target="_blank" rel="noopener" data-page-node-id="Di5diFX2cjGFB7QOBo3gC4">▶ 在线试听</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="music-card">
+        <div class="music-card__cover">
+          <img class="music-card__img" src="assets/cover/music-school-gate.webp" alt="风吹过校门口 封面" loading="lazy" />
+          <span class="music-eq"><i></i><i></i><i></i><i></i></span>
+        </div>
+        <div class="music-card__body">
+          <div class="music-card__meta">2026 · Single</div>
+          <h3 class="music-card__title">风吹过校门口</h3>
+          <div class="music-card__artist">me坤子</div>
+          <p class="music-card__desc">「原来孩子长大的时候，没有什么特别的声音，只是有一天你不再回头」——校门口的风里，藏着一个爸爸看着你走远的小小怅惘。</p>
+          <div class="music-card__actions">
+            <a class="music-btn music-btn--primary" href="https://m.novelfm.com/s/Ye1CVSqPIuA/" target="_blank" rel="noopener">▶ 在线试听</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="music-card">
+        <div class="music-card__cover">
+          <img class="music-card__img" src="assets/cover/music-chedaogou-no-ditch.webp" alt="车道沟没有沟 封面" loading="lazy" />
+          <span class="music-eq"><i></i><i></i><i></i><i></i></span>
+        </div>
+        <div class="music-card__body">
+          <div class="music-card__meta">2026 · Single</div>
+          <h3 class="music-card__title">车道沟没有沟</h3>
+          <div class="music-card__artist">me坤子</div>
+          <p class="music-card__desc">「车道沟没有沟，可晚霞掉进水里时，分明有一条回家的路。」——把城市的名字唱成一句错觉，送给所有站在岸边等日落的人。</p>
+          <div class="music-card__actions">
+            <a class="music-btn music-btn--primary" href="https://m.changdunovel.com/ug-lite-ssr/pages/music-share?book_id=7683839360508120088&amp;share_id=CXjx69fBxTCSfck_v_xZGfFmZ0mLD1MNCtBQH5r9NqA%3D&amp;share_channel=copy_link&amp;source_channel=link&amp;entrance=page&amp;share_timestamp=1789088538&amp;user_id=5cbf04071521d40c776a2c3d027b6ced&amp;did=ab7c56ebdfad4515febde040eabf66b5&amp;page_type=music-share&amp;app_id=8661" target="_blank" rel="noopener">▶ 在线试听</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- Blog posts -->
+  <section id="blog" data-page-node-id="spskKqRRlOF7nxSZqu08Ql">
+    <div class="reveal" data-page-node-id="UCkuGOBWBA2dhcAdFPBkDu">
+      <div class="section-label" data-page-node-id="C3zUBQNtjxF1JnUdm1Fb6m">Writing</div>
+      <div class="section-title" data-page-node-id="bId6N3xkdiSP855cDUpFkW">最新文章</div>
+    </div>
+
+    <div class="post-filter" data-page-node-id="dsWivQJuh5jXVETJQdPKeM">
+      <div class="post-filter__search" data-page-node-id="c7VABTxaPDNpVNIqZ0qAe5">
+        <span class="post-filter__icon" aria-hidden="true" data-page-node-id="7mMTB0fXpk8rAD0uRG7wIA">⌕</span>
+        <input type="search" id="postSearch" placeholder="搜索文章标题或关键词…" aria-label="搜索文章" data-page-node-id="q0H05PcVyrcoZLPfNIoEnU" />
+      </div>
+      <div class="post-filter__chips" id="postChips" data-page-node-id="QEFjuTH4VhOjpI4SfrBzOf"></div>
+      <div class="post-filter__count" id="postCount" data-page-node-id="nGD8eQhaBHwmidYdrq61GK"></div>
+    </div>
+    <p class="post-empty" id="postEmpty" hidden data-page-node-id="d1ihzciVDe9aeilULB2okx">没有匹配的文章 🤔 换个关键词或标签试试</p>
+
+    <div class="posts-grid reveal" data-page-node-id="Hea4F37JaU9osGyNNni7ZQ">
+
+      <a class="post-card" href="posts/linkora-v082-release.html">
+        <div class="post-card__meta">2026-10-27 · 发布记录</div>
+        <h3 class="post-card__title">Linkora v0.8.2：配了的东西，终于会响了</h3>
+        <p class="post-card__excerpt">41 处改动做完，最大的感受不是修了多少 bug，而是有几处东西我们以为它是好的、其实它从来没工作过。最典型的是告警：文档里教了怎么配 webhook，代码里也有完整发送实现，但把全仓扫一遍找调用方——一个都没有。配了、绑了、填了地址，跑了三个月一次都不会响。这版把它接上了：模型全挂会计入告警，管理台统计不再是空的，阈值到了真触发。另修：默认启动从双进程改单进程（根治 database is locked 与轮询丢会话）、多平台部署时飞书/企微读到的其实是钉钉的轮询设置、管理台不再明文回传签名密钥（拿到就能伪造管理员令牌）、文档与记忆里写的指令不再被当成系统指令执行。零数据迁移、零配置改动、工具数不变。</p>
+        <div class="post-card__tags"><span class="tag">AI Agent</span><span class="tag green">v0.8.2</span><span class="tag">修复</span><span class="tag">安全</span></div>
+      </a>
+
+      <a class="post-card" href="posts/linkora-v081-release.html">
+        <div class="post-card__meta">2026-10-26 · 发布记录</div>
+        <h3 class="post-card__title">Linkora v0.8.1：别人转发的审批流程，也能查了</h3>
+        <p class="post-card__excerpt">v0.8.0 发布当天就撞上真实场景：同事转发一条合同审批通知，分身烧光工具轮次只回了「没找到确切答案」。根子有两层——审批是别人发起的，个人视角接口天生查不到；钉钉实例查询还有窗口 ≤120 天、起点一年内的双重硬限制，超限报的是误导性的「时间戳无效」。v0.8.1 新增 approval_list_org（管理员视角查全组织实例）与 approval_list_cc（抄送我的），窗口限制在工具层自动分段兜底，转发来的流程从定位实例到取回表单明细一路打通。filelock 4.2.1 顺带清零 3 个安全告警。内置工具 47 → 49，均为只读。</p>
+        <div class="post-card__tags"><span class="tag">AI Agent</span><span class="tag green">v0.8.1</span><span class="tag">钉钉</span><span class="tag">修复</span></div>
+      </a>
+
+      <a class="post-card" href="posts/linkora-v080-release.html">
+        <div class="post-card__meta">2026-10-26 · 发布记录</div>
+        <h3 class="post-card__title">Linkora v0.8.0：给管理台换上七种配色，把「突然报错」修干净</h3>
+        <p class="post-card__excerpt">这一版回头照顾「每天盯着看」的那块屏幕：Web 管理台顶栏新增调色板，7 款内置配色与明暗模式正交组合，实现侧只加了一个令牌层、顺手把散落 15 个 CSS 文件的五十多处硬编码品牌蓝收敛成变量。另修三个老毛病：登录令牌自动续期（开着管理台不再用着用着掉线）、死信队列「丢弃 / 重放」的看不懂 422（根因是 esbuild minify 重命名漏改 data-args 字符串）、CodeQL 异常信息泄露中危告警。无新增工具、无数据迁移，升级零配置改动。</p>
+        <div class="post-card__tags"><span class="tag">AI Agent</span><span class="tag green">v0.8.0</span><span class="tag">管理台</span><span class="tag">修复</span></div>
+      </a>
+
+      <a class="post-card" href="posts/linkora-v070-release.html">
+        <div class="post-card__meta">2026-10-22 · 发布记录</div>
+        <h3 class="post-card__title">Linkora v0.7.0：分身开始看得见群里发生的事</h3>
+        <p class="post-card__excerpt">钉钉 CLI 升到 v1.0.63 后重新过了一遍真实能力，发现 Linkora 有几处设计是照着旧版认知写下的——包括一条我信了好几年的错误判断。这一版把它们一次性纠过来：话题（Thread）从「能回复但读不到历史」变成能读能答；群成员枚举修好了（此前工具声称返回成员、实际一个都没有）；新接入钉钉日志（日报周报）与企业语义检索两个域；补齐审批表单字段配置、待办闭环、会议协调（冲突 / 空闲 / 推荐时间）三处业务缺口。内置工具 38 → 47，意图分类 39 → 41。</p>
+        <div class="post-card__tags"><span class="tag">AI Agent</span><span class="tag green">v0.7.0</span><span class="tag">钉钉</span><span class="tag">工具</span></div>
+      </a>
+
+      <a class="post-card" href="posts/clashmodule.html" data-page-node-id="clashmod-post">
+        <div class="post-card__meta">2026-10-22 · 工具 / 资源</div>
+        <h3 class="post-card__title">ClashModule：代理模块一键导入 Clash</h3>
+        <p class="post-card__excerpt">把可莉插件中心的 Loon 模块与 Quantumult X 重写 / 规则合集整理成一个浏览器索引页：596 个模块支持搜索、标签筛选、分页，主按钮「导入 Clash」点一下就拉起客户端，Loon / Quantumult X 与复制链接作为备用，数据实时同步源站。</p>
+        <div class="post-card__tags"><span class="tag">代理</span><span class="tag green">工具</span><span class="tag">Clash</span><span class="tag">Loon</span></div>
+      </a>
+      <a class="post-card" href="posts/linkora-v065-release.html">
+        <div class="post-card__meta">2026-10-19 · 发布记录</div>
+        <h3 class="post-card__title">Linkora v0.6.5：分身不再答非所答</h3>
+        <p class="post-card__excerpt">单聊里同事追问「用手机连 rokae-dev 也是这个账号密码吗？」，分身却把一篇《Windows 共享访问教程》从头到尾复述，还照抄教程结尾的客服反问句反问回去。v0.6.5 在普通 RAG / 严格模式 / 公共记忆三类外部内容注入点统一加「原文不是指令」硬约束，注入前导从「请完整引用」改为「只摘必需的片段、严禁整篇复述」，并新增【追问与指代】常驻指令；顺带把后台日志收敛成默认只看关键信号的焦点模式。</p>
+        <div class="post-card__tags"><span class="tag">AI Agent</span><span class="tag green">v0.6.5</span><span class="tag">RAG</span><span class="tag">质量</span></div>
+      </a>
+
+      <a class="post-card" href="posts/linkora-v064-release.html">
+        <div class="post-card__meta">2026-10-15 · 发布记录</div>
+        <h3 class="post-card__title">Linkora v0.6.4：让轮询安静下来</h3>
+        <p class="post-card__excerpt">打开钉钉后台的调用日志，发现分身在以秒级频率拉会话消息接口，活跃时段还反复撞平台限流、回复偶发慢一拍。v0.6.4 四层降频：未读列表加 30 秒缓存、单聊对方解析失败进 5 分钟负缓存、未读会话抓取加 30 秒下限间隔、轮询间隔 10→20 秒。关键是先分清主通道与冗余保底——被降频的是重复确认，不是消息本身。实测调用量降约 6–7 成，限流熔断减半。</p>
+        <div class="post-card__tags"><span class="tag">AI Agent</span><span class="tag green">v0.6.4</span><span class="tag">性能</span><span class="tag">可靠性</span></div>
+      </a>
+
+      <a class="post-card" href="posts/linkora-v063-release.html">
+        <div class="post-card__meta">2026-10-14 · 发布记录</div>
+        <h3 class="post-card__title">Linkora v0.6.3：一眼分清「内置」和「你自己装的」</h3>
+        <p class="post-card__excerpt">Web 管理台的技能与工具展示界面统一加上来源徽标——靛蓝「内置」/ 琥珀「安装」，技能列表、工具链路、意图映射、决策流、路由追踪、模拟测试一眼可辨；后端 Skill.origin 按目录判定并由 API 透出。顺手把主库写路径全量收口到进程内写闸门，补齐 WAL/SSRF/配置漂移等边缘缺陷；依赖随 dependabot 同步 6 项。</p>
+        <div class="post-card__tags"><span class="tag">AI Agent</span><span class="tag green">v0.6.3</span><span class="tag">前端</span><span class="tag">可维护性</span></div>
+      </a>
+
+      <a class="post-card" href="posts/linkora-v062-release.html">
+        <div class="post-card__meta">2026-10-10 · 发布记录</div>
+        <h3 class="post-card__title">Linkora v0.6.2：源码没错，构建错了</h3>
+        <p class="post-card__excerpt">一个源码完全正确、只有压缩产物才出错的 bug：草稿与死信的过滤器「默认能加载、点一下就清空」——真凶是构建压缩把拼接重排成模板字面量，data-args 被截断成 ["，请求 status=undefined 被后端当字面量查询返回空列表。源码对≠产物对，故新增静态门禁禁掉拼接写法、回归测试直接断言压缩产物。顺带把颜色/字体/图标/间距四类散乱样式收敛到设计 token（保值映射，视觉零变化），并修弹窗背景可滚动、灯箱监听器泄漏、错误提示不变红、死信搜索框死按钮。</p>
+        <div class="post-card__tags"><span class="tag">AI Agent</span><span class="tag green">v0.6.2</span><span class="tag">修复</span><span class="tag">前端</span></div>
+      </a>
+
+      <a class="post-card" href="posts/linkora-v061-release.html">
+        <div class="post-card__meta">2026-10-08 · 发布记录</div>
+        <h3 class="post-card__title">Linkora v0.6.1：一次系统性缺陷审计的收口</h3>
+        <p class="post-card__excerpt">没有新功能，全是「特定条件下才发作」的隐蔽缺陷。生产用 python -O 启动时 assert 被整条剥离、8 处本该返回 ID 的地方静默返回 None；读游标没关干净，累积到把写入拖垮（症状与上次索引损坏事故一模一样，极易误判）；工具卡住会拖慢所有并发会话，现加 120 秒超时护栏；注销令牌黑名单不再无限增长；卡片图片不再被当文字写进正文；3 处 frontmatter 切分方式统一到行级。</p>
+        <div class="post-card__tags"><span class="tag">AI Agent</span><span class="tag green">v0.6.1</span><span class="tag">修复</span><span class="tag">可靠性</span></div>
+      </a>
+
+      <a class="post-card" href="posts/linkora-v060-release.html">
+        <div class="post-card__meta">2026-10-05 · 发布记录</div>
+        <h3 class="post-card__title">Linkora v0.6.0：修启动卡死、决策追踪排序与安全加固</h3>
+        <p class="post-card__excerpt">全是「把自己绊了一跤的地方填平」。根因修掉「offline 配置误走同步加载导致启动永挂在步骤 4/8」；决策追踪不再取最旧而取最新；安全侧关闭鉴权时 fail-closed、管理口令升级 PBKDF2 哈希、消除 3 条 urllib3 告警；85 处静默吞噬补上可追溯日志并加门禁防回潮；每次回复最多省 400 次查询。</p>
+        <div class="post-card__tags"><span class="tag">AI Agent</span><span class="tag green">v0.6.0</span><span class="tag">修复</span><span class="tag">安全</span></div>
+      </a>
+
+      <a class="post-card" href="posts/linkora-v056-release.html">
+        <div class="post-card__meta">2026-09-24 · 发布记录</div>
+        <h3 class="post-card__title">Linkora v0.5.6：答复门禁——命中即拦截，敏感问题不再进 AI</h3>
+        <p class="post-card__excerpt">AI 分身最怕不该答的它也答。v0.5.6 新增答复门禁：对每条用户提问做前置检测，命中规则直接终止回复并返回拦截提示，问题根本不进 AI。内置隐私 / 违法 / 辱骂 / 引流四类预置规则，关键词与正则双模式（带 ReDoS 防护），后台可维护、可测试、可统计，门禁本身 fail-open 绝不吞正常消息。</p>
+        <div class="post-card__tags"><span class="tag">AI Agent</span><span class="tag green">v0.5.6</span><span class="tag">安全</span><span class="tag">管理后台</span></div>
+      </a>
+
+      <a class="post-card" href="posts/linkora-v055-release.html">
+        <div class="post-card__meta">2026-09-23 · 发布记录</div>
+        <h3 class="post-card__title">Linkora v0.5.5：记忆重构为「整合记忆」，已读后不再嘴瓢</h3>
+        <p class="post-card__excerpt">分身聊久了记忆越攒越杂，零散事实堆一起既冗余又淹没检索。v0.5.5 把记忆升级为按「人 + 主题」聚合的整合记忆，后台周期合并零散事实成结构化摘要、召回更干净；堵上「标记已读仍自动回复」，标记已读后加 3 秒反悔窗口；今日摘要卡片取材收敛到当天。</p>
+        <div class="post-card__tags"><span class="tag">AI Agent</span><span class="tag green">v0.5.5</span><span class="tag">记忆</span><span class="tag">体验</span></div>
+      </a>
+
+      <a class="post-card" href="posts/linkora-v054-release.html">
+        <div class="post-card__meta">2026-09-22 · 发布记录</div>
+        <h3 class="post-card__title">Linkora v0.5.4：出厂默认密码终于能直接登录了</h3>
+        <p class="post-card__excerpt">此前 config.yaml.example 的占位密码恰好落在「弱口令拒绝启动」黑名单里，新用户照模板 cp 后一启动就被拦、体感「没默认密码还登不进」。v0.5.4 把出厂默认密码改为强度达标且不在黑名单的 Admin@P0sw0rd，照抄即可登录；fail-closed 仍拦弱口令，首次登录请改密码。</p>
+        <div class="post-card__tags"><span class="tag">AI Agent</span><span class="tag green">v0.5.4</span><span class="tag">安全</span><span class="tag">体验</span></div>
+      </a>
+
+      <a class="post-card" href="posts/linkora-v053-release.html">
+        <div class="post-card__meta">2026-09-21 · 发布记录</div>
+        <h3 class="post-card__title">Linkora v0.5.3：会话图片不再「莫名消失」</h3>
+        <p class="post-card__excerpt">后台「孤儿图片回收」此前误删过两次活跃账号的图，根因是只按孤儿库自身引用判断、没把活跃库引用算进保护集。v0.5.3 加三道护栏：先算保护集再回收、账号身份存疑整轮停手；顺手让前端在图片缺失时自动降级为「图片已不可用」占位，不再满屏破图。</p>
+        <div class="post-card__tags"><span class="tag">AI Agent</span><span class="tag green">v0.5.3</span><span class="tag">可靠性</span><span class="tag">媒体</span></div>
+      </a>
+
+      <a class="post-card" href="posts/linkora-v052-release.html">
+        <div class="post-card__meta">2026-09-15 · 发布记录</div>
+        <h3 class="post-card__title">Linkora v0.5.2：RAG 记忆不再记住「死」的结论</h3>
+        <p class="post-card__excerpt">分身聊了十次同一个客户，前十次结论各不相同，检索时旧结论照样和新结论抢召回。v0.5.2 给记忆装上时效与作废：最新优先、写入即作废旧版、过期自动忘，并清理了消息展示噪声、升级两个依赖修 CVE。</p>
+        <div class="post-card__tags"><span class="tag">AI Agent</span><span class="tag green">v0.5.2</span><span class="tag">RAG</span><span class="tag">记忆</span></div>
+      </a>
+
+      <a class="post-card" href="posts/linkora-v051-release.html">
+        <div class="post-card__meta">2026-09-11 · 发布记录</div>
+        <h3 class="post-card__title">Linkora v0.5.1：常驻内存从 3.9GB 降到 0.6GB——两个「看不见」的内存大户被摁住</h3>
+        <p class="post-card__excerpt">模型才 91MB，进程却吃了 3.9GB。v0.5.1 治住两个隐性大户：MPS 后端固定白拿约 1GB 无法回收的显存、SQLite 每线程页缓存懒增长。实测常驻内存降到约 0.6GB，多数用户零配置即受益。</p>
+        <div class="post-card__tags"><span class="tag">AI Agent</span><span class="tag green">v0.5.1</span><span class="tag">性能</span><span class="tag">内存</span></div>
+      </a>
+
+      <a class="post-card" href="posts/linkora-v050-release.html">
+        <div class="post-card__meta">2026-09-08 · 发布记录</div>
+        <h3 class="post-card__title">Linkora v0.5.0：RAG 严格问答模式——给 AI 的嘴上把锁，答案只认知识库</h3>
+        <p class="post-card__excerpt">新增「严格问答模式」：开启后回答 100% 来自知识库、未命中直接说「未收录」，从流程上杜绝编造。适合制度问答、产品资料这类对出处要求极高的场景，Web 一键开关、热重载即时生效。</p>
+        <div class="post-card__tags"><span class="tag">AI Agent</span><span class="tag green">v0.5.0</span><span class="tag">RAG</span><span class="tag">质量</span></div>
+      </a>
+
+      <a class="post-card" href="posts/linkora-v049-release.html">
+        <div class="post-card__meta">2026-09-07 · 发布记录</div>
+        <h3 class="post-card__title">Linkora v0.4.9：摘要不再串台，分身也学会说「我」了</h3>
+        <p class="post-card__excerpt">修了三件让人哭笑不得的事：摘要越摘越杂、一句「谢谢」让正经请求被跳过、AI 用第三人称称呼自己。从取材范围、意图识别到人称映射，一次讲清根因与修法。</p>
+        <div class="post-card__tags"><span class="tag">AI Agent</span><span class="tag green">v0.4.9</span><span class="tag">质量</span><span class="tag">体验</span></div>
+      </a>
+
+      <a class="post-card" href="posts/linkora-v048-release.html" data-page-node-id="QQz0sdo0b7Co0rIL14PqWc">
+        <div class="post-card__meta" data-page-node-id="HB3eLLTWefKFl8jAnGRLR3">2026-08-31 · 发布记录</div>
+        <h3 class="post-card__title" data-page-node-id="YuDQ5riFDiZ6Yf7Uuhkhbh">Linkora v0.4.8：把「答非所问」摁回去——历史重放防护、排版规范与安全加固</h3>
+        <p class="post-card__excerpt" data-page-node-id="QBUyBF7lopTiMdhpbexDN5">根治「旧截图被重放污染上下文导致答非所问」的事故，三道防线（新消息窗口解耦 / 批内防抖 / OCR 噪声清理）；顺手收掉长回复排版、引用回复降级，以及 image.py 路径注入、登出真实吊销等安全兜底。</p>
+        <div class="post-card__tags" data-page-node-id="rnsDV0e79CYmWmBYZdIj9o"><span class="tag" data-page-node-id="dqDgeJXNTAWmkAOOZAK7Kv">AI Agent</span><span class="tag green" data-page-node-id="HyyozYaC0RlZZYIKKEGVFd">v0.4.8</span><span class="tag" data-page-node-id="vSi4N2F6TG3jKlIJqqUgZf">质量</span><span class="tag" data-page-node-id="XtMX57PRiRXbVZFXeop3AN">安全</span></div>
+      </a>
+
+      <a class="post-card" href="posts/linkora-v047-release.html" data-page-node-id="UDwMVfDLclF9QbGI8GOTp4">
+        <div class="post-card__meta" data-page-node-id="14Ch9LWFRoAtKMYGRUIc6k">2026-08-24 · 发布记录</div>
+        <h3 class="post-card__title" data-page-node-id="XR9pBWDS5Grku3E3Pi4EsL">Linkora v0.4.7：缺陷修复——LLM 异常分类、OCR 下载限制、异常处理治理</h3>
+        <p class="post-card__excerpt" data-page-node-id="t0Ej7axGodA6pHF3mcpNGN">新增 LLMNetworkError / LLMRateLimitError / LLMAuthError 精确分类、OCR 下载收紧到 10MB、清理 91 处 noqa: BLE001；新增错误监控告警系统与性能基准测试。</p>
+        <div class="post-card__tags" data-page-node-id="R5P3RbOZEHSGbme8OP9cBZ"><span class="tag" data-page-node-id="zMmU3q8xk0Qs2Vt5TnjC1q">AI Agent</span><span class="tag green" data-page-node-id="HdkSDjHdIDR0AOwcZxwQnz">v0.4.7</span><span class="tag" data-page-node-id="V0IHHorWDGx9Ta7RDrPFZF">质量</span><span class="tag" data-page-node-id="ybeGHJ3Z1mZXafop3EhXGq">安全</span></div>
+      </a>
+
+      <a class="post-card" href="posts/linkora-v046-release.html" data-page-node-id="YCF3qgmBblnK0wEefAjr5H">
+        <div class="post-card__meta" data-page-node-id="WVyXOPBd4X06CEfCn14T04">2026-08-23 · 发布记录</div>
+        <h3 class="post-card__title" data-page-node-id="bYFqpc2FCQMUw0d6R55c00">Linkora v0.4.6：主动触达摘要排版优化</h3>
+        <p class="post-card__excerpt" data-page-node-id="SlqHLPDq9Ffi2sd3vSEFtJ">每日主动触达摘要从「一坨文本」改为空行分隔 + 序号列表、去除冗余前缀，钉钉推送在手机上终于能正常扫读。</p>
+        <div class="post-card__tags" data-page-node-id="SDB9ZwTkdv4vQyauVFZuqC"><span class="tag" data-page-node-id="FbBNEhFvB2rjXuX4gajP8O">AI Agent</span><span class="tag green" data-page-node-id="Zfea1Vl3ofx4Fjv6HqSpdf">v0.4.6</span><span class="tag" data-page-node-id="N28g3GTxYvnn411bFOXEgS">体验</span></div>
+      </a>
+
+      <a class="post-card" href="posts/linkora-v045-release.html" data-page-node-id="VYUnoWq7RFNLj3gx2TZZ7I">
+        <div class="post-card__meta" data-page-node-id="fGA59H74MUtAB0rHJBaBJV">2026-08-22 · 发布记录</div>
+        <h3 class="post-card__title" data-page-node-id="zPf5ZINsfDlAipQ7XU03ep">Linkora v0.4.5：摘要视角修复，不再把主人当成第三方</h3>
+        <p class="post-card__excerpt" data-page-node-id="HdGSwK78SFTGgs1IcNVwDd">对话摘要统一以主人第一人称生成——强化 owner_name 注入与 prompt 约束，杜绝把主人当第三方的混乱视角；四类生成链路（滚动/补跑/推送/Web 页）共用同一函数，一次修复全生效。</p>
+        <div class="post-card__tags" data-page-node-id="8sZGyUHryG4IJMRWveE58B"><span class="tag" data-page-node-id="Cr9n4DQSYKp9EB709nhxPm">AI Agent</span><span class="tag green" data-page-node-id="M7UdVzkIv5Daw9zvzaHSSJ">v0.4.5</span><span class="tag" data-page-node-id="uxKGEmPhmlCddEcOuorB64">质量</span></div>
+      </a>
+
+      <a class="post-card" href="posts/linkora-v044-release.html" data-page-node-id="a9qBogKQGQBBwvGLLLbpCg">
+        <div class="post-card__meta" data-page-node-id="IRx4rDGAyILMBFntmwhDS1">2026-08-22 · 发布记录</div>
+        <h3 class="post-card__title" data-page-node-id="sUY7zAbw6nsqiNz0YW6CJe">Linkora v0.4.4：摘要连续性补跑，关机几天也不丢当天的摘要</h3>
+        <p class="post-card__excerpt" data-page-node-id="HXk286dGEPUEVnhJyr9cyy">启动检测停机时长，按自然日补生成遗漏的当日/近七天对话摘要，与正常周期同源同格式；时区稳健、LLM 额度受限流上限保护。</p>
+        <div class="post-card__tags" data-page-node-id="V0lrzeZJaNKoJWCuC2qEgb"><span class="tag" data-page-node-id="iqQuWjPzCHeOOwKJQjYD8b">AI Agent</span><span class="tag green" data-page-node-id="L94JERTZDrNCGjD3NYByX5">v0.4.4</span><span class="tag" data-page-node-id="dYnr3koymDpkR7zq7XtGNe">可靠性</span></div>
+      </a>
+
+      <a class="post-card" href="posts/linkora-v043-release.html" data-page-node-id="PGivMmDxGJOmJgiZiMAAn6">
+        <div class="post-card__meta" data-page-node-id="1BaAj6Kp2bZdJKzCtVEI76">2026-08-21 · 发布记录</div>
+        <h3 class="post-card__title" data-page-node-id="4Go1PAhROMcKBde0AQGe5f">Linkora v0.4.3：对话摘要页重构与稳定性修复</h3>
+        <p class="post-card__excerpt" data-page-node-id="faI4DzrUSRb9JRYfeEAoO2">把对话摘要从纯文本升级成结构化卡片（头像/平台标签/主题/关键词/建议待办），并修掉潜伏两个版本的 get_store_dep 关闭全局单例导致 metrics 偶发 500 的 bug。</p>
+        <div class="post-card__tags" data-page-node-id="6xShtNzPz1xAk6hXsTA9dq"><span class="tag" data-page-node-id="HjMZ9UMz6s8ZO1EcvZOBGW">AI Agent</span><span class="tag green" data-page-node-id="EK1X9BZoYrrufMwc9rqotf">v0.4.3</span><span class="tag" data-page-node-id="Jxhc3xglzubcmfuaolxBId">前端</span></div>
+      </a>
+
+      <a class="post-card" href="posts/linkora-v042-release.html" data-page-node-id="coFy3CJBoVMBOJMSCZOTBu">
+        <div class="post-card__meta" data-page-node-id="csyTCajDldqVpUd8ibg8Av">2026-08-20 · 发布记录</div>
+        <h3 class="post-card__title" data-page-node-id="H9PVNl4Y6yDvCaqjVLrkGQ">Linkora v0.4.2：对话摘要实时页与 CodeQL 告警清零</h3>
+        <p class="post-card__excerpt" data-page-node-id="f2zZNoCNdv0pKtOPgxEvti">Web 侧栏「消息中心」新增对话摘要实时页（30s 轮询），与钉钉 17:30 推送完全同源；主动触达支持自定义时刻；CodeQL 安全告警清零。</p>
+        <div class="post-card__tags" data-page-node-id="gGgBnnLMQAKAIrNlbONVtp"><span class="tag" data-page-node-id="EYct4C8Qu6YvYwLLfguk7L">AI Agent</span><span class="tag red" data-page-node-id="vU7Veju2jXzPoTww49Ztx7">安全</span><span class="tag green" data-page-node-id="rm14U2sSYySlvsy7FKpt7u">v0.4.2</span></div>
+      </a>
+
+      <a class="post-card" href="posts/linkora-v041-release.html" data-page-node-id="vkIyb2cSn7s0dUa4TDZoxo">
+        <div class="post-card__meta" data-page-node-id="7d6XDT8LCy7Zg36I7xoY2U">2026-08-20 · 发布记录</div>
+        <h3 class="post-card__title" data-page-node-id="6jjfKGXuZ1Sphd3s3JO1tM">Linkora v0.4.1：公共记忆自动注入与日志脱敏</h3>
+        <p class="post-card__excerpt" data-page-node-id="W0geSgV2g4u9lMH5oz9At7">公共记忆（scope=public）每轮对话自动召回并注入 system prompt，与 RAG 注入对称；移除 auth_middleware 中明文密码日志，CodeQL 告警清零。</p>
+        <div class="post-card__tags" data-page-node-id="EfIfoe2iLdkfSjYKqEYZVk"><span class="tag" data-page-node-id="0WwQLP4DZdB1RPdtFlHd8b">AI Agent</span><span class="tag red" data-page-node-id="pS1cSaqATBqvOQMhQUkZls">安全</span><span class="tag green" data-page-node-id="IXZ67DlJrKewbhxSlceB8v">v0.4.1</span></div>
+      </a>
+
+      <a class="post-card" href="posts/linkora-v040-release.html" data-page-node-id="0ZpwCu2E5HaMFoACGgNJbQ">
+        <div class="post-card__meta" data-page-node-id="p0HSqGNLpiqbe0Jc9gzmEE">2026-08-18 · 发布记录</div>
+        <h3 class="post-card__title" data-page-node-id="3OGqigeMbaT2FSFy4Yohm4">Linkora v0.4.0：安全收口与主动触达</h3>
+        <p class="post-card__excerpt" data-page-node-id="S56ygPX8z6se3QklWGaleF">认证迁移 pyjwt、出站默认拒绝非公网、新增每日主动触达，并用 CI 护栏封死配置覆盖丢参数的事故路径。</p>
+        <div class="post-card__tags" data-page-node-id="CSjyy1CIp7xVVyN39kveVp"><span class="tag" data-page-node-id="BPTnb5GYIzdDuVVmMVndUI">AI Agent</span><span class="tag red" data-page-node-id="4kyooECuiGhuf31BlEebP6">安全</span><span class="tag green" data-page-node-id="mCWipXEFf29z8IbnTyjmTL">v0.4.0</span></div>
+      </a>
+
+      <a class="post-card" href="posts/linkora-architecture.html" data-page-node-id="1iTei26zktXIR0amNNV01I">
+        <div class="post-card__meta" data-page-node-id="60JIrKHXbTV4yNJxGIvyPn">2026-08-15 · 架构</div>
+        <h3 class="post-card__title" data-page-node-id="LBRemjfetNOGJPkXMnKN41">Linkora 灵桥：多平台 AI 分身架构复盘</h3>
+        <p class="post-card__excerpt" data-page-node-id="CZ3pFykMOGfIFJ5hgIl83k">从钉钉单平台到钉钉/飞书/企微三端统一的适配器设计，以及 RAG + 规则引擎如何协同做出何时该回复、何时交还真人的决策。</p>
+        <div class="post-card__tags" data-page-node-id="3zvAdV4n42rLvubaLBB69Z"><span class="tag" data-page-node-id="zrd7y4ZlzPrzhZapJ0qykh">AI Agent</span><span class="tag green" data-page-node-id="Xc3uD4Wg23z1sy7rvxKoHY">架构</span></div>
+      </a>
+
+      <a class="post-card" href="posts/multi-platform-adapter.html" data-page-node-id="Zc8X0wvJzmcwLvC0d6VdDE">
+        <div class="post-card__meta" data-page-node-id="tB2GmgA8C6m8zf38U7tbRI">2026-08-02 · 工程实践</div>
+        <h3 class="post-card__title" data-page-node-id="ZtnyhfngJ7LxBBpL5zqIfI">多平台 IM 适配器：一套抽象吃下三家里程碑</h3>
+        <p class="post-card__excerpt" data-page-node-id="pchBaCqWNr5yelFITJOU5p">BaseIMAdapter 的上下文隔离、平台门控与执行兜底。记录踩过的坑：消息去重、自身消息识别、媒体消息降级。</p>
+        <div class="post-card__tags" data-page-node-id="zDG1eOjV9pzcdW9If8B6TC"><span class="tag" data-page-node-id="wF3Zu7hq0ukBkz3VhhjEPy">Python</span><span class="tag orange" data-page-node-id="thnkd5m2620f2TCDpNdg03">IM</span></div>
+      </a>
+
+      <a class="post-card" href="posts/lookaway-localization.html" data-page-node-id="1G3nSMX3vHApFk4rSkL54L">
+        <div class="post-card__meta" data-page-node-id="duO5ztAakx85m1URAlDncV">2026-07-20 · 折腾</div>
+        <h3 class="post-card__title" data-page-node-id="MemE9EhSDpDggasBUAjPhi">把 LookAway 汉化成简体中文</h3>
+        <p class="post-card__excerpt" data-page-node-id="vJOUEkvTpZtjvmCpBLSyE8">一个 macOS 护眼小工具，本地化过程里的 nib 编辑、plutil 校验与 AppleScript 辅助，以及本地化文件的正确打包姿势。</p>
+        <div class="post-card__tags" data-page-node-id="9TghOd7eVodULye81Pf0KJ"><span class="tag" data-page-node-id="v2TMzV8wvm9YFUn6Ft2s4C">macOS</span><span class="tag green" data-page-node-id="abM3WgdWIFWBC5quokiZM2">本地化</span></div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- Timeline -->
+  <section id="timeline" data-page-node-id="v79runaYGRJ1NwRR2WMxkm">
+    <div class="reveal" data-page-node-id="raplGZTQHIkayuxHoCwMFL">
+      <div class="section-label" data-page-node-id="DUz89EcFIHrRoB1tzzvppH">Now &amp; Then</div>
+      <div class="section-title" data-page-node-id="RhDdx5CofEeGyIX75MdTD7">近期动态</div>
+    </div>
+    <div class="timeline reveal" data-page-node-id="7SIQX957SeEP7IVtbwzcyH">
+
+      <div class="timeline-item">
+        <div class="timeline-date">2026-10</div>
+        <div class="timeline-body">
+          <p><strong>v0.8.2</strong>：一次「让配了的东西真的生效」的版本，41 处改动里绝大多数是内部重构，但有几处用户能直接感觉到。最大的一条是<strong>告警系统此前完全没有接线</strong>——<code>record_error()</code> 全仓零调用，导致管理台 <code>/api/alerts/stats</code> 永远返回空、阈值告警永不触发，而 <code>docs/alerts.md</code> 还在教用户「在 <code>src/llm/client.py</code> 中集成告警」并给出 <code>webhook_url</code> 配置示例（配了不生效）；现已接线（6 个最终失败出口各记一次，<strong>不在重试循环内记</strong>，否则一次限频风暴会按尝试次数虚增计数），并实现 webhook 消费（走 <code>safe_http_request</code>，DNS 解析后 IP 钉死 + 禁重定向）。默认启动从双进程改单进程，根治跨进程 SQLite 写锁争用（2026-10-05 线上事故形态）。多平台部署时飞书/企微读到的轮询设置其实一直是钉钉那份，现按平台解析。安全：<code>GET /api/config</code> 此前明文回传 <code>jwt_secret</code>（拿到即可离线伪造管理员令牌）现一并掩码 + 补齐 16 类漏判的高危只读端点；RAG 片段/公共记忆/历史消息加「不可信数据」边界标记（正文逐字保留、零误伤、<strong>当前用户消息不包裹</strong>）以阻断文档里的指令被当系统指令执行；知识库同步失败提示补 <code>escapeHtml</code>。附带修正三处文档口径漂移（嵌入模型 <code>bge-base-zh</code> → <code>bge-small-zh</code>、<code>data/models/</code> 实际为空、关键词重排非 BM25）。无数据迁移、无破坏性配置变更、工具数仍 49，唯一需留意的是默认启动改为单进程（需分离部署请显式加 <code>--multi-process</code>）。</p>
+          <p><strong>v0.8.1</strong>：紧跟 v0.8.0 的小版本，为「别人转发审批流程给我看」场景补齐能力。真实故障：同事转发一条合同审批通知，分身烧光工具轮次只回了「没找到确切答案」——根因两层：审批是别人发起的，个人视角接口（我发起/待我处理/我已处理）天生查不到；且实测钉钉审批实例查询有双重硬限制（start/end 跨度 ≤120 天、start 不得早于 365 天前，二分法钉到具体日期），超限报的是误导性的「时间戳无效」。新增 <code>approval_list_org</code>（管理员视角按模板+时间窗查全组织审批实例，可选状态/发起人过滤，接 approval_get_detail 取表单明细）与 <code>approval_list_cc</code>（抄送我的审批单，含表单摘要与跳转链接）；窗口限制在工具层自动兜底（超长自动按 ≤120 天分段聚合、跨段去重、起点超一年自动收紧并标注、非法时间本地拒绝），LLM 传任意合理窗口都能一次查成。顺带 filelock 3.32.0 → 4.2.1 清零 3 个 Dependabot 安全告警（major 跳跃走人工依赖升级通道）。内置工具 47 → 49，新增均为只读、仅钉钉；升级仅需可选补充白名单。</p>
+          <p><strong>v0.8.0</strong>：一次以「管理台体验」为主的版本。新增主题配色：顶栏调色板提供 7 款内置配色（湛蓝 / 靛青 / 雅紫 / 碧青 / 翠绿 / 琥珀 / 玫红），与明暗模式（<code>data-theme</code>）正交的 <code>data-accent</code> 轴，每款配色带明暗两套亮度令牌，选择持久化、刷新无闪烁；实现侧只加了一个 <code>css/theme-accent.css</code> 令牌层，并把散落 15 个 CSS 文件的五十多处硬编码品牌蓝全部收敛为 <code>rgba(var(--brand-primary-rgb), α)</code>（Bootstrap 覆盖层一并桥接），canvas 图表改走 <code>window.getAccentColor()</code> 取色、分类色板保持不变。修掉三个「用着用着突然报错」：登录令牌新增 <code>POST /api/auth/refresh</code> 自动续期（剩 30 分钟静默换新，401 先续期重放再降级），失败提示说人话，批量丢弃误把 404 计为成功的计数修正；死信队列「丢弃 / 重放」的 422 根因在 esbuild minify 重命名漏改 <code>data-args</code> 字符串里的 <code>item.id</code>（请求打到 <code>/undefined/discard</code>），前端改模板字面量 + 后端 id 参数字符串化归一为 404 + 4 例回归锁死；CodeQL 中危「异常信息泄露」收敛——登录态异常改固定文案回前端、原文只进脱敏日志。顺手：侧边栏页脚署名收为两行左对齐，重名防护告警只列前 3 个候选 ID。无新增工具、无数据迁移，升级零配置改动。</p>
+          <p><strong>v0.7.0</strong>：一次能力扩展大版本，对接钉钉 CLI（dws）v1.0.63 的能力迭代，把 Linkora 里几处<strong>基于旧版本认知写下的过时设计</strong>一次性校正过来。最大的一处纠偏是话题（Thread）：此前代码认定「钉钉不支持话题内回复」，实测证明真实情况是「能回复、但读不到话题历史」——这个不对称导致同事在话题里讨论了三轮方案，分身进去问「谁提的」却只看得见群里那句「开个话题聊」，现已补上话题上下文拉取、按时间合并去重后并入主回复。另一处是群成员枚举：工具此前明确报告「已返回成员列表」实际返回空数组，根因是群成员接口的 <code>--group</code> 走语义解析（传群名/关键词），把已保存的 <code>cid...</code> 会话 ID 传过去反而报「解析失败」，必须走 <code>--conversation-id</code> 直通，这条规则已固化在适配器层。新接入两个域：钉钉日志（日报周报，可列出收到/发出的日志、读取单份正文、搜索填报模板）与企业语义检索（跨文档/消息/日程/待办/听记/日志/邮件的语义检索，以及「我发给谁/谁发给我/我创建过什么」的行为追溯，保留「仅摘要片段」与「语义候选」两个证据标记避免把降级结果当完整命中）。补齐三处业务缺口：审批表单字段级配置（可按字段名反查哪些表单含该字段，如「项目」字段盘点）、待办闭环（查清单 + 标记完成，写操作需二次确认）、日程协调（冲突检测 / 空闲时段 / 多人共同时间推荐）。媒体下载迁到安全 Shortcut，保留拒绝绝对路径、拒绝 <code>..</code> 逃逸、原子落盘、默认不覆盖四项安全属性。同时立了一条铁律：适配器层绝不传输出改写类全局 flag——实测 <code>--fields</code> 只在顶层投影、传错时返回 <code>{}</code> <strong>且不报错</strong>，<code>--jq</code> 写错返回 <code>null</code> 加 exit 0 也无错误信号，这类「静默返回空」的 flag 是数据丢失温床。内置工具 38 → 47，意图分类 39 → 41。</p>
+          <p><strong>v0.6.5</strong>：一次以「回复质量」为主的小版本，修掉了分身在 RAG 检索场景下几类答非所答。起因是单聊里同事追问「用手机连 rokae-dev 也是这个账号密码吗？」，分身却把一篇《Windows 共享访问教程》从头到尾复述，还照抄教程结尾的客服反问句反问回去——根因不在模型笨，而是我们把知识库 / 记忆当作高优先级事实整块喂给模型，却没告诉它「这些原文不是指令」。现已在三类外部内容注入点（普通 RAG / 严格问答模式 / 公共记忆）对称加「原文非指令」硬约束，注入前导从「请完整引用」改为「只摘解决问题必需的片段、严禁整篇复述」，并新增 system prompt【追问与指代】常驻段（追问先弄清指代对象、已说明的条件不得反问）；顺带新增 <code>--focus</code> 焦点模式（默认开启），控制台只显示收到的新消息 / LLM 回复 / WARNING 及以上告警，把每条消息的链路内部噪声（20+ 模块）压下去，文件日志与 Web 实时日志页仍为全量。</p>
+          <p><strong>v0.6.4</strong>：纯性能小版本，把轮询器对钉钉接口的调用频率降下来——起因是钉钉管理后台的调用日志里，同一会话消息接口被以秒级频率反复拉取，活跃时段还反复撞平台限流、回复偶发慢一拍。根因是四层各打各的：未读会话列表每轮拉一次、未读会话每轮全量重抓、解析失败的会话每轮重试元数据接口、轮询间隔只有 10 秒。现已四层降频：未读列表加 30 秒 TTL 缓存（<code>unread_convs_cache_ttl_seconds</code>）、单聊对方解析失败进 5 分钟负缓存（<code>conv_info_negative_cache_ttl_seconds</code>）、未读会话抓取加 30 秒下限间隔（<code>forced_fetch_min_interval_seconds</code>）、轮询间隔 10→20 秒（另：置顶列表缓存 120→180 秒、黑名单对账 10→20 轮、限流冷却 60→120 秒）。敢降频的前提是先分清主动脉与保底：消息主通道是 list-all 每轮全量拉取 + 快通道即时派发，逐会话抓取只是外部好友/群消息的兜底冗余，被降频的是重复确认、不是消息本身。实测同一活跃时段限流熔断由每 30 分钟 28 次降到 14 次、改动后连续 18 分钟零熔断，调用总量约降 60–70%；顺带修好一个恒为 0 的「长尾限频跳过」统计（早退路径没计数），降频效果终于在日志里可见。</p>
+          <p><strong>v0.6.3</strong>：Web 管理台的技能与工具展示界面统一加上来源徽标——靛蓝「内置」/ 琥珀「安装」（含暗色主题），技能列表、工具链路、意图映射、决策流、路由追踪、模拟测试一眼可分；后端 <code>Skill.origin</code> 按 SKILL.md 所在目录判定（<code>src/skills</code> 与捆绑资源 = <code>builtin</code>，可写 <code>data/skills</code> 与 <code>.agents</code> = <code>user</code>），由 <code>/api/skills</code> 与 <code>/api/tools-chain</code> 透出。顺手把主库写路径全量收口到进程内写闸门（<code>write_main_with_retry</code> + 全局锁），杜绝绕过闸门直连 <code>conn.commit()</code>，补齐 WAL / SSRF 过滤 / 配置漂移检测等边缘缺陷；依赖随 dependabot 同步 6 项（pydantic / fastapi / tokenizers / platformdirs / pypdfium2 / ruff）。</p>
+          <p><strong>v0.6.2</strong>：一次前端专项，最值得记的是一个<strong>源码完全正确、只有构建压缩后才出错</strong>的缺陷——草稿审阅与死信队列的过滤器「默认能加载、点一下就清空」。真凶不在前端逻辑也不在后端，而是构建时把字符串拼接重排成了模板字面量片段，<code>data-args</code> 被截断成 <code>["</code>，<code>JSON.parse</code> 解析出 <code>undefined</code> → 请求 <code>status=undefined</code> → 后端按字面量 <code>WHERE status='undefined'</code> 查询 → 空列表（源码正确、单元测试直接调函数也「通过」，只有跑真实产物才暴露）。已改为模板字符串插值，并新增静态门禁禁掉「拼接生成 <code>data-*</code> 属性」的写法、回归测试直接断言压缩产物；门禁与测试都做过「注入故障→确认报红」验证。顺带把颜色（多套灰阶与4 种蓝 3 种红混用）、字体（10+ 种手写等宽栈）、图标（25+ 种散值字号）、间距（<code>--space-*</code> 定义了却零引用）四类散乱样式收敛到设计 token（保值映射，视觉零变化）；修弹窗背景可滚动（锁真正的滚动容器而非 body）、图片灯箱 Esc 监听器泄漏、知识库页错误提示不变红（引用了非全局的局部别名 <code>--danger</code>）、死信搜索框是死按钮（模板引用了代码里不存在的处理器）。</p>
+          <p><strong>v0.6.1</strong>：全量缺陷审计收口，没有新功能，修 10 类「平时跑得好好的、特定条件下才发作」的隐蔽缺陷。生产环境用 <code>python -O</code> 启动时 <code>assert</code> 会被整条剥离，8 处本该返回数据库记录 ID 的地方静默返回 <code>None</code>、调用方直接崩（开发期跑一年都发现不了）；高频轮询路径 3 个读方法未关游标，长生命周期进程里 WAL 读快照持续累积最终拖垮写入——症状与 v0.6.0 那次索引损坏事故一模一样，极易误判成锁参数问题；工具执行补 120 秒统一超时护栏（内部子进程硬超时 60 秒，留一倍余量），工具并发共享，此前一个卡死会拖慢所有会话；注销令牌黑名单改为按过期时间惰性清理、不再无限增长；图文混排里卡片图片（内部是 JSON 映射）不再被当路径拼进正文；3 处 frontmatter 切分（AI 意图写回 / 技能安装写平台 / Web 端改元数据）统一到读取路径的行级切分，值内含 <code>---</code> 时不再错位。</p>
+          <p><strong>v0.6.0</strong>：修「服务起不来」的真凶——本地部署日志停在「步骤 4/8」永不继续、web 端口从不上线，根因是 <code>offline=True</code>（用本地缓存不联网，最常见的配置）恰好命中「同步加载」分支，把主线程堵在读模型权重上（实测 &gt;50 秒，进程活着但 CPU 0.4%）。<code>background</code>（要不要异步）与 <code>offline</code>（要不要联网）本是正交的两件事，绑成一个条件就成了设计错误；现已解耦，启动秒回、模型照旧后台约 10 秒就绪。顺带修首页「决策追踪」取到最旧而非最新消息（后端正序、前端取前 N 条），排序下沉到组件内部统一处理；安全侧关闭鉴权且无凭据时对外地址改走 fail-closed、管理口令从明文升级为 PBKDF2 哈希（登录行为不变）、<code>urllib3</code> 升到 2.8.0 消掉 3 条告警（此前两份锁文件不一致，CI 实际吃的是漏洞版）；85 处「静默吞噬异常」补上可追溯日志并加 AST 门禁防回潮；少样本推荐的 N+1 降为单次查询（每次回复最多省 400 次）。</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">2026-09</div>
+        <div class="timeline-body">
+          <p><strong>v0.5.6</strong>：新增「答复门禁」——对用户发来的每条提问做前置检测，命中任一启用中的规则直接终止回复并返回拦截提示语，问题根本不进 AI（比生成后再过滤干净得多）。内置私人隐私 / 违法信息 / 负面情绪 / 其他四类预置规则（11 条装完即有基础防护），支持关键词与正则双模式（regex 引擎带超时，ReDoS 打不死主链路），后台规则可增删改查、批量启停、命中计数、在线匹配测试；门禁 fail-open——规则加载或匹配出任何异常一律放行，绝不吞正常消息。</p>
+          <p><strong>v0.5.5</strong>：记忆系统重构为「基于摘要的整合记忆」——单条逐条记忆容易堆积冗余、让检索被噪声淹没，v0.5.5 改为按「人 + 主题」聚合：个人记忆按对话对象、公共记忆按主题桶，后台调度器周期把零散事实合并成结构化摘要并去重，召回直接返回摘要、上下文更干净；顺手堵上「标记已读仍自动回复」（发送前强制复核未读 + 3 秒已读反悔窗口），并把「今日」摘要卡片取材窗口收敛到当天、不再串旧内容。</p>
+          <p><strong>v0.5.4</strong>：出厂配置自带可用默认密码——此前 `config.yaml.example` 的占位密码恰好落在「弱口令拒绝启动」黑名单里，新用户照抄模板一启动就被拦，体感「没默认密码」。v0.5.4 把出厂默认密码改为强度达标且不在黑名单的 `Admin@P0sw0rd`，照抄即可登录（fail-closed 仍拦弱口令，首次登录请改密码）。</p>
+          <p><strong>v0.5.3</strong>：会话图片不再「莫名消失」——后台孤儿图片回收此前误删过两次活跃账号的图，v0.5.3 加三道护栏：先算保护集再回收（跨库共享同一张图也不误删）、账号身份存疑整轮停手（宁可少清不删错）；顺手让前端在图片缺失时自动降级为「图片已不可用」占位，不再满屏破图。</p>
+          <p><strong>v0.5.2</strong>：RAG 记忆治理——分身聊同一个客户十次、结论各不相同，旧「死记忆」照样和新结论抢召回。v0.5.2 给记忆装上时效与作废：检索按时间加权（最新优先、过期沉底）、同一主题写出新结论时旧版自动标记为 superseded 只召回最新、知识库重投改为原地替换不再留僵尸分块、过期 GC 先删作废再删超龄；顺手清理消息展示噪声、升级两个依赖修 CVE。</p>
+          <p><strong>v0.5.1</strong>：常驻内存从 3.9GB 降到约 0.6GB——模型才 91MB，进程却吃 3.9GB，定位到两个「看不见」的大户：macOS MPS 后端首次分配就固定白拿约 1GB 显存且回收不掉、SQLite 每线程页缓存懒增长到 62.5MB；新增 embedding.device 配置可切 CPU 关掉显存占用，rerank 模型跟随该设置也不再偷占 GPU。多数用户零配置即受益。</p>
+          <p><strong>v0.5.0</strong>：新增 RAG「严格问答模式」——开启后回答只依据知识库内容、未命中直接返回固定「未收录」文案，从源头杜绝编造与幻觉；Web 顶栏常驻模式徽章、设置页状态条、模拟面板「对比两种模式」一键并排，直观体现两种模式差异；顺手修了 skills/router.py 跨线程读取崩溃（真实生产事故，被严格模式触发）。</p>
+          <p><strong>v0.4.9</strong>：摘要取材范围修复（漏旧消息、混自己写回的摘要副本、增量超限保最旧丢最新）+ 按日期与主题拆分摘要；意图识别补上礼貌语剥离，修掉「请求 + 谢谢」被误判为纯致谢直接跳过；分身自称改回第一人称「我」。</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">2026-09</div>
+        <div class="timeline-body">
+          <p><strong>意图识别修复</strong>：处置层新增尾部礼貌语剥离前处理，修掉「请求 + 谢谢」被误判为纯致谢直接跳过的问题——「王工，帮开一下 VPN 吧，谢谢」这类客套请求现在会正常进入处理；社交子型改用剥离后核心判定，「收到，谢谢」归确认而非被谢谢翻成致谢。</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">2026-09</div>
+        <div class="timeline-body">
+          <p><strong>对话摘要卡片渲染修复</strong>：根治卡片只显示首行日期、正文全丢的问题——单条摘要按自然日分段（多行），<code>renderDigestCards</code> 原只认单行「• 名称：内容」格式、续行被丢弃，首行恰是纯日期头时卡片看上去就只有一个日期。新增续行回接（续行拼回上一条目）+ 分段日期弱化为 <code>digest-sub-date</code> 小标；前端显式请求 <code>max_chars=2000</code> 避免长摘要被后端默认上限截断。全库 57 条多行摘要统一恢复完整显示，此前受影响的卡片正文均已正常。</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">2026-09</div>
+        <div class="timeline-body">
+          <p><strong>新歌《车道沟没有沟》</strong>：又一首原创上线番茄畅听 / 番茄音乐，me坤子 演唱。把北京的地名唱成一句温柔的错觉，封面里背着吉他的人站在水边，等落日把回家的路铺满——「我的音乐」区块现已收录四首，点开就能听。</p>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-page-node-id="kFMpwogZMTta9H6FPjDByE">
+        <div class="timeline-date" data-page-node-id="uVNfUUNYXYM3T6vcySOxjw">2026-08</div>
+        <div class="timeline-body" data-page-node-id="pvdWIVYclFcZcAtuuJmkKX">
+          <p data-page-node-id="afR0acDW0pbVaZv97q50tB"><strong data-page-node-id="H7mh3DvvIQmLuQpzRmVGwr">v0.4.8</strong>：可靠性修复——根治「历史消息重放污染上下文导致答非所问」（新增 <code data-page-node-id="ue5VNPLF7z2x39d5IfdAIH">poll_new_message_max_age_hours</code> 解耦新消息窗口、批内防抖剔除陈旧记录、清理 OCR caption 噪声）；长回复排版规范、引用回复降级消除、承诺边界措辞修正；安全加固 image.py 路径注入与登出真实吊销、性能并发化抓取与限频退避。</p>
+          <p data-page-node-id="a9w4sPrqJOunoauclxcE2J"><strong data-page-node-id="fyte2uVIv2wNq2DSH12mCd">v0.4.7</strong>：缺陷修复——LLM 异常精确分类（新增 <code data-page-node-id="qiL7AHmb9GLcQNKDQxlH6t">LLMNetworkError</code> / <code data-page-node-id="2byVyIJqTiCDHxVDck7XRG">LLMRateLimitError</code> / <code data-page-node-id="T6G9adLmJXOZQT3a9AOIBY">LLMAuthError</code>）、OCR 下载大小限制收紧到 10MB、清理 91 处 <code data-page-node-id="gA9a0GmSRvkFqC2E9ytpCg">noqa: BLE001</code>；新增错误监控告警系统（<code data-page-node-id="bayy5T6Q4aGpgimDw2TUkL">src/alerts/</code>）、性能基准测试工具、文档站点自动生成；测试套件扩展到 1409 用例。</p>
+          <p data-page-node-id="CEZIs1IqBccWxgl9CnNfL4"><strong data-page-node-id="AQGlC8i4Smv4BxYEyMqdsy">v0.4.6</strong>：主动触达摘要排版优化——<code data-page-node-id="lahSZKnAA23uCvBlEJ83fc">build_digest</code> 条目之间空行分隔、去除冗余的「【对话摘要】」前缀、改用序号列表，解决钉钉推送里所有摘要粘成一段的问题。</p>
+          <p data-page-node-id="nCFSrqVRnWbNgCA1XRvp9Y"><strong data-page-node-id="cpPXAiagnD28XuHFFDwCvf">v0.4.5</strong>：摘要视角修复——第一人称视角加固，<code data-page-node-id="iDPpJLy88PlctRK0hEmC7A">summarize_conversation</code> 新增显式 <code data-page-node-id="gDEeUK9MdTPKDTlrxSwTLZ">owner_name</code> 参数并强制 prompt 约束「凡是主人的消息统一用『我』指代」，杜绝把主人当成第三方的混乱视角；四类生成链路共用同一函数，一次修复全生效。</p>
+          <p data-page-node-id="OMahRJ8ICOupbT4ClCoapm"><strong data-page-node-id="YsKuixGpmUfD2lJbePkzlD">v0.4.4</strong>：摘要连续性补跑——启动检测停机时长，按自然日补生成遗漏的「当日 / 近七天」对话摘要，与正常周期同源同格式（均写回 <code data-page-node-id="N8GqvFN1hwXcUE67wD2ngS">conversation_summaries</code>）；时区稳健、LLM 额度受 <code data-page-node-id="WcYtp2SYUlSFATizfGZj84">max_backfill_days</code> 上限保护，异常不拖垮主链路。</p>
+          <p data-page-node-id="yTqSXDdK0RTDo0AMbXh8ZZ">修掉一个有意思的「时间窗口」bug：主动触达摘要推送原公式 <code data-page-node-id="TEStIxNwBWxrlDTbjsFwXT">max(今日0点, now - lookback_hours)</code> 在 <code data-page-node-id="94N3g8stxqi99ku3CAl0Zi">lookback_hours=24</code> 时恒取今日 0 点，导致 17:30 推送只覆盖当日、漏掉昨日尾巴。改为 <code data-page-node-id="CCDOmEaEV1yPYYP5rRwayk">now - lookback_hours</code> 滚动窗口，17:30 推送正确覆盖「昨日 17:30 → 今日 17:30」；同时复用 Web 同源的 <code data-page-node-id="W79KNfCKvQTrNwoYxW1WIA">list_recent_summaries(since=cutoff)</code>，消除窗口错配与活跃会话 LIMIT 截断的双重隐患。</p>
+          <p data-page-node-id="DGM4dSV2lQdhDRaXyxYLOI"><strong data-page-node-id="wb5dVo8atK0H06rYjjxCbt">v0.4.3</strong>：对话摘要页从纯文本升级为结构化卡片（头像/平台标签/主题/关键词/建议待办），默认今日视图；修掉 get_store_dep 关闭全局单例导致 metrics 偶发 500 的隐性 bug；F5 刷新不再跳回首页。</p>
+          <p data-page-node-id="gKQubVNVwfDqNALeBblCC3"><strong data-page-node-id="7wzniTEIdHmYWVDgMtgfw3">v0.4.2</strong>：Web 侧栏「消息中心」新增独立「对话摘要」实时页（30s 轮询），与钉钉 17:30 主动触达推送完全同源；主动触达支持自定义时刻。</p>
+          <p data-page-node-id="oP08fK6ZhFdRXKLXeU6K4w"><strong data-page-node-id="CUeHajvEWHdN8CW8phxFAY">v0.4.1</strong>：公共记忆（scope=public）每轮对话自动召回并注入 system prompt，与 RAG 注入对称；移除 auth_middleware 中明文密码日志，CodeQL 告警清零。</p>
+          <p data-page-node-id="xQ8VevVcvVVjY2UR0KmHzc">给 Linkora 做了一套开源宣传图，嵌入 README、GitHub Pages 项目页和个人主页，深色/浅色双版本自动切换；顺手修了上下文组装里的发言人丢失 bug。</p>
+          <p data-page-node-id="PWNgrHFKEVSvWZcZVOIHWo"><strong data-page-node-id="9z0L8lUMFxO5lG0f5JePl4">Linkora v0.4.0</strong> 发布：认证迁移 pyjwt、出站 SSRF 默认拒绝、新增每日主动触达，并用 CI 护栏封死配置覆盖丢参数的事故路径。</p>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-page-node-id="tV8Asast9rosmbCbCkKXn5">
+        <div class="timeline-date" data-page-node-id="xsUyvIA1yzN2DqSmmnyjJr">2026-07</div>
+        <div class="timeline-body" data-page-node-id="qa7jJ3Q0TBp3ZvJGrz4b0O">
+          <p data-page-node-id="hbDoSXAMNUGMDaEDZIRhMr">推进 <strong data-page-node-id="FhFZL3O1exERTjXjfn2SjB">数字克隆人</strong> 项目，基于 SQLite 沉淀近半年聊天记录，评估 Few-shot / LoRA / RAG / 混合四种技术路径。</p>
+          <p data-page-node-id="wppOj0K3AaSqbcFqrzdFsN">启动 <strong data-page-node-id="zmQsmpLZmvMva0Ghm2ZHkf">LookAway.app</strong> 简体中文汉化。</p>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-page-node-id="KBYAwLGdkgVITCXfMd60MB">
+        <div class="timeline-date" data-page-node-id="ZAC3YQmUVxzjXvCGpUbSu4">2026-06</div>
+        <div class="timeline-body" data-page-node-id="zQJ0nyTNELeqFnJ3B0jE83">
+          <p data-page-node-id="Tgl2cID4KkQrmkH3ihOkEg">梳理 25 个钉钉 OA 审批表单模板，试点含「项目」字段表单的 API 批量管理。</p>
+          <p data-page-node-id="FcQpCiz0m5KIDbLH0K5hen">用 Whisper medium 处理会议录音，校准「曲总 / 老蔡 / 英雄传团 Top10」等专有术语映射。</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" data-page-node-id="6gGwGD7wHhLtjRNYYz157S">
+    <div class="reveal" data-page-node-id="SmDMyFZTmQ6zvN2viVGtdJ">
+      <div class="section-label" data-page-node-id="B1meAd6qhyGTNZEjQDuJ7o">Featured Projects</div>
+      <div class="section-title" data-page-node-id="YAQBBXoaPoyuZhredRfPn0">精选项目</div>
+    </div>
+    <div class="projects-grid reveal" data-page-node-id="IvO8NOo71Mro0GN6DfQ3t9">
+
+      <a href="https://github.com/0x0021/Linkora" class="project-card project-card--featured" target="_blank" rel="noopener" data-page-node-id="qSlWay7ICWIDsEHMFIBwOY">
+        <picture data-page-node-id="K40yS8sVqP9n7MTku74G8P">
+          <img class="card-banner card-banner--dark" src="assets/brand/linkora-hero-dark.png" alt="Linkora 灵桥 — 多平台 AI 智能连接中枢" loading="lazy" data-page-node-id="AOHQDU4osgH8qE9UJ6B1tl" />
+          <img class="card-banner card-banner--light" src="assets/brand/linkora-hero-light.png" alt="Linkora 灵桥 — 多平台 AI 智能连接中枢" loading="lazy" data-page-node-id="VjNXvOvxk6ovVyyAIl61Et" />
+        </picture>
+        <div class="card-body" data-page-node-id="o7EPC1StJaaYB56LvRlO2f">
+          <div class="card-header" data-page-node-id="stP8p380SxyZSbl5rIiy2F">
+            <div class="card-icon" style="background:var(--accent-dim)" data-page-node-id="CiC8pQIF7DSJgGXQEJp5xi">🌉</div>
+            <div data-page-node-id="5hluQyTrhOjIEjMoT5ptK8">
+              <div class="card-name" data-page-node-id="E83d753QfWhyP5cwUL8YxZ">Linkora 灵桥</div>
+              <div class="card-meta" data-page-node-id="UjJ5hLbik8tPjROHZBf7NE">Python · Multi-platform</div>
+            </div>
+          </div>
+          <p class="card-desc" data-page-node-id="597jiioTJ1WOjqgBCYWPYG">企业级 AI 分身平台，接入钉钉/飞书/企微，读文档、调工具、自动处理群聊与私聊，懂得分何时交还真人。</p>
+          <div class="card-tags" data-page-node-id="WUA69TSzNfYkeHO3JMTr1N">
+            <span class="tag" data-page-node-id="lB5MCbjxE0Pt4PVZENAOZV">AI Agent</span>
+            <span class="tag green" data-page-node-id="NBRSCeScASeUFUXsQTGRaN">多平台</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="posts/lookaway-localization.html" class="project-card" rel="noopener" data-page-node-id="tIIzGxNpSu0byW5yfa83OR">
+        <div class="card-header" data-page-node-id="uEXaoJ3D6jRifO0OyhgChB">
+          <div class="card-icon" style="background:var(--green-dim)" data-page-node-id="PZin3a9PKJgv31K8Bry40D">👁</div>
+          <div data-page-node-id="5DblgTzKNuplh5uZmzW4FN">
+            <div class="card-name" data-page-node-id="xHWtpDFKANtyVsk2hIha0k">LookAway 简体中文汉化</div>
+            <div class="card-meta" data-page-node-id="raiaAFFNeVPcBHm0nK4b4O">Swift · macOS Localization</div>
+          </div>
+        </div>
+        <p class="card-desc" data-page-node-id="dqyd1cKuiSGQoe7z0FC3DG">把 macOS 护眼小工具 LookAway 完整汉化为简体中文，记录 nib 编辑、plutil 校验与本地化文件打包的全过程。</p>
+        <div class="card-tags" data-page-node-id="33lXuWxIT9RUjH1hlFnvvn">
+          <span class="tag" data-page-node-id="vvcLtwStlDgEsrt1ar2iE9">macOS</span>
+          <span class="tag green" data-page-node-id="uoznGC5YkxeGt7n9VC2bXe">本地化</span>
+        </div>
+      </a>
+
+      <a href="posts/multi-platform-adapter.html" class="project-card" rel="noopener" data-page-node-id="0UbEnMR0c3vpFuFrTxEtKk">
+        <div class="card-header" data-page-node-id="IOKRkqiUf6UHY9CUqYLsY7">
+          <div class="card-icon" style="background:rgba(210,153,34,0.12)" data-page-node-id="PsRfFzrSWg33CSJrAGNZgl">🔌</div>
+          <div data-page-node-id="oxhYDG7DHsFxenccHfQsHA">
+            <div class="card-name" data-page-node-id="1FtPxTfCHBMiRXkdPF8eoX">多平台 IM 适配器</div>
+            <div class="card-meta" data-page-node-id="E4SYIV9z5VoZTmtXRObwBB">Python · Adapter</div>
+          </div>
+        </div>
+        <p class="card-desc" data-page-node-id="A09EyNPOGC1EYItzSVjjfK">一套 BaseIMAdapter 抽象吃下钉钉/飞书/企微三家，统一上下文隔离、平台门控与执行兜底，踩过的坑都写进了复盘。</p>
+        <div class="card-tags" data-page-node-id="bq6B45JnUAVR1uHt4y2AFF">
+          <span class="tag orange" data-page-node-id="jHLUMEg4IIO18TQywasoyk">IM</span>
+          <span class="tag" data-page-node-id="202AyvxNHENsPMz2ybFlDO">Python</span>
+        </div>
+      </a>
+
+      <a href="https://0x0021.github.io/ClashModule/" class="project-card" target="_blank" rel="noopener" data-page-node-id="clashmod-proj">
+        <div class="card-header">
+          <div class="card-icon" style="background:var(--accent-dim)">⚡</div>
+          <div>
+            <div class="card-name">ClashModule 代理模块库</div>
+            <div class="card-meta">Web · Clash / Loon / QX</div>
+          </div>
+        </div>
+        <p class="card-desc">可莉插件中心模块的浏览器一键导入索引：搜索、标签筛选、分页浏览，点一下拉起 Clash / Loon / Quantumult X 导入，也支持复制链接手动导入，内置实时同步兜底。</p>
+        <div class="card-tags">
+          <span class="tag">代理</span>
+          <span class="tag green">工具</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" data-page-node-id="HLGt7GGFjYX0xN4FoNx2hu">
+    <div class="reveal" data-page-node-id="KQHcLD42EoAAv0UlUShyId">
+      <div class="section-label" data-page-node-id="hB8X9LnUhJVeHQbl2Dyfs3">About</div>
+      <div class="section-title" data-page-node-id="g2lVuYANvTpCAqR4MKfaZZ">关于我</div>
+    </div>
+    <div class="about-grid reveal" data-page-node-id="PoT0Zu5AcbWd7aMQv2MUlN">
+      <div class="about-card" data-page-node-id="bfyMmmALi6NI7DFThEmeFy">
+        <h3 data-page-node-id="4n76izLx6g1i3aEFPbWUPv">🎯 专注领域</h3>
+        <ul data-page-node-id="YD9h1ySOsymeqoxupTAb1E">
+          <li data-page-node-id="U3eaikPBwiSpmw1yzVX9CF">AI 智能体 &amp; RAG 系统</li>
+          <li data-page-node-id="aec6EOnMvaa59eedKPwUMw">企业级 IM 平台集成</li>
+          <li data-page-node-id="zAnRikiY15c6DwyyBkuz2U">云原生与 DevOps 工具链</li>
+          <li data-page-node-id="oUXmAx9uFr6eA6pANxVDQf">网络安全与 VPN 方案</li>
+        </ul>
+      </div>
+      <div class="about-card" data-page-node-id="qOKq1FEffi480nQ47B5eDx">
+        <h3 data-page-node-id="dxOsMDfNI4cNMlLP6Ugt3Y">🛠 技术栈</h3>
+        <ul data-page-node-id="ed4kIN7oZYCzcjcgoGqgq2">
+          <li data-page-node-id="lyXnbPwHsO7OuRo6SLPNsj">Python / Go / TypeScript</li>
+          <li data-page-node-id="erZfAoeoHmqWkoE0CRdtAU">Docker / K8s / CI/CD</li>
+          <li data-page-node-id="1uwmaTwjU9VvWxoNwIHhUC">PostgreSQL / Redis / SQLite</li>
+          <li data-page-node-id="DkAEusVtGdUHa2zkvaNyCZ">DingTalk / Feishu / WeCom SDK</li>
+        </ul>
+      </div>
+      <div class="about-card" data-page-node-id="SyCFr9mURCaIiEcKuIhvBR">
+        <h3 data-page-node-id="i29Hij3G9AydBxs2z7YBH9">📫 联系</h3>
+        <ul data-page-node-id="U0dLbay78IhXvbSeaPzu2D">
+          <li data-page-node-id="1Ss7DmHJcWGGETlWKYj3Q3">GitHub：<a href="https://github.com/0x0021" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none" data-page-node-id="Fd7ArPphSYbfzCJIkXRhnT">@0x0021</a></li>
+          <li data-page-node-id="mY1LLQWUbXQR50E6rmpmLF">开源项目、技术文章都在上面持续更新</li>
+          <li data-page-node-id="LGoNsxKqFX2JQl6Nu7YZJr">欢迎就 AI 智能体 / IM 集成交流想法</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer data-page-node-id="TIBvkl2YuKrZ6TC4uIAM1v">
+  <p data-page-node-id="jJBb1ULDbJ0AljCc2IX6vv">© 2026 坤子 · Built with ☕ and open source · <a href="https://github.com/0x0021" target="_blank" rel="noopener" data-page-node-id="YePMv0tTfvBSbfsehTKR8c">GitHub</a> · <a href="https://0x0021.github.io/ClashModule/" target="_blank" rel="noopener">代理模块库</a></p>
+</footer>
+
+<!-- 回到顶部（带进度环） -->
+<button class="to-top" id="toTop" aria-label="回到顶部" title="回到顶部" data-page-node-id="WmP9iSCPFaVXZ4O2Qe7DbF">
+  <svg class="to-top__ring" viewBox="0 0 44 44" aria-hidden="true" data-page-node-id="HANcYCp5wzkGPG9OR1vRdb">
+    <circle class="to-top__track" cx="22" cy="22" r="19" data-page-node-id="LhXeajXCSHln0JXyrWNkRP"></circle>
+    <circle class="to-top__bar" cx="22" cy="22" r="19" id="toTopBar" data-page-node-id="AwtxokUkDFhPvVKIB7Uln3"></circle>
+  </svg>
+  <span class="to-top__arrow" data-page-node-id="M3rId27FqSC1mw9T4lRTQH">↑</span>
+</button>
+
+<!-- 移动端底部导航 -->
+<nav class="mobile-nav" aria-label="底部导航" data-page-node-id="4Z4ei8W2PiclrjFHI8oxs2">
+  <a href="#blog" data-page-node-id="Iqk0fGFuZ6oHXw89taPLUs">📝<span data-page-node-id="i3qbVEICuRksGr2vvqQBLE">文章</span></a>
+  <a href="#timeline" data-page-node-id="0VHgv1SxsiCxixJ7Od2AWO">🕒<span data-page-node-id="KDGV4hdd5tj1B5MOuxOG26">动态</span></a>
+  <a href="#projects" data-page-node-id="OA5nT5kNx8l8j7ko5UVlqW">⭐<span data-page-node-id="NM1vBOXsbbLW24BGCoTqBi">项目</span></a>
+  <a href="#about" data-page-node-id="1q5zNFTH75H9YSFTJimQ1r">👤<span data-page-node-id="ivvLcuGYCiwCHozsg8xTQ8">关于</span></a>
+  <button id="mobileMore" class="mobile-nav__more" type="button" aria-expanded="false" aria-controls="moreSheet" aria-label="更多" data-page-node-id="YlZxhginAjQIesQ5EYMvtH">⋯<span data-page-node-id="351zEXWCKMii9sDXrHdzFQ">更多</span></button>
+</nav>
+
+<!-- 移动端"更多"面板 -->
+<div class="more-sheet" id="moreSheet" role="dialog" aria-modal="true" aria-labelledby="moreSheetTitle" data-page-node-id="RnJfdcw2b6hJ7jN9NxuYIW">
+  <div class="more-sheet__backdrop" data-close-sheet data-page-node-id="kACJIkUrmf1GDHaNnZeFZW"></div>
+  <div class="more-sheet__panel" data-page-node-id="TLIUQfKRjzG1MXaXaJy6XD">
+    <div class="more-sheet__handle" aria-hidden="true" data-page-node-id="sbOLQghTv0HPlThSmdwNyu"></div>
+    <div class="more-sheet__title" id="moreSheetTitle" data-page-node-id="3d141Q8tiNVMcSZY48f7V2">更多</div>
+    <div class="more-sheet__list" data-page-node-id="aiGAOjH25PMjAX5gzaF1zR">
+      <button type="button" class="more-sheet__item" data-sheet-action="top" data-page-node-id="CzW128kbmxCp4sVpwpm1Np">
+        <span class="more-sheet__icon" aria-hidden="true" data-page-node-id="3XCEXvwEkI6V0MqsHKcB4i">↑</span>
+        <span class="more-sheet__label" data-page-node-id="AV5QPSDkI4E2rQFzLJ5Ewk">回到顶部</span>
+        <span class="more-sheet__hint" data-page-node-id="w0VxqR6ew0yHFn38QahZ04">TOP</span>
+      </button>
+      <a class="more-sheet__item" href="#music" data-page-node-id="9lmH8FziyVb6B4uIAQ1FG2">
+        <span class="more-sheet__icon" aria-hidden="true" data-page-node-id="DyhEtm1BATMh4fM96MCXtD">♪</span>
+        <span class="more-sheet__label" data-page-node-id="MnBqgqtYeL5FHGCwxmRKtV">我的音乐</span>
+        <span class="more-sheet__hint" data-page-node-id="hKMGycWvI6hCWC2NF6N6uS">MUSIC</span>
+      </a>
+      <a class="more-sheet__item" href="https://github.com/0x0021" target="_blank" rel="noopener" data-page-node-id="L1nyQZGstJJiAG2bweCF82">
+        <span class="more-sheet__icon" aria-hidden="true" data-page-node-id="jloY70o7tcB4gEU3fdBZ0z">↗</span>
+        <span class="more-sheet__label" data-page-node-id="JDBjgJpoZvAQvdwDCz9s6s">GitHub 仓库</span>
+        <span class="more-sheet__hint" data-page-node-id="WMqnP0bOpL5ya557DF7jM0">@0x0021</span>
+      </a>
+      <button type="button" class="more-sheet__item" data-sheet-action="theme" data-page-node-id="LDpW8wFJCQgq58FMZrQtpE">
+        <span class="more-sheet__icon theme" id="sheetThemeIcon" aria-hidden="true" data-page-node-id="w6Zpcw4PGKHAHEEmYcDi8I">◐</span>
+        <span class="more-sheet__label" id="sheetThemeLabel" data-page-node-id="xqq0wh21TLfFkAsbjovI0s">切换主题</span>
+        <span class="more-sheet__hint" id="sheetThemeHint" data-page-node-id="NA6OdifuT4PcE9wKHEQxQJ">DARK</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<script src="assets/main.js"></script>
+</body>
+</html>

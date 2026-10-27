@@ -1,0 +1,7 @@
+# Disable Jekyll for raw HTML serving
+exclude: ['*.md', '*.yml']
+keep_files: ['.github']
+markdown: kramdown
+jekyll: false
+plugins: []
+future: true

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Linkora v0.6.4：让轮询安静下来 · 坤子</title>
+<meta name="description" content="v0.6.4 把轮询器对钉钉接口的调用频率降下来：未读列表加 30 秒缓存、单聊对方解析失败进 5 分钟负缓存、未读会话抓取加 30 秒下限间隔、轮询间隔 10→20 秒。调用总量降约 6–7 成，活跃时段不再反复触发限流，消息一条不丢。" />
+<link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+<div class="post-progress" aria-hidden="true"></div>
+
+<nav>
+  <a href="../index.html" class="nav-brand">坤子</a>
+  <div class="nav-links">
+    <a href="../index.html#blog">文章</a>
+    <a href="../index.html#timeline">动态</a>
+    <a href="../index.html#projects">项目</a>
+    <a href="https://github.com/0x0021" target="_blank" rel="noopener">GitHub</a>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="切换主题">◑</button>
+  </div>
+</nav>
+
+<main class="post has-toc">
+    <aside class="toc" aria-label="目录"></aside>
+  <a class="post-back" href="../index.html">← 返回博客</a>
+  <header class="post-header">
+    <div class="post-meta">2026-10-15 · 发布记录</div>
+    <h1>Linkora v0.6.4：让轮询安静下来</h1>
+    <div class="post-tags">
+      <span class="tag">AI Agent</span>
+      <span class="tag green">v0.6.4</span>
+      <span class="tag">性能</span>
+      <span class="tag">可靠性</span>
+    </div>
+  </header>
+
+  <article class="post-content">
+    <p>这一版没有新功能，只做了一件事：<strong>让轮询器少敲门</strong>。起因是打开钉钉管理后台的调用日志，看见自己的分身在以秒级频率拉会话消息接口，活跃时段还会反复撞上平台限流——表现为回复偶发地慢上一拍。</p>
+
+    <blockquote>
+      <p><strong>本文要点</strong></p>
+      <ul>
+        <li>未读会话列表加 <strong>30 秒 TTL 缓存</strong>：它只决定「哪些会话优先抓」，新消息仍由主通道每轮全量拉取</li>
+        <li>单聊对方信息解析失败进 <strong>5 分钟负缓存</strong>：外部好友、跨组织、网络瞬断不再每轮重打同一批元数据接口</li>
+        <li>未读会话抓取加 <strong>30 秒下限间隔</strong>：从「每轮必抓」改为「最多每 30 秒一次」</li>
+        <li>轮询间隔 10→20 秒、置顶列表缓存 120→180 秒、黑名单对账 10→20 轮、限流冷却 60→120 秒</li>
+        <li>实测：接口调用总量降约 <strong>6–7 成</strong>，活跃时段限流熔断减半，改动后连续 18 分钟零熔断</li>
+      </ul>
+    </blockquote>
+
+    <h2>现象：后台日志里的密集调用</h2>
+    <p>钉钉管理后台（安全 &gt; AI安全 &gt; 调用管理）能看到分身账号的接口调用记录。截图里一分钟不到的时间窗内，同一会话消息接口被调了十几次，还经常是同一秒并发四五个——那是轮询器的受控并发在同时抓多个会话。问题不在并发本身，而在<strong>频率与重复</strong>：很多次调用拉回来的内容，和上一次完全一样。</p>
+    <p>更实际的后果是限流。日志里能看到平台在活跃时段反复返回 <code>RATE_LIMIT_ERROR</code>，熔断器虽然会暂停抓取 60 秒再恢复，但恢复的瞬间又要把攒下的会话一次性重抓，于是再次撞限流——一个自己喂自己的循环。</p>
+
+    <h2>根因：四层各打各的</h2>
+    <p>拆开看，重复调用来自四个地方，每一处单看都「合理」，叠在一起就是风暴：</p>
+    <ul>
+      <li><strong>未读会话列表每轮拉一次</strong>——它只用来决定「哪些会话享受实时优先」，而这个名单在几十秒内几乎不变。</li>
+      <li><strong>未读会话每轮全量重抓</strong>——只要会话在未读列表里，就每轮都抓一次，从不间隔。活跃时段未读会话常有几十个，这一下就是几十次调用。</li>
+      <li><strong>解析失败的会话每轮重试</strong>——外部好友、跨组织会话、网络瞬断导致「解析不出对方是谁」时，此前只有权限类失败会被记住，瞬断和无命中仍然每轮重打。</li>
+      <li><strong>轮询间隔只有 10 秒</strong>——所有上述行为都乘以每分钟 6 轮。</li>
+    </ul>
+
+    <h2>做法：四层降频，各归其位</h2>
+    <ul>
+      <li><strong>未读列表加 30 秒缓存</strong>（<code>unread_convs_cache_ttl_seconds</code>）：缓存期内复用上次结果，调用量降到约每两轮一次；拉取失败不写缓存，避免把一次瞬断钉成「没有未读」。</li>
+      <li><strong>解析失败进 5 分钟负缓存</strong>（<code>conv_info_negative_cache_ttl_seconds</code>）：失败后在 TTL 内不再重打会话详情与联系人搜索两个接口；数据库缓存与外部好友映射是纯本地查询，不受影响；一旦解析成功立刻清掉负缓存。</li>
+      <li><strong>未读会话加 30 秒下限间隔</strong>（<code>forced_fetch_min_interval_seconds</code>）：未读仍然优先于长尾会话，但不再每轮必打。</li>
+      <li><strong>配置放宽</strong>：轮询间隔 10→20 秒、置顶会话列表缓存 120→180 秒、黑名单自愈对账 10→20 轮、限流冷却 60→120 秒（给服务端限流窗口留恢复时间，别一到期就重撞）。</li>
+    </ul>
+
+    <h2>关键前提：为什么敢降频</h2>
+    <p>敢动这几个开关的前提是：<strong>消息的主通道不是它们</strong>。系统真正收消息靠的是 list-all 主通道——每轮按时间窗全量拉取，命中即走「快通道」即时派发，不等后面的逐会话抓取。逐会话抓取（<code>chat_message_list</code> / <code>chat_message_list_direct</code>）只是健壮性冗余：外部好友、群消息这类主通道覆盖不到的兜底路径。</p>
+    <p>换句话说，被降频的是「冗余通道的重复确认」，不是「消息本身」。实测也印证了这一点：降频后消息照常进来，list-all 快通道持续派发，图片 OCR 正常，没有任何漏回。</p>
+    <blockquote>降频的正确姿势不是「少查点」，而是先分清哪条是主动脉、哪条是保底，再决定保底要多勤。</blockquote>
+
+    <h2>实测</h2>
+    <ul>
+      <li>同一活跃时段对比：平台限流熔断由<strong>每 30 分钟 28 次降到 14 次</strong>；改动后连续 18 分钟<strong>零熔断</strong>（改动前前 5 分钟就熔断 6 次）。</li>
+      <li>接口调用总量估算降约 <strong>60–70%</strong>。</li>
+      <li>轮询统计从「101 个会话全抓」变为「100 个会话、跳过 25–70 个」。</li>
+    </ul>
+
+    <h2>顺带修一个失真的统计</h2>
+    <p>轮询日志里有一行「长尾限频跳过 N 个抓取」，此前<strong>恒为 0</strong>——限频命中的会话走的是提前返回路径，没被计入聚合返回值。降频做完却看不出效果，正是因为这行数字在骗人。现已改为独立计数，降频效果在日志里如实可见（上面那组 25–70 就是它打出来的）。</p>
+
+    <h2>门禁</h2>
+    <ul>
+      <li>ruff 全路径通过；pyright 钉版（1.1.414）src + web 零错误；<code>check_deps.py --strict</code> 零告警；裸异常基线未增。</li>
+      <li>新增 17 个测试用例（未读缓存 6 例、解析负缓存 6 例、forced 下限 5 例），定向回归 560+ 全过。</li>
+      <li>线上重启后实测：stream 长连接就绪、Web 200、消息收发与 OCR 正常、零限流熔断。</li>
+    </ul>
+
+    <h2>升级注意</h2>
+    <p>无破坏性变更、无数据迁移。新增三个可调配置，默认值即降频后的取值；不想要降频可全部设为 <code>0</code> 回到旧行为。轮询间隔由 10 秒放宽到 20 秒，兜底通道的抓取延迟相应变长（主通道仍是每轮一遍），介意延迟可把 <code>interval_seconds</code> 调回 10。</p>
+
+    <h2>延伸阅读</h2>
+    <ul>
+      <li><a href="https://github.com/0x0021/Linkora/blob/main/docs/CHANGELOG.md" target="_blank" rel="noopener">完整变更日志（CHANGELOG）</a>——本次全部变更条目</li>
+      <li><a href="https://github.com/0x0021/Linkora/releases/tag/v0.6.4" target="_blank" rel="noopener">GitHub Release v0.6.4</a></li>
+      <li><a href="https://github.com/0x0021/Linkora" target="_blank" rel="noopener">项目源码</a>——<a href="https://github.com/0x0021" target="_blank" rel="noopener">GitHub</a></li>
+    </ul>
+  </article>
+  <footer class="post-footer">
+    <a class="post-back" href="../index.html">← 返回博客</a>
+  </footer>
+</main>
+<script src="../assets/main.js"></script>
+</body>
+</html>

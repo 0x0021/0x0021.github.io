@@ -1,0 +1,4195 @@
+{
+  "name": "Quantumult X 资源合集",
+  "sources": [
+    {
+      "key": "dee",
+      "label": "可莉重写库",
+      "home": "https://github.com/deezertidal/QuantumultX-Rewrite"
+    },
+    {
+      "key": "ddg",
+      "label": "墨鱼手记",
+      "home": "https://github.com/ddgksf2013"
+    },
+    {
+      "key": "adblock",
+      "label": "毒奶特供",
+      "home": "https://github.com/limbopro/Adblock4limbo"
+    }
+  ],
+  "modules": [
+    {
+      "name": "去广告",
+      "desc": "APP启动页去广告",
+      "author": "ddgksf2013",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/startingad.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/startingad.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "去广告"
+      ]
+    },
+    {
+      "name": "百度云加速",
+      "desc": "百度云倍速播放",
+      "author": "NobyDa",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/baiducloud.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/BaiduCloud.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "扫描全能王",
+      "desc": "解锁扫描全能王",
+      "author": "NobyDa",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/cs.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/CamScanner.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "Emby",
+      "desc": "Emby插件",
+      "author": "Tartarus2014",
+      "icon": "https://raw.githubusercontent.com/Tartarus2014/For-own-use/master/Color/EMBY.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/Emby.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "工具脚本"
+      ]
+    },
+    {
+      "name": "酷我会员",
+      "desc": "解锁酷我年费会员",
+      "author": "NobyDa",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/kuwo.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/KuwoVip.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "酷我数字专辑解锁",
+      "desc": "听书+下载+解锁数字专辑",
+      "author": "nameking77",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/kuwosvip.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/kuwo-unlock.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "历史价格",
+      "desc": "京东比价",
+      "author": "Tartarus2014",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/price.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/Price.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "工具脚本"
+      ]
+    },
+    {
+      "name": "WPS会员解锁",
+      "desc": "WPS解锁本地会员",
+      "author": "I-am-R-E",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/wps.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/WPS.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "Nicegram会员解锁",
+      "desc": "解锁Nicegram会员(2022.07.15)",
+      "author": "@R·E https://t.me/Functional_Store_Hub",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/nicegram.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/nicegram.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "财新文章解锁",
+      "desc": "财新会员解锁",
+      "author": "cuttlefish",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/caixin.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/caixin.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "spotify会员解锁",
+      "desc": "部分解锁premium,建议重新登录,音质不能设置为超高",
+      "author": "app2smile",
+      "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Spotify.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/SpotifyPremium.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "SoundCloud Go+",
+      "desc": "解锁SoundCloud Go+",
+      "author": "Marol62926",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/soundcloud.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/soundcloud.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "代理链路检测",
+      "desc": "一款支持Surge、QuantumultX、Loon的节点代理链路检测模块",
+      "author": "I-am-R-E",
+      "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Stack.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/NodeLinkCheck.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "工具脚本"
+      ]
+    },
+    {
+      "name": "波点音乐",
+      "desc": "波点音乐去广告",
+      "author": "zqzess",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/bodian2.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/Bodian.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "去广告"
+      ]
+    },
+    {
+      "name": "禁用iOS更新",
+      "desc": "屏蔽 iOS 系统更新且需匹配REJECT策略组",
+      "author": "deezertidal",
+      "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple_Update.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/DisableUpdate.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "工具脚本"
+      ]
+    },
+    {
+      "name": "奈飞评分",
+      "desc": "奈菲迪士尼评分",
+      "author": "yichahucha",
+      "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Netflix.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/Ratings.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "工具脚本"
+      ]
+    },
+    {
+      "name": "番茄小说",
+      "desc": "番茄小说去广告",
+      "author": "zqzess",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/fanqie.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/fanqienovel.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "去广告"
+      ]
+    },
+    {
+      "name": "流利说解锁",
+      "desc": "解锁流利说·阅读会员、解锁阅读权限、解锁音频权限等",
+      "author": "@R·E https://t.me/Functional_Store_Hub",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/lls.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/lls.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "JibJab",
+      "desc": "JibJab解锁会员",
+      "author": "NobyDa",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/jibjab.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/jibjab.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "Mix Camera",
+      "desc": "mix解锁",
+      "author": "NobyDa",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/mix.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/mix.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "Picsart",
+      "desc": "picsart解锁会员",
+      "author": "NobyDa",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/picsart.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/picsart.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "Polarr",
+      "desc": "polarr解锁",
+      "author": "NobyDa",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/polarr.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/polarr.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "皮皮虾",
+      "desc": "皮皮虾去广告和水印",
+      "author": "NobyDa",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/ppx.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/ppx.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "去广告"
+      ]
+    },
+    {
+      "name": "VSCO",
+      "desc": "vsco解锁",
+      "author": "NobyDa",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/vsco.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/vsco.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "小影",
+      "desc": "小影解锁",
+      "author": "NobyDa",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/xiaoying.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/xiaoying.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "香蕉视频",
+      "desc": "解锁观看限制",
+      "author": "NobyDa",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/xjsp.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/xjsp.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "ColorWidgets小组件",
+      "desc": "桌面小组件会员解锁 初次使用需点击恢复购买",
+      "author": "Marol62926",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/colorwidgets.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/colorwidgets.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "Alarmy闹钟解锁",
+      "desc": "使命闹钟会员解锁",
+      "author": "Marol62926",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/alarmy.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/alarmy.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "彩云天气提醒",
+      "desc": "自动定位 异常天气预警 实时天气预报",
+      "author": "Peng-YM",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/caiyun.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/caiyun.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "工具脚本"
+      ]
+    },
+    {
+      "name": "Aloha浏览器",
+      "desc": "Aloha VPN浏览器会员解锁",
+      "author": "Marol62926",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/aloha.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/aloha.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "BedtimeFan助眠风扇",
+      "desc": "助眠风扇解锁",
+      "author": "Marol62926",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/bedtimefan.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/BedtimeFan.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "Bazaart解锁",
+      "desc": "Bazaart编辑器解锁，进入app恢复购买",
+      "author": "Marol62926",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/bazaart.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/bazaart.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "DailyYoga解锁",
+      "desc": "Daily Yoga 解锁 金星会员  显示需要会员的课程，点击成为会员即可观看",
+      "author": "Marol62926",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/dailyyoga.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/daily-yoga.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "Darkroom解锁",
+      "desc": "Darkroom解锁会员 进去app恢复购买",
+      "author": "Marol62926",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/darkroom.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/darkroom.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "Fabulous解锁",
+      "desc": "Fabulous会员解锁",
+      "author": "Marol62926",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/fabulous.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/fabulous.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "Invideo解锁",
+      "desc": "Invideo会员解锁",
+      "author": "Marol62926",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/invideo.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/invideo.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "忆飞Gif解锁",
+      "desc": "忆飞Gif解锁",
+      "author": "Marol62926",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/giftr.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/giftr.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "句读解锁",
+      "desc": "句读解锁，进入app恢复购买",
+      "author": "Marol62926",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/judou.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/judou.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "Kika会员解锁",
+      "desc": "Kika会员解锁",
+      "author": "Marol62926",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/kika.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/kika.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "Mojo会员解锁",
+      "desc": "Mojo会员解锁",
+      "author": "Marol62926",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/mojo.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/mojo.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "Musixmatch解锁",
+      "desc": "Musixmatch解锁",
+      "author": "Marol62926",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/musixmatch.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/musixmatch.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "MyFitnessPal解锁",
+      "desc": "MyFitnessPal会员解锁",
+      "author": "Marol62926",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/myfitnesspal.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/myfitnesspal.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "Now冥想解锁",
+      "desc": "Now 冥想 解锁",
+      "author": "Marol62926",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/now.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/now.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "奶由壁纸解锁",
+      "desc": "奶由壁纸解锁",
+      "author": "Marol62926",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/nybz.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/nybz.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "Piccollage解锁",
+      "desc": "Piccollage解锁",
+      "author": "Marol62926",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/piccollage.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/piccollage.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "Pixelcut解锁",
+      "desc": "可莉重写库 · Quantumult X 重写脚本",
+      "author": "deezertidal",
+      "icon": "",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/pixelcut.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "时光手账解锁",
+      "desc": "时光手账解锁",
+      "author": "Marol62926",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/sgsz.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/sgsz.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "ShadowLink解锁会员节点",
+      "desc": "ShadowLink VPN解锁会员节点",
+      "author": "Marol62926",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/shadowlinkvpn.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/shadowlinkvpn.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "Smallpdf解锁",
+      "desc": "Smallpdf解锁",
+      "author": "Marol62926",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/smallpdf.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/smallpdf.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "Tangerine解锁",
+      "desc": "Tangerine解锁",
+      "author": "Marol62926",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/tangerine.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/tangerine.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "Ten Percent解锁",
+      "desc": "Ten Percent解锁",
+      "author": "Marol62926",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/tenpercent.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/tenpercent.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "迅雷会员解锁",
+      "desc": "迅雷会员解锁",
+      "author": "Marol62926",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/thunder.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/thunder.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "Workout For Women解锁",
+      "desc": "Workout For Women解锁",
+      "author": "Marol62926",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/wfw.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/wfw.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "Widgetsmith解锁",
+      "desc": "Widgetsmith解锁",
+      "author": "Marol62926",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/widgetsmith.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/widgetsmith.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "万能变声器解锁",
+      "desc": "万能变声器解锁",
+      "author": "Marol62926",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/wnbsq.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/wnbsq.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "指尖时光解锁会员",
+      "desc": "指尖时光解锁会员",
+      "author": "Marol62926",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/zjsg.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/zjsg.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "傲软抠图会员",
+      "desc": "傲软抠图会员 需登陆账号",
+      "author": "ddgksf2013",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/apowersoft.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/apowersoft.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "Appraven Pro",
+      "desc": "Appraven Pro",
+      "author": "ddgksf2013",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/appraven.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/appraven.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "布丁锁屏",
+      "desc": "布丁锁屏 VIP",
+      "author": "ddgksf2013",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/bdsp.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/bdsp.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "Bilibili 1080P",
+      "desc": "Bilibili解锁高清画质",
+      "author": "ddgksf2013",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/bili.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/bili.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "BOOM会员解锁",
+      "desc": "BOOM会员解锁",
+      "author": "ddgksf2013",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/boom.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/boom.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "克拉壁纸",
+      "desc": "克拉壁纸解锁",
+      "author": "ddgksf2013",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/clarity.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/clarity.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "彩云天气SVIP",
+      "desc": "彩云天气会员解锁",
+      "author": "ddgksf2013",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/caiyun.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/colorweather.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "Ellabook VIP",
+      "desc": "Ellabook VIP",
+      "author": "ddgksf2013",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/ellabook.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/ellabook.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "Fimo Pro",
+      "desc": "Fimo会员解锁 先登陆再开插件",
+      "author": "ddgksf2013",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/fimo.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/fimo.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "i Love PDF解锁",
+      "desc": "i Love PDF解锁",
+      "author": "Marol62926",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/ilovepdf.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/ilovepdf.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "美图秀秀VIP",
+      "desc": "美图秀秀解锁",
+      "author": "I-am-R-E",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/meituxx.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/meituxx.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "起伏会员解锁",
+      "desc": "起伏会员解锁",
+      "author": "ddgksf2013",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/qifu.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/qifu.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "Symbolab Pro",
+      "desc": "Symbolab Pro",
+      "author": "ddgksf2013",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/symbolab.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/symbolab.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "B612咔叽",
+      "desc": "B612咔叽会员解锁",
+      "author": "ddgksf2013",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/b612.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/b612.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "儿歌点点会员",
+      "desc": "儿歌点点会员",
+      "author": "ddgksf2013",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/egdd.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/egdd.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "hyperweb会员解锁",
+      "desc": "hyperweb会员解锁",
+      "author": "ddgksf2013",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/hyperweb.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/hyperweb.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "Molycam会员",
+      "desc": "Molycam会员解锁",
+      "author": "ddgksf2013",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/molycam.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/molycam.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "Photomath会员",
+      "desc": "Photomath会员解锁",
+      "author": "ddgksf2013",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/photomath.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/photomath.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "西窗烛解锁",
+      "desc": "西窗烛会员解锁",
+      "author": "ddgksf2013",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/xcz.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/xcz.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "Accuweather解锁",
+      "desc": "AccuWeather解锁会员",
+      "author": "Marol62926",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/accu.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/accu.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "Meistertask解锁",
+      "desc": "MeisterTask解锁会员",
+      "author": "ddgksf2013",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/meistertask.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/meistertask.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "一言解锁",
+      "desc": "一言解锁会员",
+      "author": "ddgksf2013",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/yiyan.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/yiyan.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "Fantastical解锁",
+      "desc": "Fantastical解锁会员",
+      "author": "ddgksf2013",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/fantastical.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/fantastical.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "云听解锁",
+      "desc": "云听解锁会员",
+      "author": "ddgksf2013",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/yunting.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/yunting.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "豌豆清单解锁",
+      "desc": "豌豆清单解锁会员",
+      "author": "ddgksf2013",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/wdqd.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/wdqd.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "EMMO解锁",
+      "desc": "Emmo解锁会员",
+      "author": "ddgksf2013",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/emmo.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/emmo.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "小习惯解锁",
+      "desc": "小习惯解锁会员",
+      "author": "ddgksf2013",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/xxg.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/xxg.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "读书笔记解锁",
+      "desc": "读书笔记解锁会员",
+      "author": "ddgksf2013",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/dsbj.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/dsbj.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "斑马海报解锁",
+      "desc": "斑马海报解锁会员",
+      "author": "ddgksf2013",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/zebra.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/zebra.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "My Plate解锁",
+      "desc": "My Plate解锁会员",
+      "author": "Marol62926",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/myplate.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/myplate.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "❌I AM解锁",
+      "desc": "Iam解锁会员",
+      "author": "Marol62926",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/iam.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/iam.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "iMuseum解锁",
+      "desc": "IMuseum会员解锁",
+      "author": "Marol62926",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/imuseum.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/imuseum.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "Audiomack解锁",
+      "desc": "AudioMack解锁永久订阅",
+      "author": "yqc007",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/audiomack.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/audiomack.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "Grammarly解锁",
+      "desc": "Grammarly解锁订阅 subscription.grammarly.com",
+      "author": "yqc007",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/grammarly.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/grammarly.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "TOKCAM解锁",
+      "desc": "TOKCAM解锁永久订阅",
+      "author": "yqc007",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/tokcam.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/tokcam.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "图图记账解锁",
+      "desc": "图图记账解锁永久高级版",
+      "author": "yqc007",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/tutu.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/tutu.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "WallCraft解锁",
+      "desc": "WallCraft解锁永久专业版",
+      "author": "yqc007",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/wallcraft.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/wallcraft.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "新语听书解锁",
+      "desc": "新语听书解锁会员",
+      "author": "yqc007",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/xyts.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/xyts.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "一甜相机解锁",
+      "desc": "一甜相机解锁会员",
+      "author": "yqc007",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/yitian.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/yitian.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "Grow解锁",
+      "desc": "Grow解锁会员",
+      "author": "I-am-R-E",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/grow.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/grow.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "Xmind思维导图",
+      "desc": "解锁Xmind思维导图订阅到2030年",
+      "author": "@R·E https://t.me/Functional_Store_Hub",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/xmind.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/xmind.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "微信公众号去广告",
+      "desc": "微信公众号去广告",
+      "author": "HotKids",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/wechatad.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/wechatad.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "去广告"
+      ]
+    },
+    {
+      "name": "微博去广告",
+      "desc": "微博去广告",
+      "author": "ddgksf2013",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/weiboad.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/weiboad.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "去广告"
+      ]
+    },
+    {
+      "name": "哔哩哔哩去广告",
+      "desc": "哔哩哔哩去广告",
+      "author": "ddgksf2013",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/biliad.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/biliad.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "去广告"
+      ]
+    },
+    {
+      "name": "喜马拉雅去广告",
+      "desc": "喜马拉雅去广告",
+      "author": "ddgksf2013",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/xmlyad.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/xmlyad.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "去广告"
+      ]
+    },
+    {
+      "name": "网易蜗牛阅读",
+      "desc": "网易蜗牛读书解锁会员",
+      "author": "yxiaocai & JO2EY",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/wnds.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/wnds.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "马卡龙玩图",
+      "desc": "马卡龙玩图解锁会员",
+      "author": "CheeryTodo",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/mklwt.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/mklwt.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "第一弹解锁",
+      "desc": "第一弹去广告+原画",
+      "author": "MiaoMiao",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/dyd.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/dyd.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "去广告"
+      ]
+    },
+    {
+      "name": "海豚记账本",
+      "desc": "海豚记账本解锁会员",
+      "author": "superuv",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/htjzb.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/htjzb.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "PEAK解锁",
+      "desc": "Peak解锁Pro",
+      "author": "chamberlen",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/peak.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/peak.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "Pillow解锁",
+      "desc": "Pillow解锁会员",
+      "author": "CheeryTodo",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/pillow.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/pillow.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "PocketLists解锁",
+      "desc": "Pocket Lists解锁会员",
+      "author": "superuv",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/pocketlist.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/pocketlists.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "知音漫客解锁",
+      "desc": "解锁知音漫客付费章节 (需登录)",
+      "author": "NobyDa",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/zymk.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/zymk.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "有道云笔记解锁",
+      "desc": "有道云笔记VIP",
+      "author": "Alex0510",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/ydybj.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/ydybj.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "Vista看天下解锁",
+      "desc": "Vista看天下会员解锁",
+      "author": "lutqhysky",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/vista.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/vista.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "PhotosShop Express会员解锁",
+      "desc": "PhotoshopExpress解锁高级订阅",
+      "author": "litieyin",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/photoshop.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/photoshop.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "人人视频去广告",
+      "desc": "人人（多多）视频去广告",
+      "author": "ddgksf2013",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/rrsp.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/rrsp.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "去广告"
+      ]
+    },
+    {
+      "name": "七猫小说解锁",
+      "desc": "七猫小说解锁",
+      "author": "I-am-R-E",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/qmxs.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/qmxs.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "漫画台小程序解锁",
+      "desc": "漫画台lite微信小程序解锁",
+      "author": "ddgksf2013",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/mht.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/mht.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "Notability解锁",
+      "desc": "Notability解锁",
+      "author": "litieyin",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/notability.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/notability.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "爱美剧解锁",
+      "desc": "爱美剧解锁部分功能+去广告",
+      "author": "NobyDa",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/amj.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/amj.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "去广告"
+      ]
+    },
+    {
+      "name": "白描黄金会员",
+      "desc": "白描黄金会员",
+      "author": "iEwha",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/baimiao.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/baimiao.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "OldRoll相机解锁",
+      "desc": "OldRoll相机解锁",
+      "author": "yqc007",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/oldroll.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/oldroll.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "少年得到解锁会员",
+      "desc": "少年得到解锁会员",
+      "author": "lutqhysky",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/sndd.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/sndd.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "大蓝鲸",
+      "desc": "大蓝鲸解锁会员",
+      "author": "lutqhysky",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/dalanjing.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/dalanjing.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "螺畤大语文解锁会员",
+      "desc": "螺畤大语文解锁会员",
+      "author": "lutqhysky",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/lsdyw.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/lsdyw.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "语文趣配音解锁会员",
+      "desc": "语文趣配音解锁会员",
+      "author": "lutqhysky",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/ywqpy.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/ywqpy.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "纸条年度会员解锁",
+      "desc": "纸条年度会员解锁",
+      "author": "lutqhysky",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/zhitiao.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/zhitiao.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "石墨文档解锁",
+      "desc": "石墨文档解锁",
+      "author": "litieyin",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/smwd.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/smwd.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "美篇解锁vip",
+      "desc": "美篇解锁vip",
+      "author": "litieyin",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/meipian.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/meipian.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "Adobe LightRoom解锁",
+      "desc": "Adobe LightRoom解锁",
+      "author": "I-am-R-E",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/lightroom.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/lightroom.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "Calm解锁",
+      "desc": "Calm解锁限制",
+      "author": "lutqhysky",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/calm.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/calm.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "NFC门禁卡公交卡",
+      "desc": "NFC门禁卡公交卡读写神器",
+      "author": "lutqhysky",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/nfc.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/nfc.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "工具脚本"
+      ]
+    },
+    {
+      "name": "搜图神器",
+      "desc": "搜图神器解锁会员",
+      "author": "lutqhysky",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/stsq.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/stsq.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "https抓包",
+      "desc": "https抓包解锁订阅",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/https.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/https.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "SSA丝社",
+      "desc": "SSA丝社解锁会员",
+      "author": "lutqhysky",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/ssa.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/ssa.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "小小优趣",
+      "desc": "小小优趣解锁会员",
+      "author": "lutqhysky",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/xxyq.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/xxyq.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "幻影相册",
+      "desc": "幻影相册VIP",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/hyxc.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/hyxc.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "精塾国学",
+      "desc": "精塾国学解锁会员",
+      "author": "lutqhysky",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/jsgx.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/jsgx.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "PrettyUp",
+      "desc": "PrettyUp视频美化解锁",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/prettyup.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/prettyup.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "Cubox",
+      "desc": "Cubox解锁",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/cubox.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/cubox.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "pandora订阅管理",
+      "desc": "Pandora订阅管理会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/pandora.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/pandora.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "微信阅读积分兑换",
+      "desc": "微信自动阅读积分兑换",
+      "author": "ddgksf2013",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/wechatread.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/wechatread.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "工具脚本"
+      ]
+    },
+    {
+      "name": "来音智能陪练",
+      "desc": "来音智能陪练解锁",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/ly.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/ly.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "熊掌记",
+      "desc": "熊掌记解锁",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/xzj.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/xzj.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "❌Notboring解锁",
+      "desc": "Notboring天气+闹钟+习惯解锁",
+      "author": "Marol62926",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/notboring.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/notboring.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "如期",
+      "desc": "如期会员解锁",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/rq.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/rq.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "CEO周课",
+      "desc": "CEO周课解锁",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/ceo.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/ceo.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "Fileball",
+      "desc": "Fileball会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/fileball.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/fileball.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "1blocker",
+      "desc": "1blocker会员解锁",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/1blocker.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/1blocker.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "AI换脸秀",
+      "desc": "AI换脸秀会员解锁",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/ai.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/ai.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "proknockout",
+      "desc": "proKnockout解锁会员",
+      "author": "lutqhysky",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/proknockout.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/proknockout.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "青柠海报",
+      "desc": "青柠海报设计解锁",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/qnhb.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/qnhb.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "Faintv",
+      "desc": "FainTV解锁会员去广告",
+      "author": "deezertidal",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/faintv.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/faintv.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "去广告"
+      ]
+    },
+    {
+      "name": "微信听书",
+      "desc": "微信听书解锁",
+      "author": "deezertidal",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/wxts.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/wxts.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "人民日报去广告",
+      "desc": "人民日报去广告",
+      "author": "deezertidal",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/rmrb.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/rmrb.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "去广告"
+      ]
+    },
+    {
+      "name": "爱企查",
+      "desc": "爱企查vip",
+      "author": "deezertidal",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/aqc.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/aqc.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "工具脚本"
+      ]
+    },
+    {
+      "name": "微信读书免费卡解锁",
+      "desc": "微信读书无限卡解锁 version:6.0.1/5.4.3",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/wxds.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/wxds.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "chic",
+      "desc": "chic相机解锁会员",
+      "author": "lutqhysky",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/chic.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/chic.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "有道词典",
+      "desc": "有道词典会员解锁",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/ydcd.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/ydcd.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "网速测试大师",
+      "desc": "网速测试大师解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/wscsds.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/wscsds.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "网速管家",
+      "desc": "网速管家解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/wsgj.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/wsgj.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "EFEKT美易",
+      "desc": "EFEKT美易解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/efekt.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/efekt.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "WPS稻壳会员",
+      "desc": "稻壳会员解锁",
+      "author": "yqc007",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/doc.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/doc.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "米克锁屏",
+      "desc": "米克锁屏解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/mksp.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/mksp.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "阿布睡前故事",
+      "desc": "阿布睡前故事解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/absqgs.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/absqgs.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "collart",
+      "desc": "collart解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/collart.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/collart.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "博商小麦",
+      "desc": "博商小麦解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/bsxm.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/bsxm.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "MEMRISE",
+      "desc": "可莉重写库 · Quantumult X 重写脚本",
+      "author": "deezertidal",
+      "icon": "",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/memrise.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "工具脚本"
+      ]
+    },
+    {
+      "name": "堆糖",
+      "desc": "堆糖解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/duitang.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/duitang.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "Flomo",
+      "desc": "Flomo解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/flomo.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/flomo.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "APTV",
+      "desc": "APTV解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/aptv.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/aptv.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "香哈菜谱大全",
+      "desc": "菜谱大全&香哈菜谱解锁会员",
+      "author": "I-am-R-E",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/cp.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/cp.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "长相思",
+      "desc": "长相思解锁会员",
+      "author": "lutqhysky",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/cxs.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/cxs.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "电子请柬制作",
+      "desc": "电子请柬制作解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/dzqj.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/dzqj.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "黄油相机",
+      "desc": "黄油相机解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/hyxj.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/hyxj.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "Lingokids",
+      "desc": "Lingokids解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/lingokids.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/lingokids.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "百度文库阅读解锁",
+      "desc": "解锁文档阅读权限",
+      "author": "ddgksf2013",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/bdwk.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/bdwk.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "Craft",
+      "desc": "Craft解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/craft.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/craft.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "Panda小组件",
+      "desc": "Panda桌面小组件解锁",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/panda.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/panda.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "Keep",
+      "desc": "Keep解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/keep.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/keep.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "Documents",
+      "desc": "Documents解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/documents.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/documents.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "Ego Reader",
+      "desc": "Ego Reader解锁会员",
+      "author": "deezertidal",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/ego.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/ego.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "极速扫描仪",
+      "desc": "极速扫描仪解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/jssmy.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/jssmy.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "指尖笔记",
+      "desc": "指尖笔记解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/zjbj.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/zjbj.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "钱迹",
+      "desc": "钱迹解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/qj.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/qj.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "Agenda",
+      "desc": "Agenda解锁会员",
+      "author": "Alex0510",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/agenda.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/agenda.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "多重搜索",
+      "desc": "多重搜索",
+      "author": "deezertidal",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/multisearch.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/multisearch.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "工具脚本"
+      ]
+    },
+    {
+      "name": "即刻运动",
+      "desc": "即刻运动解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/jkyd.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/jkyd.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "Day One",
+      "desc": "Day One解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/dayone.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/dayone.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "Usage",
+      "desc": "Usage解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/usage.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/usage.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "谜底时钟",
+      "desc": "谜底时钟解锁会员",
+      "author": "lutqhysky",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/mdsz.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/mdsz.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "MoneyThings",
+      "desc": "MoneyThings解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/moneythings.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/moneythings.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "手机扫描仪",
+      "desc": "手机扫描仪会员解锁",
+      "author": "lutqhysky",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/sjsmy.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/sjsmy.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "Sorted",
+      "desc": "Sorted日历解锁",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/sorted.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/sorted.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "尽简衣橱",
+      "desc": "尽简衣橱解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/jjyc.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/jjyc.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "看理想",
+      "desc": "看理想会员解锁",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/klx.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/klx.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "目标地图",
+      "desc": "目标地图解锁",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/mbdt.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/mbdt.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "拼图酱",
+      "desc": "拼图酱会员解锁",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/ptj.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/ptj.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "向日葵阅读",
+      "desc": "向日葵阅读解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/xrk.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/xrk.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "卡片日记",
+      "desc": "卡片日记解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/kprj.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/kprj.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "莉景天气",
+      "desc": "莉景天气解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/ljtq.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/ljtq.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "Motivation",
+      "desc": "Motivation解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/motivation.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/motivation.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "PDF Viewer",
+      "desc": "PDF Viewer解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/pdfviewer.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/pdfviewer.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "Percento",
+      "desc": "Percento解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/percento.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/percento.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "Pixelance",
+      "desc": "Pixelance解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/pixelance.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/pixelance.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "Retake",
+      "desc": "Retake解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/retake.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/retake.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "色采",
+      "desc": "色采解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/sc.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/sc.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "闪萌表情",
+      "desc": "闪萌表情解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/smbq.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/smbq.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "音频剪辑",
+      "desc": "音频剪辑解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/ypjj.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/ypjj.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "Varlens",
+      "desc": "Varlens解锁会员",
+      "author": "I-am-R-E",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/varlens.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/varlens.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "一木记账",
+      "desc": "一木记账解锁会员",
+      "author": "I-am-R-E",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/ymjz.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/ymjz.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "Drafts",
+      "desc": "Drafts解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/drafts.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/drafts.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "叮叮水印相机",
+      "desc": "叮叮水印相机解锁会员",
+      "author": "Alex0510",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/ddsyxj.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/ddsyxj.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "Emote",
+      "desc": "Emote解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/emote.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/emote.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "灵敢足迹",
+      "desc": "灵敢足迹解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/lgzj.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/lgzj.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "7分钟HIIT运动",
+      "desc": "7分钟HIIT运动解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/seven.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/seven.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "私密相册管家",
+      "desc": "私密相册管家解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/smxcgj.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/smxcgj.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "FitnessView",
+      "desc": "FitnessView解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/fnv.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/fnv.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "TODO清单",
+      "desc": "Todo清单解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/todo.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/todo.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "淘票票评分",
+      "desc": "支付宝内淘票票显示豆瓣评分",
+      "author": "98kevinxiao",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/tpp.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/tpp.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "工具脚本"
+      ]
+    },
+    {
+      "name": "天天豆",
+      "desc": "天天豆解锁会员",
+      "author": "Alex0510",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/ttd.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/ttd.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "咖映",
+      "desc": "咖映会员解锁",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/ky.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/ky.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "VCUS",
+      "desc": "VCUS会员解锁",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/vcus.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/vcus.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "傲软PDF编辑",
+      "desc": "傲软PDF编辑解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/arpdfbj.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/arpdfbj.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "傲软投屏",
+      "desc": "傲软投屏解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/artp.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/artp.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "幻休",
+      "desc": "幻休解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/hx.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/hx.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "绘影字幕",
+      "desc": "绘影字幕解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/hyzm.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/hyzm.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "汇中考",
+      "desc": "汇中考解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/hzk.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/hzk.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "iScreen",
+      "desc": "iScreen解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/iscreen.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/iscreen.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "小组件盒子",
+      "desc": "小组件盒子解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/xzjhz.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/xzjhz.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "佐糖",
+      "desc": "佐糖解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/zt.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/zt.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "飞鱼计划",
+      "desc": "飞鱼计划解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/fyjh.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/fyjh.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "过期啦",
+      "desc": "过期啦解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/gql.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/gql.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "乃糖小组件",
+      "desc": "乃糖小组件解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/nt.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/nt.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "一书一课",
+      "desc": "一书一课解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/ysyk.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/ysyk.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "充电助手",
+      "desc": "充电助手解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/cdzs.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/cdzs.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "电视家",
+      "desc": "电视家解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/dsj.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/dsj.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "Endel",
+      "desc": "Endel解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/endel.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/endel.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "格至日记",
+      "desc": "格志日记解锁会员",
+      "author": "yqc007",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/gzrj.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/gzrj.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "高德地图去广告",
+      "desc": "高德地图去广告",
+      "author": "ddgksf2013",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/gddt.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/gddt.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "去广告"
+      ]
+    },
+    {
+      "name": "好事发生",
+      "desc": "好事发生解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/hsfs.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/hsfs.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "简讯",
+      "desc": "简讯机解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/jianxun.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/jianxun.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "可拍",
+      "desc": "可拍解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/kepai.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/kepai.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "Lifeviewer",
+      "desc": "Lifeviewer解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/lifeviewer.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/lifeviewer.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "Relens",
+      "desc": "Relens大光圈单反相机解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/relens.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/relens.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "Vivacut",
+      "desc": "Vivacut解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/vivacut.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/vivacut.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "Watchout",
+      "desc": "Watchout小组件解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/watchout.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/watchout.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "无痕去水印",
+      "desc": "无痕去水印解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/whqsy.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/whqsy.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "一键换脸",
+      "desc": "一键换脸解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/yjhl.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/yjhl.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "节点信息查询",
+      "desc": "可莉重写库 · Quantumult X 重写脚本",
+      "author": "deezertidal",
+      "icon": "",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/ip-api.js",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "工具脚本"
+      ]
+    },
+    {
+      "name": "流媒体解锁查询",
+      "desc": "可莉重写库 · Quantumult X 重写脚本",
+      "author": "deezertidal",
+      "icon": "",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/media-check.js",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "Styleart",
+      "desc": "StyleArt解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/styleart.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/styleart.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "7动",
+      "desc": "7动解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/7dong.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/7dong.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "海报工厂",
+      "desc": "海报工厂解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/hbgc.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/hbgc.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "我的番茄",
+      "desc": "我的番茄解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/wdfq.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/wdfq.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "FoMz",
+      "desc": "FoMz解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/fomz.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/fomz.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "日杂相机",
+      "desc": "日杂相机解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/rzxj.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/rzxj.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "古诗词大全",
+      "desc": "古诗词大全解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/gscdq.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/gscdq.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "Mondly",
+      "desc": "Mondly解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/mondly.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/mondly.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "猫头鹰文件",
+      "desc": "猫头鹰文件解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/mtywj.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/mtywj.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "YouTube去广告",
+      "desc": "支持pip，后台播放",
+      "author": "Maasea",
+      "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/youtube.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "去广告"
+      ]
+    },
+    {
+      "name": "汉堡儿童故事",
+      "desc": "汉堡儿童故事解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/hbetgs.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/hbetgs.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "iconKiller",
+      "desc": "icon Killer解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/iconkiller.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/iconkiller.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "一寸证件照",
+      "desc": "一寸证件照解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/yczjz.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/yczjz.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "中华诗词库",
+      "desc": "中华诗词库解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/zhsck.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/zhsck.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "字体册",
+      "desc": "字体册解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/ztc.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/ztc.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "配音",
+      "desc": "配音解锁会员",
+      "author": "89996462",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/peiyin.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/peiyin.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "AdGuard",
+      "desc": "AdGuard 美区 解锁会员",
+      "author": "yqc007",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/adguard.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/adguard.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "解锁"
+      ]
+    },
+    {
+      "name": "阿里云盘签到",
+      "desc": "阿里云盘定时签到",
+      "author": "lowking",
+      "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/aliyun.png",
+      "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/aliyun.conf",
+      "kind": "rewrite",
+      "repo": "可莉重写库",
+      "tags": [
+        "可莉重写库",
+        "工具脚本"
+      ]
+    },
+    {
+      "name": "高德地图净化",
+      "desc": "墨鱼手记出品的 Quantumult X 重写",
+      "author": "@ddgksf2013",
+      "icon": "",
+      "url": "https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/AmapAds.conf",
+      "kind": "rewrite",
+      "repo": "墨鱼手记",
+      "tags": [
+        "墨鱼手记",
+        "去广告"
+      ]
+    },
+    {
+      "name": "微信小程序去除广告",
+      "desc": "去除广告、直接查看隐藏内容、净化弹窗",
+      "author": "ddgksf2013",
+      "icon": "",
+      "url": "https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/Applet.conf",
+      "kind": "rewrite",
+      "repo": "墨鱼手记",
+      "tags": [
+        "墨鱼手记",
+        "去广告"
+      ]
+    },
+    {
+      "name": "哔哩哔哩漫画净化",
+      "desc": "墨鱼手记出品的 Quantumult X 重写",
+      "author": "@ddgksf2013",
+      "icon": "",
+      "url": "https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/BiliBiliComicsAds.conf",
+      "kind": "rewrite",
+      "repo": "墨鱼手记",
+      "tags": [
+        "墨鱼手记",
+        "去广告"
+      ]
+    },
+    {
+      "name": "Bing首页简化",
+      "desc": "墨鱼手记出品的 Quantumult X 重写",
+      "author": "@ddgksf2013",
+      "icon": "",
+      "url": "https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/BingSimplify.conf",
+      "kind": "rewrite",
+      "repo": "墨鱼手记",
+      "tags": [
+        "墨鱼手记",
+        "工具脚本"
+      ]
+    },
+    {
+      "name": "彩云天气净化",
+      "desc": "墨鱼手记出品的 Quantumult X 重写",
+      "author": "@ddgksf2013",
+      "icon": "",
+      "url": "https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/CaiYunAds.conf",
+      "kind": "rewrite",
+      "repo": "墨鱼手记",
+      "tags": [
+        "墨鱼手记",
+        "去广告"
+      ]
+    },
+    {
+      "name": "菜鸟[菜鸟裹裹](支付宝小程序)净化",
+      "desc": "墨鱼手记出品的 Quantumult X 重写",
+      "author": "@ddgksf2013",
+      "icon": "",
+      "url": "https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/CainiaoAds.conf",
+      "kind": "rewrite",
+      "repo": "墨鱼手记",
+      "tags": [
+        "墨鱼手记",
+        "去广告"
+      ]
+    },
+    {
+      "name": "车来了(小程序)净化",
+      "desc": "墨鱼手记出品的 Quantumult X 重写",
+      "author": "@ddgksf2013",
+      "icon": "",
+      "url": "https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/CheLaiLeAds.conf",
+      "kind": "rewrite",
+      "repo": "墨鱼手记",
+      "tags": [
+        "墨鱼手记",
+        "去广告"
+      ]
+    },
+    {
+      "name": "中国联通净化",
+      "desc": "墨鱼手记出品的 Quantumult X 重写",
+      "author": "@ddgksf2013",
+      "icon": "",
+      "url": "https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/ChinaUnicomAds.conf",
+      "kind": "rewrite",
+      "repo": "墨鱼手记",
+      "tags": [
+        "墨鱼手记",
+        "去广告"
+      ]
+    },
+    {
+      "name": "IOS伪装影视APP净化",
+      "desc": "去广告配置（自用，持续更新...）",
+      "author": "@ddgksf2013",
+      "icon": "",
+      "url": "https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/FakeiOSAds.conf",
+      "kind": "rewrite",
+      "repo": "墨鱼手记",
+      "tags": [
+        "墨鱼手记",
+        "去广告"
+      ]
+    },
+    {
+      "name": "小黄鱼净化",
+      "desc": "墨鱼手记出品的 Quantumult X 重写",
+      "author": "@ddgksf2013",
+      "icon": "",
+      "url": "https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/GoofishAds.conf",
+      "kind": "rewrite",
+      "repo": "墨鱼手记",
+      "tags": [
+        "墨鱼手记",
+        "去广告"
+      ]
+    },
+    {
+      "name": "Keep应用净化",
+      "desc": "应用界面简化、去除广告",
+      "author": "@ddgksf2013",
+      "icon": "",
+      "url": "https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/KeepAds.conf",
+      "kind": "rewrite",
+      "repo": "墨鱼手记",
+      "tags": [
+        "墨鱼手记",
+        "去广告"
+      ]
+    },
+    {
+      "name": "墨迹天气净化",
+      "desc": "墨鱼手记出品的 Quantumult X 重写",
+      "author": "@ddgksf2013",
+      "icon": "",
+      "url": "https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/MoJiWeatherAds.conf",
+      "kind": "rewrite",
+      "repo": "墨鱼手记",
+      "tags": [
+        "墨鱼手记",
+        "去广告"
+      ]
+    },
+    {
+      "name": "网易云音乐净化",
+      "desc": "墨鱼手记出品的 Quantumult X 重写",
+      "author": "@ddgksf2013",
+      "icon": "",
+      "url": "https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/NeteaseAds.conf",
+      "kind": "rewrite",
+      "repo": "墨鱼手记",
+      "tags": [
+        "墨鱼手记",
+        "去广告"
+      ]
+    },
+    {
+      "name": "网易邮箱大师净化",
+      "desc": "墨鱼手记出品的 Quantumult X 重写",
+      "author": "@ddgksf2013",
+      "icon": "",
+      "url": "https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/NeteaseMailAds.conf",
+      "kind": "rewrite",
+      "repo": "墨鱼手记",
+      "tags": [
+        "墨鱼手记",
+        "去广告"
+      ]
+    },
+    {
+      "name": "汽水音乐净化",
+      "desc": "墨鱼手记出品的 Quantumult X 重写",
+      "author": "@ddgksf2013",
+      "icon": "",
+      "url": "https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/QiShuiMusicAds.conf",
+      "kind": "rewrite",
+      "repo": "墨鱼手记",
+      "tags": [
+        "墨鱼手记",
+        "去广告"
+      ]
+    },
+    {
+      "name": "Reddit增强",
+      "desc": "去除Reddit信息流广告、帖子页面广告、帖子TreeAds、社区信息流广告，另去除信息流的NSFW图的遮罩，NSFW的帖子点击可直接查看图，伪装Premium，解锁会员图标",
+      "author": "@ddgksf2013",
+      "icon": "",
+      "url": "https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/RedditAds.conf",
+      "kind": "rewrite",
+      "repo": "墨鱼手记",
+      "tags": [
+        "墨鱼手记",
+        "去广告"
+      ]
+    },
+    {
+      "name": "什么值得买净化",
+      "desc": "墨鱼手记出品的 Quantumult X 重写",
+      "author": "@blackmatrix7, @ddgksf2013",
+      "icon": "",
+      "url": "https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/SmzdmAds.conf",
+      "kind": "rewrite",
+      "repo": "墨鱼手记",
+      "tags": [
+        "墨鱼手记",
+        "去广告"
+      ]
+    },
+    {
+      "name": "淘票票净化",
+      "desc": "墨鱼手记出品的 Quantumult X 重写",
+      "author": "@ddgksf2013",
+      "icon": "",
+      "url": "https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/TaoPiaoPiaoAds.conf",
+      "kind": "rewrite",
+      "repo": "墨鱼手记",
+      "tags": [
+        "墨鱼手记",
+        "去广告"
+      ]
+    },
+    {
+      "name": "百度贴吧净化",
+      "desc": "墨鱼手记出品的 Quantumult X 重写",
+      "author": "@app2smile, @ddgksf2013",
+      "icon": "",
+      "url": "https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/TieBaAds.conf",
+      "kind": "rewrite",
+      "repo": "墨鱼手记",
+      "tags": [
+        "墨鱼手记",
+        "去广告"
+      ]
+    },
+    {
+      "name": "微信公众号去广告[已失效]",
+      "desc": "Block AD",
+      "author": "@ddgksf2013",
+      "icon": "",
+      "url": "https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/WeChat.conf",
+      "kind": "rewrite",
+      "repo": "墨鱼手记",
+      "tags": [
+        "墨鱼手记",
+        "去广告"
+      ]
+    },
+    {
+      "name": "微博&微博国际版净化",
+      "desc": "墨鱼手记出品的 Quantumult X 重写",
+      "author": "@ddgksf2013",
+      "icon": "",
+      "url": "https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/WeiboAds.conf",
+      "kind": "rewrite",
+      "repo": "墨鱼手记",
+      "tags": [
+        "墨鱼手记",
+        "去广告"
+      ]
+    },
+    {
+      "name": "小宇宙FM去广告",
+      "desc": "墨鱼手记出品的 Quantumult X 重写",
+      "author": "@ddgksf2013",
+      "icon": "",
+      "url": "https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/XiaoYuZhouAds.conf",
+      "kind": "rewrite",
+      "repo": "墨鱼手记",
+      "tags": [
+        "墨鱼手记",
+        "去广告"
+      ]
+    },
+    {
+      "name": "喜马拉雅净化",
+      "desc": "去广告配置（自用，不定期更新）",
+      "author": "@ddgksf2013",
+      "icon": "",
+      "url": "https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/Ximalaya.conf",
+      "kind": "rewrite",
+      "repo": "墨鱼手记",
+      "tags": [
+        "墨鱼手记",
+        "去广告"
+      ]
+    },
+    {
+      "name": "YoutubeAds",
+      "desc": "墨鱼手记出品的 Quantumult X 重写",
+      "author": "ddgksf2013",
+      "icon": "",
+      "url": "https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/YoutubeAds.conf",
+      "kind": "rewrite",
+      "repo": "墨鱼手记",
+      "tags": [
+        "墨鱼手记",
+        "工具脚本"
+      ]
+    },
+    {
+      "name": "哔哩哔哩繁体CC字幕转中文简体",
+      "desc": "墨鱼手记出品的 Quantumult X 重写",
+      "author": "@ddgksf2013",
+      "icon": "",
+      "url": "https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/Function/Bilibili_CC.conf",
+      "kind": "rewrite",
+      "repo": "墨鱼手记",
+      "tags": [
+        "墨鱼手记",
+        "工具脚本"
+      ]
+    },
+    {
+      "name": "Emby增强[墨鱼整理版]",
+      "desc": "Emby官方客户端内调用外部播放器，该功能需要自行添加Emby服域名的MITM",
+      "author": "@renzhipengBot 原创，@AppleArcade 魔改",
+      "icon": "",
+      "url": "https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/Function/EmbyPlugin.conf",
+      "kind": "rewrite",
+      "repo": "墨鱼手记",
+      "tags": [
+        "墨鱼手记",
+        "工具脚本"
+      ]
+    },
+    {
+      "name": "M系列Mac解除iOS TF軟件下載限制",
+      "desc": "墨鱼手记出品的 Quantumult X 重写",
+      "author": "Skyxim",
+      "icon": "",
+      "url": "https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/Function/ForceInstallTF.conf",
+      "kind": "rewrite",
+      "repo": "墨鱼手记",
+      "tags": [
+        "墨鱼手记",
+        "工具脚本"
+      ]
+    },
+    {
+      "name": "TFDownload",
+      "desc": "解决国区TF中无法下载某些应用（QX、小火箭、LOON）的问题",
+      "author": "@id77, Modified by Cuttlefish",
+      "icon": "",
+      "url": "https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/Function/TFDownload.conf",
+      "kind": "rewrite",
+      "repo": "墨鱼手记",
+      "tags": [
+        "墨鱼手记",
+        "工具脚本"
+      ]
+    },
+    {
+      "name": "UnblockURLinWeChat",
+      "desc": "墨鱼手记出品的 Quantumult X 重写",
+      "author": "ddgksf2013",
+      "icon": "",
+      "url": "https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/Function/UnblockURLinWeChat.conf",
+      "kind": "rewrite",
+      "repo": "墨鱼手记",
+      "tags": [
+        "墨鱼手记",
+        "工具脚本"
+      ]
+    },
+    {
+      "name": "UposRedirect",
+      "desc": "墨鱼手记出品的 Quantumult X 重写",
+      "author": "ddgksf2013",
+      "icon": "",
+      "url": "https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/Function/UposRedirect.conf",
+      "kind": "rewrite",
+      "repo": "墨鱼手记",
+      "tags": [
+        "墨鱼手记",
+        "工具脚本"
+      ]
+    },
+    {
+      "name": "豆瓣移动网页版去广告+快捷观影",
+      "desc": "豆瓣电影移动版网页增强，快捷跳转搜片搜索，豆瓣移动版网页去弹窗广告",
+      "author": "@ddgksf2013",
+      "icon": "",
+      "url": "https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/Html/Douban.conf",
+      "kind": "rewrite",
+      "repo": "墨鱼手记",
+      "tags": [
+        "墨鱼手记",
+        "去广告"
+      ]
+    },
+    {
+      "name": "google自动翻页",
+      "desc": "墨鱼手记出品的 Quantumult X 重写",
+      "author": "@langkhach270389, modified by Cuttlefish",
+      "icon": "",
+      "url": "https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/Html/EndlessGoogle.conf",
+      "kind": "rewrite",
+      "repo": "墨鱼手记",
+      "tags": [
+        "墨鱼手记",
+        "工具脚本"
+      ]
+    },
+    {
+      "name": "General",
+      "desc": "墨鱼手记出品的 Quantumult X 重写",
+      "author": "ddgksf2013",
+      "icon": "",
+      "url": "https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/Html/General.conf",
+      "kind": "rewrite",
+      "repo": "墨鱼手记",
+      "tags": [
+        "墨鱼手记",
+        "工具脚本"
+      ]
+    },
+    {
+      "name": "Q-Search",
+      "desc": "墨鱼手记出品的 Quantumult X 重写",
+      "author": "ddgksf2013",
+      "icon": "",
+      "url": "https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/Html/Q-Search.conf",
+      "kind": "rewrite",
+      "repo": "墨鱼手记",
+      "tags": [
+        "墨鱼手记",
+        "工具脚本"
+      ]
+    },
+    {
+      "name": "Apple Intelligence 分流",
+      "desc": "Apple 智能功能分流规则",
+      "author": "ddgksf2013",
+      "icon": "",
+      "url": "https://raw.githubusercontent.com/ddgksf2013/Filter/master/AppleIntelligence.list",
+      "kind": "rule",
+      "repo": "墨鱼手记",
+      "tags": [
+        "墨鱼手记",
+        "分流规则"
+      ]
+    },
+    {
+      "name": "屏蔽 iOS 系统更新",
+      "desc": "屏蔽 iOS OTA 更新检测",
+      "author": "ddgksf2013",
+      "icon": "",
+      "url": "https://raw.githubusercontent.com/ddgksf2013/Filter/master/BlockiOSUpdate.list",
+      "kind": "rule",
+      "repo": "墨鱼手记",
+      "tags": [
+        "墨鱼手记",
+        "分流规则"
+      ]
+    },
+    {
+      "name": "Emby 分流",
+      "desc": "Emby 媒体服务器分流",
+      "author": "ddgksf2013",
+      "icon": "",
+      "url": "https://raw.githubusercontent.com/ddgksf2013/Filter/master/Emby.list",
+      "kind": "rule",
+      "repo": "墨鱼手记",
+      "tags": [
+        "墨鱼手记",
+        "分流规则"
+      ]
+    },
+    {
+      "name": "Google Voice 分流",
+      "desc": "Google Voice 号码分流",
+      "author": "ddgksf2013",
+      "icon": "",
+      "url": "https://raw.githubusercontent.com/ddgksf2013/Filter/master/GoogleVoice.list",
+      "kind": "rule",
+      "repo": "墨鱼手记",
+      "tags": [
+        "墨鱼手记",
+        "分流规则"
+      ]
+    },
+    {
+      "name": "网易云音乐分流",
+      "desc": "网易云音乐解锁分流",
+      "author": "ddgksf2013",
+      "icon": "",
+      "url": "https://raw.githubusercontent.com/ddgksf2013/Filter/master/NeteaseMusic.list",
+      "kind": "rule",
+      "repo": "墨鱼手记",
+      "tags": [
+        "墨鱼手记",
+        "分流规则"
+      ]
+    },
+    {
+      "name": "国际流媒体分流",
+      "desc": "Netflix / Disney+ 等国际流媒体分流",
+      "author": "ddgksf2013",
+      "icon": "",
+      "url": "https://raw.githubusercontent.com/ddgksf2013/Filter/master/Streaming.list",
+      "kind": "rule",
+      "repo": "墨鱼手记",
+      "tags": [
+        "墨鱼手记",
+        "分流规则"
+      ]
+    },
+    {
+      "name": "东南亚流媒体分流",
+      "desc": "东南亚区域流媒体分流",
+      "author": "ddgksf2013",
+      "icon": "",
+      "url": "https://raw.githubusercontent.com/ddgksf2013/Filter/master/StreamingSE.list",
+      "kind": "rule",
+      "repo": "墨鱼手记",
+      "tags": [
+        "墨鱼手记",
+        "分流规则"
+      ]
+    },
+    {
+      "name": "TikTok 分流",
+      "desc": "TikTok 区域分流",
+      "author": "ddgksf2013",
+      "icon": "",
+      "url": "https://raw.githubusercontent.com/ddgksf2013/Filter/master/TikTok.list",
+      "kind": "rule",
+      "repo": "墨鱼手记",
+      "tags": [
+        "墨鱼手记",
+        "分流规则"
+      ]
+    },
+    {
+      "name": "Unbreak 分流",
+      "desc": "Unbreak 规则分流",
+      "author": "ddgksf2013",
+      "icon": "",
+      "url": "https://raw.githubusercontent.com/ddgksf2013/Filter/master/Unbreak.list",
+      "kind": "rule",
+      "repo": "墨鱼手记",
+      "tags": [
+        "墨鱼手记",
+        "分流规则"
+      ]
+    },
+    {
+      "name": "微信分流",
+      "desc": "微信语音视频分流",
+      "author": "ddgksf2013",
+      "icon": "",
+      "url": "https://raw.githubusercontent.com/ddgksf2013/Filter/master/WeChat.list",
+      "kind": "rule",
+      "repo": "墨鱼手记",
+      "tags": [
+        "墨鱼手记",
+        "分流规则"
+      ]
+    },
+    {
+      "name": "IP 归属隐藏分流",
+      "desc": "修改出口 IP 归属地（作者不建议使用）",
+      "author": "ddgksf2013",
+      "icon": "",
+      "url": "https://raw.githubusercontent.com/ddgksf2013/Filter/master/anti-ip-attribution.list",
+      "kind": "rule",
+      "repo": "墨鱼手记",
+      "tags": [
+        "墨鱼手记",
+        "分流规则"
+      ]
+    },
+    {
+      "name": "毒奶特供",
+      "desc": "毒奶去网页广告计划用户脚本 For Quantumult X & Surge & Shadowrocket & Loon & Stash & 油猴 ；1.新增页面右下角导航；2.…",
+      "author": "limbopro",
+      "icon": "",
+      "url": "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/QuantumultX/rewrite/Adblock4limbo.conf",
+      "kind": "rewrite",
+      "repo": "毒奶特供",
+      "tags": [
+        "毒奶特供",
+        "去广告"
+      ]
+    },
+    {
+      "name": "YouTube 去广告",
+      "desc": "毒奶特供 · YouTube 视频广告屏蔽",
+      "author": "limbopro",
+      "icon": "",
+      "url": "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/QuantumultX/rewrite/YouTubeAds.conf",
+      "kind": "rewrite",
+      "repo": "毒奶特供",
+      "tags": [
+        "毒奶特供",
+        "去广告"
+      ]
+    },
+    {
+      "name": "知乎网页净化",
+      "desc": "毒奶特供 · 知乎网页 UA 替换 + 直读",
+      "author": "limbopro",
+      "icon": "",
+      "url": "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/QuantumultX/rewrite/Zhihu.conf",
+      "kind": "rewrite",
+      "repo": "毒奶特供",
+      "tags": [
+        "毒奶特供",
+        "去广告"
+      ]
+    },
+    {
+      "name": "内容农场清除",
+      "desc": "毒奶特供 · Google 搜索结果内容农场清除",
+      "author": "limbopro",
+      "icon": "",
+      "url": "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/QuantumultX/rewrite/contentFarm.conf",
+      "kind": "rewrite",
+      "repo": "毒奶特供",
+      "tags": [
+        "毒奶特供",
+        "去广告"
+      ]
+    },
+    {
+      "name": "Adblock4limbo 主规则",
+      "desc": "毒奶去广告计划主规则（合并 BanAD / EasyList 等）",
+      "author": "limbopro",
+      "icon": "",
+      "url": "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/QuantumultX/rule/Adblock4limbo.list",
+      "kind": "rule",
+      "repo": "毒奶特供",
+      "tags": [
+        "毒奶特供",
+        "分流规则"
+      ]
+    },
+    {
+      "name": "BanAD 去广告规则",
+      "desc": "国内 App 去广告规则（BanAD）",
+      "author": "limbopro",
+      "icon": "",
+      "url": "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/QuantumultX/rule/BanAD.list",
+      "kind": "rule",
+      "repo": "毒奶特供",
+      "tags": [
+        "毒奶特供",
+        "分流规则"
+      ]
+    },
+    {
+      "name": "Peter Lowe 广告服务器规则",
+      "desc": "广告服务器域名屏蔽规则",
+      "author": "limbopro",
+      "icon": "",
+      "url": "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/QuantumultX/rule/Peter_Lowe_adservers.list",
+      "kind": "rule",
+      "repo": "毒奶特供",
+      "tags": [
+        "毒奶特供",
+        "分流规则"
+      ]
+    },
+    {
+      "name": "EasyList 国际规则",
+      "desc": "国际通用去广告规则（EasyList）",
+      "author": "limbopro",
+      "icon": "",
+      "url": "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/QuantumultX/rule/easylist.list",
+      "kind": "rule",
+      "repo": "毒奶特供",
+      "tags": [
+        "毒奶特供",
+        "分流规则"
+      ]
+    },
+    {
+      "name": "EasyList China 中文规则",
+      "desc": "中文网站去广告规则（EasyList China）",
+      "author": "limbopro",
+      "icon": "",
+      "url": "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/QuantumultX/rule/easylistchina.list",
+      "kind": "rule",
+      "repo": "毒奶特供",
+      "tags": [
+        "毒奶特供",
+        "分流规则"
+      ]
+    },
+    {
+      "name": "EasyPrivacy 隐私规则",
+      "desc": "隐私跟踪屏蔽规则（EasyPrivacy）",
+      "author": "limbopro",
+      "icon": "",
+      "url": "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/QuantumultX/rule/easyprivacy.list",
+      "kind": "rule",
+      "repo": "毒奶特供",
+      "tags": [
+        "毒奶特供",
+        "分流规则"
+      ]
+    }
+  ]
+}

@@ -2170,34 +2170,6 @@
     "loon": "https://raw.githubusercontent.com/QingRex/LoonKissSurge/main/Surge/%E5%8F%AE%E5%92%9A%E4%B9%B0%E8%8F%9C%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule"
   },
   {
-    "name": "广告过滤器",
-    "desc": "Surge 模块",
-    "tags": [
-      "Beta"
-    ],
-    "icon": "",
-    "date": "",
-    "author": "",
-    "authorHome": "",
-    "lpx": "https://raw.githubusercontent.com/QingRex/LoonKissSurge/main/Surge/Beta/%E5%8F%AF%E8%8E%89%E5%B9%BF%E5%91%8A%E8%BF%87%E6%BB%A4%E5%99%A8.beta.sgmodule",
-    "install": "hako://install-module?url=https%3A%2F%2Fraw.githubusercontent.com%2FQingRex%2FLoonKissSurge%2Fmain%2FSurge%2FBeta%2F%25E5%258F%25AF%25E8%258E%2589%25E5%25B9%25BF%25E5%2591%258A%25E8%25BF%2587%25E6%25BB%25A4%25E5%2599%25A8.beta.sgmodule",
-    "loon": "https://raw.githubusercontent.com/QingRex/LoonKissSurge/main/Surge/Beta/%E5%8F%AF%E8%8E%89%E5%B9%BF%E5%91%8A%E8%BF%87%E6%BB%A4%E5%99%A8.beta.sgmodule"
-  },
-  {
-    "name": "广告过滤器",
-    "desc": "Surge 模块",
-    "tags": [
-      "Surge"
-    ],
-    "icon": "",
-    "date": "",
-    "author": "",
-    "authorHome": "",
-    "lpx": "https://raw.githubusercontent.com/QingRex/LoonKissSurge/main/Surge/%E5%8F%AF%E8%8E%89%E5%B9%BF%E5%91%8A%E8%BF%87%E6%BB%A4%E5%99%A8.sgmodule",
-    "install": "hako://install-module?url=https%3A%2F%2Fraw.githubusercontent.com%2FQingRex%2FLoonKissSurge%2Fmain%2FSurge%2F%25E5%258F%25AF%25E8%258E%2589%25E5%25B9%25BF%25E5%2591%258A%25E8%25BF%2587%25E6%25BB%25A4%25E5%2599%25A8.sgmodule",
-    "loon": "https://raw.githubusercontent.com/QingRex/LoonKissSurge/main/Surge/%E5%8F%AF%E8%8E%89%E5%B9%BF%E5%91%8A%E8%BF%87%E6%BB%A4%E5%99%A8.sgmodule"
-  },
-  {
     "name": "向日葵去广告",
     "desc": "Surge 模块",
     "tags": [
@@ -3008,6 +2980,34 @@
     "lpx": "https://raw.githubusercontent.com/QingRex/LoonKissSurge/main/Surge/Official/%E5%B9%BF%E5%91%8A%E8%81%94%E7%9B%9F.official.sgmodule",
     "install": "hako://install-module?url=https%3A%2F%2Fraw.githubusercontent.com%2FQingRex%2FLoonKissSurge%2Fmain%2FSurge%2FOfficial%2F%25E5%25B9%25BF%25E5%2591%258A%25E8%2581%2594%25E7%259B%259F.official.sgmodule",
     "loon": "https://raw.githubusercontent.com/QingRex/LoonKissSurge/main/Surge/Official/%E5%B9%BF%E5%91%8A%E8%81%94%E7%9B%9F.official.sgmodule"
+  },
+  {
+    "name": "广告过滤器",
+    "desc": "Surge 模块",
+    "tags": [
+      "Beta"
+    ],
+    "icon": "",
+    "date": "",
+    "author": "",
+    "authorHome": "",
+    "lpx": "https://raw.githubusercontent.com/QingRex/LoonKissSurge/main/Surge/Beta/%E5%8F%AF%E8%8E%89%E5%B9%BF%E5%91%8A%E8%BF%87%E6%BB%A4%E5%99%A8.beta.sgmodule",
+    "install": "hako://install-module?url=https%3A%2F%2Fraw.githubusercontent.com%2FQingRex%2FLoonKissSurge%2Fmain%2FSurge%2FBeta%2F%25E5%258F%25AF%25E8%258E%2589%25E5%25B9%25BF%25E5%2591%258A%25E8%25BF%2587%25E6%25BB%25A4%25E5%2599%25A8.beta.sgmodule",
+    "loon": "https://raw.githubusercontent.com/QingRex/LoonKissSurge/main/Surge/Beta/%E5%8F%AF%E8%8E%89%E5%B9%BF%E5%91%8A%E8%BF%87%E6%BB%A4%E5%99%A8.beta.sgmodule"
+  },
+  {
+    "name": "广告过滤器",
+    "desc": "Surge 模块",
+    "tags": [
+      "Surge"
+    ],
+    "icon": "",
+    "date": "",
+    "author": "",
+    "authorHome": "",
+    "lpx": "https://raw.githubusercontent.com/QingRex/LoonKissSurge/main/Surge/%E5%8F%AF%E8%8E%89%E5%B9%BF%E5%91%8A%E8%BF%87%E6%BB%A4%E5%99%A8.sgmodule",
+    "install": "hako://install-module?url=https%3A%2F%2Fraw.githubusercontent.com%2FQingRex%2FLoonKissSurge%2Fmain%2FSurge%2F%25E5%258F%25AF%25E8%258E%2589%25E5%25B9%25BF%25E5%2591%258A%25E8%25BF%2587%25E6%25BB%25A4%25E5%2599%25A8.sgmodule",
+    "loon": "https://raw.githubusercontent.com/QingRex/LoonKissSurge/main/Surge/%E5%8F%AF%E8%8E%89%E5%B9%BF%E5%91%8A%E8%BF%87%E6%BB%A4%E5%99%A8.sgmodule"
   },
   {
     "name": "库街区去广告",

@@ -33,6 +33,7 @@ SRC_REPO_URL = "https://github.com/QingRex/LoonKissSurge"
 SRC_NOTE = "公开 Surge 模块集合，随上游仓库更新同步"
 LIVE_JSON = "qingr.json"            # 自托管实时源（与页面同域，免 CORS / 免代理）
 QINGR_CACHE = "qingr_cache.json"   # 联网失败时的本地回退
+LEGACY_BRAND = "\u53ef\u8389"       # 上游已废弃源站品牌字眼（构建期剔除，避免外泄）
 
 # 标签筛选最多展示的热门标签数
 TOP_TAGS = 16
@@ -102,7 +103,8 @@ def fetch_qingr_lists():
             if not p.endswith(".sgmodule"):
                 continue
             fname = p.rsplit("/", 1)[-1]
-            name = fname.replace(".beta", "").replace(".sgmodule", "").replace("可莉", "")
+            # 上游个别模块名沿用的旧品牌字眼（已废弃源站），构建期剔除避免外泄
+            name = fname.replace(".beta", "").replace(".sgmodule", "").replace(LEGACY_BRAND, "")
             is_beta = "/Beta/" in p
             items.append({
                 "name": name,
@@ -534,9 +536,9 @@ function extractResource(url){
     return url;
   }catch(e){ return url; }
 }
-/* 基础清洗：去除首尾空白；上游个别模块名含「可莉」字样，统一剔除避免源站品牌名外泄 */
+/* 基础清洗：去除首尾空白（上游个别模块名沿用旧品牌字眼，已在构建期统一剔除） */
 function fixBrand(s){
-  return String(s||'').replace(/可莉/g,'').trim();
+  return String(s||'').trim();
 }
 function transformLists(lists){
   const mods=[];

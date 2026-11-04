@@ -2481,38 +2481,6 @@
       }
     },
     {
-      "name": "广告过滤器",
-      "url": "https://raw.githubusercontent.com/QingRex/LoonKissSurge/main/Surge/Beta/%E5%8F%AF%E8%8E%89%E5%B9%BF%E5%91%8A%E8%BF%87%E6%BB%A4%E5%99%A8.beta.sgmodule",
-      "desc": "Surge 模块",
-      "tag": [
-        "Beta"
-      ],
-      "icon": "",
-      "date": "",
-      "author": [],
-      "src": {
-        "name": "Surge",
-        "url": "https://github.com/QingRex/LoonKissSurge",
-        "note": "公开 Surge 模块集合，随上游仓库更新同步"
-      }
-    },
-    {
-      "name": "广告过滤器",
-      "url": "https://raw.githubusercontent.com/QingRex/LoonKissSurge/main/Surge/%E5%8F%AF%E8%8E%89%E5%B9%BF%E5%91%8A%E8%BF%87%E6%BB%A4%E5%99%A8.sgmodule",
-      "desc": "Surge 模块",
-      "tag": [
-        "Surge"
-      ],
-      "icon": "",
-      "date": "",
-      "author": [],
-      "src": {
-        "name": "Surge",
-        "url": "https://github.com/QingRex/LoonKissSurge",
-        "note": "公开 Surge 模块集合，随上游仓库更新同步"
-      }
-    },
-    {
       "name": "向日葵去广告",
       "url": "https://raw.githubusercontent.com/QingRex/LoonKissSurge/main/Surge/Beta/%E5%90%91%E6%97%A5%E8%91%B5%E5%8E%BB%E5%B9%BF%E5%91%8A.beta.sgmodule",
       "desc": "Surge 模块",
@@ -3427,6 +3395,38 @@
     {
       "name": "广告联盟.official",
       "url": "https://raw.githubusercontent.com/QingRex/LoonKissSurge/main/Surge/Official/%E5%B9%BF%E5%91%8A%E8%81%94%E7%9B%9F.official.sgmodule",
+      "desc": "Surge 模块",
+      "tag": [
+        "Surge"
+      ],
+      "icon": "",
+      "date": "",
+      "author": [],
+      "src": {
+        "name": "Surge",
+        "url": "https://github.com/QingRex/LoonKissSurge",
+        "note": "公开 Surge 模块集合，随上游仓库更新同步"
+      }
+    },
+    {
+      "name": "广告过滤器",
+      "url": "https://raw.githubusercontent.com/QingRex/LoonKissSurge/main/Surge/Beta/%E5%8F%AF%E8%8E%89%E5%B9%BF%E5%91%8A%E8%BF%87%E6%BB%A4%E5%99%A8.beta.sgmodule",
+      "desc": "Surge 模块",
+      "tag": [
+        "Beta"
+      ],
+      "icon": "",
+      "date": "",
+      "author": [],
+      "src": {
+        "name": "Surge",
+        "url": "https://github.com/QingRex/LoonKissSurge",
+        "note": "公开 Surge 模块集合，随上游仓库更新同步"
+      }
+    },
+    {
+      "name": "广告过滤器",
+      "url": "https://raw.githubusercontent.com/QingRex/LoonKissSurge/main/Surge/%E5%8F%AF%E8%8E%89%E5%B9%BF%E5%91%8A%E8%BF%87%E6%BB%A4%E5%99%A8.sgmodule",
       "desc": "Surge 模块",
       "tag": [
         "Surge"
@@ -8099,5 +8099,5 @@
   ],
   "name": "Surge",
   "srcUrl": "https://surge.qingr.moe",
-  "buildDate": "2026-11-04 17:30"
+  "buildDate": "2026-11-04 17:40"
 }

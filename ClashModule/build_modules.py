@@ -1,32 +1,38 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-从可莉的插件中心 (https://hub.kelee.one) 的 list.json 生成 ClashModule 页面。
+从 Surge 模块源 surge.qingr.moe（即 GitHub 仓库 QingRex/LoonKissSurge）生成 ClashModule 页面。
 
 关键设计：免维护 / 自动同步
-  - index.html 内联一份「原始快照」(list.json 的 lists/notice/name) 作为离线兜底；
-  - 页面在浏览器加载时，先渲染快照（秒开），再实时 fetch https://hub.kelee.one/list.json；
-  - 拉取成功则用最新数据重渲染（真正自动同步），失败则保留快照并提示；
-  - 因此无需任何定时任务、无需重新生成或推送，数据始终跟随源站更新。
+  - index.html 内联一份「原始快照」(lists/name/srcUrl) 作为离线兜底；
+  - 页面在浏览器加载时，先渲染快照（秒开），再实时 fetch 同域自托管 qingr.json；
+  - 拉取成功则用最新数据重渲染，失败则保留快照并提示；
+  - qingr.json 由本脚本从 GitHub 仓库树枚举 .sgmodule 生成，随构建更新推送即可刷新。
 
 用法:
-    1. 抓取数据(可选，仅用于更新内联兜底快照):  curl -L https://hub.kelee.one/list.json > list.json
-    2. 生成页面:  python3 build_modules.py
+    1. 生成页面(联网从 GitHub 仓库树枚举模块，失败时回退本地缓存):  python3 build_modules.py
+    2. 部署:  将 index.html 与 qingr.json 一并推送到站点 ClashModule 目录
 
 产出:
+    - qingr.json     同域实时源（浏览器直连即可刷新，免 CORS / 免代理）
     - modules.json   纯数据（静态导出，供参考/离线）
     - index.html     自包含、移动端适配、运行时自动同步、带搜索 / 标签筛选 / 分页的导入页面
 """
 import json
 import os
 import datetime
+import urllib.request
 from collections import Counter
 from urllib.parse import urlparse, parse_qs, quote
 
-SRC_NAME = "可莉的插件中心"
-SRC_URL = "https://hub.kelee.one"
-LIST_JSON = "list.json"
-LIVE_JSON = "https://hub.kelee.one/list.json"
+SRC_NAME = "Surge"
+SRC_URL = "https://surge.qingr.moe"
+SRC_REPO = "QingRex/LoonKissSurge"
+RAW_BASE = "https://raw.githubusercontent.com/QingRex/LoonKissSurge/main"
+SRC_REPO_URL = "https://github.com/QingRex/LoonKissSurge"
+SRC_NOTE = "公开 Surge 模块集合，随上游仓库更新同步"
+LIVE_JSON = "qingr.json"            # 自托管实时源（与页面同域，免 CORS / 免代理）
+QINGR_CACHE = "qingr_cache.json"   # 联网失败时的本地回退
 
 # 标签筛选最多展示的热门标签数
 TOP_TAGS = 16
@@ -46,7 +52,7 @@ def extract_resource(url: str) -> str:
 
 
 def transform(items):
-    """把 list.json 的 lists 条目转换为页面模块对象（与前端 JS 保持同一逻辑）。"""
+    """把源站条目转换为页面模块对象（与前端 JS 保持同一逻辑）。"""
     modules = []
     for it in items:
         url = it.get("url", "")
@@ -79,23 +85,71 @@ def top_tags(modules, n=TOP_TAGS):
     return [t for t, _ in c.most_common(n)]
 
 
+def fetch_qingr_lists():
+    """从 GitHub 仓库树枚举 .sgmodule 模块，构造 lists 结构；失败回退本地缓存。"""
+    def parse_tree():
+        api = f"https://api.github.com/repos/{SRC_REPO}/git/trees/main?recursive=1"
+        req = urllib.request.Request(
+            api,
+            headers={"User-Agent": "ClashModule-Builder",
+                     "Accept": "application/vnd.github+json"},
+        )
+        with urllib.request.urlopen(req, timeout=30) as r:
+            tree = json.loads(r.read().decode("utf-8"))
+        items = []
+        for node in tree.get("tree", []):
+            p = node.get("path", "")
+            if not p.endswith(".sgmodule"):
+                continue
+            fname = p.rsplit("/", 1)[-1]
+            name = fname.replace(".beta", "").replace(".sgmodule", "").replace("可莉", "")
+            is_beta = "/Beta/" in p
+            items.append({
+                "name": name,
+                "url": f"{RAW_BASE}/{quote(p, safe='/')}",
+                "desc": "Surge 模块",
+                "tag": ["Beta"] if is_beta else ["Surge"],
+                "icon": "",
+                "date": "",
+                "author": [],
+                "src": {"name": SRC_NAME, "url": SRC_REPO_URL, "note": SRC_NOTE},
+            })
+        items.sort(key=lambda m: m["name"])
+        return items
+
+    here = os.path.dirname(os.path.abspath(__file__))
+    try:
+        items = parse_tree()
+        if items:
+            with open(os.path.join(here, QINGR_CACHE), "w", encoding="utf-8") as f:
+                json.dump(items, f, ensure_ascii=False, indent=2)
+            return items
+    except Exception as e:  # noqa: BLE001
+        print(f"⚠️ 抓取 GitHub 仓库树失败（{e}），尝试本地缓存")
+    if os.path.exists(os.path.join(here, QINGR_CACHE)):
+        with open(os.path.join(here, QINGR_CACHE), encoding="utf-8") as f:
+            return json.load(f)
+    return []
+
+
 def main():
     here = os.path.dirname(os.path.abspath(__file__))
-    with open(os.path.join(here, LIST_JSON), encoding="utf-8") as f:
-        data = json.load(f)
-
-    items = data.get("lists", [])
+    items = fetch_qingr_lists()
     modules = transform(items)
     tags = top_tags(modules)
     with open(os.path.join(here, "modules.json"), "w", encoding="utf-8") as f:
         json.dump(modules, f, ensure_ascii=False, indent=2)
-    print(f"共收集 {len(modules)} 个模块；热门标签 {len(tags)} 个")
+    # 自托管实时源：与页面同域，浏览器直连即可刷新，无需代理
+    with open(os.path.join(here, LIVE_JSON), "w", encoding="utf-8") as f:
+        json.dump({"lists": items, "name": SRC_NAME, "srcUrl": SRC_URL,
+                   "buildDate": datetime.datetime.now().strftime("%Y-%m-%d %H:%M")},
+                  f, ensure_ascii=False, indent=2)
+    print(f"共收集 {len(modules)} 个模块（来自 {SRC_URL}）；热门标签 {len(tags)} 个")
 
-    # 内联到页面的是「原始快照」(lists/notice/name)，前端负责转换 + 实时拉取
+    # 内联到页面的是「原始快照」(lists/name)，前端负责转换 + 实时拉取
     snapshot = {
         "lists": items,
-        "notice": data.get("notice", []),
-        "name": data.get("name", SRC_NAME),
+        "name": SRC_NAME,
         "srcUrl": SRC_URL,
         "liveUrl": LIVE_JSON,
         "buildDate": datetime.datetime.now().strftime("%Y-%m-%d %H:%M"),
@@ -125,8 +179,14 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-<title>Clash / Loon 模块导入 · 可莉插件中心</title>
-<meta name="description" content="从可莉的插件中心收集的 Loon / Clash 模块，浏览器一键拉起 Clash 或 Loon 导入；另收录 Quantumult X 重写与规则合集（可莉重写库 / 墨鱼手记 / 毒奶特供），支持 quantumult-x 与 hako 协议导入。" />
+<title>代理模块一键导入 Clash</title>
+<meta name="description" content="收录 Loon / Clash 模块，浏览器一键导入 Clash，支持 hako:// 协议导入与复制链接手动导入。" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="代理模块一键导入 Clash" />
+<meta property="og:description" content="收录 Loon / Clash 模块，浏览器一键导入 Clash，支持 hako:// 协议导入与复制链接手动导入。" />
+<meta property="og:url" content="https://0x0021.github.io/ClashModule/" />
+<meta property="og:site_name" content="0x0021" />
+<meta name="twitter:card" content="summary" />
 <meta name="theme-color" content="#f5f5f7" />
 <style>
   :root{
@@ -134,17 +194,15 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
     --line:rgba(0,0,0,.08); --text:#1d1d1f; --muted:#6e6e73; --accent:#0071e3; --accent2:#34c759;
     --radius:18px; --shadow:0 2px 10px rgba(0,0,0,.05); --shadow-lg:0 12px 40px rgba(0,0,0,.10);
     --maxw:1040px; --on-accent:#fff;
-    --notice-bg:rgba(255,184,0,.10); --notice-text:#8a5b12; --notice-line:rgba(255,184,0,.28);
     --glass:blur(20px) saturate(180%); --ease:cubic-bezier(.4,0,.2,1);
   }
   :root[data-theme="dark"]{
     --bg:#000; --bg2:rgba(28,28,30,.66); --card:rgba(28,28,30,.66); --card2:rgba(44,44,46,.9);
     --line:rgba(255,255,255,.12); --text:#f5f5f7; --muted:#98989d; --accent:#0a84ff; --accent2:#30d158;
     --shadow:0 2px 10px rgba(0,0,0,.4); --shadow-lg:0 16px 50px rgba(0,0,0,.6);
-    --notice-bg:rgba(255,184,0,.12); --notice-text:#e8c07a; --notice-line:rgba(255,184,0,.3);
   }
   *{box-sizing:border-box}
-  html,body{margin:0;padding:0}
+  html,body{margin:0;padding:0;overflow-x:clip}
   body{
     background:var(--bg);
     color:var(--text);
@@ -157,6 +215,18 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
   a{color:inherit;text-decoration:none}
   .wrap{max-width:var(--maxw);margin:0 auto;padding:48px 20px calc(56px + env(safe-area-inset-bottom));position:relative;}
 
+  /* ---------- 顶部标语（通栏） ---------- */
+  .motto{
+    padding:16px 20px;text-align:center;
+    font-size:clamp(13.5px,2.3vw,16px);font-weight:500;letter-spacing:.14em;line-height:1.7;
+    color:var(--muted);
+    background:linear-gradient(90deg,rgba(0,113,227,.05),rgba(94,92,230,.10),rgba(10,132,255,.05));
+    border-bottom:1px solid var(--line);
+  }
+  .motto span{
+    background:linear-gradient(120deg,#0071e3,#5e5ce6,#0a84ff);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
   /* ---------- Hero ---------- */
   .hero{
     position:relative;text-align:center;padding:56px 24px 44px;margin-bottom:28px;overflow:hidden;
@@ -185,19 +255,13 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
   .sync.load .dot{background:var(--accent);animation:pulse 1.1s infinite}
   @keyframes pulse{0%,100%{opacity:.35;transform:scale(.85)}50%{opacity:1;transform:scale(1)}}
 
-  .notice{margin:0 0 24px;padding:14px 18px;border-radius:14px;border:1px solid var(--notice-line);
-    background:var(--notice-bg);color:var(--notice-text);font-size:13.5px;line-height:1.65;
-    -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);}
-  .notice div{margin:3px 0}
-
-  .toolbar{position:sticky;top:56px;z-index:30;margin:0 0 18px;padding:14px;border-radius:20px;
+  .toolbar{position:static;z-index:30;margin:0 0 18px;padding:14px;border-radius:20px;
     background:var(--bg2);border:1px solid var(--line);box-shadow:var(--shadow);
     -webkit-backdrop-filter:var(--glass);backdrop-filter:var(--glass);}
   .controls{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:14px;}
   .search{flex:1 1 260px;min-width:0;position:relative;}
   .search input{width:100%;padding:13px 42px 13px 44px;border-radius:980px;border:1px solid var(--line);
-    background:var(--bg2);color:var(--text);font-size:15px;outline:none;transition:.25s var(--ease);
-    -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);}
+    background:var(--bg2);color:var(--text);font-size:15px;outline:none;transition:.25s var(--ease);}
   .search input:focus{border-color:var(--accent);box-shadow:0 0 0 4px rgba(0,113,227,.15)}
   .search input::placeholder{color:var(--muted)}
   .search svg{position:absolute;left:16px;top:50%;transform:translateY(-50%);opacity:.5}
@@ -224,7 +288,7 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
   .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px;}
   .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px;
     display:flex;flex-direction:column;gap:12px;transition:transform .25s var(--ease),box-shadow .25s var(--ease),border-color .25s var(--ease);
-    position:relative;overflow:hidden;-webkit-backdrop-filter:var(--glass);backdrop-filter:var(--glass);}
+    position:relative;overflow:hidden;}
   .card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:rgba(0,113,227,.4)}
   .grid>.card{height:100%}
   .card .desc{margin-top:0}
@@ -236,8 +300,8 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
   .card h3{margin:0;font-size:16.5px;font-weight:600;line-height:1.3;letter-spacing:-.2px}
   .meta{font-size:12px;color:var(--muted);margin-top:3px}
   .card .src-badge{position:absolute;top:14px;right:14px;font-size:11px;font-weight:600;padding:3px 9px;border-radius:999px;
-    white-space:nowrap;border:1px solid transparent;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);}
-  .card .src-badge[data-r="kelee"],.card .src-badge[data-r="klee"]{color:#0071e3;background:rgba(0,113,227,.10);border-color:rgba(0,113,227,.22)}
+    white-space:nowrap;border:1px solid transparent;}
+  .card .src-badge[data-r="surge"],.card .src-badge[data-r="rewrite"]{color:#0071e3;background:rgba(0,113,227,.10);border-color:rgba(0,113,227,.22)}
   .card .src-badge[data-r="ddg"]{color:#0a9d8e;background:rgba(10,157,142,.12);border-color:rgba(10,157,142,.24)}
   .card .src-badge[data-r="adblock"]{color:#e08600;background:rgba(224,134,0,.12);border-color:rgba(224,134,0,.24)}
   .card .src-badge[data-r="qx"]{color:var(--muted);background:var(--bg2);border-color:var(--line)}
@@ -250,20 +314,18 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
   .tags{display:flex;gap:7px;flex-wrap:wrap}
   .tag{font-size:11.5px;color:var(--accent);background:rgba(0,113,227,.10);border:1px solid rgba(0,113,227,.18);
     padding:3px 9px;border-radius:980px;white-space:nowrap}
-  .acts{display:flex;flex-direction:column;gap:10px;margin-top:2px}
+  .acts{display:flex;gap:10px;margin-top:auto}
   .btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;text-align:center;
     padding:11px 14px;border-radius:12px;font-size:14px;font-weight:600;
     cursor:pointer;border:1px solid var(--line);background:var(--bg2);color:var(--text);transition:.2s var(--ease);min-width:0;white-space:nowrap;
     -webkit-tap-highlight-color:transparent;}
   .btn svg{flex:0 0 auto}
-  .btn.primary{width:100%;background:var(--accent);color:#fff;border-color:transparent;box-shadow:0 4px 16px rgba(0,113,227,.28)}
+  .btn.primary{flex:2 1 0;background:var(--accent);color:#fff;border-color:transparent;box-shadow:0 4px 16px rgba(0,113,227,.28)}
   .btn.primary:hover{filter:brightness(1.06);transform:translateY(-1px)}
   .btn.primary:active{transform:scale(.985)}
-  .btn:hover{border-color:var(--accent)}
-  .btn.secondary{flex:1 1 0;font-size:13px;color:var(--text);font-weight:500;background:var(--bg2);}
-  .btn.secondary.wide{flex:2 1 0}
+  .btn.secondary{flex:1 1 0;font-size:13.5px;color:var(--text);font-weight:500;background:var(--bg2);}
   .btn.secondary:hover{color:var(--accent);border-color:var(--accent)}
-  .sec-row{display:flex;gap:10px}
+  .btn.secondary:active{transform:scale(.985)}
 
   .empty{text-align:center;color:var(--muted);padding:72px 10px;font-size:16px}
   .empty-ico{font-size:46px;margin-bottom:14px;opacity:.85}
@@ -292,6 +354,41 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
     opacity:0;pointer-events:none;transition:.3s var(--ease);z-index:99;
     -webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);box-shadow:0 10px 40px rgba(0,0,0,.4)}
   #toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+  /* 模块卡片可点击打开详情弹窗 */
+  .grid .card{cursor:pointer}
+  .grid .card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg);border-color:rgba(0,113,227,.25)}
+
+  /* 详情弹窗 */
+  .modal{position:fixed;inset:0;z-index:200;display:flex;align-items:flex-start;justify-content:center;
+    padding:8vh 16px;opacity:0;visibility:hidden;transition:opacity .22s var(--ease),visibility .22s var(--ease);}
+  .modal.show{opacity:1;visibility:visible}
+  .modal-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.42);-webkit-backdrop-filter:var(--glass);backdrop-filter:var(--glass)}
+  .modal-dialog{position:relative;width:100%;max-width:540px;max-height:84vh;overflow:auto;
+    background:var(--card2);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow-lg);
+    padding:24px 24px 20px;transform:translateY(14px) scale(.98);transition:transform .24s var(--ease)}
+  .modal.show .modal-dialog{transform:none}
+  .modal-close{position:absolute;top:12px;right:14px;width:30px;height:30px;border:none;border-radius:980px;
+    background:var(--bg2);color:var(--text);font-size:20px;line-height:1;cursor:pointer;transition:.2s var(--ease)}
+  .modal-close:hover{background:var(--line)}
+  .modal-body{display:flex;flex-direction:column;gap:14px}
+  .m-head{display:flex;gap:13px;align-items:center}
+  .m-head .icon{flex:0 0 50px;width:50px;height:50px;border-radius:14px;background:var(--bg2);border:1px solid var(--line);
+    display:flex;align-items:center;justify-content:center;font-size:26px;overflow:hidden}
+  .m-head .icon img{width:100%;height:100%;object-fit:cover}
+  .m-head h3{font-size:18px;font-weight:700;margin:0;word-break:break-word}
+  .m-desc{font-size:14px;line-height:1.65;color:var(--text)}
+  .m-src{border:1px solid var(--line);border-radius:14px;padding:13px 14px;background:var(--bg2);display:flex;flex-direction:column;gap:6px}
+  .m-src-head{font-size:11px;font-weight:700;letter-spacing:.08em;color:var(--muted);text-transform:uppercase}
+  .m-src-link{display:inline-flex;align-items:center;gap:6px;color:var(--accent);font-weight:600;font-size:14px;text-decoration:none;word-break:break-all}
+  .m-src-link:hover{text-decoration:underline}
+  .m-src-note{font-size:12.5px;color:var(--muted);line-height:1.5}
+  .m-src-url{font-size:11.5px;color:var(--muted);word-break:break-all}
+  .m-src-url a{color:var(--muted);text-decoration:none}
+  .m-src-url a:hover{text-decoration:underline}
+  .m-acts{display:flex;gap:10px;margin-top:2px}
+  .m-acts .btn{flex:1 1 0;justify-content:center}
+  @media(max-width:560px){ .modal{padding:5vh 10px} .modal-dialog{padding:20px 18px 16px} }
 
   .theme-switch{position:fixed;top:18px;right:18px;z-index:50;display:flex;gap:0;padding:3px;
     background:var(--bg2);border:1px solid var(--line);border-radius:980px;box-shadow:var(--shadow);
@@ -326,9 +423,29 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
   var t=m==='auto'?(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):m;
   document.documentElement.dataset.theme=t;
 }catch(e){}})();
+/* 看门狗：主脚本若 4s 内未完成初始化（如部署瞬间拿到截断 HTML），自动刷新一次（仅一次，防循环） */
+(function(){
+  window.__cmReady=false;
+  setTimeout(function(){
+    if(window.__cmReady) return;
+    try{
+      var el=document.getElementById('sync'), tx=document.getElementById('syncText');
+      if(sessionStorage.getItem('cm-reloaded')){
+        if(tx) tx.textContent='页面数据加载异常，请手动刷新重试';
+        if(el) el.className='sync warn';
+      }else{
+        sessionStorage.setItem('cm-reloaded','1');
+        if(tx) tx.textContent='页面数据加载异常，正在自动刷新…';
+        if(el) el.className='sync warn';
+        setTimeout(function(){ location.reload(); },900);
+      }
+    }catch(e){}
+  },4000);
+})();
 </script>
 </head>
 <body>
+  <div class="motto"><span>源于互联网，回馈互联网</span>；崇尚开放共享，拒绝封闭垄断。</div>
   <div class="wrap">
     <div class="theme-switch" id="themeSwitch" role="group" aria-label="主题切换">
       <button data-theme="light" title="日间模式" aria-label="日间模式">
@@ -343,20 +460,18 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
     </div>
     <header class="hero">
       <div class="badge">⚡</div>
-      <h1>Clash · Loon · Quantumult X 模块导入</h1>
-      <p>可莉插件中心的 Loon 模块，一键拉起 Clash / Loon 导入；另收录 Quantumult X 重写与规则合集（可莉重写库 / 墨鱼手记 / 毒奶特供），支持 Quantumult X 与 hako:// 协议导入。</p>
-      <div class="src">数据来源 · <a href="__SRCURL__" target="_blank" rel="noopener"><b>__SRCNAME__</b></a> · Quantumult X 资源合集 · 共 <span id="total">0</span> 个模块</div>
+      <h1>代理模块一键导入 Clash</h1>
+      <p>收录 Surge 模块与 GitHub 重写规则，浏览器一键导入 Clash，未装客户端可复制链接手动导入。</p>
+      <div class="src">数据来源 · GitHub 资源合集 · 共 <span id="total">0</span> 个模块</div>
       <div class="sync load" id="sync"><span class="dot"></span><span id="syncText">正在同步源站最新模块…</span></div>
     </header>
-
-    <div class="notice" id="notice"></div>
 
     <div class="toolbar">
       <div class="sources" id="sources">
         <span class="src-label">来源</span>
         <div class="chip active" data-src="all">全部</div>
-        <div class="chip" data-src="kelee">可莉插件中心</div>
-        <div class="chip" data-src="qx">Quantumult X</div>
+        <div class="chip" data-src="surge">Surge</div>
+        <div class="chip" data-src="qx">GitHub</div>
       </div>
 
       <div class="controls">
@@ -379,19 +494,25 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
     <div class="pager" id="pager"></div>
 
     <footer>
-      本页为资源索引，模块版权归原作者所有（CC BY-NC-SA 4.0），数据来自 __SRCNAME__。<br/>
-      「导入 Clash」使用 <code>hako://install-module</code> 协议；「Loon」使用 <code>loon://import</code> 协议；「导入 Quantumult X」使用 <code>quantumult-x:///add-resource</code> 协议（保留现有资源追加导入）。<br/>
-      Quantumult X 资源的导入链接直连 GitHub 仓库，点一下拉取的永远是仓库最新版；其页面数据为构建时快照。<br/>
-      可莉插件中心部分：每次打开会自动同步源站最新数据，源站不可达时回退到内置缓存快照。<br/>
-      若设备未安装对应客户端，链接将无法拉起，可使用「复制」按钮手动导入。<br/>
+      <div>模块版权归原作者所有（CC&nbsp;BY-NC-SA&nbsp;4.0）</div>
+      <div>数据来源 · GitHub 资源合集</div>
+      <div>「导入 Clash」使用 <code>hako://install-module</code> 协议；未安装客户端可用「复制链接」手动导入。</div>
       <span class="recommend">友情推荐 · <a href="https://xn--4gqx1hgtfdmt.com/#/register?code=ayOVtXLb" target="_blank" rel="noopener">一分机场</a>（高速稳定，注册即送流量）</span>
     </footer>
   </div>
 
   <div id="toast"></div>
 
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" data-close aria-label="关闭">×</button>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
 <script>
-/* 内联兜底快照（构建时从 list.json 写入），实时拉取失败时使用 */
+/* 内联兜底快照（构建时写入），实时拉取失败时使用 */
 const SNAPSHOT = /*__SNAPSHOT__*/;
 
 const PAGE_SIZE = 12;
@@ -413,6 +534,10 @@ function extractResource(url){
     return url;
   }catch(e){ return url; }
 }
+/* 基础清洗：去除首尾空白；上游个别模块名含「可莉」字样，统一剔除避免源站品牌名外泄 */
+function fixBrand(s){
+  return String(s||'').replace(/可莉/g,'').trim();
+}
 function transformLists(lists){
   const mods=[];
   for(const it of (lists||[])){
@@ -420,11 +545,11 @@ function transformLists(lists){
     const install='hako://install-module?url='+pyQuote(lpx);
     const authors=it.author||[];
     const a0=authors[0]||{};
-    const tags=it.tag||[];
+    const tags=(it.tag||[]).map(fixBrand);
     mods.push({
-      name:it.name||'', desc:(it.desc||'').trim(), tags, icon:it.icon||'',
-      date:it.date||'', author:a0.name||'', authorHome:a0.homepage||'',
-      lpx, install, loon:it.url||''
+      name:fixBrand(it.name||''), desc:fixBrand((it.desc||'').trim()), tags, icon:it.icon||'',
+      date:it.date||'', author:fixBrand(a0.name||''), authorHome:a0.homepage||'',
+      lpx, install, loon:it.url||'', src:it.src||null
     });
   }
   mods.sort((a,b)=>(b.date||'').localeCompare(a.date||''));
@@ -443,24 +568,62 @@ function qxInstall(url, kind, name){
   const payload = JSON.stringify({[key]:[url+', tag='+tag]});
   return 'quantumult-x:///add-resource?remote-resource='+pyQuote(payload);
 }
+/* 描述统一以 Clash 为主：其它客户端名（Quantumult X / Surge / Loon 等）一律替换或剔除 */
+function cleanDesc(s){
+  return (s||'')
+    .replace(/Quantumult\s*X|QuantumultX|圈X/gi,'Clash')
+    .replace(/(Surge4?|Loon2?|Shadowrocket|小火箭|Stash|Loon|Surge)[、，,]?\s*/gi,'')
+    .replace(/[、，,]\s*的/g,'的')
+    .replace(/[、，,]\s*(?=[、，,])|[、，,]\s*$/g,'')
+    .trim();
+}
+/* 各 GitHub 来源的中文名 / 主页 / 说明，供模块弹窗展示「来源」 */
+const REPO_SRC={
+  '重写库':{name:'重写库',url:'https://github.com/deezertidal/QuantumultX-Rewrite',note:'Quantumult X 重写规则合集，随上游仓库更新'},
+  '墨鱼手记':{name:'墨鱼手记',url:'https://github.com/ddgksf2013/Rewrite',note:'墨鱼手记重写与分流规则'},
+  '毒奶特供':{name:'毒奶特供',url:'https://github.com/limbopro/Adblock4limbo',note:'毒奶特供广告拦截规则'},
+  '红果广告过滤':{name:'红果广告过滤',url:'https://github.com/k6nfmm7dbr-commits/hongguo-lite',note:'红果短剧去广告模块'}
+};
+function repoSrc(repo){
+  return REPO_SRC[repo] || {name:repo||'GitHub', url:'https://github.com', note:''};
+}
 function transformQx(qx){
   if(!qx || !qx.modules) return [];
-  return qx.modules.map(m=>({
-    name:m.name||'', desc:(m.desc||'').trim(), tags:m.tags||[], icon:m.icon||'',
-    date:'', author:m.author||'', authorHome:'',
-    lpx:m.url||'', raw:m.url||'', kind:m.kind||'rewrite', repo:m.repo||'',
-    source:'qx',
+  /* 仅保留重写模块（kind=rewrite）；规则 / 分流订阅（kind=rule）不是模块，hako:// 也不适用，剔除 */
+  return qx.modules.filter(m=>m.kind!=='rule').map(m=>({
+    name:fixBrand(m.name||''), desc:cleanDesc(fixBrand((m.desc||'').trim())), tags:(m.tags||[]).map(fixBrand), icon:m.icon||'',
+    date:'', author:fixBrand(m.author||''), authorHome:'',
+    lpx:m.url||'', raw:m.url||'', kind:m.kind||'rewrite', repo:fixBrand(m.repo||''),
+    source:'qx', src:repoSrc(fixBrand(m.repo||'')),
     install:qxInstall(m.url||'', m.kind, m.name),
     hako:'hako://install-module?url='+pyQuote(m.url||''),
     loon:'loon://import?plugin='+encodeURIComponent(m.url||'')
   }));
 }
 
-let KELEE = transformLists(SNAPSHOT.lists);
-let QX = transformQx(SNAPSHOT.qx);
-let MODULES = KELEE.concat(QX);
+/* 手动收录：红果短剧去广告（Surge 模块，raw 直链，hako:// 导入） */
+const HONGGUO_BASE='https://raw.githubusercontent.com/k6nfmm7dbr-commits/hongguo-lite/main';
+const EXTRA_MODS=[
+  {name:'红果短剧去广告 · Lite',repo:'红果广告过滤',author:'Minis',date:'2026-10-06',
+   icon:HONGGUO_BASE+'/icon.png',tags:['去广告','红果短剧','短剧'],
+   desc:'拦截红果短剧的穿山甲广告 SDK、广告素材签名域与埋点上报，减少开屏广告等待与剧集插播广告。基础版，无需 MITM 与证书。',
+   url:HONGGUO_BASE+'/surge/hongguo-lite.sgmodule'},
+  {name:'红果短剧去广告 · Plus',repo:'红果广告过滤',author:'Minis',date:'2026-10-06',
+   icon:HONGGUO_BASE+'/icon.png',tags:['去广告','红果短剧','短剧'],
+   desc:'基础版全部规则 + 广告请求接口拦截（Map Local 返回空 JSON），拦截更彻底。需要 MITM 并信任证书。',
+   url:HONGGUO_BASE+'/surge/hongguo-lite-plus.sgmodule'},
+].map(m=>({
+  name:m.name, desc:m.desc, tags:m.tags, icon:m.icon, date:m.date, author:m.author, authorHome:'',
+  lpx:m.url, raw:m.url, kind:'rewrite', repo:m.repo, source:'qx', src:repoSrc(m.repo),
+  install:'', hako:'hako://install-module?url='+pyQuote(m.url), loon:''
+}));
+
+let SURGE = transformLists(SNAPSHOT.lists);
+let QX = transformQx(SNAPSHOT.qx).concat(EXTRA_MODS);
+let MODULES = SURGE.concat(QX);
 let TOP_TAGS = computeTopTags(MODULES, 16);
 let state = { q:"", tag:"全部", page:1, source:"all" };
+let byId = {};   /* lpx -> 模块对象，供卡片点击打开弹窗 */
 
 /* 全部视图下两类资源交替排列，保证两边都能被看到 */
 function interleave(a,b){
@@ -469,9 +632,9 @@ function interleave(a,b){
   return out;
 }
 function currentSet(){
-  if(state.source==='kelee') return KELEE;
+  if(state.source==='surge') return SURGE;
   if(state.source==='qx') return QX;
-  return interleave(KELEE,QX);
+  return interleave(SURGE,QX);
 }
 
 const grid=document.getElementById('grid');
@@ -480,10 +643,9 @@ const pager=document.getElementById('pager');
 const countEl=document.getElementById('count');
 const totalEl=document.getElementById('total');
 const chipsEl=document.getElementById('chips');
-const noticeEl=document.getElementById('notice');
 const syncEl=document.getElementById('sync');
 const syncText=document.getElementById('syncText');
-const SRC_NAME=SNAPSHOT.name||'可莉的插件中心';
+const SRC_NAME=SNAPSHOT.name||'Surge';
 
 /* ===== 主题切换：日间 / 夜间 / 自动（默认自动，跟随系统，localStorage 记忆） ===== */
 const THEME_KEY='clashmod-theme';
@@ -507,10 +669,6 @@ themeSwitch.addEventListener('click',e=>{
 prefersDark.addEventListener?.('change',()=>{ if(currentTheme==='auto') applyTheme('auto'); });
 
 totalEl.textContent=MODULES.length;
-
-if(SNAPSHOT.notice && SNAPSHOT.notice.length){
-  noticeEl.innerHTML=SNAPSHOT.notice.map(n=>`<div>• ${esc(n)}</div>`).join('');
-}else{ noticeEl.style.display='none'; }
 
 function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
 
@@ -552,14 +710,12 @@ function card(m){
   const when=m.date?`${esc((m.date||'').slice(0,10))}`:'';
   const meta=[author,when].filter(Boolean).join(' · ');
   const isQx=m.source==='qx';
-  const rk = isQx ? ({'墨鱼手记':'ddg','毒奶特供':'adblock','可莉重写库':'klee'}[m.repo]||'qx') : 'kelee';
-  const rlabel = isQx ? (m.repo||'Quantumult X') : '可莉插件中心';
+  const rk = isQx ? ({'墨鱼手记':'ddg','毒奶特供':'adblock','重写库':'rewrite'}[m.repo]||'qx') : 'surge';
+  const rlabel = isQx ? (m.repo||'GitHub') : 'Surge';
   const primary=`<a class="btn primary" href="${esc(isQx?m.hako:m.install)}">${SVG_DOWN}导入 Clash</a>`;
-  const secondary=isQx
-    ?`<a class="btn secondary wide" href="${esc(m.install)}" title="用 quantumult-x:///add-resource 协议导入">${SVG_BOLT}导入 Quantumult X</a>`
-    :`<a class="btn secondary" href="${esc(m.loon)}">${SVG_BOLT}Loon 导入</a>`;
+  const copy=`<button class="btn secondary" data-copy="${esc(m.lpx)}" title="复制资源链接，可手动导入任意客户端">${SVG_COPY}复制链接</button>`;
   return `
-  <div class="card">
+  <div class="card" data-id="${esc(m.lpx)}" title="点击查看详情">
     <span class="src-badge" data-r="${rk}">${esc(rlabel)}</span>
     <div class="head">
       <div class="icon"><span>🧩</span><img src="${esc(m.icon)}" alt="" loading="lazy" onload="this.previousElementSibling.remove()" onerror="this.remove()"></div>
@@ -572,13 +728,7 @@ function card(m){
     <div class="tags">${tags}</div>
     <div class="acts">
       ${primary}
-      <div class="sec-row">
-        ${secondary}
-        <button class="btn secondary" data-copy="${esc(m.lpx)}" title="复制资源链接">
-          ${SVG_COPY}
-          复制链接
-        </button>
-      </div>
+      ${copy}
     </div>
   </div>`;
 }
@@ -589,6 +739,7 @@ function render(){
   if(state.page>totalPages) state.page=totalPages;
   const start=(state.page-1)*PAGE_SIZE;
   const pageItems=list.slice(start,start+PAGE_SIZE);
+  byId={}; MODULES.forEach(m=>{ if(m.lpx) byId[m.lpx]=m; });
   grid.innerHTML=pageItems.map(card).join('');
   empty.style.display=list.length?'none':'block';
   countEl.textContent=`显示 ${list.length?start+1:0}–${Math.min(start+PAGE_SIZE,list.length)} / 共 ${list.length} 项`;
@@ -617,10 +768,59 @@ function render(){
 
 grid.addEventListener('click',e=>{
   const t=e.target.closest('[data-copy]');
-  if(!t) return;
-  const url=t.dataset.copy;
-  navigator.clipboard?.writeText(url).then(()=>toast('链接已复制 ✓')).catch(()=>toast('复制失败，请手动复制'));
+  if(t){ const url=t.dataset.copy; navigator.clipboard?.writeText(url).then(()=>toast('链接已复制 ✓')).catch(()=>toast('复制失败，请手动复制')); return; }
+  if(e.target.closest('.acts')) return;            /* 导入 / 复制按钮自行处理，不触发弹窗 */
+  const cardEl=e.target.closest('.card');
+  if(!cardEl) return;
+  const m=byId[cardEl.dataset.id];
+  if(m) openModal(m);
 });
+
+/* ===== 模块详情弹窗 ===== */
+const modal=document.getElementById('modal');
+const modalBody=document.getElementById('modalBody');
+function openModal(m){
+  const isQx=m.source==='qx';
+  const tags=(m.tags||[]).slice(0,8).map(t=>`<span class="tag">${esc(t)}</span>`).join('');
+  const author=m.author?esc(m.author):'';
+  const when=m.date?esc(String(m.date).slice(0,10)):'';
+  const meta=[author,when].filter(Boolean).join(' · ');
+  const rk=isQx?({'墨鱼手记':'ddg','毒奶特供':'adblock','重写库':'rewrite'}[m.repo]||'qx'):'surge';
+  const rlabel=isQx?(m.repo||'GitHub'):'Surge';
+  const primary=`<a class="btn primary" href="${esc(isQx?m.hako:m.install)}" target="_blank" rel="noopener">${SVG_DOWN}导入 Clash</a>`;
+  const copy=`<button class="btn secondary" data-copy="${esc(m.lpx)}">${SVG_COPY}复制链接</button>`;
+  const src=m.src||null;
+  const srcHtml=src?`<div class="m-src">
+      <div class="m-src-head">来源</div>
+      <a class="m-src-link" href="${esc(src.url)}" target="_blank" rel="noopener">${SVG_LINK}${esc(src.name)} ↗</a>
+      ${src.note?`<div class="m-src-note">${esc(src.note)}</div>`:''}
+      <div class="m-src-url"><a href="${esc(m.lpx)}" target="_blank" rel="noopener">${esc(m.lpx)}</a></div>
+    </div>`:'';
+  modalBody.innerHTML=`
+    <span class="src-badge" data-r="${rk}">${esc(rlabel)}</span>
+    <div class="m-head">
+      <div class="icon"><span>🧩</span><img src="${esc(m.icon)}" alt="" onerror="this.remove()"></div>
+      <div style="min-width:0"><h3 id="modalTitle">${esc(m.name)}</h3>${meta?`<div class="meta">${meta}</div>`:''}</div>
+    </div>
+    <div class="m-desc">${esc(m.desc)||'—'}</div>
+    ${tags?`<div class="tags">${tags}</div>`:''}
+    ${srcHtml}
+    <div class="m-acts">${primary}${copy}</div>`;
+  modal.classList.add('show');
+  modal.setAttribute('aria-hidden','false');
+  document.body.style.overflow='hidden';
+}
+function closeModal(){
+  modal.classList.remove('show');
+  modal.setAttribute('aria-hidden','true');
+  document.body.style.overflow='';
+}
+modal.addEventListener('click',e=>{
+  if(e.target.closest('[data-close]')){ closeModal(); return; }
+  const t=e.target.closest('[data-copy]');
+  if(t){ const url=t.dataset.copy; navigator.clipboard?.writeText(url).then(()=>toast('链接已复制 ✓')).catch(()=>toast('复制失败，请手动复制')); }
+});
+document.addEventListener('keydown',e=>{ if(e.key==='Escape' && modal.classList.contains('show')) closeModal(); });
 
 function toast(msg){
   const el=document.getElementById('toast');
@@ -630,11 +830,12 @@ function toast(msg){
 
 const qEl=document.getElementById('q');
 const clearBtn=document.getElementById('clearBtn');
+let qTimer;
 function syncClear(){ clearBtn.classList.toggle('show', qEl.value.length>0); }
-qEl.addEventListener('input',e=>{state.q=e.target.value;state.page=1;render();syncClear();});
+qEl.addEventListener('input',e=>{state.q=e.target.value;state.page=1;syncClear();clearTimeout(qTimer);qTimer=setTimeout(render,200);});
 clearBtn.addEventListener('click',()=>{ qEl.value=''; state.q=''; state.page=1; render(); syncClear(); qEl.focus(); });
 
-/* 来源筛选：全部 / 可莉插件中心 / Quantumult X */
+/* 来源筛选：全部 / Surge / GitHub */
 const sourcesEl=document.getElementById('sources');
 sourcesEl.addEventListener('click',e=>{
   const el=e.target.closest('.chip'); if(!el) return;
@@ -646,17 +847,18 @@ sourcesEl.addEventListener('click',e=>{
 
 /* 先用快照秒开，再根据缓存策略决定是否需要请求源站 */
 render();
+window.__cmReady=true; /* 通知看门狗：初始化完成 */
 
-let keleeSync={cls:'load',text:'正在同步源站最新模块…'};
+let surgeSync={cls:'load',text:'正在同步源站最新模块…'};
 function setSync(cls,text,remember){
   syncEl.className='sync '+cls; syncText.textContent=text;
-  if(remember!==false) keleeSync={cls,text};
+  if(remember!==false) surgeSync={cls,text};
 }
 function updateSyncForSource(){
   if(state.source==='qx'){
-    setSync('ok',`Quantumult X 资源共 ${QX.length} 个（构建于 ${SNAPSHOT.buildDate||'—'}），导入链接直连 GitHub 仓库，始终拉取最新版`,false);
+    setSync('ok',`GitHub 资源共 ${QX.length} 个（构建于 ${SNAPSHOT.buildDate||'—'}），导入链接直连仓库，始终拉取最新版`,false);
   }else{
-    setSync(keeleeSync.cls,keeleeSync.text,false);
+    setSync(surgeSync.cls,surgeSync.text,false);
   }
 }
 function fmtTime(d){
@@ -688,17 +890,18 @@ function writeCache(lists){
 function applyModules(lists,extra){
   const live=transformLists(lists);
   if(!live.length) return false;
-  KELEE=live;                        /* 实时同步只替换可莉插件中心部分，QX 为静态快照 */
-  MODULES=KELEE.concat(QX);
+  SURGE=live;                        /* 实时同步只替换 Surge 部分，QX 为静态快照 */
+  MODULES=SURGE.concat(QX);
   refreshTags(); totalEl.textContent=MODULES.length; render();
   if(extra) setSync(extra.cls,extra.text);
   return true;
 }
 
-/* 实时同步源站：源站 CORS 头为重复的 "*, *"（非法），直连必然被浏览器拒绝，
-   因此走支持 CORS 的代理：jina（稳定）→ allorigins（备用）→ 内置快照兜底 */
-const LIVE_URL=SNAPSHOT.liveUrl||'https://hub.kelee.one/list.json';
+/* 实时同步：qingr.json 与页面同域自托管，浏览器直连即可刷新（免 CORS / 免代理）；
+   若 liveUrl 被覆盖为外部绝对地址，再走支持 CORS 的代理兜底 */
+const LIVE_URL=SNAPSHOT.liveUrl||'qingr.json';
 const LIVE_SOURCES=[
+  {url:LIVE_URL, parse:r=>r.json()},                                   /* 同域直连（自托管 qingr.json） */
   {url:'https://r.jina.ai/'+LIVE_URL, parse:async r=>{
     const t=await r.text();
     const i=t.indexOf('Markdown Content:');

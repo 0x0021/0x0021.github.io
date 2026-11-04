@@ -3,7 +3,7 @@
   "sources": [
     {
       "key": "dee",
-      "label": "可莉重写库",
+      "label": "重写库",
       "home": "https://github.com/deezertidal/QuantumultX-Rewrite"
     },
     {
@@ -25,9 +25,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/startingad.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/startingad.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "去广告"
       ]
     },
@@ -38,9 +38,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/baiducloud.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/BaiduCloud.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -51,9 +51,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/cs.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/CamScanner.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -64,9 +64,9 @@
       "icon": "https://raw.githubusercontent.com/Tartarus2014/For-own-use/master/Color/EMBY.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/Emby.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "工具脚本"
       ]
     },
@@ -77,9 +77,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/kuwo.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/KuwoVip.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -90,9 +90,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/kuwosvip.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/kuwo-unlock.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -103,9 +103,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/price.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/Price.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "工具脚本"
       ]
     },
@@ -116,9 +116,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/wps.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/WPS.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -129,9 +129,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/nicegram.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/nicegram.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -142,9 +142,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/caixin.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/caixin.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -155,9 +155,9 @@
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Spotify.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/SpotifyPremium.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -168,9 +168,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/soundcloud.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/soundcloud.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -181,9 +181,9 @@
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Stack.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/NodeLinkCheck.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "工具脚本"
       ]
     },
@@ -194,9 +194,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/bodian2.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/Bodian.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "去广告"
       ]
     },
@@ -207,9 +207,9 @@
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple_Update.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/DisableUpdate.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "工具脚本"
       ]
     },
@@ -220,9 +220,9 @@
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Netflix.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/Ratings.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "工具脚本"
       ]
     },
@@ -233,9 +233,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/fanqie.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/fanqienovel.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "去广告"
       ]
     },
@@ -246,9 +246,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/lls.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/lls.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -259,9 +259,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/jibjab.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/jibjab.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -272,9 +272,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/mix.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/mix.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -285,9 +285,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/picsart.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/picsart.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -298,9 +298,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/polarr.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/polarr.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -311,9 +311,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/ppx.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/ppx.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "去广告"
       ]
     },
@@ -324,9 +324,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/vsco.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/vsco.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -337,9 +337,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/xiaoying.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/xiaoying.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -350,9 +350,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/xjsp.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/xjsp.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -363,9 +363,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/colorwidgets.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/colorwidgets.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -376,9 +376,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/alarmy.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/alarmy.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -389,9 +389,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/caiyun.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/caiyun.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "工具脚本"
       ]
     },
@@ -402,9 +402,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/aloha.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/aloha.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -415,9 +415,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/bedtimefan.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/BedtimeFan.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -428,9 +428,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/bazaart.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/bazaart.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -441,9 +441,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/dailyyoga.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/daily-yoga.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -454,9 +454,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/darkroom.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/darkroom.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -467,9 +467,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/fabulous.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/fabulous.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -480,9 +480,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/invideo.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/invideo.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -493,9 +493,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/giftr.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/giftr.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -506,9 +506,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/judou.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/judou.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -519,9 +519,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/kika.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/kika.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -532,9 +532,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/mojo.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/mojo.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -545,9 +545,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/musixmatch.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/musixmatch.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -558,9 +558,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/myfitnesspal.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/myfitnesspal.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -571,9 +571,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/now.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/now.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -584,9 +584,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/nybz.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/nybz.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -597,22 +597,22 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/piccollage.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/piccollage.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
     {
       "name": "Pixelcut解锁",
-      "desc": "可莉重写库 · Quantumult X 重写脚本",
+      "desc": "重写库 · Quantumult X 重写脚本",
       "author": "deezertidal",
       "icon": "",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/pixelcut.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -623,9 +623,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/sgsz.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/sgsz.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -636,9 +636,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/shadowlinkvpn.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/shadowlinkvpn.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -649,9 +649,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/smallpdf.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/smallpdf.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -662,9 +662,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/tangerine.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/tangerine.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -675,9 +675,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/tenpercent.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/tenpercent.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -688,9 +688,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/thunder.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/thunder.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -701,9 +701,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/wfw.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/wfw.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -714,9 +714,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/widgetsmith.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/widgetsmith.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -727,9 +727,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/wnbsq.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/wnbsq.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -740,9 +740,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/zjsg.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/zjsg.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -753,9 +753,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/apowersoft.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/apowersoft.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -766,9 +766,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/appraven.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/appraven.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -779,9 +779,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/bdsp.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/bdsp.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -792,9 +792,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/bili.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/bili.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -805,9 +805,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/boom.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/boom.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -818,9 +818,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/clarity.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/clarity.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -831,9 +831,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/caiyun.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/colorweather.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -844,9 +844,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/ellabook.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/ellabook.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -857,9 +857,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/fimo.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/fimo.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -870,9 +870,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/ilovepdf.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/ilovepdf.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -883,9 +883,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/meituxx.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/meituxx.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -896,9 +896,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/qifu.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/qifu.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -909,9 +909,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/symbolab.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/symbolab.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -922,9 +922,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/b612.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/b612.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -935,9 +935,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/egdd.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/egdd.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -948,9 +948,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/hyperweb.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/hyperweb.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -961,9 +961,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/molycam.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/molycam.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -974,9 +974,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/photomath.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/photomath.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -987,9 +987,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/xcz.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/xcz.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -1000,9 +1000,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/accu.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/accu.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -1013,9 +1013,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/meistertask.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/meistertask.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -1026,9 +1026,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/yiyan.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/yiyan.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -1039,9 +1039,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/fantastical.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/fantastical.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -1052,9 +1052,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/yunting.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/yunting.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -1065,9 +1065,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/wdqd.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/wdqd.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -1078,9 +1078,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/emmo.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/emmo.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -1091,9 +1091,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/xxg.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/xxg.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -1104,9 +1104,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/dsbj.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/dsbj.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -1117,9 +1117,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/zebra.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/zebra.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -1130,9 +1130,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/myplate.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/myplate.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -1143,9 +1143,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/iam.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/iam.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -1156,9 +1156,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/imuseum.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/imuseum.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -1169,9 +1169,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/audiomack.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/audiomack.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -1182,9 +1182,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/grammarly.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/grammarly.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -1195,9 +1195,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/tokcam.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/tokcam.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -1208,9 +1208,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/tutu.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/tutu.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -1221,9 +1221,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/wallcraft.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/wallcraft.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -1234,9 +1234,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/xyts.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/xyts.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -1247,9 +1247,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/yitian.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/yitian.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -1260,9 +1260,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/grow.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/grow.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -1273,9 +1273,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/xmind.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/xmind.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -1286,9 +1286,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/wechatad.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/wechatad.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "去广告"
       ]
     },
@@ -1299,9 +1299,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/weiboad.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/weiboad.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "去广告"
       ]
     },
@@ -1312,9 +1312,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/biliad.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/biliad.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "去广告"
       ]
     },
@@ -1325,9 +1325,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/xmlyad.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/xmlyad.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "去广告"
       ]
     },
@@ -1338,9 +1338,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/wnds.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/wnds.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -1351,9 +1351,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/mklwt.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/mklwt.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -1364,9 +1364,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/dyd.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/dyd.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "去广告"
       ]
     },
@@ -1377,9 +1377,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/htjzb.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/htjzb.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -1390,9 +1390,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/peak.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/peak.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -1403,9 +1403,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/pillow.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/pillow.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -1416,9 +1416,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/pocketlist.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/pocketlists.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -1429,9 +1429,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/zymk.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/zymk.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -1442,9 +1442,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/ydybj.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/ydybj.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -1455,9 +1455,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/vista.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/vista.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -1468,9 +1468,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/photoshop.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/photoshop.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -1481,9 +1481,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/rrsp.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/rrsp.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "去广告"
       ]
     },
@@ -1494,9 +1494,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/qmxs.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/qmxs.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -1507,9 +1507,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/mht.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/mht.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -1520,9 +1520,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/notability.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/notability.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -1533,9 +1533,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/amj.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/amj.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "去广告"
       ]
     },
@@ -1546,9 +1546,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/baimiao.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/baimiao.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -1559,9 +1559,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/oldroll.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/oldroll.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -1572,9 +1572,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/sndd.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/sndd.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -1585,9 +1585,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/dalanjing.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/dalanjing.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -1598,9 +1598,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/lsdyw.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/lsdyw.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -1611,9 +1611,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/ywqpy.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/ywqpy.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -1624,9 +1624,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/zhitiao.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/zhitiao.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -1637,9 +1637,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/smwd.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/smwd.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -1650,9 +1650,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/meipian.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/meipian.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -1663,9 +1663,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/lightroom.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/lightroom.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -1676,9 +1676,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/calm.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/calm.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -1689,9 +1689,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/nfc.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/nfc.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "工具脚本"
       ]
     },
@@ -1702,9 +1702,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/stsq.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/stsq.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -1715,9 +1715,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/https.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/https.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -1728,9 +1728,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/ssa.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/ssa.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -1741,9 +1741,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/xxyq.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/xxyq.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -1754,9 +1754,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/hyxc.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/hyxc.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -1767,9 +1767,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/jsgx.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/jsgx.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -1780,9 +1780,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/prettyup.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/prettyup.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -1793,9 +1793,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/cubox.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/cubox.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -1806,9 +1806,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/pandora.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/pandora.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -1819,9 +1819,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/wechatread.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/wechatread.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "工具脚本"
       ]
     },
@@ -1832,9 +1832,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/ly.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/ly.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -1845,9 +1845,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/xzj.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/xzj.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -1858,9 +1858,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/notboring.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/notboring.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -1871,9 +1871,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/rq.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/rq.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -1884,9 +1884,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/ceo.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/ceo.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -1897,9 +1897,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/fileball.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/fileball.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -1910,9 +1910,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/1blocker.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/1blocker.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -1923,9 +1923,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/ai.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/ai.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -1936,9 +1936,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/proknockout.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/proknockout.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -1949,9 +1949,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/qnhb.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/qnhb.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -1962,9 +1962,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/faintv.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/faintv.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "去广告"
       ]
     },
@@ -1975,9 +1975,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/wxts.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/wxts.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -1988,9 +1988,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/rmrb.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/rmrb.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "去广告"
       ]
     },
@@ -2001,9 +2001,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/aqc.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/aqc.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "工具脚本"
       ]
     },
@@ -2014,9 +2014,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/wxds.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/wxds.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -2027,9 +2027,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/chic.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/chic.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -2040,9 +2040,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/ydcd.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/ydcd.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -2053,9 +2053,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/wscsds.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/wscsds.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -2066,9 +2066,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/wsgj.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/wsgj.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -2079,9 +2079,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/efekt.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/efekt.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -2092,9 +2092,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/doc.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/doc.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -2105,9 +2105,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/mksp.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/mksp.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -2118,9 +2118,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/absqgs.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/absqgs.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -2131,9 +2131,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/collart.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/collart.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -2144,22 +2144,22 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/bsxm.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/bsxm.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
     {
       "name": "MEMRISE",
-      "desc": "可莉重写库 · Quantumult X 重写脚本",
+      "desc": "重写库 · Quantumult X 重写脚本",
       "author": "deezertidal",
       "icon": "",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/memrise.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "工具脚本"
       ]
     },
@@ -2170,9 +2170,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/duitang.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/duitang.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -2183,9 +2183,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/flomo.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/flomo.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -2196,9 +2196,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/aptv.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/aptv.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -2209,9 +2209,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/cp.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/cp.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -2222,9 +2222,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/cxs.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/cxs.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -2235,9 +2235,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/dzqj.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/dzqj.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -2248,9 +2248,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/hyxj.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/hyxj.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -2261,9 +2261,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/lingokids.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/lingokids.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -2274,9 +2274,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/bdwk.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/bdwk.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -2287,9 +2287,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/craft.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/craft.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -2300,9 +2300,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/panda.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/panda.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -2313,9 +2313,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/keep.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/keep.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -2326,9 +2326,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/documents.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/documents.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -2339,9 +2339,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/ego.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/ego.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -2352,9 +2352,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/jssmy.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/jssmy.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -2365,9 +2365,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/zjbj.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/zjbj.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -2378,9 +2378,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/qj.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/qj.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -2391,9 +2391,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/agenda.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/agenda.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -2404,9 +2404,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/multisearch.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/multisearch.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "工具脚本"
       ]
     },
@@ -2417,9 +2417,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/jkyd.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/jkyd.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -2430,9 +2430,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/dayone.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/dayone.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -2443,9 +2443,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/usage.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/usage.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -2456,9 +2456,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/mdsz.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/mdsz.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -2469,9 +2469,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/moneythings.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/moneythings.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -2482,9 +2482,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/sjsmy.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/sjsmy.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -2495,9 +2495,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/sorted.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/sorted.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -2508,9 +2508,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/jjyc.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/jjyc.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -2521,9 +2521,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/klx.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/klx.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -2534,9 +2534,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/mbdt.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/mbdt.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -2547,9 +2547,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/ptj.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/ptj.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -2560,9 +2560,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/xrk.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/xrk.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -2573,9 +2573,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/kprj.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/kprj.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -2586,9 +2586,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/ljtq.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/ljtq.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -2599,9 +2599,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/motivation.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/motivation.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -2612,9 +2612,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/pdfviewer.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/pdfviewer.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -2625,9 +2625,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/percento.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/percento.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -2638,9 +2638,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/pixelance.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/pixelance.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -2651,9 +2651,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/retake.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/retake.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -2664,9 +2664,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/sc.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/sc.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -2677,9 +2677,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/smbq.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/smbq.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -2690,9 +2690,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/ypjj.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/ypjj.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -2703,9 +2703,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/varlens.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/varlens.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -2716,9 +2716,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/ymjz.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/ymjz.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -2729,9 +2729,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/drafts.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/drafts.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -2742,9 +2742,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/ddsyxj.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/ddsyxj.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -2755,9 +2755,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/emote.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/emote.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -2768,9 +2768,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/lgzj.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/lgzj.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -2781,9 +2781,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/seven.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/seven.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -2794,9 +2794,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/smxcgj.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/smxcgj.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -2807,9 +2807,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/fnv.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/fnv.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -2820,9 +2820,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/todo.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/todo.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -2833,9 +2833,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/tpp.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/tpp.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "工具脚本"
       ]
     },
@@ -2846,9 +2846,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/ttd.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/ttd.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -2859,9 +2859,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/ky.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/ky.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -2872,9 +2872,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/vcus.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/vcus.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -2885,9 +2885,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/arpdfbj.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/arpdfbj.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -2898,9 +2898,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/artp.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/artp.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -2911,9 +2911,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/hx.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/hx.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -2924,9 +2924,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/hyzm.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/hyzm.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -2937,9 +2937,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/hzk.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/hzk.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -2950,9 +2950,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/iscreen.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/iscreen.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -2963,9 +2963,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/xzjhz.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/xzjhz.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -2976,9 +2976,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/zt.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/zt.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -2989,9 +2989,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/fyjh.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/fyjh.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -3002,9 +3002,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/gql.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/gql.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -3015,9 +3015,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/nt.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/nt.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -3028,9 +3028,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/ysyk.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/ysyk.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -3041,9 +3041,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/cdzs.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/cdzs.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -3054,9 +3054,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/dsj.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/dsj.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -3067,9 +3067,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/endel.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/endel.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -3080,9 +3080,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/gzrj.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/gzrj.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -3093,9 +3093,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/gddt.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/gddt.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "去广告"
       ]
     },
@@ -3106,9 +3106,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/hsfs.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/hsfs.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -3119,9 +3119,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/jianxun.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/jianxun.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -3132,9 +3132,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/kepai.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/kepai.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -3145,9 +3145,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/lifeviewer.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/lifeviewer.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -3158,9 +3158,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/relens.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/relens.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -3171,9 +3171,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/vivacut.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/vivacut.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -3184,9 +3184,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/watchout.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/watchout.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -3197,9 +3197,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/whqsy.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/whqsy.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -3210,35 +3210,35 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/yjhl.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/yjhl.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
     {
       "name": "节点信息查询",
-      "desc": "可莉重写库 · Quantumult X 重写脚本",
+      "desc": "重写库 · Quantumult X 重写脚本",
       "author": "deezertidal",
       "icon": "",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/ip-api.js",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "工具脚本"
       ]
     },
     {
       "name": "流媒体解锁查询",
-      "desc": "可莉重写库 · Quantumult X 重写脚本",
+      "desc": "重写库 · Quantumult X 重写脚本",
       "author": "deezertidal",
       "icon": "",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/media-check.js",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -3249,9 +3249,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/styleart.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/styleart.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -3262,9 +3262,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/7dong.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/7dong.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -3275,9 +3275,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/hbgc.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/hbgc.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -3288,9 +3288,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/wdfq.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/wdfq.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -3301,9 +3301,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/fomz.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/fomz.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -3314,9 +3314,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/rzxj.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/rzxj.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -3327,9 +3327,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/gscdq.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/gscdq.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -3340,9 +3340,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/mondly.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/mondly.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -3353,9 +3353,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/mtywj.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/mtywj.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -3366,9 +3366,9 @@
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/youtube.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "去广告"
       ]
     },
@@ -3379,9 +3379,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/hbetgs.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/hbetgs.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -3392,9 +3392,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/iconkiller.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/iconkiller.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -3405,9 +3405,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/yczjz.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/yczjz.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -3418,9 +3418,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/zhsck.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/zhsck.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -3431,9 +3431,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/ztc.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/ztc.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -3444,9 +3444,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/peiyin.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/peiyin.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -3457,9 +3457,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/adguard.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/adguard.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "解锁"
       ]
     },
@@ -3470,9 +3470,9 @@
       "icon": "https://raw.githubusercontent.com/deezertidal/private/main/icons/aliyun.png",
       "url": "https://raw.githubusercontent.com/deezertidal/QuantumultX-Rewrite/master/rewrite/aliyun.conf",
       "kind": "rewrite",
-      "repo": "可莉重写库",
+      "repo": "重写库",
       "tags": [
-        "可莉重写库",
+        "重写库",
         "工具脚本"
       ]
     },

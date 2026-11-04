@@ -153,13 +153,13 @@ def collect_dee():
         icon = meta.get("icon") or ""
         return {
             "name": name,
-            "desc": desc or "可莉重写库 · Quantumult X 重写脚本",
+            "desc": desc or "重写库 · Quantumult X 重写脚本",
             "author": author,
             "icon": icon,
             "url": raw_url("dee", item["path"]),
             "kind": "rewrite",
-            "repo": "可莉重写库",
-            "tags": ["可莉重写库", categorize(name, desc)],
+            "repo": "重写库",
+            "tags": ["重写库", categorize(name, desc)],
         }
 
     return uniq, build
@@ -331,7 +331,7 @@ def main():
     out = {
         "name": "Quantumult X 资源合集",
         "sources": [
-            {"key": "dee", "label": "可莉重写库", "home": "https://github.com/deezertidal/QuantumultX-Rewrite"},
+            {"key": "dee", "label": "重写库", "home": "https://github.com/deezertidal/QuantumultX-Rewrite"},
             {"key": "ddg", "label": "墨鱼手记", "home": "https://github.com/ddgksf2013"},
             {"key": "adblock", "label": "毒奶特供", "home": "https://github.com/limbopro/Adblock4limbo"},
         ],
@@ -342,7 +342,7 @@ def main():
         json.dump(out, f, ensure_ascii=False, indent=2)
 
     print(f"\n共 {len(modules)} 个 QX 资源 -> {dst}")
-    for label in ("可莉重写库", "墨鱼手记", "毒奶特供"):
+    for label in ("重写库", "墨鱼手记", "毒奶特供"):
         n = sum(1 for m in modules if m["repo"] == label)
         r = sum(1 for m in modules if m["repo"] == label and m["kind"] == "rule")
         print(f"  {label}: {n} 个（规则 {r}）")

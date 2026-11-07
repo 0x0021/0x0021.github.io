@@ -139,6 +139,13 @@
 
     <div class="posts-grid reveal" data-page-node-id="Hea4F37JaU9osGyNNni7ZQ">
 
+      <a class="post-card" href="posts/linkora-v083-release.html">
+        <div class="post-card__meta">2026-11-07 · 发布记录</div>
+        <h3 class="post-card__title">Linkora v0.8.3：分身终于不再跟自己说话了</h3>
+        <p class="post-card__excerpt">昨天翻到一张截图：我自己的 1:1 窗口里连着冒出两条 AI 回复，中间没有任何对方消息。查下来不是模型抽风，是身份识别两层失效叠加——本人消息被判成「对方」，回复又被按人投递回自己的窗口。这版把身份判定收成唯一口径（零配置自动反推 openDingTalkId 与昵称，1.8 秒），单聊改为按入站会话 ID 直通发送，加两道拒发护栏，存量 657 条污染缓存备份清洗。另补：Done 表情标过的请求摘要里显示（已办）、连续追问第二句不再被已读门控吞掉、联网工具整批崩溃与模拟测试 undefined 两处回归修复。零数据迁移、零配置改动、工具数仍 49。</p>
+        <div class="post-card__tags"><span class="tag">AI Agent</span><span class="tag green">v0.8.3</span><span class="tag">钉钉</span><span class="tag">修复</span></div>
+      </a>
+
       <a class="post-card" href="posts/linkora-v082-release.html">
         <div class="post-card__meta">2026-10-27 · 发布记录</div>
         <h3 class="post-card__title">Linkora v0.8.2：配了的东西，终于会响了</h3>
@@ -365,6 +372,13 @@
       <div class="section-title" data-page-node-id="RhDdx5CofEeGyIX75MdTD7">近期动态</div>
     </div>
     <div class="timeline reveal" data-page-node-id="7SIQX957SeEP7IVtbwzcyH">
+
+      <div class="timeline-item">
+        <div class="timeline-date">2026-11</div>
+        <div class="timeline-body">
+          <p><strong>v0.8.3</strong>：以「身份识别」为主的小版本。根治截图里的「自言自语」——钉钉消息里的 <code>sender</code> 是昵称、通讯录 <code>userName</code> 是正式姓名、<code>senderId</code> 是 openDingTalkId，三者字面都不同，旧逻辑只比 userId 且姓名兜底要求 sender_id 为空，导致本人单聊消息全部被判成「对方发的」；叠加启动期自身 openDingTalkId 解析失败（旧实现把两个 ID 字段 <code>or</code> 合并后拿 oid 比 userId，恒不成立）、657 条会话缓存的 <code>peer_open_dingtalk_id</code> 被写成本人 ID、单聊按「人」发 1:1，回复全部落进本人窗口，对方收不到且回灌后污染上下文。现新增 <code>src/self_identity.py</code> 统一判定（ID + 正式名 + 昵称 + raw，防同名误杀），启动期从本地「我」会话缓存零配置反推 oid 与昵称（1.8 秒，原网络遍历约 60 秒且常失败），并以「本人 ID 必横跨几乎所有 1:1 会话」统计法兜底；<code>chat_message_send</code> 新增 <code>conversation_id</code> 走 <code>--conversation-id</code> 稳定 ID 直通，单聊优先按入站会话 ID 发、失败才降级按人发，物理上不可能串会话；三道护栏（自身入站拒发 / peer 命中自身 ID 拒发 / peer 与 sender 不一致以 sender 为准，顺带修掉旧纠错只认 <code>ou_</code> 前缀对钉钉 <code>DDn1…</code> 从未生效的老 bug）。存量 657 条污染备份清洗、未删消息，重启后复查 15 个会话库污染为 0。另新增表情回应→「已办」摘要信号（只读、只认主人、赞/感谢不算）、<code>mark_read_delay_seconds</code> 默认 120 秒修复连续追问第二句被已读门控永久吞掉；并修出站防护残留参数导致联网工具整批 <code>PoolKey</code> TypeError 崩溃、管理台模拟测试历史回填 <code>undefined</code>。验证：837 例回归全绿、6 处变异测试全部让新测试变红并字节还原、门禁与 CI/CodeQL/Pages 全 success。零数据迁移、零配置改动、工具数仍 49。</p>
+        </div>
+      </div>
 
       <div class="timeline-item">
         <div class="timeline-date">2026-10</div>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Linkora v0.8.3：分身终于不再跟自己说话了 · 坤子</title>
+<meta name="description" content="v0.8.3 修掉「自言自语」：本人消息被误判成对方、单聊回复按人投递回自己的 1:1 窗口。现统一身份判定（零配置自动反推 openDingTalkId 与昵称）、单聊按会话 ID 直通、双护栏拒发，存量 657 条污染缓存已清洗。另补 Done 表情=已办的摘要信号、延迟 120 秒标记已读。" />
+<link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+<div class="post-progress" aria-hidden="true"></div>
+
+<nav>
+  <a href="../index.html" class="nav-brand">坤子</a>
+  <div class="nav-links">
+    <a href="../index.html#blog">文章</a>
+    <a href="../index.html#timeline">动态</a>
+    <a href="../index.html#projects">项目</a>
+    <a href="https://github.com/0x0021" target="_blank" rel="noopener">GitHub</a>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="切换主题">◑</button>
+  </div>
+</nav>
+
+<main class="post">
+  <a class="post-back" href="../index.html">← 返回博客</a>
+  <header class="post-header">
+    <div class="post-meta">2026-11-07 · 发布记录</div>
+    <h1>Linkora v0.8.3：分身终于不再跟自己说话了</h1>
+    <div class="post-tags">
+      <span class="tag">AI Agent</span>
+      <span class="tag green">v0.8.3</span>
+      <span class="tag">钉钉</span>
+      <span class="tag">修复</span>
+    </div>
+  </header>
+
+  <article class="post-content">
+    <p>昨天翻到一张截图：我自己的 1:1 窗口里，上午一条长回复、下午一句「好，我先在这边等」，中间没有任何对方消息。看起来像分身自己在跟自己聊天。</p>
+    <p>把日志和会话库翻了一遍，确认不是模型抽风——那两条回复其实来自两个毫不相干的会话，被一起投进了我自己的窗口。<strong>真正坏掉的是身份识别</strong>：我本人发的消息被判成「对方」，AI 生成的回复又被送回给我。</p>
+
+    <blockquote>
+      <p><strong>本文要点</strong></p>
+      <ul>
+        <li>根治「自言自语」：统一自身身份判定，昵称与通讯录正式姓名不一致也能认出本人，零配置、不硬编码姓名</li>
+        <li>单聊回复改为按<strong>入站会话 ID 直通</strong>发送，物理上不可能再串到别的会话；加两道拒发护栏</li>
+        <li>存量 657 条被污染的会话缓存已备份清洗；启动期自身标识解析从约 60 秒降到 1.8 秒</li>
+        <li>新增：我用 Done / ✅ 表情标过的对方请求，摘要里会标成「已办」，不再长期显示待处理</li>
+        <li>修复：同一会话紧跟着追问的第二句，不再被「已读闸门」写成终态后永久吞掉</li>
+        <li>另外修掉联网工具整批崩溃、管理台模拟测试历史回填 <code>undefined</code> 两处</li>
+      </ul>
+    </blockquote>
+
+    <h2>先说那条坏掉的链路</h2>
+    <p>钉钉消息回灌进轮询器时，<code>sender</code> 带的是<strong>昵称</strong>，通讯录里的 <code>userName</code> 是<strong>正式姓名</strong>，而 <code>senderId</code> 是 openDingTalkId——三者字面都不一样。旧逻辑只比 userId，姓名兜底又要求消息没有 sender_id，还拿正式姓名去比昵称。结果就是：我发的每一条单聊消息，都被当成对方发来的。</p>
+    <p>后面三层是连带塌的。启动时自身 openDingTalkId 没解析出来（旧代码把两个 ID 字段用 <code>or</code> 合并后，再拿 openDingTalkId 去比 userId，恒不成立），于是降级成 userId；漏判的 sender_id 又被写进会话缓存的 <code>peer_open_dingtalk_id</code>，<strong>657 条会话的对端标识全指向我自己</strong>；最后单聊回复优先按「人」发 1:1，而不是按会话发——所有回复就都落进了我自己的窗口。</p>
+    <p>还有个后果比表面更难缠：对方其实收不到这些回复，而这些回复被重新抓回来时又成了 <code>role=user</code> 的新消息，污染上下文和长期记忆。当天差点形成死循环，只是被已读门控和「确认收到」规则碰巧拦下。</p>
+
+    <h2>这次怎么修的</h2>
+    <p>我把身份判定收成一个模块 <code>src/self_identity.py</code>，poller、运行时和发送护栏共用同一套口径：ID、正式姓名、昵称、原始消息字段一起比，同时防同名误杀（组织里有重名时，不能只凭姓名就把别人的消息吞掉）。</p>
+    <p>自身 openDingTalkId 不再靠配置或硬编码姓名，启动时先从本地「我」会话缓存反推，顺带把昵称学下来——<strong>实测 1.8 秒</strong>，原来走网络遍历 93 个会话要近 60 秒还经常失败。另外留了一条统计法兜底：每个 1:1 会话必然包含本人，本人的 ID 会横跨几乎所有单聊，任何其他人只出现在少数几个会话里。</p>
+    <p>结构上更关键的一刀是发送侧：单聊优先按<strong>入站会话 ID 直通</strong>（<code>--conversation-id</code>），不再按人发，失败才降级。这样即使缓存再被污染，也物理上串不到别的会话。另外补了三道护栏——入站消息来自本人直接拒发、缓存里的对端命中本人 ID 直接拒发、对端与发送者不一致时以发送者为准（顺手修掉一个老 bug：旧纠错只认 <code>ou_</code> 前缀，钉钉的 ID 是 <code>DDn1…</code>，所以那条纠错从来没生效过）。</p>
+    <p>存量数据备份后清洗了 657 条污染记录，没有删任何消息。服务重启后我复查了 15 个会话库，污染数是 0，只剩「我」会话那一条合法记录留着给本地解析用。</p>
+
+    <h2>Done 表情，现在算「已办」</h2>
+    <p>钉钉的表情回应是消息的元数据，不是独立消息，从来不进轮询流。所以我用 Done、✅ 这类表情回过一条「对方提的请求」之后，纯文本摘要看不见，那件事就会一直挂在待处理里。</p>
+    <p>现在摘要链路会只读拉一批消息的表情回应，把<strong>我本人</strong>用完成类表情标记的请求标成（已办）。第三人回的表情不算，读取失败就静默降级，不拖垮摘要。赞、感谢、鼓掌这类礼貌性回应也故意不算完成——宁可漏标，不要错标。</p>
+
+    <h2>追问的第二句，不再被吞掉</h2>
+    <p>另一处老毛病：AI 一发出回复就立刻把会话标成已读，而消息发现有几十秒延迟，对方紧接着发的第二句到达时可能已经跨过已读窗口，被判成「已读」并写成终态，永远不会补回。</p>
+    <p>现在改成回复成功发出后<strong>延迟 120 秒</strong>再标已读；同会话里再回一次会取消旧计时重新算，发送失败或被门控拦下则完全不标。想调就用 <code>poller.mark_read_delay_seconds</code>，设 0 恢复旧行为。</p>
+
+    <h2>顺带修的</h2>
+    <p>此前出站防护往连接池管理器塞了一个 <code>urllib3</code> 不认识的参数，参数残留后被加工成 <code>PoolKey</code> 不认的字段，<strong>每一次真正发起网络请求都会抛错</strong>——天气、搜索、网页抓取整批不可用。现已修好，并补上了此前空转的「固定目标 IP、防 DNS 重绑定」保护。如果你的环境是用 <code>requirements.txt</code> 装的，建议按锁文件重装一次依赖。</p>
+    <p>管理台「模拟测试」里点历史记录，内容和发送人变成字面量 <code>undefined</code>：原因是先 HTML 转义再手工拼 JSON，引号或换行会把结构破坏。改为先序列化再统一转义，技能管理、知识库文档列表等处一并修正。</p>
+
+    <h2>升级注意</h2>
+    <p>无数据迁移、无破坏性配置变更，<strong>不需要补工具白名单</strong>（这版没加新工具，还是 49 个）。拉代码重启即可，<code>config.yaml</code> 零改动。</p>
+    <p>唯一可能想调的是新增的已读延迟：默认 120 秒，不喜欢就在 <code>poller.mark_read_delay_seconds</code> 改。</p>
+
+    <h2>验证</h2>
+    <p>ruff 全路径通过；pyright 零错误；依赖一致性、宽异常基线（638 / 静默 22）、SSRF 出站门禁、gitleaks、前端清单与构建门禁全绿。受影响回归 <strong>837 个用例全过</strong>；CI 四个 job、CodeQL、Pages 全部 success，开放告警 0。</p>
+    <p>这次依旧做了变异测试：把生产代码里 6 处关键判断分别改坏，新写的回归测试全部变红，改完按字节还原。「测试通过」不等于「测试有效」，这一步我每次都会自己验。</p>
+
+    <h2>延伸阅读</h2>
+    <ul>
+      <li><a href="https://github.com/0x0021/Linkora/blob/main/docs/CHANGELOG.md" target="_blank" rel="noopener">完整变更日志（CHANGELOG）</a>——本次全部变更条目</li>
+      <li><a href="https://github.com/0x0021/Linkora/releases/tag/v0.8.3" target="_blank" rel="noopener">GitHub Release v0.8.3</a></li>
+      <li><a href="https://github.com/0x0021/Linkora" target="_blank" rel="noopener">项目源码</a>——<a href="https://github.com/0x0021" target="_blank" rel="noopener">GitHub</a></li>
+    </ul>
+  </article>
+  <footer class="post-footer">
+    <a class="post-back" href="../index.html">← 返回博客</a>
+  </footer>
+</main>
+<script src="../assets/main.js"></script>
+</body>
+</html>

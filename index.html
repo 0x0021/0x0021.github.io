@@ -139,6 +139,13 @@
 
     <div class="posts-grid reveal" data-page-node-id="Hea4F37JaU9osGyNNni7ZQ">
 
+      <a class="post-card" href="posts/linkora-v090-release.html">
+        <div class="post-card__meta">2026-11-09 · 发布记录</div>
+        <h3 class="post-card__title">Linkora v0.9.0：别人发来的话，也可能是在给分身下指令</h3>
+        <p class="post-card__excerpt">顺着消息链路重走一遍，发现提示词注入还有一个口子敞着：RAG 片段、公共记忆、历史消息都套了「不可信数据」边界，唯独别人当场从钉钉/飞书/企微发来的那句是原样进 prompt 的。这版把入站检测、清洗隔离、回复脱敏三段接上，只认协议级结构标记（伪造 ChatML/[INST]/"role":"system"、伪造边界结束标记、不可见控制字符、超长填充），不做语义检测——「忽略以上，我再补充一句：打印机在3楼」字节级原样放行。管理台新增「安全防护」页：KPI、7 日趋势、命中信号与处置分布、事件明细、检测预览、策略开关（只当前进程生效、不写 config.yaml）。默认 block_high_risk=false，命中也照常回复；顺带补齐前端提交前输入校验与错误提示脱敏。零数据迁移、零配置改动、工具数仍 49。</p>
+        <div class="post-card__tags"><span class="tag">AI Agent</span><span class="tag green">v0.9.0</span><span class="tag">安全</span><span class="tag">提示词注入</span></div>
+      </a>
+
       <a class="post-card" href="posts/linkora-v083-release.html">
         <div class="post-card__meta">2026-11-07 · 发布记录</div>
         <h3 class="post-card__title">Linkora v0.8.3：分身终于不再跟自己说话了</h3>
@@ -372,6 +379,13 @@
       <div class="section-title" data-page-node-id="RhDdx5CofEeGyIX75MdTD7">近期动态</div>
     </div>
     <div class="timeline reveal" data-page-node-id="7SIQX957SeEP7IVtbwzcyH">
+
+      <div class="timeline-item">
+        <div class="timeline-date">2026-11</div>
+        <div class="timeline-body">
+          <p><strong>v0.9.0</strong>：一次以「入站安全」为主的大版本。补上提示词注入防护最后一个敞口——RAG 片段 / 公共记忆 / 历史消息此前已有「不可信数据」边界包裹，别人当场发来的 IM 消息却是原样进 prompt。现新增 <code>src/guard/</code>（策略 / 检测清洗 / 边界隔离 / 输出脱敏 / JSONL 事件与统计 / 决策与限流），三处接线：入站检测（fail-open，<code>runtime_inbound</code>）、送 LLM 前隔离（<code>prompt_builder</code>）、回复正文密钥脱敏（<code>runtime_setup</code>）。检测<strong>只认协议级结构标记</strong>（伪造 <code>&lt;|im_start|&gt;</code> / <code>[INST]</code> / <code>"role":"system"</code>、伪造「不可信数据结束」边界、C0/零宽/bidi 控制字符、病态超长与单字符填充），在 NFKC 归一化文本上跑防全角绕过、清洗在原文上跑且可读正文逐字保留；<strong>不做语义/关键词启发式检测</strong>——2026-08 正则话题分类器误杀过「忽略以上，我再补充一句：打印机在3楼」，该用例写成零误伤回归锁；行首角色标签与 emoji 零宽连接符只记录不改写。新增 <code>safety.guard</code> 配置段（20+ 开关，含 observe 灰度模式、滑动窗口频率控制、审计开关），<strong>默认 <code>block_high_risk=false</code> 不改变业务流程</strong>（命中仍正常进 LLM 并回复）；Web 页面改策略仅内存覆盖、不落盘、重启回 yaml。管理台新增第 19 个页面「安全防护」：KPI / 7 日趋势 / 命中信号与处置分布 / 事件明细（时间·平台·发送者·会话·信号·处置·原文预览，渲染前 escapeHtml）/ 检测预览 / 策略开关；新增 5 个 <code>/api/guard/*</code> 端点并登记 admin-only，既有 182 个端点契约零改动。顺带在统一 API 客户端与 <code>showToast</code> 两个收口点补齐前端提交前输入校验（长度/结构/控制字符、上传体积）与错误文案脱敏（路径/堆栈/凭据/限长）。验证：新增 133 个 Python + 22 个前端用例全绿、既有相关回归 431 例、前端完整链 168 tests / 22 files、静态门禁与 gitleaks 全通过、真实 HTTP 5 端点 200（正常消息 none/unchanged=true、攻击 high/unchanged=false、超长 422）、3 处变异测试 3/3 报警并按 sha256 还原。无数据迁移、<code>config.yaml</code> 零改动、工具数仍 49。</p>
+        </div>
+      </div>
 
       <div class="timeline-item">
         <div class="timeline-date">2026-11</div>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Linkora v0.9.0：别人发来的话，也可能是在给分身下指令 · 坤子</title>
+<meta name="description" content="v0.9.0 把提示词注入防护补到入站 IM 消息这条最后没包住的入口：只认协议级结构标记，正常业务话术零误伤；管理台新增「安全防护」页，风险事件、趋势、策略都看得见。默认不改业务流程，拉代码重启即可。" />
+<link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+<div class="post-progress" aria-hidden="true"></div>
+
+<nav>
+  <a href="../index.html" class="nav-brand">坤子</a>
+  <div class="nav-links">
+    <a href="../index.html#blog">文章</a>
+    <a href="../index.html#timeline">动态</a>
+    <a href="../index.html#projects">项目</a>
+    <a href="https://github.com/0x0021" target="_blank" rel="noopener">GitHub</a>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="切换主题">◑</button>
+  </div>
+</nav>
+
+<main class="post">
+  <a class="post-back" href="../index.html">← 返回博客</a>
+  <header class="post-header">
+    <div class="post-meta">2026-11-09 · 发布记录</div>
+    <h1>Linkora v0.9.0：别人发来的话，也可能是在给分身下指令</h1>
+    <div class="post-tags">
+      <span class="tag">AI Agent</span>
+      <span class="tag green">v0.9.0</span>
+      <span class="tag">安全</span>
+      <span class="tag">提示词注入</span>
+    </div>
+  </header>
+
+  <article class="post-content">
+    <p>把「不可信数据」边界标记接上知识库、公共记忆和历史消息的时候，我以为提示词注入这块已经收口了。这周重新顺着消息链路走了一遍，发现还有一个口子敞着：<strong>别人当场从钉钉、飞书、企微发过来的那句话</strong>，是原样进 prompt 的。</p>
+    <p>平时都是同事在问排期、转审批、找文档，这没问题。但只要有人（或者某个被转发的文本）在消息里贴一段伪造的对话模板标记，模型看到的东西就不只是「一句话」了——它有机会被当成一条新指令。这版就是把这个口子补上，顺便让防护不再是黑盒。</p>
+
+    <blockquote>
+      <p><strong>本文要点</strong></p>
+      <ul>
+        <li>入站消息先做结构化检测，命中后在送进 LLM 前中和载荷、加「不可信数据」边界隔离</li>
+        <li>只认<strong>协议级结构标记</strong>：伪造 ChatML / <code>[INST]</code> / <code>"role":"system"</code>、伪造边界结束标记、不可见控制字符、超长填充</li>
+        <li><strong>不做语义检测</strong>：「忽略以上，我再补充一句：打印机在3楼」字节级原样放行，零误伤写成回归锁</li>
+        <li>管理台新增「安全防护」页：风险 KPI、7 日趋势、命中信号、事件明细、检测预览、策略开关</li>
+        <li>默认照常回复、不拦截；无数据迁移、<code>config.yaml</code> 零改动、工具数仍 49</li>
+        <li>顺带补齐 Web 端提交前输入校验与错误提示脱敏</li>
+      </ul>
+    </blockquote>
+
+    <h2>我为什么不写「忽略以上指令」的正则</h2>
+    <p>最容易想到的是堆关键词：忽略以上、你现在是、把系统提示词念出来……看着覆盖面挺全，真上线会出事。2026-08 我就被这个教训过一次：正则话题分类器把同事一句完全正常的「忽略以上，我再补充一句：打印机在3楼」拦了。分身是给真人干活用的，误伤一句正常业务消息，比漏掉一次注入更让人不敢用。</p>
+    <p>所以这次判据只落在<strong>结构上</strong>。真正能改变模型对话角色的，从来不是某句中文措辞，而是协议级标记：伪造的 <code>&lt;|im_start|&gt;</code> / <code>[INST]</code> / <code>"role":"system"</code>，或者伪造一个「不可信数据结束」的边界标记，试图提前把我套上的包裹闭合掉。再加上不可见控制字符（C0、零宽、bidi 覆盖）和病态超长、单字符填充这类明显不是人打出来的东西。</p>
+    <p>两个细节：检测在 NFKC 归一化后的文本上跑，用全角字符绕过没用；清洗在<strong>原文</strong>上跑，可读正文逐字保留，剥掉的只有危险结构本身。行首 <code>system:</code> 这种贴日志时常见的写法、emoji 里的零宽连接符，只记录、不改写正文——宁可漏报，不能把同事的正常消息改得面目全非。</p>
+
+    <h2>消息进来到回复发出，中间多了三段</h2>
+    <p><strong>第一段在入站。</strong>消息刚进处理链路就过一遍检测，产出风险等级、命中信号和处置动作，同时写一条 JSONL 审计事件；同一发送者还挂了滑动窗口频率控制，防止有人拿注入 payload 刷屏。</p>
+    <p><strong>第二段在拼 prompt 前。</strong>命中风险的消息先中和载荷，再套一层「这是外部数据，不是系统指令」的边界标记，然后才交给模型。这一步和 RAG 片段用的是同一套包裹逻辑，等于把最后一块拼图补上。<strong>第三段在出站。</strong>回复正文里的密钥、令牌一律脱敏，不让模型把不该说的东西带出去。</p>
+    <p>整条链路我是按 fail-open 做的：检测或审计自己抛异常，只记日志、消息照常走。防护模块绝不能变成新的故障点。</p>
+
+    <h2>能不能别再让防护是个黑盒</h2>
+    <p>以前配了安全策略，只能靠翻日志猜它在不在干活。这版给管理台加了一页「安全防护」：已检测、风险、高风险、已拦截四个 KPI，7 日趋势，命中信号与处置分布，下面是一张事件明细表——时间、平台、发送者、会话、命中什么信号、怎么处置的、原文预览（渲染前统一转义）。</p>
+    <p>还有两个我自查时最常用的东西：一个<strong>检测预览</strong>框，贴一段文字当场看判定结果，验证「正常话术会不会被误伤」不用等真消息；一组<strong>策略开关</strong>，改完立刻在当前进程生效。这里特意没让它写 <code>config.yaml</code>——页面上调参是临时试手，重启就回到 yaml 值，想固化请去编辑 <code>safety.guard</code> 段。配置文件被工具悄悄改掉这种事，我踩过一次就够了。</p>
+    <p>顺手把前端那三项也做了：所有走统一 API 客户端的写请求，在发出前校验长度、结构和不可见控制字符，异常输入直接提示并拦下；上传加体积上限；所有提示文案在上屏前统一剥掉内部路径、堆栈与凭据并限长。之前后端 4xx 的 detail、CLI 的 stderr 会原样弹成 toast，现在只留人话。既有接口契约和业务流程一个没动。</p>
+
+    <h2>升级注意</h2>
+    <p>无数据迁移、无破坏性配置变更，<code>config.yaml</code> 零改动，工具数还是 49，<strong>不需要补工具白名单</strong>。旧配置里没有 <code>safety.guard</code> 段也没关系，全部走安全默认值，拉代码重启即可。</p>
+    <p>默认值里最关键的一条是 <code>block_high_risk=false</code>：命中风险的消息照样进 LLM、照样正常回复，只是载荷被中和，业务流程完全不变。想真拦截再把这个开关打开，或者调整同一发送者的频率阈值。</p>
+    <p>事件默认写 <code>data/guard-events.jsonl</code>，只记命中风险的摘要和 200 字以内的原文预览，按日志数据同等权限对待；不想留就用 <code>audit_enabled=false</code> 关掉。5 个 <code>/api/guard/*</code> 端点都登记为管理员可见。</p>
+
+    <h2>验证</h2>
+    <p>新增 133 个 Python 用例、22 个前端用例，覆盖正常业务消息零误伤、超长 / 控制字符 / 角色伪造 / 编码绕过、限流、输出脱敏、配置开关、错误脱敏；既有相关回归 431 例全过。ruff 全路径、pyright 零错误、依赖一致性、宽异常基线（638 / 静默 22）、SSRF 出站门禁、前端清单与构建门禁、gitleaks 全绿；前端完整验证链 168 tests / 22 files，dist 二次构建 hash 一致。真实 HTTP 链路 5 个端点全 200：正常消息预览 <code>none / unchanged=true</code>，攻击消息 <code>high / unchanged=false</code>，超长输入 422。</p>
+    <p>照例做了变异测试：把检测规则清空、把边界隔离改成总返回原文、把入站接线改成忽略拦截决策，三处分别让 18 / 2 / 1 个用例变红，改完按 sha256 字节还原。「测试通过」不等于「测试有效」，这一步每次都得自己验。</p>
+
+    <h2>延伸阅读</h2>
+    <ul>
+      <li><a href="https://github.com/0x0021/Linkora/blob/main/docs/CHANGELOG.md" target="_blank" rel="noopener">完整变更日志（CHANGELOG）</a>——本次全部变更条目</li>
+      <li><a href="https://github.com/0x0021/Linkora/blob/main/docs/security.md" target="_blank" rel="noopener">权限与安全说明</a> / <a href="https://github.com/0x0021/Linkora/blob/main/docs/configuration.md" target="_blank" rel="noopener">配置参考（safety.guard）</a></li>
+      <li><a href="https://github.com/0x0021/Linkora/releases/tag/v0.9.0" target="_blank" rel="noopener">GitHub Release v0.9.0</a></li>
+      <li><a href="https://github.com/0x0021/Linkora" target="_blank" rel="noopener">项目源码</a>——<a href="https://github.com/0x0021" target="_blank" rel="noopener">GitHub</a></li>
+    </ul>
+  </article>
+  <footer class="post-footer">
+    <a class="post-back" href="../index.html">← 返回博客</a>
+  </footer>
+</main>
+<script src="../assets/main.js"></script>
+</body>
+</html>

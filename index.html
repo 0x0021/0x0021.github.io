@@ -139,6 +139,13 @@
 
     <div class="posts-grid reveal" data-page-node-id="Hea4F37JaU9osGyNNni7ZQ">
 
+      <a class="post-card" href="posts/linkora-v091-release.html">
+        <div class="post-card__meta">2026-11-10 · 发布记录</div>
+        <h3 class="post-card__title">Linkora v0.9.1：自然语言越狱模板也拦住了</h3>
+        <p class="post-card__excerpt">v0.9.0 只认协议级结构标记，纯中文写的越狱模板漏检。这版新增第二层检测：把攻击拆成 5 类意图部件、要求至少 3 类共现才判高风险；确证攻击默认整条拦截，正常消息零误伤不变。无数据迁移、config.yaml 零改动。</p>
+        <div class="post-card__tags"><span class="tag">AI Agent</span><span class="tag green">v0.9.1</span><span class="tag">安全</span><span class="tag">提示词注入</span><span class="tag">修复</span></div>
+      </a>
+
       <a class="post-card" href="posts/linkora-v090-release.html">
         <div class="post-card__meta">2026-11-09 · 发布记录</div>
         <h3 class="post-card__title">Linkora v0.9.0：别人发来的话，也可能是在给分身下指令</h3>
@@ -379,6 +386,13 @@
       <div class="section-title" data-page-node-id="RhDdx5CofEeGyIX75MdTD7">近期动态</div>
     </div>
     <div class="timeline reveal" data-page-node-id="7SIQX957SeEP7IVtbwzcyH">
+
+      <div class="timeline-item">
+        <div class="timeline-date">2026-11</div>
+        <div class="timeline-body">
+          <p><strong>v0.9.1</strong>：针对 v0.9.0 入站防护的补丁。v0.9.0 只认协议级结构标记，纯自然语言写出的完整越狱模板被判「无风险」原样进 LLM——实打实的漏检。现新增 <code>src/guard/commands.py</code>：把越狱模板拆成 5 类独立意图部件（覆盖系统指令 / 重定义身份 / 索取系统提示 / 强制无条件执行 / 攻击性输出要求），只匹配语义完整短语且要求至少 3 类共现才判高风险；孤立措辞永不判风险，「忽略以上，我再补充一句：打印机在3楼」等正常消息仍字节级原样放行。处置判定抽成 <code>decide_action()</code> 单一真源，预览与实际入站链路共用；确证的多部件越权指令默认整条拦截（<code>block_injection_commands=true</code>，不进 LLM），结构标记类命中仍维持清洗 + 边界隔离、照常回复；<code>mode=observe</code> 可整体降级为纯观测。新增 3 个 <code>safety.guard</code> 字段走默认值，无数据迁移、<code>config.yaml</code> 零改动。验证：新增 <code>test_guard_commands.py</code> 与 4 处变异测试全报警并按 sha256 还原、全量 pytest 通过、真实 HTTP 链路确认攻击样本 <code>would_block=true</code>。</p>
+        </div>
+      </div>
 
       <div class="timeline-item">
         <div class="timeline-date">2026-11</div>

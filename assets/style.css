@@ -494,6 +494,53 @@ footer a:hover { text-decoration: underline; }
   font-size: 0.9rem;
 }
 
+/* ── 文章分页 ── */
+.post-pagination {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+.post-pagination[hidden] { display: none; }
+.post-page-btn {
+  min-width: 2.1rem;
+  padding: 0.4rem 0.7rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-sec);
+  font-size: 0.82rem;
+  font-family: var(--font);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.post-page-btn:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); }
+.post-page-btn--active {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+  font-weight: 600;
+}
+.post-page-btn--disabled { opacity: 0.4; cursor: not-allowed; }
+
+/* ── 近期动态：折叠较早条目 ── */
+.timeline-item--collapsed { display: none; }
+.timeline-toggle-wrap { display: flex; justify-content: center; margin-top: 1.5rem; }
+.timeline-toggle {
+  padding: 0.55rem 1.2rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-hi);
+  background: var(--surface);
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-weight: 500;
+  font-family: var(--font);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.timeline-toggle:hover { border-color: var(--accent); background: var(--accent-dim); }
+
 /* ── To top (带进度环的回到顶部) ── */
 .to-top {
   position: fixed;

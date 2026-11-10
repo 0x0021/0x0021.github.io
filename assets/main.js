@@ -147,7 +147,7 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
   if (toTop) toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 })();
 
-// ── 文章搜索 + 标签筛选 ──
+// ── 文章搜索 + 标签筛选 + 分页 ──
 (function () {
   const grid = document.querySelector('.posts-grid');
   if (!grid) return;
@@ -155,8 +155,12 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
   const chipsWrap = document.getElementById('postChips');
   const count = document.getElementById('postCount');
   const empty = document.getElementById('postEmpty');
+  const pager = document.getElementById('postPager');
   const cards = Array.from(grid.querySelectorAll('.post-card'));
+  const PAGE_SIZE = 9;
   let activeTag = 'all';
+  let currentPage = 1;
+  let filtered = cards.slice();
   const norm = s => (s || '').toLowerCase().trim();
 
   // 从卡片标签动态生成筛选 chips（排除版本号标签）
@@ -196,20 +200,73 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
     const tags = Array.from(c.querySelectorAll('.post-card__tags .tag')).map(x => x.textContent).join(' ');
     return { hay: norm(t + ' ' + e), tags: norm(tags) };
   }
-  function apply() {
+
+  function computeFiltered() {
     const q = norm(search ? search.value : '');
-    let shown = 0;
-    cards.forEach(c => {
+    filtered = cards.filter(c => {
       const { hay, tags } = cardData(c);
       const matchQ = !q || hay.includes(q);
       const matchTag = activeTag === 'all' || tags.includes(norm(activeTag));
-      const ok = matchQ && matchTag;
-      c.style.display = ok ? '' : 'none';
-      if (ok) shown++;
+      return matchQ && matchTag;
     });
-    if (count) count.textContent = `共 ${shown} 篇`;
-    if (empty) empty.hidden = shown !== 0;
   }
+
+  function mkBtn(label, opts = {}) {
+    const b = document.createElement('button');
+    b.className = 'post-page-btn'
+      + (opts.active ? ' post-page-btn--active' : '')
+      + (opts.disabled ? ' post-page-btn--disabled' : '');
+    b.textContent = label;
+    if (opts.disabled) b.disabled = true;
+    return b;
+  }
+
+  function renderPager(totalPages) {
+    if (!pager) return;
+    pager.innerHTML = '';
+    if (totalPages <= 1) { pager.hidden = true; return; }
+    pager.hidden = false;
+    const prev = mkBtn('上一页', { disabled: currentPage === 1 });
+    prev.addEventListener('click', () => {
+      if (currentPage > 1) { currentPage--; render(); scrollToGridTop(); }
+    });
+    pager.appendChild(prev);
+    for (let p = 1; p <= totalPages; p++) {
+      const b = mkBtn(String(p), { active: p === currentPage });
+      b.addEventListener('click', () => { currentPage = p; render(); scrollToGridTop(); });
+      pager.appendChild(b);
+    }
+    const next = mkBtn('下一页', { disabled: currentPage === totalPages });
+    next.addEventListener('click', () => {
+      if (currentPage < totalPages) { currentPage++; render(); scrollToGridTop(); }
+    });
+    pager.appendChild(next);
+  }
+
+  function scrollToGridTop() {
+    const top = grid.getBoundingClientRect().top + window.scrollY - 90;
+    window.scrollTo({ top, behavior: 'smooth' });
+  }
+
+  function render() {
+    const total = filtered.length;
+    const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));
+    if (currentPage > totalPages) currentPage = totalPages;
+    const start = (currentPage - 1) * PAGE_SIZE;
+    const end = start + PAGE_SIZE;
+    cards.forEach(c => { c.style.display = 'none'; });
+    filtered.forEach((c, i) => { c.style.display = (i >= start && i < end) ? '' : 'none'; });
+    if (count) count.textContent = `共 ${total} 篇`;
+    if (empty) empty.hidden = total !== 0;
+    renderPager(totalPages);
+  }
+
+  function apply() {
+    computeFiltered();
+    currentPage = 1;
+    render();
+  }
+
   if (search) search.addEventListener('input', apply);
   if (chipsWrap) chipsWrap.addEventListener('click', (e) => {
     const btn = e.target.closest('.chip');
@@ -220,6 +277,29 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
     apply();
   });
   apply();
+})();
+
+// ── 近期动态：折叠较早条目，默认只显示最近若干条 ──
+(function () {
+  const tl = document.querySelector('.timeline');
+  if (!tl) return;
+  const btn = document.getElementById('timelineToggle');
+  const items = Array.from(tl.querySelectorAll('.timeline-item'));
+  const VISIBLE = 5;
+  if (items.length <= VISIBLE) { if (btn) btn.hidden = true; return; }
+  let expanded = false;
+  function setExpanded(on) {
+    expanded = on;
+    items.forEach((it, i) => {
+      if (i >= VISIBLE) it.classList.toggle('timeline-item--collapsed', !on);
+    });
+    if (btn) {
+      btn.textContent = on ? '收起较早的动态' : '查看更早的动态';
+      btn.setAttribute('aria-expanded', String(on));
+    }
+  }
+  setExpanded(false);
+  if (btn) btn.addEventListener('click', () => setExpanded(!expanded));
 })();
 
 // ── 移动端底部导航：回顶按钮（保留兼容，实际触发由更多面板处理）──

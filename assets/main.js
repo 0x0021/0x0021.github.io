@@ -1,14 +1,6 @@
 // ── Theme ──
-(function () {
-  const stored = localStorage.getItem('kp-theme');
-  if (stored === 'light') document.documentElement.setAttribute('data-theme', 'light');
-})();
-function toggleTheme() {
-  const html = document.documentElement;
-  const next = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
-  html.setAttribute('data-theme', next === 'light' ? 'light' : '');
-  localStorage.setItem('kp-theme', next);
-}
+// 主题由 <head> 同步加载的 assets/theme.js 统一驱动（自动 / 亮色 / 暗色三态），
+// 全局 toggleTheme() 也定义在那个脚本里，本文件不再重复实现。
 
 // ── Scroll reveal ──
 const io = new IntersectionObserver((entries) => {
@@ -281,21 +273,7 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && sheet.classList.contains('show')) close();
   });
-
-  // 同步主题按钮文案（☾=暗 / ☀=亮）
-  function syncThemeHint() {
-    const isLight = document.documentElement.getAttribute('data-theme') === 'light';
-    const icon = document.getElementById('sheetThemeIcon');
-    const label = document.getElementById('sheetThemeLabel');
-    const hint = document.getElementById('sheetThemeHint');
-    if (icon) icon.textContent = isLight ? '☀' : '☾';
-    if (label) label.textContent = isLight ? '切换到深色' : '切换到浅色';
-    if (hint) hint.textContent = isLight ? 'LIGHT' : 'DARK';
-  }
-  syncThemeHint();
-  new MutationObserver(syncThemeHint).observe(document.documentElement, {
-    attributes: true, attributeFilter: ['data-theme'],
-  });
+  // 主题项文案由 theme.js 的 syncUI 统一维护（三态），此处不再重复。
 })();
 
 // ── 文章侧边浮动目录（自动从 h2 生成，类 Markdown [TOC]，高亮当前章节）──

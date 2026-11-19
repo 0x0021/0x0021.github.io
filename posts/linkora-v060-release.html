@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Linkora v0.6.0：修启动卡死、决策追踪排序与安全加固 · 坤子</title>
 <meta name="description" content="v0.6.0 修复「启动卡在步骤 4/8」的真凶（离线配置误走同步加载）、首页决策追踪取到最旧而非最新消息；安全侧新增关闭鉴权时的 fail-closed、管理口令从明文升级为 PBKDF2 哈希、消除 3 条 urllib3 依赖告警；性能侧消除每次回复最多 400 次查询的 N+1。" />
+<script src="../assets/theme.js"></script>
 <link rel="stylesheet" href="../assets/style.css" />
 </head>
 <body>
@@ -17,7 +18,7 @@
     <a href="../index.html#timeline">动态</a>
     <a href="../index.html#projects">项目</a>
     <a href="https://github.com/0x0021" target="_blank" rel="noopener">GitHub</a>
-    <button class="theme-toggle" onclick="toggleTheme()" aria-label="切换主题">◑</button>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="主题：自动（点击切到亮色）" title="主题：自动（点击切到亮色）">◐</button>
   </div>
 </nav>
 

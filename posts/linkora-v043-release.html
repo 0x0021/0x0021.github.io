@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Linkora v0.4.3：对话摘要页重构与稳定性修复 · 坤子</title>
 <meta name="description" content="v0.4.3 把对话摘要页从纯文本改造成结构化卡片，修复 get_store_dep 关闭全局单例导致 metrics 偶发 500 的隐性 bug。" />
+<script src="../assets/theme.js"></script>
 <link rel="stylesheet" href="../assets/style.css" />
 </head>
 <body>
@@ -17,7 +18,7 @@
     <a href="../index.html#timeline">动态</a>
     <a href="../index.html#projects">项目</a>
     <a href="https://github.com/0x0021" target="_blank" rel="noopener">GitHub</a>
-    <button class="theme-toggle" onclick="toggleTheme()" aria-label="切换主题">◑</button>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="主题：自动（点击切到亮色）" title="主题：自动（点击切到亮色）">◐</button>
   </div>
 </nav>
 

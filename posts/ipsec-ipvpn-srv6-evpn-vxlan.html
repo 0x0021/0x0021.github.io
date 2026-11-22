@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-home="1">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#080c0b" />
+<title>一张图拆开五层分布式组网：IPsec / IPVPN / SRv6 TE / EVPN / VXLAN · 坤子</title>
+<meta name="description" content="按原图逐层拆解 IPsec over IPVPN over SRv6 TE Flow Group over EVPN over VXLAN 分布式战法：五层分工、节点层级、请求与数据流向、IPsec 四个插入位置、安全与部署边界。图中明示与推断逐条标注，原图随文附上。" />
+<script src="../assets/theme.js"></script>
+<link rel="stylesheet" href="../assets/style.css" />
+<link rel="stylesheet" href="../assets/terminal.css" />
+</head>
+<body class="site-home">
+<div class="post-progress" aria-hidden="true"></div>
+
+<nav>
+  <a href="../index.html" class="nav-brand">0x0021 <span aria-hidden="true">/ 坤子</span></a>
+  <div class="nav-links">
+    <a href="../index.html#blog" aria-label="文章">posts</a>
+    <a href="../index.html#timeline" aria-label="动态">log</a>
+    <a href="../index.html#projects" aria-label="项目">projects</a>
+    <a href="https://github.com/0x0021" target="_blank" rel="noopener">github</a>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="主题：深色（点击切到亮色）" title="主题：深色（点击切到亮色）">◐</button>
+  </div>
+</nav>
+
+<main class="post">
+  <a class="post-back" href="../index.html">← 返回博客</a>
+  <header class="post-header">
+    <div class="post-meta">2026-11-22 · 技术图解</div>
+    <h1>一张图拆开五层分布式组网：IPsec / IPVPN / SRv6 TE / EVPN / VXLAN</h1>
+    <div class="post-tags">
+      <span class="tag green">技术图解</span>
+      <span class="tag">网络架构</span>
+      <span class="tag">SRv6</span>
+      <span class="tag">EVPN / VXLAN</span>
+      <span class="tag">IPsec</span>
+    </div>
+  </header>
+
+  <article class="post-content">
+    <p>这张图的标题已经把结论写出来了：IPSEC over IPVPN over SRv6 TE Flow Group over EVPN over VXLAN 分布式战法。副标题给的分工是——SRv6 做智能调度中枢，EVPN + VXLAN 构建跨二层与多租户，IPVPN 提供底层承载，IPsec 按需插入提供加密。我按图从上到下拆一遍，原图放在下面，随文一起发布。</p>
+    <p>先立个规矩：凡是图上写了的，我标成<strong>图中明示</strong>；凡是我根据分层位置和连线推出来的，一律标成<strong>推断</strong>。图里没画的东西，我不补。</p>
+
+    <figure class="post-figure">
+      <a class="post-figure__link" href="../assets/cover/network-ipsec-srv6-evpn-vxlan.jpg" target="_blank" rel="noopener" aria-label="点击查看原图">
+        <img src="../assets/cover/network-ipsec-srv6-evpn-vxlan.jpg" alt="IPSEC over IPVPN over SRv6 TE Flow Group over EVPN over VXLAN 分布式战法架构图" loading="lazy" />
+      </a>
+      <figcaption>图 1｜原图（未做标注修改，点击可放大查看）。自上而下为 IPVPN、SRv6 TE Flow Group、EVPN、VXLAN 四层云形分层；左右为站点 A / B（园区 / 数据中心），下方为站点 C（分支 / 边缘）；绿色虚线为按需插入的 IPsec。右侧列出 IPsec 可插入的四个位置示例，底部是五个组件卡片与关键点。</figcaption>
+    </figure>
+
+    <blockquote>
+      <p><strong>本文要点</strong></p>
+      <ul>
+        <li><strong>图中明示</strong>：四层叠加——IPVPN（基础承载）、SRv6 TE Flow Group（流量工程 / 智能调度）、EVPN（控制平面）、VXLAN（数据平面）；IPsec 是可选安全层，按需插入。</li>
+        <li><strong>图中明示</strong>：SRv6 决定「怎么走」，VXLAN 决定「怎么连」——前者靠 SID + Flow Group 做智能选路与流量调度，后者靠 VNI + EVPN 做跨站点二层延伸与多租户隔离。</li>
+        <li><strong>图中明示</strong>：IPsec 可插在站点到站点、业务专线、接入层、特定业务四类位置，与 SRv6 / VXLAN / EVPN 兼容，不改变原有架构。</li>
+        <li><strong>推断</strong>：图中连线没有箭头，请求与数据的具体方向是按分层位置推出来的，见第四节。</li>
+        <li><strong>推断</strong>：图中未展示密钥管理、MTU、故障切换、可观测性等内容，本文不对这些能力下结论。</li>
+      </ul>
+    </blockquote>
+
+    <h2>一、整体：四层各管一段，安全层单独插</h2>
+    <p>图的标题本身就是一条叠加公式：IPsec over IPVPN over SRv6 TE Flow Group over EVPN over VXLAN。自上而下的云形框依次是（<strong>图中明示</strong>）：</p>
+    <ul>
+      <li><strong>IPVPN</strong>（运营商 / 企业专线）——标注 MPLS / L3VPN / 互联网 / 专线</li>
+      <li><strong>SRv6 TE Flow Group</strong>（流量工程）——基于 SRv6 SID 的智能调度 · Flow Group 多路径 / 负载分担 · 精细化业务保障</li>
+      <li><strong>EVPN</strong>（控制平面）——MAC/IP 学习 · 路由发布 · 跨站点二层延伸 · 多租户隔离</li>
+      <li><strong>VXLAN</strong>（数据平面）——VN 隔离 · 二层延伸 · 跨站点隧道 · 多租户</li>
+    </ul>
+    <p>两端站点 A、B 标为「园区 / 数据中心」，各挂着 Tenant A（办公）与 Tenant B（业务），站点 B 还多一个 Tenant C（研发），每个租户下面是 PC / 服务器；下方单独一个站点 C，标为「分支 / 边缘」，挂着 PC / 服务器 / 设备。VTEP 标为「接入 / 汇聚」，PE / 网关标了 SRv6（<strong>图中明示</strong>）。</p>
+    <p>我的读法：这四层不是并列关系，而是各管一段——承载、调度、控制、数据。IPsec 不在这四层里，图例把它写成「可选 / 按需插入」，是叠在链路上的一层安全壳。</p>
+
+    <h2>二、五个组件各自的角色</h2>
+
+    <h3>IPVPN（基础承载）</h3>
+    <p>图中卡片写的是：提供站点间的三层互联能力；可基于 MPLS L3VPN、企业 IP VPN、或运营商专线 / 互联网；承载 SRv6 与 EVPN；保障基础连通性和路由可达。关键点一栏写「作为底座，承载 SRv6 和 EVPN 的所有流量，保证全网互联」（<strong>图中明示</strong>）。</p>
+
+    <h3>SRv6 TE Flow Group（智能调度）</h3>
+    <p>图中卡片：以 SRv6 SID 组成的 TE 隧道；通过 Flow Group 实现多路径 / 负载分担；依据业务、时延、带宽等策略灵活选路。关键点：「让每类业务走最优路径，支持动态调整和精细化流量调度」（<strong>图中明示</strong>）。</p>
+
+    <h3>EVPN（控制平面）</h3>
+    <p>图中卡片：负责 MAC/IP 学习与路由发布；实现跨站点二层延伸；多租户隔离，支持大规模组网。关键点：「让不同站点的同一二层网络像一张网，业务无感知迁移」（<strong>图中明示</strong>）。</p>
+
+    <h3>VXLAN（数据平面）</h3>
+    <p>图中卡片：通过 VNI 隔离不同租户 / 业务；承载二层流量，跨站点互通；与 EVPN 联动，按需学习 / 转发。关键点：「在 IP 网络上实现二层延伸，是多租户和分布式的核心数据面」（<strong>图中明示</strong>）。</p>
+
+    <h3>IPsec（可插入）</h3>
+    <p>图中卡片：在任意链路 / 隧道上按需加密；支持站点 / 业务 / 设备 / 用户级策略；与 SRv6、VXLAN、EVPN 兼容。关键点：「灵活插入、不改变原有架构，只增加安全保护层」（<strong>图中明示</strong>）。图例里 IPsec 对应绿色虚线，写着「可选 / 按需插入」，所以它不是必选层。</p>
+
+    <h2>三、节点与层级：谁挂在哪一层</h2>
+    <p>按图里的位置关系：</p>
+    <ul>
+      <li><strong>租户侧</strong>：站点 A / B 的 Tenant A（办公）、Tenant B（业务），站点 B 额外有 Tenant C（研发），下面是 PC / 服务器；站点 C 是分支 / 边缘，下面是 PC / 服务器 / 设备。（<strong>图中明示</strong>）</li>
+      <li><strong>站点接入</strong>：VTEP 标为「接入 / 汇聚」，画在站点与隧道之间。（<strong>图中明示</strong>）</li>
+      <li><strong>网络侧</strong>：PE / 网关（SRv6）出现在 SRv6 TE Flow Group 那一层。（<strong>图中明示</strong>）</li>
+      <li><strong>云形分层顺序</strong>：自上而下 IPVPN → SRv6 TE → EVPN → VXLAN。（<strong>图中明示</strong>）</li>
+    </ul>
+    <p><strong>推断</strong>：从上下位置看，VTEP 更像 VXLAN / EVPN 一侧的接入点，PE / 网关更像 SRv6 / IPVPN 一侧的边缘；但图上没有接口归属表，也没有箭头，这两句是我的位置推断，不是图上写的。</p>
+
+    <h2>四、请求与数据怎么走（本节为推断）</h2>
+    <p>图里没有画箭头，也没有报文封装示意，所以这一节整节都是<strong>推断</strong>，依据只是分层位置。</p>
+    <ul>
+      <li><strong>推断 · 同站点内</strong>：租户下的 PC / 服务器先接到本站点的 VTEP（接入 / 汇聚）——图上 VTEP 就画在站点与隧道之间。</li>
+      <li><strong>推断 · 跨站点二层互通</strong>：VTEP 之间跑 VXLAN 数据平面，EVPN 作为控制平面负责 MAC/IP 学习和路由发布，从而让不同站点的同一二层网络互通。两张卡片分别写了这两件事，把它们连成一条路径是我的推断。</li>
+      <li><strong>推断 · 跨站点承载</strong>：VXLAN 之上经 SRv6 TE Flow Group 选路，再由 IPVPN 承载到对端站点；图底部的「SRv6 决定怎么走」支持这一层理解。</li>
+      <li><strong>推断 · 加密插入</strong>：如果启用 IPsec，会在上述路径的某个位置插入加密（位置见下一节）；图上绿色虚线跨过了多条链路，但没有指定唯一入口。</li>
+    </ul>
+    <p>我把这条链路写成一句便于记的话：<code>租户 PC / 服务器 → VTEP → VXLAN（数据）/ EVPN（控制）→ SRv6 TE 选路 → IPVPN 承载 → 对端站点 VTEP → 对端租户</code>。再强调一次：图上没有箭头，这是按上下分层推出来的，不是图上明写的报文路径。</p>
+
+    <h2>五、关键通信路径：IPsec 的四个插入位置</h2>
+    <p>图右侧「IPsec 可插入的位置（示例）」列了四条，要点照录（<strong>图中明示</strong>）：</p>
+    <ol>
+      <li><strong>站点到站点</strong>：在 IPVPN 之上建立 IPsec 隧道，保护整条路径。</li>
+      <li><strong>业务专线</strong>：在 SRv6 TE 的某条路径上插入 IPsec。</li>
+      <li><strong>接入层</strong>：在 VTEP 之间或 PE 边缘做链路加密。</li>
+      <li><strong>特定业务</strong>：只对敏感业务流量（如生产 / 研发 / 管理）加密。</li>
+    </ol>
+    <p>旁边一句：「IPsec 不限制位置，可按安全、性能、接入侧、业务灵活部署。」（<strong>图中明示</strong>）</p>
+    <p>我的理解：这四条从「整条路径」一路收到「某类业务」，颗粒度是递减的；同一张图里同时列出来，说明图中强调的是「按需选择插在哪」，而不是固定一套。<strong>推断</strong>：不同位置的安全覆盖范围与对调度 / 转发的影响应当不同，但图上没有给出对比数据或选型建议，我这里不做结论。</p>
+
+    <h2>六、安全与部署边界</h2>
+    <p><strong>安全边界（图中明示）</strong>：加密能力由 IPsec 这一可选层提供，与 SRv6、VXLAN、EVPN 兼容；图中说它「不改变原有架构，只增加安全保护层」。插入位置可按站点到站点 / 业务专线 / 接入层 / 特定业务四类选。</p>
+    <p><strong>部署边界（图中明示）</strong>：底座 IPVPN 可基于 MPLS L3VPN、企业 IP VPN、或运营商专线 / 互联网；站点 A / B 是园区 / 数据中心，站点 C 是分支 / 边缘；VTEP 承担接入 / 汇聚，PE / 网关标了 SRv6；租户在图中按办公 / 业务 / 研发划分。</p>
+    <p><strong>图中未展示、因此我不下结论的部分（推断）</strong>：密钥如何分发与轮换、加密对封装开销和 MTU 的影响、链路或节点故障时的切换方式、SRv6 TE 与 EVPN 之间的控制面接口、以及监控 / 遥测手段。这些都很重要，但这张图没有画，按「不编造」的原则我只标注，不展开。</p>
+
+    <h2>七、设计特点与可改进点</h2>
+    <p>先看<strong>设计特点</strong>（基于图中文字的归纳）：</p>
+    <ul>
+      <li><strong>分层解耦</strong>：承载（IPVPN）、调度（SRv6 TE）、控制（EVPN）、数据（VXLAN）、安全（IPsec）各管一段；图底部把它概括成「SRv6 决定怎么走，VXLAN 决定怎么连」。</li>
+      <li><strong>调度与控制分离</strong>：SRv6 侧按业务 / 时延 / 带宽策略选路，EVPN 侧做 MAC/IP 学习与路由发布。</li>
+      <li><strong>多租户与二层延伸</strong>：VNI 隔离 + VXLAN 二层延伸 + EVPN 跨站点同步，图中称「业务无感知迁移」。</li>
+      <li><strong>安全可插拔</strong>：IPsec 不绑死某一层，四个位置按需选。</li>
+    </ul>
+    <p>再看<strong>可改进点</strong>（以下全部是<strong>推断</strong>，图中未展示）：</p>
+    <ul>
+      <li><strong>策略一致性</strong>：插入位置有四种，且图中说可按业务灵活部署；如果没有统一的策略编排与下发，多处插入容易出现策略漂移。图上没有展示策略编排机制。</li>
+      <li><strong>封装与链路开销</strong>：五层概念叠加，图中没有提到 MTU、分片或开销评估；实际落地时需要单独验证（这是工程常识层面的推断，图上未写）。</li>
+      <li><strong>控制面协同边界</strong>：图上分别写了 SRv6 TE 的调度与 EVPN 的学习 / 发布，但没有画两者之间的信息交互；协同接口是否清晰，图中无法判断。</li>
+      <li><strong>可观测性</strong>：图中没有监控、遥测或故障定位的任何元素，无法据此评估运维难度。</li>
+    </ul>
+
+    <h2>八、小结</h2>
+    <p>图底部的关键点我原样收在这里：SRv6 决定「怎么走」——通过 SID + Flow Group 实现智能选路与流量调度；VXLAN 决定「怎么连」——通过 VNI + EVPN 实现跨站点二层延伸与多租户隔离。两者结合，才能真正实现分布式、灵活、可扩展的网络形态。（<strong>图中明示</strong>）</p>
+    <p>我自己的一句话总结：这张图讲的是「把承载、调度、控制、数据、安全拆开各管一段，再把 IPsec 当成可插拔的安全壳按需要扣上去」。至于怎么选路的具体算法、怎么加密的具体参数，图上没有，本文也没有。</p>
+  </article>
+  <footer class="post-footer">
+    <a class="post-back" href="../index.html">← 返回博客</a>
+  </footer>
+</main>
+<script src="../assets/main.js"></script>
+</body>
+</html>

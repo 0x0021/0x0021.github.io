@@ -1,24 +1,26 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-home="1">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#080c0b" />
 <title>Linkora v0.8.3：分身终于不再跟自己说话了 · 坤子</title>
 <meta name="description" content="v0.8.3 修掉「自言自语」：本人消息被误判成对方、单聊回复按人投递回自己的 1:1 窗口。现统一身份判定（零配置自动反推 openDingTalkId 与昵称）、单聊按会话 ID 直通、双护栏拒发，存量 657 条污染缓存已清洗。另补 Done 表情=已办的摘要信号、延迟 120 秒标记已读。" />
 <script src="../assets/theme.js"></script>
 <link rel="stylesheet" href="../assets/style.css" />
+<link rel="stylesheet" href="../assets/terminal.css" />
 </head>
-<body>
+<body class="site-home">
 <div class="post-progress" aria-hidden="true"></div>
 
 <nav>
-  <a href="../index.html" class="nav-brand">坤子</a>
+  <a href="../index.html" class="nav-brand">0x0021 <span aria-hidden="true">/ 坤子</span></a>
   <div class="nav-links">
-    <a href="../index.html#blog">文章</a>
-    <a href="../index.html#timeline">动态</a>
-    <a href="../index.html#projects">项目</a>
-    <a href="https://github.com/0x0021" target="_blank" rel="noopener">GitHub</a>
-    <button class="theme-toggle" onclick="toggleTheme()" aria-label="主题：自动（点击切到亮色）" title="主题：自动（点击切到亮色）">◐</button>
+    <a href="../index.html#blog" aria-label="文章">posts</a>
+    <a href="../index.html#timeline" aria-label="动态">log</a>
+    <a href="../index.html#projects" aria-label="项目">projects</a>
+    <a href="https://github.com/0x0021" target="_blank" rel="noopener">github</a>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="主题：深色（点击切到亮色）" title="主题：深色（点击切到亮色）">◐</button>
   </div>
 </nav>
 

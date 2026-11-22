@@ -189,7 +189,7 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
 <meta property="og:url" content="https://0x0021.github.io/ClashModule/" />
 <meta property="og:site_name" content="0x0021" />
 <meta name="twitter:card" content="summary" />
-<meta name="theme-color" content="#f5f5f7" />
+<meta name="theme-color" content="#080c0b" />
 <style>
   :root{
     --bg:#f4f5f7; --bg2:rgba(255,255,255,.72); --card:rgba(255,255,255,.82); --card2:rgba(255,255,255,.96);
@@ -430,10 +430,11 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
     footer code{font-size:11px}
   }
 </style>
+<link rel="stylesheet" href="../assets/clash-terminal.css" />
 <script>
 /* 尽早应用主题，避免浅色用户看到深色闪烁；默认「自动」跟随系统 */
 (function(){try{
-  var m=localStorage.getItem('clashmod-theme')||'auto';
+  var m=localStorage.getItem('clashmod-theme')||'dark';
   var t=m==='auto'?(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):m;
   document.documentElement.dataset.theme=t;
 }catch(e){}})();
@@ -664,8 +665,8 @@ const SRC_NAME=SNAPSHOT.name||'Surge';
 /* ===== 主题切换：日间 / 夜间 / 自动（默认自动，跟随系统，localStorage 记忆） ===== */
 const THEME_KEY='clashmod-theme';
 const themeSwitch=document.getElementById('themeSwitch');
-let currentTheme='auto';
-try{ currentTheme=localStorage.getItem(THEME_KEY)||'auto'; }catch(e){}
+let currentTheme='dark';
+try{ currentTheme=localStorage.getItem(THEME_KEY)||'dark'; }catch(e){}
 const prefersDark=window.matchMedia('(prefers-color-scheme: dark)');
 function applyTheme(mode){
   document.documentElement.dataset.theme=(mode==='auto')?(prefersDark.matches?'dark':'light'):mode;

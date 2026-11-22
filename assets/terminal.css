@@ -760,21 +760,31 @@ body.site-home .post-content h2 {
   border-left: 2px solid var(--accent);
   font-size: 1.2rem;
 }
+/* 标题装饰用终端方括号标签，不用 markdown 的 # 号，避免被误读成未渲染的源代码 */
 body.site-home .post-content h2::before {
-  content: "## ";
+  content: "[ // ]";
+  display: inline-block;
+  margin-right: 10px;
   font-family: var(--mono);
-  font-size: 0.74em;
+  font-size: 0.66em;
+  font-weight: 400;
+  letter-spacing: 0.02em;
   color: var(--accent);
+  vertical-align: 2px;
 }
 body.site-home .post-content h3 {
   margin: 32px 0 12px;
   font-size: 1.05rem;
 }
 body.site-home .post-content h3::before {
-  content: "### ";
+  content: "[ · ]";
+  display: inline-block;
+  margin-right: 9px;
   font-family: var(--mono);
-  font-size: 0.75em;
+  font-size: 0.7em;
+  font-weight: 400;
   color: var(--ink-3);
+  vertical-align: 1px;
 }
 body.site-home .post-content a { border-bottom-color: var(--line-strong); }
 body.site-home .post-content a:hover { border-bottom-color: var(--accent); }
@@ -783,6 +793,10 @@ body.site-home .post-content code {
   border-radius: var(--radius-sm);
   background: var(--accent-dim);
   color: var(--orange);
+  /* 行内代码允许长内容换行，避免撑破容器（覆盖 style.css 的 nowrap） */
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 body.site-home .post-content pre {
   padding: 18px 20px;
@@ -793,7 +807,29 @@ body.site-home .post-content pre {
   -webkit-backdrop-filter: none;
   font-size: 13px;
 }
-body.site-home .post-content pre code { background: none; color: var(--ink); }
+/* pre 内代码必须保留 pre 的空白与不换行，需显式重设以覆盖上面的行内规则 */
+body.site-home .post-content pre code {
+  background: none;
+  color: var(--ink);
+  white-space: pre;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+/* 代码块语言标记：让 language-* 在渲染后有可见的终端式标签 */
+body.site-home .post-content pre:has(code[class*="language-"]) { position: relative; padding-top: 38px; }
+body.site-home .post-content pre code[class*="language-"]::before {
+  position: absolute;
+  top: 0; right: 0; left: 0;
+  padding: 6px 20px;
+  border-bottom: 1px solid var(--line);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: var(--ink-3);
+  background: var(--bg-sunken);
+}
+body.site-home .post-content pre code.language-python::before { content: "// python"; }
+body.site-home .post-content pre code.language-yaml::before { content: "// yaml"; }
 body.site-home .post-content blockquote {
   padding: 14px 18px;
   border-radius: var(--radius-sm);
@@ -859,8 +895,6 @@ body.site-home .toc-inner::before {
 
 @media (max-width: 768px) {
   body.site-home .post { padding-top: 96px; }
-  body.site-home .post-content h2::before { content: "# "; }
-  body.site-home .post-content h3::before { content: "## "; }
   body.site-home .post-content .post-figure { margin: 22px 0 28px; padding: 8px; }
   body.site-home .post-content .post-figure figcaption { margin-top: 10px; font-size: 11px; }
 }

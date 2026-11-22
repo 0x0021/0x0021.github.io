@@ -150,6 +150,13 @@
 
     <div class="posts-grid reveal" data-page-node-id="Hea4F37JaU9osGyNNni7ZQ">
 
+      <a class="post-card" href="posts/linkora-v0100-release.html">
+        <div class="post-card__meta">2026-11-22 · 发布记录</div>
+        <h3 class="post-card__title">Linkora v0.10.0：下班后发来的留言，不再被我漏掉</h3>
+        <p class="post-card__excerpt">工作时间外 / 非工作日收到、且我本人还没回的真人留言，自动建为当前平台的个人待办。AI 代发不算，系统推送和「好的 / 收到 / ok」这类纯客套词自动跳过，按「平台 + 会话 + 消息 ID」去重、后来我亲自回了自动回填「已回复」。建单后原会话回执对方 + 本人私聊汇总；钉钉走 dws todo、飞书走 lark-cli task，企微无 API 时降级消息提醒。跟随平台隔离，管理台新增「未回复待办」页。执行人只认数字 userId——传 openDingTalkId 会被钉钉静默忽略，这个坑也一并填了。默认关闭。</p>
+        <div class="post-card__tags"><span class="tag">AI Agent</span><span class="tag green">v0.10.0</span><span class="tag">钉钉</span><span class="tag">待办</span><span class="tag">新功能</span></div>
+      </a>
+
       <a class="post-card" href="posts/linkora-v091-release.html">
         <div class="post-card__meta">2026-11-10 · 发布记录</div>
         <h3 class="post-card__title">Linkora v0.9.1：自然语言越狱模板也拦住了</h3>
@@ -398,6 +405,13 @@
       <div class="section-title" data-page-node-id="RhDdx5CofEeGyIX75MdTD7">近期动态</div>
     </div>
     <div class="timeline reveal" data-page-node-id="7SIQX957SeEP7IVtbwzcyH">
+
+      <div class="timeline-item">
+        <div class="timeline-date">2026-11</div>
+        <div class="timeline-body">
+          <p><strong>v0.10.0</strong>：新功能——工作时间外未回复消息自动建个人待办。起因是昨天一条留言没回、隔天才想起，工作时间内有分身盯着，下班后 / 周末的消息反而最容易漏。现按工作时段 / 工作日 / 时区 / 节假日配置识别非工作时段收到的<strong>真人留言</strong>，本人尚未回复的（未读，或之后没有真人回复，<strong>AI 代发不算</strong>）自动建为当前平台个人待办：钉钉走 <code>dws todo</code>、飞书走 <code>lark-cli task</code>，企微无 API 时降级消息提醒。系统推送与纯客套词四层过滤（系统发送者 / senderId / 内容前缀 / 客套词）自动跳过，有实质内容的「好的明天发你」保留；消息来源为平台侧实时拉取 + 本地会话库合并去重，离线期间未读也能补齐；按「平台 + 会话 + 消息 ID」去重，后来本人回复自动回填「已回复」。建单后原会话给对方回执 + 本人私聊汇总。踩坑修复：<code>dws todo task create --executors</code> 只认<strong>数字 userId</strong>，传 openDingTalkId 被静默忽略导致待办不出现在「待我处理」，现执行人解析统一优先数字 ID（配置 / engine / self_ids）、非数字仅兜底告警，存量 6 单已补执行人。新增 <code>unreplied_todo</code> 配置段（<strong>默认 <code>enabled: false</code></strong>，开关 + 时段 + 过滤 + 通知 + 扫描周期），首次启用自建 <code>offhours_unanswered</code> / <code>offhours_todo_records</code> 两表、无数据迁移；管理台新增「未回复待办」页（筛选规则 / 未回复消息 / 建单记录 / 统计 / 手动扫描同步建单忽略），GET 端点已纳入 admin-only 敏感清单。验证：20 个功能用例 + 149 回归全过、全门禁绿、真实钉钉 6 单出现在「待我处理」；工具数仍 49，不需要补白名单。</p>
+        </div>
+      </div>
 
       <div class="timeline-item">
         <div class="timeline-date">2026-11</div>

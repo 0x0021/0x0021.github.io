@@ -7,24 +7,22 @@
   'use strict';
 
   var KEY = 'kp-theme';
-  // 首页是深色终端风格：默认深色，切换顺序也以深色为起点；文章页保持原三态不变。
   var isHome = document.documentElement.hasAttribute('data-home');
-  var ORDER = isHome ? ['dark', 'light', 'auto'] : ['auto', 'light', 'dark'];
-  var NEXT = isHome
-    ? { dark: '亮色', light: '自动', auto: '深色' }
-    : { auto: '亮色', light: '暗色', dark: '自动' };
+  var ORDER = ['auto', 'light', 'dark'];
+  var NEXT = { auto: '亮色', light: '暗色', dark: '自动' };
   var NAME = { auto: '自动', light: '亮色', dark: '暗色' };
   var ICON = { auto: '◐', light: '☀', dark: '☾' };
+  // 首页与文章页的亮/暗底色不同，浏览器 chrome 配色按各自 --bg 走
   var COLOR = isHome
-    ? { light: '#f2f5f1', dark: '#080c0b' } // 与 home.css 的 --bg 同步
-    : { light: '#eceef2', dark: '#15171c' }; // 与 style.css 的 --bg 同步
+    ? { light: '#f2f5f1', dark: '#080c0b' }
+    : { light: '#eceef2', dark: '#15171c' };
   var mq = window.matchMedia ? window.matchMedia('(prefers-color-scheme: light)') : null;
 
   function read() {
     try {
       var v = localStorage.getItem(KEY);
-      return ORDER.indexOf(v) !== -1 ? v : (isHome ? 'dark' : 'auto');
-    } catch (e) { return isHome ? 'dark' : 'auto'; }
+      return ORDER.indexOf(v) !== -1 ? v : 'auto';
+    } catch (e) { return 'auto'; }
   }
 
   function write(mode) {
@@ -32,8 +30,8 @@
   }
 
   function resolve(mode) {
-    // 首页即使在「自动」模式也保持深色底，亮色只在用户显式选择时出现。
-    if (mode === 'auto') return !isHome && mq && mq.matches ? 'light' : 'dark';
+    // 自动模式跟随系统外观：系统亮色 → light，系统暗色 → dark
+    if (mode === 'auto') return mq && mq.matches ? 'light' : 'dark';
     return mode;
   }
 
@@ -83,7 +81,7 @@
 
   // 自动模式下实时跟随系统外观变化
   if (mq) {
-    var onChange = function () { if (!isHome && read() === 'auto') apply(); };
+    var onChange = function () { if (read() === 'auto') apply(); };
     if (mq.addEventListener) mq.addEventListener('change', onChange);
     else if (mq.addListener) mq.addListener(onChange);
   }

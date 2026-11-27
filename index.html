@@ -169,6 +169,13 @@
 
     <div class="posts-grid reveal" data-page-node-id="Hea4F37JaU9osGyNNni7ZQ">
 
+      <a class="post-card" href="posts/rust-ping-release.html">
+        <div class="post-card__meta">2026-11-27 · 项目记录</div>
+        <h3 class="post-card__title">rust-ping：一个用 Rust 重写的 ping，和三个只在真机上才露出来的坑</h3>
+        <p class="post-card__excerpt">命令行 + TOML 配置双通道、普通 / 颜色 / 表格三种输出、5 平台自动发版。记录三个真机才暴露的坑：connect+send 在 TUN 路由下 Broken pipe，sudo 也救不了；macOS 的 DGRAM ICMP 返回带完整 IP 头且改写 identifier；msg_controllen 在 Linux 是 usize、macOS 是 u32，本机编译通过不代表 CI 能过。</p>
+        <div class="post-card__tags"><span class="tag">Rust</span><span class="tag green">ICMP</span><span class="tag orange">踩坑记录</span><span class="tag">GitHub Actions</span></div>
+      </a>
+
       <a class="post-card" href="posts/ipsec-ipvpn-srv6-evpn-vxlan.html">
         <div class="post-card__meta">2026-11-22 · 技术图解</div>
         <h3 class="post-card__title">一张图拆开五层分布式组网：IPsec / IPVPN / SRv6 TE / EVPN / VXLAN</h3>
@@ -438,6 +445,13 @@
       <div class="timeline-item">
         <div class="timeline-date">2026-11</div>
         <div class="timeline-body">
+          <p><strong>rust-ping v0.1.0</strong>：用 Rust 写了个跨平台 ping 工具，命令行 + TOML 配置双通道（命令行 &gt; 配置文件 &gt; 默认值），普通 / 颜色 / 表格三种输出。三个真机才暴露的坑写进了<a href="posts/rust-ping-release.html">复盘文章</a>：<code>connect()</code> + <code>send()</code> 在 Clash TUN 路由下被内核以 EPIPE 拒绝（<code>sudo</code> 也无效，换 <code>sendto()</code> 解决）；macOS 的 DGRAM ICMP 会返回带完整 IP 头的报文且改写 identifier，解析要跳头、匹配按序号；<code>msghdr.msg_controllen</code> 在 Linux 是 <code>usize</code>、macOS 是 <code>u32</code>，本机过不代表 CI 过。CI 跑 fmt + clippy + test + build，打 <code>v*</code> tag 自动交叉编译 5 平台、生成 SHA256 并发布 Release，<a href="https://github.com/0x0021/rust-ping/releases/tag/v0.1.0" target="_blank" rel="noopener">v0.1.0</a> 已发。</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">2026-11</div>
+        <div class="timeline-body">
           <p><strong>技术图解</strong>：写了 <a href="posts/ipsec-ipvpn-srv6-evpn-vxlan.html">一张图拆开五层分布式组网</a>——按原图拆解 IPsec / IPVPN / SRv6 TE Flow Group / EVPN / VXLAN 的分工、节点层级、请求与数据流向、IPsec 四个插入位置、安全与部署边界。图中明示与我的推断逐条分开标注，原图随文发布。</p>
         </div>
       </div>
@@ -634,6 +648,22 @@
         <div class="card-tags">
           <span class="tag">代理</span>
           <span class="tag green">工具</span>
+        </div>
+      </a>
+
+      <a href="posts/rust-ping-release.html" class="project-card" rel="noopener" data-page-node-id="rustping-proj">
+        <div class="card-header">
+          <div class="card-icon" style="background:rgba(210,153,34,0.12)">📡</div>
+          <div>
+            <div class="card-name">rust-ping</div>
+            <div class="card-meta">Rust · ICMP · CLI</div>
+          </div>
+        </div>
+        <p class="card-desc">用 Rust 写的跨平台 ping：命令行与 TOML 配置双通道，普通 / 颜色 / 表格三种输出，5 平台 CI 自动发版。踩过的 TUN 路由 Broken pipe、macOS 带 IP 头与 identifier 改写都记在文章里。</p>
+        <div class="card-tags">
+          <span class="tag">Rust</span>
+          <span class="tag orange">工具</span>
+          <span class="tag green">跨平台</span>
         </div>
       </a>
 
